@@ -1,16 +1,0 @@
-=== SSH Session: EDK_METRO_SW1 (10.255.11.18:22) ===
-Başlangıç: 2026-03-13T18:15:37.421036
-============================================================
-
-
-Warning: The initial password poses security risks.
-The password needs to be changed. Change now? [Y/N]:NN
-Info: The max number of VTY users is 5, the number of current VTY users online is 1, and total number of terminal users online is 1.
-      The current login time is 2026-03-13 18:15:42+03:00.
-      The last login time is 2026-03-13 05:42:14+03:00 from 10.110.254.60 through SSH.
-<EDK_METRO_SW1>
-<EDK_METRO_SW1>
-<EDK_METRO_SW1>ii 
-<EDK_METRO_SW1>
-
-=== Oturum sona erdi: 2026-03-13T18:15:56.155867 ===
