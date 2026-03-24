@@ -1,0 +1,63 @@
+=== SSH Session: KAMU_ROUTER_1 (10.111.11.13:22) ===
+Başlangıç: 2026-03-23T16:33:10.226635
+============================================================
+
+
+Warning: The initial password poses security risks.
+The password needs to be changed. Change now? [Y/N]:NN
+Info: The max number of VTY users is 21, the number of current VTY users online is 1, and total number of terminal users online is 1.
+      The current login time is 2026-03-23 16:28:22+03:00.
+      The last login time is 2026-03-23 14:37:26+03:00 from 10.110.254.60 through SSH.
+<KG_DC3_A11U31_RTR1>ddiiss		
+<KG_DC3_A11U31_RTR1>display vveerr		
+<KG_DC3_A11U31_RTR1>display version 
+Huawei Versatile Routing Platform Software
+VRP (R) software, Version 8.230 (NetEngine 8000 V800R023C00SPC500)
+Copyright (C) 2012-2023 Huawei Technologies Co., Ltd.
+HUAWEI NetEngine 8000 F1A-8H20Q uptime is 661 days, 1 hour, 14 minutes
+
+NetEngine 8000 F1A-8H20Q version information:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+IPU version information:
+
+IPU (Master) 1 : uptime is 661 days, 1 hour, 14 minutes
+  StartupTime 2024/05/31   23:14:50
+  SDRAM Memory Size   : 32768 M bytes
+  FLASH Memory Size   : 128 M bytes
+  CFCARD Memory Size  : 12315 M bytes
+  IPU CR8B0BKP03D0 version information:
+  CPU PCB     Version : GPRCPUB REV A
+  EPLD        Version : 102
+  NPU PCB     Version : GPR8CQ20YSD REV A
+  EPLD        Version : 100
+  FPGA1       Version : 100
+  FPGA2       Version : 100
+  FPGA3       Version : 100
+  FPGA4       Version : 100
+  FPGA5       Version : 100
+  NP          Version : 110
+  TM          Version : 110
+  NSE         Version : NSE REV A
+  BootROM     Version : 10.72
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Power version information: 
+
+POWER 2's version information:
+  PCB     Version : PAC600S12-EB REV A
+  DCDC    Version : 1.6
+  PFC     Version : 0.0
+
+POWER 3's version information:
+  PCB     Version : PAC600S12-EB REV A
+  DCDC    Version : 1.6
+  PFC     Version : 1.6
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+CLK version information:
+
+CLK 9 : uptime is 661 days, 1 hour, 14 minutes
+  StartupTime 2024/05/31   23:14:50
+  FPGA     Version : 256
+  DSP      Version : 30502015
+  ---- More ----                 <KG_DC3_A11U31_RTR1>
+
+=== Oturum sona erdi: 2026-03-23T16:33:30.185380 ===

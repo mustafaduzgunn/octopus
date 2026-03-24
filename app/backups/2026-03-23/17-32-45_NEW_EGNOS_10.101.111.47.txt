@@ -1,0 +1,385 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 11937 bytes
+!
+! Last configuration change at 15:10:48 GMT Wed Mar 11 2026 by ssarikaya
+! NVRAM config last updated at 15:10:49 GMT Wed Mar 11 2026 by ssarikaya
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec localtime show-timezone year
+no service password-encryption
+service sequence-numbers
+!
+hostname NEW_EGNOS
+!
+boot-start-marker
+boot-end-marker
+!
+!
+username adeorouser privilege 7 secret 9 $9$adc6r6RHED1PiK$ezL0.irNjF4Y76tSjubyEwRfM3/qPuLM/8sXo0YYGiQ
+username bbarisci privilege 15 secret 9 $9$e0yMoslp/qWvFa$YBMtzRPwGqacd150kGEV0JbAtF7IW5qDi00XMKYmnyQ
+username mozan privilege 15 secret 9 $9$xjaeM86x1ASTjq$0oPU85/BEtru4K00J5QB8pB0YSrdnRyAOUnoSmCFvxo
+username mduzgun privilege 15 secret 9 $9$mxyxd5aZUMPLW4$Z8AeoI6xNDMTLD.Ux3/yXmVLHaOKL3HoKLtMrZjvn4A
+username ssarikaya privilege 15 secret 9 $9$Deospflojnoksa$AciLFnjTjfk8E7qyqjVJ9lpLSn24/cniyPVumr2pY.E
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ local
+aaa authentication login console group tacacs+ local
+aaa authentication login vty group tacacs+ local
+aaa authorization console
+aaa authorization exec default group tacacs+ local if-authenticated 
+aaa authorization commands 0 default group tacacs+ local if-authenticated 
+aaa authorization commands 15 default group tacacs+ local if-authenticated 
+aaa accounting update periodic 5
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 0 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+!
+!
+!
+!
+!
+!
+aaa session-id common
+clock timezone GMT 3 0
+switch 1 provision ws-c3560cx-12pd-s
+system mtu routing 1500
+!
+!
+!
+!
+device-sensor accounting
+device-sensor notify all-changes
+!
+!
+no ip domain-lookup
+ip domain-name turksat.local
+ip name-server 10.101.30.249
+ip name-server 10.101.30.250
+vtp mode transparent
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2002040320
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2002040320
+ revocation-check none
+ rsakeypair TP-self-signed-2002040320
+!
+!
+crypto pki certificate chain TP-self-signed-2002040320
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32303032 30343033 3230301E 170D3234 30333134 30383535 
+  35315A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 30303230 
+  34303332 3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
+  8100AB07 8FD9312D 5DC0855A B48D5457 5B3E935F 63236EF2 B5712934 5E48B6DC 
+  E0AC480F 9F666014 E1382367 B01AA8CC CA315465 C952A4CE EFDEE201 177B375B 
+  C5ED111C BAB65EE7 39022D1C 5073D72D 6BC9F5DC A87283C6 A037AF3A BC680765 
+  2DACD85D 823F499E 5BED70BE 608C5EEB EB201A2F 44ECBDCD F93F218B 7365720C 
+  36CB0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603 
+  551D2304 18301680 1446D1D1 557E48CD CAB58B97 3DE23FC4 F7EEF034 5B301D06 
+  03551D0E 04160414 46D1D155 7E48CDCA B58B973D E23FC4F7 EEF0345B 300D0609 
+  2A864886 F70D0101 05050003 81810087 287D230D A6F1C3E2 3981E7FD 75101180 
+  E228901A C6B70B65 F4971450 737056AA B3F5F08E 094E6AE2 AEFFE30B 5A449EA1 
+  3752C61D 7A347F99 550CB442 6F7E5E77 60A25699 76CACEE1 257713F7 497FC788 
+  784F071F B3F5D5AB F4EAFBFB BEFDC743 9E1F0E14 236A0B18 E2E2089A 8A727A02 
+  015A53EA A29C2B33 A0A6B6E3 C16444
+  	quit
+object-group network NOC 
+ 10.110.254.0 255.255.255.0
+ 10.100.41.0 255.255.255.0
+ 10.101.23.0 255.255.255.0
+ host 10.101.34.242
+ host 10.101.34.234
+ host 10.101.34.134
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+vlan 800 
+!
+vlan 810
+ name GOLBASI_PERSONEL
+!
+vlan 817 
+!
+vlan 902
+ name VOIP
+!
+vlan 917
+ name KLIMA&UPS
+!
+vlan 3911
+ name MNGT
+!
+lldp run
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet1/0/1
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 902
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/2
+ switchport access vlan 902
+ switchport mode access
+ switchport voice vlan 902
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 800
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 800
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 917
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/6
+ description KLIMA_UPS
+ switchport access vlan 800
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 917
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 917
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 800
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 800
+!
+interface GigabitEthernet1/0/15
+!
+interface GigabitEthernet1/0/16
+!
+interface TenGigabitEthernet1/0/1
+ description JANDARMA_T1/1/3
+ switchport trunk allowed vlan 810,902,917,3911
+ switchport mode trunk
+ ip arp inspection trust
+ ip dhcp snooping trust
+!
+interface TenGigabitEthernet1/0/2
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan3911
+ ip address 10.101.111.47 255.255.255.0
+!
+ip default-gateway 10.101.111.1
+ip forward-protocol nd
+!
+no ip http server
+ip http banner
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 10.101.111.1
+ip ssh version 2
+!
+ip access-list standard SNMP-RW
+ permit 10.101.34.234
+ permit 10.101.34.134
+ deny   any
+!
+!
+logging source-interface Vlan3911
+logging host 10.101.18.80
+!
+!
+snmp-server community trsatx RO
+snmp-server community fnacx RW SNMP-RW
+snmp-server community nedix RO
+snmp-server trap-source Vlan3911
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps flowmon
+snmp-server enable traps transceiver all
+snmp-server enable traps call-home message-send-fail server-fail
+snmp-server enable traps eigrp
+snmp-server enable traps tty
+snmp-server enable traps ospf state-change
+snmp-server enable traps ospf errors
+snmp-server enable traps ospf retransmit
+snmp-server enable traps ospf lsa
+snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+snmp-server enable traps ospf cisco-specific state-change shamlink interface
+snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+snmp-server enable traps ospf cisco-specific errors
+snmp-server enable traps ospf cisco-specific retransmit
+snmp-server enable traps ospf cisco-specific lsa
+snmp-server enable traps license
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps bfd
+snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps pki
+snmp-server enable traps trustsec authz-file-error cache-file-error keystore-file-error keystore-sync-fail random-number-fail src-entropy-fail
+snmp-server enable traps trustsec-policy peer-policy-updated authz-sgacl-fail
+snmp-server enable traps trustsec-sxp conn-srcaddr-err msg-parse-err conn-config-err binding-err conn-up conn-down binding-expn-fail oper-nodeid-change binding-conflict
+snmp-server enable traps energywise
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps event-manager
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps ike policy add
+snmp-server enable traps ike policy delete
+snmp-server enable traps ike tunnel start
+snmp-server enable traps ike tunnel stop
+snmp-server enable traps ipsec cryptomap add
+snmp-server enable traps ipsec cryptomap delete
+snmp-server enable traps ipsec cryptomap attach
+snmp-server enable traps ipsec cryptomap detach
+snmp-server enable traps ipsec tunnel start
+snmp-server enable traps ipsec tunnel stop
+snmp-server enable traps ipsec too-many-sas
+snmp-server enable traps ospfv3 state-change
+snmp-server enable traps ospfv3 errors
+snmp-server enable traps power-ethernet group 1
+snmp-server enable traps power-ethernet police
+snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps cpu threshold
+snmp-server enable traps rep
+snmp-server enable traps ipsla
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps trustsec-interface unauthorized sap-fail authc-fail supplicant-fail authz-fail
+snmp-server enable traps trustsec-server radius-server provision-secret
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps stackwise
+snmp-server enable traps bulkstat collection transfer
+snmp-server enable traps vrfmib vrf-up vrf-down vnet-trunk-up vnet-trunk-down
+snmp-server enable traps errdisable
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server host 10.101.34.134 version 2c fnacx  mac-notification snmp
+snmp-server host 10.101.34.234 version 2c fnacx  mac-notification snmp
+snmp-server host 10.101.34.61 version 2c nedix 
+snmp-server host 10.101.34.242 version 2c trsatx 
+snmp mib flash cache
+tacacs-server timeout 30
+tacacs server TURKSAT_TACACS_1
+ address ipv4 10.101.11.200
+ key Turks@t3214!!
+ timeout 5
+tacacs server TURKSAT_TACACS_2
+ address ipv4 10.101.34.11
+ key Turks@t3214!!
+ timeout 5
+!
+!
+banner exec ^C
+ YOU HAVE ENTERED SUCCESFULLY TURKSAT SWITCH SYSTEM.     
+   $(hostname) on $(line). BE ADVISED YOUR ACTIONS ARE     
+   LOGGED AND AUDITS ARE PERFORMED DAILY. IF YOU HAVE      
+   ANY QUESTIONS CONTACT THE SYSTEM ADMINISTRATOR.         
+   EMAIL ADDRESS IS noc@turksat.com.tr.                    
+                                                           
+   THANK YOU !                                             
+   NETWORK TEAM 
+^C
+banner login ^C
+/////  /    /  ////   /  /   ////     /    /////
+  /    /    /  /   /  / /   /        / /     /
+  /    /    /  ////   //     ///    /   /    /
+  /    /    /  /   /  / /       /  ///////   /
+  /    //////  /   /  /  /  ////   /     /   /
+  
+        /      / /     /   /////
+         /    /  / / / /   /    /
+          /  /   /  /  /   /    /
+           //    /     /   /////
+^C
+!
+line con 0
+line vty 0 4
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+ntp server 10.101.30.249 prefer
+ntp server 10.101.30.250
+mac address-table notification change
+!
+end
+

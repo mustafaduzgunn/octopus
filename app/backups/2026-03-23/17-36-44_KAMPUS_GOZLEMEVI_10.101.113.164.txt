@@ -1,0 +1,8 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+                       ^
+% Invalid input detected at '^' marker.
+
+KAMPUS_GOZLEMEVI>

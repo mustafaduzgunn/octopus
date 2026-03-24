@@ -1,0 +1,4365 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Current Configuration ...
+! Version 9.13(0.1)
+! Last configuration change at Tue Mar  3 09:56:22 2026 by mduzgun
+! Startup-config last updated at Tue Sep 30 16:22:10 2025 by mozan
+!
+boot system stack-unit 1 primary system://A
+boot system stack-unit 1 secondary system://B
+boot system stack-unit 2 primary system://A
+boot system stack-unit 2 secondary system://B
+!
+!
+logging coredump stack-unit  1 
+logging coredump stack-unit  2 
+logging coredump stack-unit  3 
+logging coredump stack-unit  4 
+logging coredump stack-unit  5 
+logging coredump stack-unit  6 
+!
+hostname TURKSAT_DELL_TOR
+!
+protocol lldp 
+ advertise management-tlv system-description system-name 
+!
+redundancy auto-synchronize full
+!
+username mozan secret 5 c7c107f2357ca8f4838b215d95cf09d3 privilege 15
+username adeorouser secret 5 f2e8b5e706cb4a3d1028cbc8d7de1a98 role netoperator
+username bbarisci secret 5 bc9423dc73ccc20d4564b248c2b01f6f privilege 15
+username ssarikaya secret 5 dcbd526c145c5df5d6ebb7b780dda404 privilege 15
+username restorepoint secret 5 b48b781ef156e67b4a2f9da7acc7c06d privilege 15
+username mduzgun secret 5 dcbd526c145c5df5d6ebb7b780dda404 privilege 15
+bsd-username adeorouser secret  $1$3T/yisKf$D5rIHTfcTTmoKJXsoUj7n1
+bsd-username bbarisci secret  $1$68.GWW6y$5Fh5ExfGyFMTbTFZ6mXMs1
+bsd-username mduzgun secret  $1$QC65tlSU$1VBLMxgPcSKv6oSrTB2OF0
+bsd-username mozan secret  $1$2wI8McKU$xuexDeliy619d4mGLgN7a1
+bsd-username restorepoint secret  $1$PabDSvjb$wrgOF3Ij.IqslQM6Q3JdT.
+bsd-username ssarikaya secret  $1$HOxZ0PPT$q7Sq4S4Y.5KVskoV89lvR1
+!
+allow unsupported-transceiver
+!
+stack-unit 1 provision S4048-ON
+!
+stack-unit 2 provision S4048-ON
+!
+stack-unit 1 stack-group 12
+!
+interface TenGigabitEthernet 1/1
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/2
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/3
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/4
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/5
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/6
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/7
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/8
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/9
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/10
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/11
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/12
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/13
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/14
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/15
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/16
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/17
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/18
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/19
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/20
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/21
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/22
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/23
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/24
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/25
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/26
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/27
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/28
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/29
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 1/30
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/31
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/32
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/33
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/34
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/35
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/36
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/37
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/38
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 1/39
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/40
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/41
+ description KS8_WORKER_NODE
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/42
+ description KS8_WORKER_NODE
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/43
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/44
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/45
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/46
+ no ip address
+ no shutdown
+!
+interface TenGigabitEthernet 1/47
+ no ip address
+ no shutdown
+!
+interface TenGigabitEthernet 1/48
+ no ip address
+ switchport
+ no shutdown
+!
+interface fortyGigE 1/50
+ no ip address
+ shutdown
+!
+interface fortyGigE 1/51
+ no ip address
+ no shutdown
+!
+interface fortyGigE 1/52
+ no ip address
+ no shutdown
+!
+interface fortyGigE 1/53
+ no ip address
+ shutdown
+!
+interface fortyGigE 1/54
+ no ip address
+ shutdown
+!
+stack-unit 2 stack-group 12
+!
+interface TenGigabitEthernet 2/1
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/2
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/3
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/4
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/5
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/6
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/7
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/8
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/9
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/10
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/11
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/12
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/13
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/14
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/15
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/16
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/17
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/18
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/19
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/20
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/21
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/22
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 2/23
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/24
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/25
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/26
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/27
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 2/28
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 2/29
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 2/30
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/31
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/32
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/33
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/34
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 2/35
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/36
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 2/37
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/38
+ no ip address
+ switchport
+ shutdown
+!
+interface TenGigabitEthernet 2/39
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/40
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/41
+ description KS8_WORKER_NODE
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/42
+ description KS8_WORKER_NODE
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/43
+ description KS8_WORKER_NODE
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/44
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/45
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/46
+ no ip address
+ no shutdown
+!
+interface TenGigabitEthernet 2/47
+ no ip address
+ no shutdown
+!
+interface TenGigabitEthernet 2/48
+ no ip address
+ switchport
+ no shutdown
+!
+interface fortyGigE 2/50
+ no ip address
+ shutdown
+!
+interface fortyGigE 2/51
+ no ip address
+ shutdown
+!
+interface fortyGigE 2/52
+ no ip address
+ shutdown
+!
+interface fortyGigE 2/53
+ no ip address
+ shutdown
+!
+interface fortyGigE 2/54
+ no ip address
+ shutdown
+!
+interface ManagementEthernet 1/1
+ ip address 10.111.11.28/24
+ no shutdown
+!
+interface ManagementEthernet 2/1
+ ip address 10.111.11.29/24
+ no shutdown
+!
+interface ManagementEthernet 3/1
+ no shutdown
+!
+interface ManagementEthernet 4/1
+ no shutdown
+!
+interface ManagementEthernet 5/1
+ no shutdown
+!
+interface ManagementEthernet 6/1
+ no shutdown
+!
+interface Port-channel 1
+ no ip address
+ switchport
+ channel-member fortyGigE 1/53,1/54
+ channel-member fortyGigE 2/53,2/54
+ shutdown
+!
+interface Port-channel 20
+ no ip address
+ switchport
+ lacp fast-switchover 
+ no shutdown
+!
+interface Port-channel 112
+ no ip address
+ switchport
+ channel-member TenGigabitEthernet 1/46-1/47
+ channel-member TenGigabitEthernet 2/46-2/47
+ no shutdown
+!
+interface Vlan 1
+!untagged Port-channel 20
+!
+interface Vlan 6
+ name UFGD
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 508
+ name TURKSAT_KAMUNET
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 650
+ name ULAK_WAN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 651
+ name ULAK_LAN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 720
+ name ED-TEST-IC-WAN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 756
+ name ED-TEST
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 771
+ name BOLGELER_LAN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 810
+ name TURKSAT_PERSONEL
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 816
+ name SIBER_GUVENLIK
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 824
+ name GUVENLIK_TARAMA
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 830
+ name VDI_SYSTEM
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 831
+ name VDI_NOC
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 832
+ name VDI_DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 833
+ name VDI_CYBER
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 850
+ name MUHASEBE
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 860
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 869
+ name MACUNKOY
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 873
+ name KAMERA
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 875
+ name name KODSIS_DMZ_EXT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 876
+ name KODSIS_INT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 878
+ name KODSIS_INTRANET_DMZ
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 879
+ name KODSIS_DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 885
+ name KAMU_KAMERA
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 893
+ name VSAT_PAM
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 900
+ name VOIP_NET
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 901
+ name VSAT_SUNUCU
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 903
+ name SBC_INTERNAL
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 904
+ name SBC_EXTERNAL
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 905
+ name PRINTER
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 908
+ name PROXY
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 910
+ name BAKCUP_MANAGEMENT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 911
+ name NETWORK_MANAGEMENT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 912
+ name ERP-DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 913
+ name TEST_DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 914
+ name TURKSAT_DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 915
+ name DEV_DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 916
+ name TSAT_GW
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 917
+ name KLIMA&UPS
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 112
+ no shutdown
+!
+interface Vlan 918
+ name SIEM
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 919
+ name PROXY.MG.MGMT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 920
+ name DMZ_INT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 921
+ name DMZ_EXT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 922
+ name CBT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 923
+ name LOG
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 925
+ name GUEST_DMZ_INT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 926
+ name MISAFIR_DMZ2
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 928
+ name PAM
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 929
+ name DLP
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 930
+ name GUVENLI_DMZ
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 931
+ name MONITORING
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 934
+ name KDS_MAN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 935
+ name YGD_KUBERNETES
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ untagged TenGigabitEthernet 1/41-1/43
+ untagged TenGigabitEthernet 2/41-2/43
+ no shutdown
+!
+interface Vlan 936
+ name TEST
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 937
+ name KBSD_K8S
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 938
+ name BT_ENVANTER
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 939
+ name TEST_SERVER
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 940
+ name ILO
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 941
+ name VM_941
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 943
+ name SISTEM_TEST
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 946
+ name TURKSAT_SUNUCU
+ ip address 10.101.46.204/24
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 955
+ name name EDK_TEST_LAN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 956
+ name TURKSAT_K8S_56
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40,1/48
+ tagged TenGigabitEthernet 2/1-2/40,2/48
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 957
+ name TURKSAT_K8S_57
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40,1/44-1/45,1/48
+ tagged TenGigabitEthernet 2/1-2/40,2/44-2/45,2/48
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 958
+ name TAKBIS_K8S_58
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40,1/44-1/45,1/48
+ tagged TenGigabitEthernet 2/1-2/40,2/44-2/45,2/48
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 959
+ name TURKSAT_K8S_TEST
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 960
+ name MAAS_JUJU_960
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 961
+ name MAAS_JUJU_961
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 966
+ name VERSA_NB_MNGMT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 967
+ name SB_DIRECTOR_ROUTER
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 968
+ name SB_ROUTER_CONT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 969
+ name ANALYTICS_INTERCONNECT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 970
+ name INTERNET_TRANSPORT_DOMAIN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 971
+ name MPLS_TRANSPORT_DOMAIN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 980
+ name VTL
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 981
+ name YEDEKLEME
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 987
+ name INSIGHT_DISCOVERY
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 988
+ name KUBERNETES
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 1111
+ name VSAT_DEFAULT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 1500
+ ip address 15.15.15.1/24
+ tagged Port-channel 112
+ no shutdown
+!
+interface Vlan 1507
+ name VSAT_BAICELLS
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 2500
+ name SIMSPACE
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2501
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2502
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2503
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2504
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2505
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2506
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2507
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2508
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2509
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2510
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2511
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2512
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2513
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2514
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2515
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2516
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2517
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2518
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2519
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2520
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2521
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2522
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2523
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2524
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2525
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2526
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2527
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2528
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2529
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2530
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2531
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2532
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2533
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2534
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2535
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2536
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2537
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2538
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2539
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2540
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2541
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2542
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2543
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2544
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2545
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2546
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2547
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2548
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2549
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2550
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2551
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2552
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2553
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2554
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2555
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2556
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2557
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2558
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2559
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2560
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2561
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2562
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2563
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2564
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2565
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2566
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2567
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2568
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2569
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2570
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2571
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2572
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2573
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2574
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2575
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2576
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2577
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2578
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2579
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2580
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2581
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2582
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2583
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2584
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2585
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2586
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2587
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2588
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2589
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2590
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2591
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2592
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2593
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2594
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2595
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2596
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2597
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2598
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2599
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2600
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2601
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2602
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2603
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2604
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2605
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2606
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2607
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2608
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2609
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2610
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2611
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2612
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2613
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2614
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2615
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2616
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2617
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2618
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2619
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2620
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2621
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2622
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2623
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2624
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2625
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2626
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2627
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2628
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2629
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2630
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2631
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2632
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2633
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2634
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2635
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2636
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2637
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2638
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2639
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2640
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2641
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2642
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2643
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2644
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2645
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2646
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2647
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2648
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2649
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2650
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2651
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2652
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2653
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2654
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2655
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2656
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2657
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2658
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2659
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2660
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2661
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2662
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2663
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2664
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2665
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2666
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2667
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2668
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2669
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2670
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2671
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2672
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2673
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2674
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2675
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2676
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2677
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2678
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2679
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2680
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2681
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2682
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2683
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2684
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2685
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2686
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2687
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2688
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2689
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2690
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2691
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2692
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2693
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2694
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2695
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2696
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2697
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2698
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2699
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2700
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2701
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2702
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2703
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2704
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2705
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2706
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2707
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2708
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2709
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2710
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2711
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2712
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2713
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2714
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2715
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2716
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2717
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2718
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2719
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2720
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2721
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2722
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2723
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2724
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2725
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2726
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2727
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2728
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2729
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2730
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2731
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2732
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2733
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2734
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2735
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2736
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2737
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2738
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2739
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2740
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2741
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2742
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2743
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2744
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2745
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2746
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2747
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2748
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2749
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2750
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2751
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2752
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2753
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2754
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2755
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2756
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2757
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2758
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2759
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2760
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2761
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2762
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2763
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2764
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2765
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2766
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2767
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2768
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2769
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2770
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2771
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2772
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2773
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2774
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2775
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2776
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2777
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2778
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2779
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2780
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2781
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2782
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2783
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2784
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2785
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2786
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2787
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2788
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2789
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2790
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2791
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2792
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2793
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2794
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2795
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2796
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2797
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2798
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2799
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2800
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2801
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2802
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2803
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2804
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2805
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2806
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2807
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2808
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2809
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2810
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2811
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2812
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2813
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2814
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2815
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2816
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2817
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2818
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2819
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2820
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2821
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2822
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2823
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2824
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2825
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2826
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2827
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2828
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2829
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2830
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2831
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2832
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2833
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2834
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2835
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2836
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2837
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2838
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2839
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2840
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2841
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2842
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2843
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2844
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2845
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2846
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2847
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2848
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2849
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2850
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2851
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2852
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2853
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2854
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2855
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2856
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2857
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2858
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2859
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2860
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2861
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2862
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2863
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2864
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2865
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2866
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2867
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2868
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2869
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2870
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2871
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2872
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2873
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2874
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2875
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2876
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2877
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2878
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2879
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2880
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2881
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2882
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2883
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2884
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2885
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2886
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2887
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2888
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2889
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2890
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2891
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2892
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2893
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2894
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2895
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2896
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2897
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2898
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2899
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2900
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2901
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2902
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2903
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2904
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2905
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2906
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2907
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2908
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2909
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2910
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2911
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2912
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2913
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2914
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2915
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2916
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2917
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2918
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2919
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2920
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2921
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2922
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2923
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2924
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2925
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2926
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2927
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2928
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2929
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2930
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2931
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2932
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2933
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2934
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2935
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2936
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2937
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2938
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2939
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2940
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2941
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2942
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2943
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2944
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2945
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2946
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2947
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2948
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2949
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2950
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2951
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2952
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2953
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2954
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2955
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2956
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2957
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2958
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2959
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2960
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2961
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2962
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2963
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2964
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2965
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2966
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2967
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2968
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2969
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2970
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2971
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2972
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2973
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2974
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2975
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2976
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2977
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2978
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2979
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2980
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2981
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2982
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2983
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2984
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2985
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2986
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2987
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2988
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2989
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2990
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2991
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2992
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2993
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2994
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2995
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2996
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2997
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2998
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 2999
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 3000
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 3001
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 3175
+ name VSAT_KAREL_SANTRAL
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ shutdown
+!
+interface Vlan 3205
+ name VSAT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 3911
+ name MANAGEMENT.NET
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 3987
+ name BOLGELER_FW
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 3995
+ name EDEVLET
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ no shutdown
+!
+interface Vlan 3999
+ name VSAT_NEW_4091
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1,112
+ no shutdown
+!
+interface Vlan 4091
+ name VSATMeshEcc4091
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 4093
+ name VSATMeshEcc4093
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/40
+ tagged TenGigabitEthernet 2/1-2/40
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 4094
+ name VSTA_ECC_4094
+ no ip address
+ shutdown
+!
+management route 0.0.0.0/0 10.111.11.1 
+!
+logging trap notifications
+logging 10.101.18.80
+!
+snmp-server community karakr1pt0 ro 
+!
+ntp server 10.101.30.249
+!
+clock timezone GMT 3 0 
+!
+ip ssh server enable
+!
+line console 0
+line vty 0
+line vty 1
+line vty 2
+line vty 3
+line vty 4
+line vty 5
+line vty 6
+line vty 7
+line vty 8
+line vty 9
+!
+reload-type
+ boot-type normal-reload
+ config-scr-download enable
+!
+end

@@ -1,0 +1,834 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V200R002C50SPC800
+!Last configuration was updated at 2026-02-28 02:27:08+03:00 by moozan
+!Last configuration was saved at 2026-02-28 02:25:40+03:00 by moozan
+#
+clock timezone IST add 03:00:00
+#
+sysname EDK_DIS_SW1
+#
+info-center loghost 10.10.18.80 source-ip 10.255.11.10 local-time
+info-center loghost 10.101.18.80 source-ip 10.101.11.212 local-time
+#
+undo port link-flap trigger error-down
+#
+device board 1 board-type CE6870-48S6CQ-EI
+device board 2 board-type CE6870-48S6CQ-EI
+#
+drop-profile default
+#
+dcb pfc
+#
+dcb ets-profile default
+#
+ntp ipv6 server disable
+ntp unicast-peer 192.168.186.55 source-interface Vlanif11
+ntp unicast-peer 192.168.186.66 source-interface Vlanif11
+#
+vlan batch 2 10 to 11 34 90 92 to 93 105 to 106 108 120 241 500
+vlan batch 664 799 804 to 805 882 884 900 to 901 990 992 995 to 997 1997
+#
+stp instance 0 priority 4096
+stp instance 2 priority 4096
+stp instance 3 priority 4096
+stp instance 4 priority 4096
+#
+telnet server disable
+telnet ipv6 server disable
+#
+telnet client source -a 94.55.116.17
+#
+observe-port 1 interface 10GE1/0/43  
+#
+diffserv domain default
+#
+vlan 2
+ name f5_FAILOVER
+#
+vlan 10
+ name gecis_icin
+#
+vlan 11
+ description EDK_MGMT
+#
+vlan 34
+ name EDKTESTLAN_EDK_K8S_TEST
+#
+vlan 90
+ name EDK_INTERNET
+ mirroring observe-port 1 inbound
+#
+vlan 92
+ name EDK_SOL_aktif
+#
+vlan 93
+ name EDK_SOL_pasif
+#
+vlan 105
+ description EGM_NN
+ name EGM_NN
+ mirroring observe-port 1 inbound
+#
+vlan 106
+ description SGK_NN
+ name SGK_NN
+ mirroring observe-port 1 inbound
+#
+vlan 108
+ description TAPU_NN
+ name TAPU_NN
+#
+vlan 120
+ name KGM_OGS_ED
+ mirroring observe-port 1 inbound
+#
+vlan 241
+ name MSB_ED
+ mirroring observe-port 1 inbound
+#
+vlan 500
+ name KAMUNET-eDEVLET
+ mirroring observe-port 1 inbound
+#
+vlan 664
+ name EDKTESTLAN_RAD_INT_4
+#
+vlan 799
+ name VPN_FW_PFSENSE_INTERNAL
+ mirroring observe-port 1 inbound
+#
+vlan 804
+ name VPN_FW_PFSENSE_WAN
+ mirroring observe-port 1 inbound
+#
+vlan 805
+ name PTT_FO
+ mirroring observe-port 1 inbound
+#
+vlan 882
+ name PTT_KEP_FO
+ mirroring observe-port 1 inbound
+#
+vlan 884
+ name ADALET_FO
+ mirroring observe-port 1 inbound
+#
+vlan 900
+ name OUTSIDE_F5
+ mirroring observe-port 1 inbound
+#
+vlan 901
+ name CITRIX_OUTSIDE
+#
+vlan 990
+ name FW2FW
+#
+vlan 992
+ name FW2FW_2
+#
+vlan 995
+ name KAMU_INTERNET
+#
+vlan 996
+ name TURKSAT_EDK_Connection
+ mirroring observe-port 1 inbound
+#
+vlan 997
+ name DIS_FIREWALL_WAN
+ mirroring observe-port 1 inbound
+#
+vlan 1997
+ name EDK_TEST_WAN
+#
+stp region-configuration
+ region-name EDEVLET-INT-EXT
+ revision-level 2
+ instance 2 vlan 990 992
+ instance 3 vlan 90 105 to 106 120 to 121 241 500 804 to 805 882 884 995 to 997
+#
+aaa
+ local-user moozan password irreversible-cipher $1c$*\0Y2`.EQC$.P`xQIo!n'K,]e(eov]V8ox4'Q-6X~nbt-GQ>bLX$
+ local-user moozan service-type ssh
+ local-user moozan level 3
+ local-user bbarisci password irreversible-cipher $1c$AH1u@K;m0'$X4Sf<T-8kDz=P^Dj1*JWf^_v&yw})@b(tCA0`0>&$
+ local-user bbarisci service-type ssh
+ local-user bbarisci level 3
+ local-user adeorouser password irreversible-cipher $1c$v]i_,=s4BD$VnH*VspclAW,W]/Tb}EPidk*Ucf97VgS1*O:;#=G$
+ local-user adeorouser service-type ssh
+ local-user adeorouser level 3
+ local-user ssarikaya password irreversible-cipher $1c$E2uqCAzS]%$eXvC6rL0;~>zw:Y^ctOX~=eT.}gUM'Da5~K$$HZ1$
+ local-user ssarikaya service-type ssh
+ local-user ssarikaya level 3
+ local-user restorepoint password irreversible-cipher $1c$[_UkP-IYhE$#LezRU2+MY*Z"|<1m~/O|k[1,'GM!~MJI8"**|:&$
+ local-user restorepoint service-type ssh
+ local-user mduzgunn password irreversible-cipher $1c$aQ/7*&\:K2$<4r{BL>_"Oh2@OHZ.doX7&$B2N:uHP,O..2Bx'K9$
+ local-user mduzgunn service-type ssh
+ local-user mduzgunn level 3
+ #
+ authentication-scheme default
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default
+ #
+ domain default
+ #
+ domain default_admin
+#
+stack
+ #
+ stack member 1 domain 11
+ stack member 1 priority 150
+ #
+ stack member 2 domain 11
+#
+interface Vlanif11
+ ip address 10.255.11.10 255.255.255.0
+#
+interface Vlanif500
+ shutdown
+ ip address 100.64.37.134 255.255.255.0
+#
+interface MEth0/0/0
+ shutdown
+ ip address 10.101.11.212 255.255.255.0
+#
+interface Eth-Trunk1
+ description R1_P1_W
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 8 90 92 to 93 995 to 996
+ mode lacp-static
+#
+interface Eth-Trunk2
+ description R1_P2_L
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 8 804 997 1997
+ mode lacp-static
+#
+interface Eth-Trunk3
+ description R2_P1_W
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 8 90 92 to 93 995 to 996
+ mode lacp-static
+#
+interface Eth-Trunk4
+ description R2_P2_L
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 8 804 997 1997
+ mode lacp-static
+#
+interface Eth-Trunk5
+ description to_EDK_DIS_FW_A
+ port link-type trunk
+ port trunk allow-pass vlan 799 900 990 997
+ mode lacp-static
+#
+interface Eth-Trunk6
+ description to_EDK_DIS_FW_B
+ port link-type trunk
+ port trunk allow-pass vlan 799 900 990 997
+ mode lacp-static
+#
+interface Eth-Trunk7
+ description EDK_f5_A_EXT
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 2 900
+ mode lacp-static
+#
+interface Eth-Trunk8
+ description EDK_f5_B_EXT
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 2 900
+ mode lacp-static
+#
+interface Eth-Trunk9
+ description to_METROSW_over_IPS
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 34 90 92 to 93 105 to 106 120 241 500 664 804 to 805 882
+ port trunk allow-pass vlan 884 995 to 997 1997
+ mode lacp-static
+#
+interface Eth-Trunk10
+ description to_IC_SW_FW2FW
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 900 990
+ mode lacp-static
+#
+interface Eth-Trunk11
+ description to_FORTI_VPN_FW-1
+ port link-type trunk
+ port trunk allow-pass vlan 8 10 105 to 106 108 120 241 500 799 804 to 805 882
+ port trunk allow-pass vlan 884
+ mode lacp-static
+#
+interface Eth-Trunk12
+ description to_FORTI_VPN_FW-2
+ port link-type trunk
+ port trunk allow-pass vlan 10 105 to 106 500 799 804
+ mode lacp-static
+#
+interface Eth-Trunk13
+ description EDKDISFW1_EDKTEST_AGG
+ port link-type trunk
+ port trunk allow-pass vlan 34 664 1997
+ mode lacp-static
+#
+interface Eth-Trunk14
+ description EDKDISFW2_EDKTEST_AGG
+ port link-type trunk
+ port trunk allow-pass vlan 34 664 1997
+ mode lacp-static
+#
+interface Eth-Trunk15
+ description EDKDISFW1_EDKINTERNAL_AGG
+ shutdown
+ port link-type trunk
+ mode lacp-static
+#
+interface Eth-Trunk16
+ description EDKDISFW2_EDKINTERNAL_AGG
+ shutdown
+ port link-type trunk
+ mode lacp-static
+#
+interface Eth-Trunk18
+ description EDK_f5-4450_Blade2-EXT
+#
+interface Eth-Trunk21
+ description EDK_f5_EXT_GECICI
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 2 900
+ mode lacp-static
+#
+interface Eth-Trunk23
+ description EDK_f5_EXT_MASKE
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 2 900
+ mode lacp-static
+#
+interface Eth-Trunk51
+ description E-DEVLET_FW_1-ROOT_AGG
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 799 900 990 997
+ mode lacp-static
+#
+interface Eth-Trunk52
+ description E-DEVLET_FW_2-ROOT_AGG
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 799 900 990 997
+ mode lacp-static
+#
+interface Eth-Trunk53
+ description E-DEVLET_FW_1-VPN_AGG
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 105 to 106 500 799 804
+ mode lacp-static
+#
+interface Eth-Trunk54
+ description E-DEVLET_FW_2-VPN_AGG
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 105 to 106 500 799 804
+ mode lacp-static
+#
+interface Eth-Trunk71
+ description F5_VELOS_SW_PORT_100GE/1
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 900
+ mode lacp-static
+#
+interface Eth-Trunk101
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 11
+ mode lacp-static
+#
+interface Stack-Port1/1
+#
+interface Stack-Port2/1
+#
+interface 10GE1/0/1
+ shutdown
+ eth-trunk 7
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/2
+ shutdown
+ eth-trunk 7
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/3
+ shutdown
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/4
+ shutdown
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/5
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/6
+ eth-trunk 2
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/7
+ eth-trunk 3
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/8
+ eth-trunk 4
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/9
+ shutdown
+ eth-trunk 7
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/10
+ shutdown
+ eth-trunk 7
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/11
+ shutdown
+ eth-trunk 21
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/12
+ shutdown
+ eth-trunk 21
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/13
+ shutdown
+ eth-trunk 7
+ device transceiver 10GBASE-COPPER
+#
+interface 10GE1/0/14
+ shutdown
+ eth-trunk 7
+ device transceiver 10GBASE-COPPER
+#
+interface 10GE1/0/15
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/16
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/17
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/18
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/19
+ device transceiver 10GBASE-COPPER
+#
+interface 10GE1/0/20
+ device transceiver 10GBASE-COPPER
+#
+interface 10GE1/0/21
+#
+interface 10GE1/0/22
+ device transceiver 10GBASE-COPPER
+#
+interface 10GE1/0/23
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/24
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/25
+ eth-trunk 101
+ device transceiver 1000BASE-T
+#
+interface 10GE1/0/26
+#
+interface 10GE1/0/27
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/28
+#
+interface 10GE1/0/29
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/30
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/31
+ eth-trunk 10
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/32
+ eth-trunk 10
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/33
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/34
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/35
+#
+interface 10GE1/0/36
+#
+interface 10GE1/0/37
+#
+interface 10GE1/0/38
+#
+interface 10GE1/0/39
+#
+interface 10GE1/0/40
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/41
+ description E-DEVLET_FW_1-ROOT_AGG_P12
+ eth-trunk 51
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/42
+ description E-DEVLET_FW_1-VPN_AGG_P13
+ eth-trunk 53
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/43
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/44
+#
+interface 10GE1/0/45
+ description E-DEVLET_FW_1-VPN_AGG_P21
+ eth-trunk 53
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/46
+ description E-DEVLET_FW_2-VPN_AGG_P21
+ eth-trunk 54
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/47
+ shutdown
+ eth-trunk 5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/48
+ shutdown
+ eth-trunk 6
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/1
+ shutdown
+ eth-trunk 7
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/2
+ shutdown
+ eth-trunk 7
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/3
+ shutdown
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/4
+ shutdown
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/5
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/6
+ eth-trunk 2
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/7
+ eth-trunk 3
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/8
+ eth-trunk 4
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/9
+ description VPN_FW_PFSENSE_TRUNK
+ shutdown
+ port link-type trunk
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/10
+ description VPN_FW_PFSENSE_INTERNAL
+ shutdown
+ port default vlan 799
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/11
+ shutdown
+ eth-trunk 21
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/12
+ shutdown
+ eth-trunk 21
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/13
+#
+interface 10GE2/0/14
+#
+interface 10GE2/0/15
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/16
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/17
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/18
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/19
+#
+interface 10GE2/0/20
+#
+interface 10GE2/0/21
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/22
+#
+interface 10GE2/0/23
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/24
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/25
+ eth-trunk 101
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/26
+#
+interface 10GE2/0/27
+#
+interface 10GE2/0/28
+#
+interface 10GE2/0/29
+#
+interface 10GE2/0/30
+#
+interface 10GE2/0/31
+ eth-trunk 10
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/32
+ eth-trunk 10
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/33
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/34
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/35
+#
+interface 10GE2/0/36
+#
+interface 10GE2/0/37
+#
+interface 10GE2/0/38
+#
+interface 10GE2/0/39
+ description VPN_PFSENSE_YEDEK-TRUNK
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/40
+ description VPN_PFSENSE_YEDEK-INTERNAL
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/41
+ description E-DEVLET_FW_2-ROOT_AGG_P12
+ eth-trunk 52
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/42
+ description E-DEVLET_FW_2-VPN_AGG_P13
+ eth-trunk 54
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/43
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/44
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/45
+ description E-DEVLET_FW_1-VPN_AGG_P22
+ eth-trunk 53
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/46
+ description E-DEVLET_FW_2-VPN_AGG_P22
+ eth-trunk 54
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/47
+ shutdown
+ eth-trunk 5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/48
+ shutdown
+ eth-trunk 6
+ device transceiver 10GBASE-FIBER
+#
+interface 100GE1/0/1
+ port mode stack 
+ stack-port 1/1
+ port crc-statistics trigger error-down
+ device transceiver 100GBASE-COPPER
+#
+interface 100GE1/0/2
+#
+interface 100GE1/0/3
+ description F5_VELOS_SW
+ shutdown
+ eth-trunk 71
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/4
+ description FW2_Q5
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/5
+ description E-DEVLET_FW_1-ROOT_AGG_P25
+ eth-trunk 51
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/6
+ description E-DEVLET_FW_2-ROOT_AGG_P25
+ eth-trunk 52
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/1
+ port mode stack 
+ stack-port 2/1
+ port crc-statistics trigger error-down
+ device transceiver 100GBASE-COPPER
+#
+interface 100GE2/0/2
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/3
+ description F5_VELOS_SW
+ shutdown
+ eth-trunk 71
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/4
+ description FW2_Q7
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/5
+ description E-DEVLET_FW_1-ROOT_AGG_P26
+ eth-trunk 51
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/6
+ description E-DEVLET_FW_2-ROOT_AGG_P26
+ eth-trunk 52
+ device transceiver 40GBASE-FIBER
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 10.255.11.1
+#
+snmp-agent
+snmp-agent local-engineid 800007DB03F898EF6E00FF
+snmp-agent community read cipher %^%#-@yB+4*kh&}C[i9_*M}Q<A<o-%f]gUp-vf'&5!U288Fm9_CBRUk2KuJ-OG~0o-*lOTiDb1+Eg<#CBe,8%^%#
+#
+snmp-agent sys-info contact TURKSAT NETWORK OPERATION CENTER
+snmp-agent sys-info version all
+snmp-agent target-host trap address udp-domain 192.168.31.5 params securityname cipher %^%#dK3pN/ykj/6~RDOccEY4T~mGAH#SK$*2XRRP9`HX%^%#
+#
+snmp-agent trap enable
+#
+lldp enable
+#
+stelnet ipv4 server enable
+stelnet ipv6 server enable
+ssh user adeorouser
+ssh user adeorouser authentication-type password
+ssh user adeorouser service-type all
+ssh user bapolatkan
+ssh user bapolatkan authentication-type password
+ssh user bapolatkan service-type all
+ssh user bapolatkan sftp-directory flash:
+ssh user bbarisci
+ssh user bbarisci authentication-type password
+ssh user bbarisci service-type all
+ssh user bbarisci sftp-directory flash:
+ssh user mduzgunn
+ssh user mduzgunn authentication-type password
+ssh user mduzgunn service-type all
+ssh user mduzgunn sftp-directory flash:
+ssh user moozan
+ssh user moozan authentication-type password
+ssh user moozan service-type all
+ssh user moozan sftp-directory flash:
+ssh user restorepoint
+ssh user restorepoint authentication-type password
+ssh user restorepoint service-type all
+ssh user ssarikaya
+ssh user ssarikaya authentication-type password
+ssh user ssarikaya service-type all
+ssh user ssarikaya sftp-directory flash:
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_ctr aes128_ctr
+ssh server hmac sha2_256_96 sha2_256 sha1_96
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521 sm2_kep
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1c$B"}0:*QyB.$XfotLQB:F5E[<8&_Y2{6UQ;P&L,NC%&Qi'){J#}T$
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+#
+port-group port_grubu1
+ group-member 100GE1/0/1
+#
+vm-manager
+#
+return

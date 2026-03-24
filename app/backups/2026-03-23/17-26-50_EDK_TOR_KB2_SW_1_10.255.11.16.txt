@@ -1,0 +1,1017 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Current Configuration ...
+! Version 9.11(2.1)
+! Last configuration change at Tue Dec  2 16:27:43 2025 by mduzgunn
+! Startup-config last updated at Tue Dec  2 16:27:46 2025 by mduzgunn
+!
+boot system stack-unit 1 primary system://A
+boot system stack-unit 1 secondary system://B
+boot system stack-unit 2 primary system://A
+boot system stack-unit 2 secondary system://B
+!
+!
+logging coredump stack-unit  1 
+logging coredump stack-unit  2 
+logging coredump stack-unit  3 
+logging coredump stack-unit  4 
+logging coredump stack-unit  5 
+logging coredump stack-unit  6 
+!
+hostname EDK_TOR_KB_2_SW_1
+!
+protocol lldp 
+!
+redundancy auto-synchronize full
+!
+username mozan password 7 8a50ad26d8b46163f5ca5e147ad93a43 privilege 15 
+username adeorouser secret 5 f2e8b5e706cb4a3d1028cbc8d7de1a98 role netoperator
+username bbarisci password 7 39c263e57be0d230 privilege 15 
+username mduzgunn password 7 ca1a72dba0389cb2b523b3a9f0eae2ac privilege 15 
+username ssarikaya password 7 39c263e57be0d230 privilege 15 
+username restorepoint secret 5 b48b781ef156e67b4a2f9da7acc7c06d privilege 15
+bsd-username adeorouser secret  $1$T0duaorE$d2n24qnH0WjRZQEOHizHP1
+bsd-username restorepoint secret  $1$T0duaorE$6Gc/veRLjlbSAC0hllsZS0
+!
+stack-unit 1 provision S4048-ON
+!
+stack-unit 1 stack-group 16
+!
+stack-unit 1 stack-group 17
+!
+interface TenGigabitEthernet 1/1
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/2
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/3
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/4
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/5
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/6
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/7
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/8
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/9
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/10
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/11
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/12
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/13
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/14
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/15
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/16
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/17
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/18
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/19
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/20
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/21
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/22
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/23
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/24
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/25
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/26
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/27
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/28
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/29
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/30
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/31
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/32
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/33
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/34
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 1/35
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/36
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 6 mode active 
+ shutdown
+!
+interface TenGigabitEthernet 1/37
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/38
+ description KUBERNETES
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/39
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/40
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/41
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/42
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/43
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/44
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/45
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/46
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/47
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 1/48
+ no ip address
+ switchport
+ no shutdown
+!
+interface fortyGigE 1/49
+ no ip address
+ shutdown
+!
+interface fortyGigE 1/50
+ no ip address
+ shutdown
+!
+interface fortyGigE 1/51
+ no ip address
+ shutdown
+!
+interface fortyGigE 1/52
+ no ip address
+ shutdown
+!
+stack-unit 2 provision S4048-ON
+!
+stack-unit 2 stack-group 16
+!
+stack-unit 2 stack-group 17
+!
+interface TenGigabitEthernet 2/1
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/2
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/3
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/4
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/5
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/6
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/7
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/8
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/9
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/10
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/11
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/12
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/13
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/14
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/15
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/16
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/17
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/18
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/19
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/20
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/21
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/22
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/23
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/24
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/25
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/26
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/27
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/28
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/29
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/30
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/31
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 2/32
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 2/33
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 2/34
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 1 mode active 
+ no shutdown
+!
+interface TenGigabitEthernet 2/35
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/36
+ no ip address
+!  
+ port-channel-protocol LACP 
+  port-channel 6 mode active 
+ shutdown
+!
+interface TenGigabitEthernet 2/37
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/38
+ description KUBERNETES
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/39
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/40
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/41
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/42
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/43
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/44
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/45
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/46
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/47
+ no ip address
+ switchport
+ no shutdown
+!
+interface TenGigabitEthernet 2/48
+ no ip address
+ switchport
+ no shutdown
+!
+interface fortyGigE 2/49
+ no ip address
+ shutdown
+!
+interface fortyGigE 2/50
+ no ip address
+ shutdown
+!
+interface fortyGigE 2/51
+ no ip address
+ shutdown
+!
+interface fortyGigE 2/52
+ no ip address
+ shutdown
+!
+interface ManagementEthernet 1/1
+ ip address 10.255.11.16/24
+ no shutdown
+!
+interface ManagementEthernet 2/1
+ ip address 10.255.11.17/24
+ no shutdown
+!
+interface ManagementEthernet 3/1
+ shutdown
+!
+interface ManagementEthernet 4/1
+ shutdown
+!
+interface ManagementEthernet 5/1
+ shutdown
+!
+interface ManagementEthernet 6/1
+ shutdown
+!
+interface Port-channel 1
+ no ip address
+ switchport
+ no shutdown
+!
+interface Port-channel 5
+ description ELVAN_TEST
+ no ip address
+ switchport
+ no shutdown
+!
+interface Port-channel 6
+ description ELVAN_TEST
+ no ip address
+ switchport
+ shutdown
+!
+interface Port-channel 110
+ no ip address
+ switchport
+ no shutdown
+!
+interface Vlan 1
+!untagged TenGigabitEthernet 1/25-1/27,1/37,1/47-1/48
+!untagged TenGigabitEthernet 2/25-2/27,2/37,2/47-2/48
+!
+interface Vlan 13
+ name MANAGEMENT-13
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 14
+ name MANAGEMENT-14
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/38-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/38-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 17
+ name CYBER_PENTEST
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/38-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/38-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 31
+ name EDK_MON
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 33
+ name TCCB_SRV
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 34
+ name EDK_K8S_TEST
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 35
+ name EDK_K8S_PROD
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/35,1/38-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/35,2/38-2/46
+ tagged Port-channel 1,5-6,110
+ no shutdown
+!
+interface Vlan 36
+ name EDK_K8S_TEST_DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 50
+ name WWWW
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 52
+ name GIRIS
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 54
+ name KAMU_TURKIYE
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 60
+ name DNS
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 66
+ name MAIL
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 70
+ name NOTIFICATION
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 71
+ name ANALITIK
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 72
+ name EDK_PAM
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 73
+ name ANKET
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 74
+ name MIDDLEWARE
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 75
+ name ANKET_YONETIM_WEB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 80
+ name EDK_CYBER
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 84
+ name EKAPI_XML
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 91
+ name TUIK
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 94
+ name EGM_ISTIHBARAT_BYM-112170
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/38-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/38-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 121
+ name E-ODEME_APP
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 130
+ name KAYI_APP
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 132
+ name JSON_GW
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 135
+ name CI-CD
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/16,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/16,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 136
+ name Z-ANAHTAR_BLOCKCHAIN
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 137
+ name Z-ANAHTAR_DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 138
+ name EDK_ANALITIK
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 139
+ name IB_BILTEK
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 154
+ name OTURUM
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 155
+ name SYSTEM_SERVICE
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/35,1/38-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/35,2/38-2/46
+ tagged Port-channel 1,5-6,110
+ no shutdown
+!
+interface Vlan 160
+ name IC_DNS-1
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 162
+ name IC_DNS-2
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 180
+ name DB
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28-1/30,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28-2/30,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 182
+ name DB_2
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28-1/30,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28-2/30,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 206
+ name DDO_ANALITIK
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 214
+ name LOG
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 550
+ name IPS_MANAGEMENT
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+interface Vlan 990
+ name FW_INTERNAL
+ no ip address
+ tagged TenGigabitEthernet 1/1-1/24,1/28,1/39-1/46
+ tagged TenGigabitEthernet 2/1-2/24,2/28,2/39-2/46
+ tagged Port-channel 1
+ no shutdown
+!
+management route 0.0.0.0/0 10.255.11.1 
+!
+logging history errors
+logging source-interface ManagementEthernet
+logging 10.10.18.80
+!
+snmp-server community edksatzbx*- ro 
+snmp-server enable traps bgp
+snmp-server enable traps snmp authentication coldstart linkdown linkup syslog-reachable syslog-unreachable 
+snmp-server enable traps vrrp
+snmp-server enable traps lacp
+snmp-server enable traps entity
+snmp-server enable traps stack
+snmp-server enable traps stp
+snmp-server enable traps ecfm
+snmp-server enable traps vlt
+snmp-server enable traps fips
+snmp-server enable traps ets
+snmp-server enable traps xstp
+snmp-server enable traps isis
+snmp-server enable traps config 
+snmp-server enable traps pfc
+snmp-server enable traps envmon cam-utilization fan supply temperature 
+snmp-server enable traps ecmp
+snmp-server host 10.101.34.245 traps version 2c edksatzbx*- udp-port 162
+snmp-server host 192.168.31.220 traps version 2c edksatzbx*- udp-port 161
+snmp-server host 192.168.31.220 traps version 2c edksatzbx*- udp-port 162
+snmp-server host 192.168.31.240 traps version 2c edksatzbx*- udp-port 161
+snmp-server host 192.168.31.240 traps version 2c edksatzbx*- udp-port 162
+snmp-server host 192.168.31.5 traps version 2c edksatzbx*- udp-port 161
+snmp-server host 192.168.31.5 traps version 2c edksatzbx*- udp-port 162
+!
+stack-unit 1 priority 14
+stack-unit 2 priority 13
+!
+ntp server 192.168.186.55
+ntp server 192.168.186.66
+!
+clock timezone istanbul 3 
+!
+ip ssh server enable
+ip ssh server version 2
+!
+line console 0
+line vty 0
+line vty 1
+line vty 2
+line vty 3
+line vty 4
+line vty 5
+line vty 6
+line vty 7
+line vty 8
+line vty 9
+!
+reload-type
+ boot-type normal-reload
+ config-scr-download enable
+!
+end

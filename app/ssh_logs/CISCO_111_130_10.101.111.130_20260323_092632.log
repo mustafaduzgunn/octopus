@@ -1,0 +1,69 @@
+=== SSH Session: CISCO_111_130 (10.101.111.130:22) ===
+Başlangıç: 2026-03-23T09:26:32.614773
+============================================================
+
+<TG_DC1_A0302U42_40G_H3C>ddiiss	
+<TG_DC1_A0302U42_40G_H3C>display vveerr	
+<TG_DC1_A0302U42_40G_H3C>display version
+H3C Comware Software, Version 7.1.070, Release 6710
+Copyright (c) 2004-2022 New H3C Technologies Co., Ltd. All rights reserved.
+H3C S9820-64H uptime is 26 weeks, 5 days, 20 hours, 56 minutes
+Last reboot reason : Cold reboot
+
+Boot image: flash:/s9820-cmw710-boot-r6710.bin
+Boot image version: 7.1.070, Release 6710
+  Compiled Dec 19 2022 11:00:00
+System image: flash:/s9820-cmw710-system-r6710.bin
+System image version: 7.1.070, Release 6710
+  Compiled Dec 19 2022 11:00:00
+Patch image(s) list:
+  flash:/S9820-CMW710-R6710HS15.bin, version: R6710HS15
+    Compiled Dec 19 2022 11:00:00
+
+
+MPU(M) Slot 1:
+Uptime is 26 weeks,5 days,20 hours,56 minutes
+H3C S9820-64H MPU(M) with 1 C3558 Processor(s)
+BOARD TYPE:         S9820-64H
+DRAM:               8192M bytes
+FLASH:              7296M bytes
+NVRAM:              0K bytes
+PCB 1 Version:      VER.A
+PCB 2 Version:      VER.B
+PCB 3 Version:      VER.A
+PCB 4 Version:      VER.A
+Basic    BootWare Version: 301
+Extended BootWare Version: 301
+CPLD 1 Version:     001
+CPLD 2 Version:     001
+CPLD 3 Version:     002
+FPGA 1 Version:     001
+Release Version:    H3C S9820-64H-6710
+Patch Version:      R6710HS15
+Reboot Cause:       ColdReboot
+[SubSlot 0] 64QSFP28
+
+MPU(S) Slot 2:
+Uptime is 26 weeks,5 days,18 hours,31 minutes
+H3C S9820-64H MPU(S) with 1 C3558 Processor(s)
+BOARD TYPE:         S9820-64H
+DRAM:               8192M bytes
+FLASH:              7296M bytes
+NVRAM:              0K bytes
+PCB 1 Version:      VER.A
+PCB 2 Version:      VER.B
+PCB 3 Version:      VER.A
+PCB 4 Version:      VER.A
+Basic    BootWare Version: 301
+Extended BootWare Version: 301
+CPLD 1 Version:     001
+CPLD 2 Version:     001
+CPLD 3 Version:     002
+FPGA 1 Version:     001
+Release Version:    H3C S9820-64H-6710
+Patch Version:      R6710HS15
+Reboot Cause:       IRFMergeReboot
+[SubSlot 0] 64QSFP28
+<TG_DC1_A0302U42_40G_H3C>  
+
+=== Oturum sona erdi: 2026-03-23T09:27:05.917125 ===

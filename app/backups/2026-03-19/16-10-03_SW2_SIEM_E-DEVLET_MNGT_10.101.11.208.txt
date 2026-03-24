@@ -1,0 +1,373 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 6962 bytes
+!
+! Last configuration change at 10:55:14 GMT Mon Mar 16 2026
+! NVRAM config last updated at 10:55:16 GMT Mon Mar 16 2026
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname TG_DC3_B04U41_SIBERMGMT
+!
+boot-start-marker
+boot-end-marker
+!
+!
+username noc privilege 15 secret 5 $1$qVyj$41vB9RtUvadl3QvtHCJ6J/
+username trsataim privilege 15 secret 5 $1$dzIN$o91xdy1VW6DGAC.KVas8Y1
+username adeorouser privilege 7 secret 5 $1$Whjd$F3q5QF5s0mMs1z/AbLnci0
+username mduzgunn privilege 15 secret 5 $1$FkXu$RRoebi4/NmC41021DiSCK/
+username nocsw privilege 15 secret 5 $1$VAo9$U0QvycGWHWDcoaXnnJ7qW/
+!
+!
+no aaa new-model
+clock timezone GMT 3
+ip subnet-zero
+ip domain-name turksat.local
+ip vrf mgmtVrf
+!
+ip dhcp snooping
+!
+!
+vtp domain turksat.local
+vtp mode transparent
+!
+!
+!
+power redundancy-mode redundant
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+vlan 103
+ name -=**TURKSAT_BAGLANTISI_189006580
+!
+vlan 113
+ name -=**ISDN_PRI**=-
+!
+vlan 300
+ name -=**ISDN_PRI_MANAGEMENT**=-
+!
+vlan 800
+ name KARANTINA
+!
+vlan 803
+ name TEKNO_GUEST
+!
+vlan 805
+ name VIP_UST_YONETIM
+!
+vlan 810
+ name PERSONEL
+!
+vlan 811
+ name GAZI
+!
+vlan 816
+ name BILGI_GUVENLIGI
+!
+vlan 820
+ name ANKU_TEKNO
+!
+vlan 840
+ name BT-TEKNIK
+!
+vlan 860
+ name GAZI_TEST
+!
+vlan 873
+ name KAMERA_GUVENLIK
+!
+vlan 905
+ name PRINTER                         
+!
+vlan 911
+ name NETWORK_MANAGEMENT
+!
+vlan 913
+ name WIRELESS
+!
+vlan 918
+ name SIEM
+!
+vlan 923
+ name SIEM_LOG
+!
+vlan 3991 
+lldp run
+!
+ip ssh version 2
+!
+!
+interface FastEthernet1
+ ip vrf forwarding mgmtVrf
+ no ip address
+ speed auto
+ duplex auto
+!
+interface GigabitEthernet1/1
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/2
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/3
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/4
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/5
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/6
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/7
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/8
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/9
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/10
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/11
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/12
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/13
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/14
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/15
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/16
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/17
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/18
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/19
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/20
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/21
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/22
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/23
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/24
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/25
+ description KAMU_MIRA_SSL
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/26
+ description KAMU_MIRA_SSL
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/27
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/28
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/29
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/30
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/31
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 911,923
+ switchport mode trunk
+!
+interface GigabitEthernet1/32
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/33
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/34
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/35
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/36
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/37
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/38
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/39
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/40
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/41
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/42
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/43
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/44
+ switchport access vlan 923
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/45
+ description ARSITA_10.101.11.96/97_MNGT
+ switchport access vlan 911
+ switchport mode access
+ media-type rj45
+!
+interface GigabitEthernet1/46
+ description ARSITA_10.101.11.96/97_MNGT
+ switchport access vlan 911
+ switchport mode access
+ media-type rj45
+!
+interface GigabitEthernet1/47
+!
+interface GigabitEthernet1/48
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 911,918,923
+ switchport mode trunk
+ ip arp inspection trust
+ media-type rj45
+ ip dhcp snooping trust
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan911
+ ip address 10.101.11.208 255.255.255.0
+!
+interface Vlan923
+ ip address 10.101.23.236 255.255.255.0
+ shutdown
+!
+ip route 0.0.0.0 0.0.0.0 10.101.11.1
+no ip http server
+no ip http secure-server
+!
+!
+!
+logging 10.101.18.80
+access-list 40 permit 10.101.30.248
+access-list 50 deny   any
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ access-class 1 in
+ privilege level 15
+ login local
+ transport input all
+line vty 5 15
+ access-class 1 in
+ privilege level 15
+ login
+ transport input ssh
+!
+!
+monitor session 1 source vlan 923
+monitor session 1 destination interface Gi1/47
+monitor session 1 filter packet-type good rx
+ntp clock-period 17179533
+ntp access-group query-only 50
+ntp access-group peer 40
+ntp access-group serve-only 50
+ntp server 10.101.30.248 prefer
+ntp server 10.101.11.254
+end
+

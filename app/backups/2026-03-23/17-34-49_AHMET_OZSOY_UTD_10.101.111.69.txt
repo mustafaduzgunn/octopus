@@ -1,0 +1,1789 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 49502 bytes
+!
+! Last configuration change at 22:01:04 GMT Mon Mar 16 2026 by nocsw
+! NVRAM config last updated at 08:55:05 GMT Thu Feb 26 2026 by hamit.hasancebi
+!
+version 17.9
+service timestamps debug datetime msec
+service timestamps log datetime msec localtime show-timezone year
+service sequence-numbers
+service call-home
+service unsupported-transceiver
+platform punt-keepalive disable-kernel-core
+!
+hostname AHMET_OZSOY_UTD
+!
+!
+vrf definition Mgmt-vrf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ local
+aaa authentication login console group tacacs+ local
+aaa authentication login vty group tacacs+ local
+aaa authorization console
+aaa authorization exec default group tacacs+ local if-authenticated 
+aaa authorization commands 0 default group tacacs+ local if-authenticated 
+aaa authorization commands 15 default group tacacs+ local if-authenticated 
+aaa accounting update periodic 5
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 0 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+!
+!
+aaa session-id common
+!
+!
+!
+clock timezone GMT 3 0
+boot system switch all flash:packages.conf
+switch 1 provision c9200l-48p-4x
+switch 2 provision c9200l-48p-4x
+!
+!
+!
+!
+!
+ip name-server 10.101.30.249 10.101.30.250
+no ip domain lookup
+ip domain name turksat.local
+!
+!
+!
+ip dhcp snooping vlan 810,819
+login on-success log
+vtp mode transparent
+vtp version 1
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+crypto pki trustpoint TP-self-signed-276178652
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-276178652
+ revocation-check none
+ rsakeypair TP-self-signed-276178652
+!
+!
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+  	quit
+crypto pki certificate chain TP-self-signed-276178652
+ certificate self-signed 01
+  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32373631 37383635 32301E17 0D323530 34323230 35323635 
+  335A170D 33353034 32323035 32363533 5A303031 2E302C06 03550403 1325494F 
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3237 36313738 
+  36353230 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 
+  82010100 A3E73E78 90B4EB02 1524F430 ADD6C1BD 179CE26D 87B3DB94 38519ADD 
+  38C75434 370FB8A2 317D6D57 FA86FFF9 A1B65B6E 35ABE0F6 BCBC240C AAD02B4B 
+  586F520A DEC4BF05 53120BD6 51610FC9 8E490B12 15B1506A A5BB023C 9A343D1D 
+  D8416609 749B82C6 95C86273 B6CCED4A ABE46E4D 3B18F5E4 1E4CB6D8 C04775FF 
+  3651B3C2 2846DC68 18FAFE9F A6EC79C6 B55F41E0 5BD1989E 380F2EE4 068699C1 
+  B4184D4F 6EB89996 26BD2C90 7EBBA969 032E6925 9BD57221 5505A3A0 5296FD48 
+  9F2F78BE 0B7D9DFF 6CCC505C 31192FEC 458B5F56 CBF8F33B F2E4A8BA BBA186A7 
+  565CBB37 76272852 7C546372 16DBC2F0 2E0B58B6 0F74149C 244740DE BC814E80 
+  33BE42A7 02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 
+  0603551D 23041830 168014E2 FC708B98 219D55F9 8BD607E1 3BE2B78F 97548D30 
+  1D060355 1D0E0416 0414E2FC 708B9821 9D55F98B D607E13B E2B78F97 548D300D 
+  06092A86 4886F70D 01010505 00038201 01006112 01699303 880B641B 3618E2D7 
+  536DDB3A 7B626DB1 1D75BF7A E8051537 DDE51DD4 356C389E 3300D6E2 5DFB118B 
+  0E814A9D 4575DA8E 167EB3BA E8F31852 77B48FB9 CD74538A 36CF13A4 DA4D7BD5 
+  F4D7B82A 96EA3201 CAFFDE97 B1F444BE AA3A1ABF 95E85BFD AAB80FC0 980FEB09 
+  8D648E1B 523E1013 1279F1C7 CFF4555F 33712ADD B66BA597 C1463C98 B223442D 
+  A43D7770 F0CAE9FC F2E4DE01 DA47BE46 2BA3F87D 8E2592E0 7D45DF8F CB8EE6D8 
+  4A6C2FDA AE42A04C 924EE994 6841B204 201709A0 87478C8A 98FAF84E 07F75080 
+  EAB963CB 66CC5A0F F6A82745 5F35231F 5D5B13A6 087A2DCD 24F61D50 E215B485 
+  3C4F8866 152139BC 3FFF7183 43B81345 7DCD
+  	quit
+!
+license boot level network-essentials addon dna-essentials
+memory free low-watermark processor 10317
+!
+!
+!
+!
+!
+object-group network NOC 
+ 10.110.254.0 255.255.255.0
+ 10.100.41.0 255.255.255.0
+ 10.101.23.0 255.255.255.0
+ host 10.101.34.242
+ host 10.101.34.234
+ host 10.101.34.134
+!
+diagnostic bootup level minimal
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+macro name KAMPUS_PERSONEL
+ description KAMPUS_PERSONEL
+ switchport access vlan 810
+ switchport mode access
+ switchport voice vlan 900
+ switchport port-security maximum 2
+ switchport port-security violation shutdown vlan
+ switchport port-security
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+@
+macro name PRINTER
+ description PRINTER
+ switchport access vlan 905
+ switchport mode access
+ switchport voice vlan 900
+ switchport port-security maximum 2
+ switchport port-security violation shutdown vlan
+ switchport port-security
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+@
+macro name KLIMA_UPS
+ description KLIMA_UPS
+ switchport access vlan 917
+ switchport mode access
+ switchport port-security maximum 2
+ switchport port-security violation shutdown vlan
+ switchport port-security
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+@
+!
+!
+!
+username mduzgun privilege 15 secret 9 $9$Vd5.pC27g8FHYU$BJ/D1CdtEQ4LJjKzqa8FLUQLguiiqCoqqb5JGIcZM6M
+username ssarikaya privilege 15 secret 9 $9$kKLDQ7DSflZGy.$0eBWufve2XDU8/q.dQWUJJNmuaiWV2ROkaY21ULwPiE
+!
+redundancy
+ mode sso
+crypto engine compliance shield disable
+!
+!
+!
+!
+!
+transceiver type all
+ monitoring
+!
+vlan 800
+ name KARANTINA
+!
+vlan 802
+ name GUEST
+!
+vlan 805
+ name VIP
+!
+vlan 806
+ name SMART.TV.WLC
+!
+vlan 808
+ name BILGI_ISLEM
+!
+vlan 809
+ name ULUS_PERSONEL
+!
+vlan 810
+ name PERSONEL-810
+!
+vlan 811
+ name GAZI_TEKNO
+!
+vlan 812
+ name KURUMSAL_ILETISIM
+!
+vlan 813
+ name UYDU_KONTROL_PERS
+!
+vlan 814
+ name EURASIASAT_PERS
+!
+vlan 815
+ name GARAJ
+!
+vlan 816
+ name BILGI_GUVENLIGI
+!
+vlan 817
+ name VSAT_PERSONEL
+!
+vlan 819
+ name ANKU_IP_PHONE
+!
+vlan 820
+ name ANKU_TEKNO
+!
+vlan 822
+ name ODTU_PERSONEL
+!
+vlan 825 
+!
+vlan 840
+ name BT-TEKNIK
+!
+vlan 841
+ name NOC_WIRELESS
+!
+vlan 850
+ name LOGO
+!
+vlan 860
+ name CBT
+!
+vlan 869
+ name MACUNKOY_PERSONEL
+!
+vlan 870
+ name OVECLER_PERSONEL
+!
+vlan 871
+ name KAMERA
+!
+vlan 873
+ name KAMERA_GUVENLIK
+!
+vlan 890
+ name VSAT
+!
+vlan 900
+ name VoIP
+!
+vlan 902
+ name KAMPUS_VOIP
+!
+vlan 905
+ name PRINTER
+!
+vlan 911 
+!
+vlan 917
+ name UPS
+!
+vlan 950 
+!
+vlan 973
+ name IZLEME
+!
+vlan 1600
+ name UST-YONETIM
+!
+vlan 1601
+ name KALITE_RYD
+!
+vlan 1602
+ name IK
+!
+vlan 1603
+ name ISLETME_TD
+!
+vlan 1604
+ name UYDUIS_GSD
+!
+vlan 1605
+ name PAZARLAMAD
+!
+vlan 1606
+ name TEDARIKD
+!
+vlan 1607
+ name EVRENSEL_HD
+!
+vlan 1608
+ name MALI_ID
+!
+vlan 1609
+ name UYDU_OPD
+!
+vlan 1610
+ name UYDU_SD
+!
+vlan 1611
+ name UYDU_TD
+!
+vlan 1612
+ name KABLO_ALTYD
+!
+vlan 1613
+ name KABLO_ISGSD
+!
+vlan 1614
+ name KABLO_OPD
+!
+vlan 1615
+ name KABLO_TD
+!
+vlan 1616
+ name ARGE_UD
+!
+vlan 1617
+ name ANALIZ_CTD
+!
+vlan 1618
+ name BILISIM_IGPYD
+!
+vlan 1619
+ name YAPAY_ZEKAASD
+!
+vlan 1620
+ name COZUM_GD
+!
+vlan 1621
+ name EDEVLET_IGPYD
+!
+vlan 1622
+ name SIBER_GD
+!
+vlan 1623
+ name VERI_MD
+!
+vlan 1624
+ name VERI_M_SISTEM
+!
+vlan 1625
+ name VERI_M_VERITABANI
+!
+vlan 1626
+ name YAZILIM_GD
+!
+vlan 1628
+ name UYDU_HAVACILIK_MUD
+!
+vlan 1629
+ name VMD-KURUMSAL
+!
+vlan 1630
+ name PERSONEL_VMD_BTD
+!
+vlan 1631
+ name PERSONEL-x
+!
+vlan 1632
+ name PERSONEL-y
+!
+vlan 1633
+ name PERSONEL-z
+!
+vlan 1634
+ name PERSONEL-w
+!
+vlan 1635
+ name PERSONEL-q
+!
+vlan 3900
+ name UDHB_VIDEO_KONF
+!
+vlan 3911
+ name MANAGEMENT.NET
+!
+vlan 3913
+ name TURKSAT.WLC
+!
+vlan 3991
+ name NOC_TR
+!
+lldp run
+!
+class-map match-any system-cpp-police-ewlc-control
+  description EWLC Control 
+class-map match-any system-cpp-police-topology-control
+  description Topology control
+class-map match-any system-cpp-police-sw-forward
+  description Sw forwarding, L2 LVX data packets, LOGGING, Transit Traffic
+class-map match-any system-cpp-default
+  description EWLC data, Inter FED Traffic 
+class-map match-any system-cpp-police-sys-data
+  description Openflow, Exception, EGR Exception, NFL Sampled Data, RPF Failed
+class-map match-any system-cpp-police-punt-webauth
+  description Punt Webauth
+class-map match-any system-cpp-police-l2lvx-control
+  description L2 LVX control packets
+class-map match-any system-cpp-police-forus
+  description Forus Address resolution and Forus traffic
+class-map match-any system-cpp-police-multicast-end-station
+  description MCAST END STATION
+class-map match-any system-cpp-police-high-rate-app
+  description High Rate Applications 
+class-map match-any system-cpp-police-multicast
+  description MCAST Data
+class-map match-any system-cpp-police-l2-control
+  description L2 control
+class-map match-any system-cpp-police-dot1x-auth
+  description DOT1X Auth
+class-map match-any system-cpp-police-data
+  description ICMP redirect, ICMP_GEN and BROADCAST
+class-map match-any system-cpp-police-stackwise-virt-control
+  description Stackwise Virtual OOB
+class-map match-any non-client-nrt-class
+class-map match-any system-cpp-police-routing-control
+  description Routing control and Low Latency
+class-map match-any system-cpp-police-protocol-snooping
+  description Protocol snooping
+class-map match-any system-cpp-police-dhcp-snooping
+  description DHCP snooping
+class-map match-any system-cpp-police-ios-routing
+  description L2 control, Topology control, Routing control, Low Latency
+class-map match-any system-cpp-police-system-critical
+  description System Critical and Gold Pkt
+class-map match-any system-cpp-police-ios-feature
+  description ICMPGEN,BROADCAST,ICMP,L2LVXCntrl,ProtoSnoop,PuntWebauth,MCASTData,Transit,DOT1XAuth,Swfwd,LOGGING,L2LVXData,ForusTraffic,ForusARP,McastEndStn,Openflow,Exception,EGRExcption,NflSampled,RpfFailed
+!
+policy-map system-cpp-policy
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport trunk allowed vlan 300,800,802,805,808-817,820,840,841,850,860
+ switchport trunk allowed vlan add 869-871,890,900,902,905,917,950,973
+ switchport trunk allowed vlan add 1630-1635,3900,3911,3913,3991
+ switchport mode trunk
+ ip arp inspection trust
+ load-interval 30
+ ip dhcp snooping trust
+!
+interface Port-channel10
+ switchport trunk allowed vlan 300,800,802,805,808-817,819,820,840,841,850,860
+ switchport trunk allowed vlan add 869-871,890,900,902,905,917,950,973
+ switchport trunk allowed vlan add 1600-1626,1628-1635,3900,3911,3913,3991
+ switchport mode trunk
+ ip arp inspection trust
+ ip dhcp snooping trust
+!
+interface GigabitEthernet0/0
+ vrf forwarding Mgmt-vrf
+ no ip address
+!
+interface GigabitEthernet1/0/1
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/2
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/3
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/4
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/5
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/7
+ description KAMPUS_PERSONEL
+ switchport access vlan 810
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/8
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/9
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/10
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/12
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/13
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/14
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/15
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/16
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/17
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/18
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/19
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/20
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/21
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/22
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/23
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/24
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/25
+ description KAMPUS_PERSONEL
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/26
+ description KAMPUS_PERSONEL
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/27
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/28
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/29
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/30
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/31
+ description KLIMA_UPS
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KLIMA_UPS
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/32
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KLIMA_UPS | KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/33
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KLIMA_UPS | KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/34
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KLIMA_UPS
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/35
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KLIMA_UPS | KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/36
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KLIMA_UPS
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/37
+ description PRINTER
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description PRINTER
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/38
+ description PRINTER
+ switchport access vlan 905
+ switchport mode access
+ switchport voice vlan 900
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description PRINTER
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/39
+ description WLC.AP
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/40
+ description PRINTER
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 900
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description PRINTER
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/41
+ description PRINTER
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 900
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description PRINTER
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/42
+ description PRINTER
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 900
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description PRINTER
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/43
+ description WLC.AP
+ switchport access vlan 800
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/44
+ description WLC.AP
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/45
+ description WLC.AP
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/46
+ description WLC.AP
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/47
+ description WLC.AP
+ switchport access vlan 808
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/48
+ description WLC.AP
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface TenGigabitEthernet1/1/1
+ switchport trunk allowed vlan 300,800,802,805,808-817,820,840,841,850,860
+ switchport trunk allowed vlan add 869-871,890,900,902,905,917,950,973,3900
+ switchport trunk allowed vlan add 3911,3913,3991
+ switchport mode trunk
+ ip arp inspection trust
+ load-interval 30
+ ip dhcp snooping trust
+!
+interface TenGigabitEthernet1/1/2
+!
+interface TenGigabitEthernet1/1/3
+ switchport trunk allowed vlan 300,800,802,805,808-817,819,820,840,841,850,860
+ switchport trunk allowed vlan add 869-871,890,900,902,905,917,950,973
+ switchport trunk allowed vlan add 1600-1626,1628-1635,3900,3911,3913,3991
+ switchport mode trunk
+ ip arp inspection trust
+ channel-group 10 mode active
+ ip dhcp snooping trust
+!
+interface TenGigabitEthernet1/1/4
+ switchport trunk allowed vlan 300,800,802,805,808-817,819,820,840,841,850,860
+ switchport trunk allowed vlan add 869-871,890,900,902,905,917,950,973
+ switchport trunk allowed vlan add 1600-1626,1628-1635,3900,3911,3913,3991
+ switchport mode trunk
+ ip arp inspection trust
+ channel-group 10 mode active
+ ip dhcp snooping trust
+!
+interface GigabitEthernet2/0/1
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/2
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/3
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/4
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/5
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/6
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/7
+ description KAMPUS_PERSONEL
+ switchport access vlan 825
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/8
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/9
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/10
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/11
+ description KAMPUS_PERSONEL
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/12
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/13
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/14
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/15
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/16
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/17
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/18
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/19
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/20
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/21
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/22
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/23
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/24
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/25
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/26
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/27
+ description KAMPUS_PERSONEL
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/28
+ description KAMPUS_PERSONEL
+ switchport access vlan 808
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/29
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/30
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/31
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/32
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/33
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/34
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/35
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/36
+ description KAMPUS_PERSONEL
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/37
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/38
+ description KAMPUS_PERSONEL
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/39
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/40
+ description KAMPUS_PERSONEL
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/41
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/42
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/43
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/44
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/45
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/46
+ description KAMPUS_PERSONEL
+ switchport access vlan 1611
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/47
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/48
+ description KAMPUS_PERSONEL
+ switchport access vlan 800
+ switchport mode access
+ switchport voice vlan 819
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ macro description KAMPUS_PERSONEL
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface TenGigabitEthernet2/1/1
+!
+interface TenGigabitEthernet2/1/2
+!
+interface TenGigabitEthernet2/1/3
+!
+interface TenGigabitEthernet2/1/4
+ switchport trunk allowed vlan 300,800,802,805,808-817,819,820,840,841,850,860
+ switchport trunk allowed vlan add 869-871,890,900,902,905,917,950,973
+ switchport trunk allowed vlan add 1600-1626,1628-1635,3900,3911,3913,3991
+ switchport mode trunk
+ ip arp inspection trust
+ channel-group 10 mode active
+ ip dhcp snooping trust
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan3911
+ ip address 10.101.111.69 255.255.255.0
+!
+no ip http server
+no ip http secure-server
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 10.101.111.1
+ip ssh version 2
+!
+ip access-list standard SNMP-RW
+ 10 permit 10.101.34.234
+ 20 permit 10.101.34.134
+ 30 deny   any
+!
+!
+logging source-interface Vlan3911
+logging host 10.101.18.80
+!
+snmp-server community fnacx RW SNMP-RW
+snmp-server community trsatx RO
+snmp-server community nedix RO
+snmp-server trap-source Vlan3911
+snmp-server enable traps mac-notification change move threshold
+snmp-server host 10.101.34.134 version 2c fnacx  mac-notification snmp
+snmp-server host 10.101.34.234 version 2c fnacx  mac-notification snmp
+snmp-server host 10.101.34.61 version 2c nedix 
+snmp-server host 10.101.34.242 version 2c trsatx 
+tacacs-server timeout 30
+tacacs server TURKSAT_TACACS_1
+ address ipv4 10.101.11.200
+ key Turks@t3214!!
+ timeout 5
+tacacs server TURKSAT_TACACS_2
+ address ipv4 10.101.34.11
+ key Turks@t3214!!
+ timeout 5
+!
+!
+!
+control-plane
+ service-policy input system-cpp-policy
+!
+banner exec ^C
+   YOU HAVE ENTERED SUCCESFULLY TURKSAT SWITCH SYSTEM.     
+   $(hostname) on $(line). BE ADVISED YOUR ACTIONS ARE     
+   LOGGED AND AUDITS ARE PERFORMED DAILY. IF YOU HAVE      
+   ANY QUESTIONS CONTACT THE SYSTEM ADMINISTRATOR.         
+   EMAIL ADDRESS IS noc@turksat.com.tr.                    
+                                                           
+   THANK YOU !                                             
+   NETWORK TEAM
+^C
+banner login ^C
+
+/////  /    /  ////   /  /   ////     /    /////
+  /    /    /  /   /  / /   /        / /     /
+  /    /    /  ////   //     ///    /   /    /
+  /    /    /  /   /  / /       /  ///////   /
+  /    //////  /   /  /  /  ////   /     /   /
+  
+        /      / /     /   /////
+         /    /  / / / /   /    /
+          /  /   /  /  /   /    /
+           //    /     /   /////
+^C
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+ntp server 10.101.30.249 prefer
+ntp server 10.101.30.250
+!
+mac address-table notification change
+!
+!
+!
+!
+!
+end
+

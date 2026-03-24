@@ -1,0 +1,2143 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V200R005C10SPC800
+!Last configuration was updated at 2026-03-23 12:27:54+03:00 by mduzgun
+!Last configuration was saved at 2026-03-23 12:34:21+03:00 by mduzgun
+#
+clock timezone IST add 03:00:00
+#
+sysname KG_DC3_B17U4139_TOR
+#
+info-center loghost 10.101.18.80
+#
+system resource standard
+#
+device board 1 board-type CE6851-48S6Q-HI
+device board 2 board-type CE6851-48S6Q-HI
+#
+drop-profile default
+#
+dcb pfc
+#
+dcb ets-profile default
+#
+ntp ipv6 server disable
+ntp unicast-server 10.101.11.254 source-interface MEth0/0/0
+#
+vlan batch 4 31 200 to 203 402 to 403 451 500 507 516 945 1101
+vlan batch 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+vlan batch 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1407
+vlan batch 1410 to 1422 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569
+vlan batch 1903 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734
+vlan batch 3740 3961 3966 3971 3981
+#
+telnet server disable
+telnet ipv6 server disable
+#
+diffserv domain default
+#
+vlan 4
+ name F5_SANAL
+#
+vlan 31
+ name HYPER_V
+#
+vlan 200
+ name KOSGEB_SIP
+#
+vlan 201
+ name KTB_SIP
+#
+vlan 202
+ name MEB_SIP
+#
+vlan 203
+ name KOSGEP_GODIGITAL
+#
+vlan 402
+ name DMO-TEST
+#
+vlan 403
+ name DMO-LAN
+#
+vlan 451
+ name VSAT_VMYD_DGM
+#
+vlan 500
+ name TUCBS_KAMUNET_fortest
+#
+vlan 507
+ name TCDD_TTVPN
+#
+vlan 516
+ name KIYI_EMNIYETI
+#
+vlan 945
+ name VMWARE
+#
+vlan 1101
+ name PA_TRUST_VLAN
+#
+vlan 1103
+ name VEEAM_CLOUD
+#
+vlan 1106
+ name ORACLE_POSTGRE_TEST
+#
+vlan 1107
+ name KAMU_KARANTINA
+#
+vlan 1108
+ name KAMU_SHGM_K8S
+#
+vlan 1113
+ name SAFIRBULUT_DBTEST
+#
+vlan 1114
+ name SAFIRBULUT_DBPROD
+#
+vlan 1120
+ name SAFIRBULUT_DISAPPPROD
+#
+vlan 1130
+ name SAFIRBULUT_ICAPPPROD
+#
+vlan 1132
+ name SAFIRBULUT_LOGAPP
+#
+vlan 1139
+ name SAFIRBULUT_APPTEST
+#
+vlan 1214
+ name SHGM_KDMDEV
+#
+vlan 1270
+ name TELIF_HAKLARI-LAN
+#
+vlan 1276
+ name KAMU_SHGM_JUMP_BYM-111999
+#
+vlan 1278
+ name KAMU_CSOC_LAN_5
+#
+vlan 1279
+ name KAMU_CSOC_LAN_6
+#
+vlan 1282
+ name KAMU_CSOC_LAN_1
+#
+vlan 1283
+ name KAMU_CSOC_LAN_2
+#
+vlan 1284
+ name KAMU_CSOC_LAN_3
+#
+vlan 1285
+ name KAMU_CSOC_LAN_4
+#
+vlan 1298
+ name VSDWAN_WAN
+#
+vlan 1304
+ name SHGM_AD_SIBER
+#
+vlan 1305
+ name SHGM_PENTEST_ZAFIYET
+#
+vlan 1306
+ name SHGM_PAM
+#
+vlan 1307
+ name SHGM_TABLEAU
+#
+vlan 1308
+ name SHGM_PUBLIC_SIBER_SERVICE
+#
+vlan 1309
+ name KAMU_SHGM_KAMERA
+#
+vlan 1310
+ name KAMU_SHGM_IHATAKIP
+#
+vlan 1311
+ name BASBAKANLIK-LAN
+#
+vlan 1312
+ name DENIZCILIK_UBAK
+#
+vlan 1315
+ name KAMU_SHGM_BIGBLUEBUTTON
+#
+vlan 1316
+ name AFAD
+#
+vlan 1317
+ name KAMU_IPS_MCAFEE
+#
+vlan 1318
+ name VUCUT_FEDERASYON
+#
+vlan 1319
+ name PENDIK_LAN
+#
+vlan 1320
+ name MGK_LAN
+#
+vlan 1321
+ name KKTC_EDEVLET_LAN
+#
+vlan 1322
+ name SHGM_LAN
+#
+vlan 1323
+ name BYEGM_LAN
+#
+vlan 1324
+ name GOC_IDARESI_LAN
+#
+vlan 1325
+ name DMO
+#
+vlan 1326
+ name DMO-MNGT
+#
+vlan 1327
+ name DMO-ORAC
+#
+vlan 1328
+ name SAYISTAY_LAN
+#
+vlan 1329
+ name TCDD_LAN
+#
+vlan 1330
+ name KGDM_LAN
+#
+vlan 1331
+ name DMO-CLIENT
+#
+vlan 1332
+ name EPDK_LAN
+#
+vlan 1333
+ name SBB_DB
+#
+vlan 1334
+ name ERBAKAN_UNI_LAN
+#
+vlan 1335
+ name ULUSAL_AJANS_LAN
+#
+vlan 1336
+ name TETAS_LAN
+#
+vlan 1337
+ name KALKINMA_LAN
+#
+vlan 1338
+ name CEVRE_SEHIRCILIK_LAN
+#
+vlan 1340
+ name TAPU_LAN
+#
+vlan 1341
+ name SAYISTAY_1
+#
+vlan 1342
+ name SAYISTAY_2
+#
+vlan 1343
+ name SAYISTAY_3
+#
+vlan 1344
+ name SAYISTAY_4
+#
+vlan 1345
+ name SAYISTAY_5
+#
+vlan 1346
+ name EKDS_KALE
+#
+vlan 1347
+ name EKDS_EGA
+#
+vlan 1348
+ name EKDS_EB
+#
+vlan 1349
+ name KAMU_SHGM_LAN_OLDAPPDMZ
+#
+vlan 1350
+ name KAMU_SHGM_LAN_MANIA
+#
+vlan 1351
+ name YSK
+#
+vlan 1352
+ name SHGM_ROHAN
+#
+vlan 1353
+ name SHGM_ERABOR
+#
+vlan 1354
+ name RIVENDELL
+#
+vlan 1355
+ name KAMU_SHGM_LAN_1
+#
+vlan 1356
+ name MESLEKI_YETERLILIK
+#
+vlan 1357
+ name AVRUPA_BIRLIGI
+#
+vlan 1358
+ name AVRUPA_BIRLIGI_1
+#
+vlan 1359
+ name AVRUPA_BIRLIGI_2
+#
+vlan 1360
+ name LRIT_LAN
+#
+vlan 1361
+ name AVRUPA_BIRLIGI_DMZ
+#
+vlan 1362
+ name UUP_TEST_LAN
+#
+vlan 1365
+ name YOK
+#
+vlan 1367
+ name SHGM_GONDOR
+#
+vlan 1369
+ name SHGM_PALANTIR
+#
+vlan 1370
+ name NDK_LOKAL
+#
+vlan 1371
+ name ClOUD_DOMAIN_LAN
+#
+vlan 1372
+ name KUTUPHANELER_LAN
+#
+vlan 1373
+ name CSGB
+#
+vlan 1374
+ name YTB_LAN
+#
+vlan 1375
+ name EKONOMI_LAN
+#
+vlan 1376
+ name CSGB_SUNUCU_1
+#
+vlan 1377
+ name CSGB_SUNUCU_2
+#
+vlan 1378
+ name CSGB_HA
+#
+vlan 1379
+ name TITCK
+#
+vlan 1380
+ name LRIT_TEST
+#
+vlan 1381
+ name ASBU_LAN
+#
+vlan 1382
+ name ADEO_2
+#
+vlan 1383
+ name ADEO
+#
+vlan 1384
+ name ADEO_3
+#
+vlan 1385
+ name ULASTIRMA_CLOUD
+#
+vlan 1386
+ name RTUK_LAN
+#
+vlan 1387
+ name ILKSAN_LAN
+#
+vlan 1388
+ name DHMI_AZUR
+#
+vlan 1389
+ name KAMU_ORTAK_LAN
+#
+vlan 1390
+ name SATCLOUD_L2
+#
+vlan 1391
+ name ETVESUT_APP
+#
+vlan 1392
+ name ETVESUT_DATABASE
+#
+vlan 1393
+ name ETU_APP
+#
+vlan 1394
+ name ETU_DATABASE
+#
+vlan 1395
+ name IBANK_APP
+#
+vlan 1396
+ name IBANK_DATABASE
+#
+vlan 1397
+ name ESK_APP
+#
+vlan 1398
+ name ESK_DATABASE
+#
+vlan 1399
+ name KAMU_TEST_NETWORK
+#
+vlan 1400
+ name DHMI_HUB_TEST
+#
+vlan 1401
+ name CIMER_VERITABANI
+#
+vlan 1402
+ name CIMER_UYGULAMA
+#
+vlan 1404
+ name CIMER_YAZILIM_GELISTIRME
+#
+vlan 1405
+ name CIMER_TEST
+#
+vlan 1407
+ name SHGM_SANGFOR_VDI_POC
+#
+vlan 1410
+ name CUMBAS_APP
+#
+vlan 1411
+ name CUMBAS_DATABASE
+#
+vlan 1412
+ name SANCAKTEPE_LAN
+#
+vlan 1413
+ name DDO_LRE
+#
+vlan 1414
+ name DDO_LRE2
+#
+vlan 1415
+ name SHGM_AVIEXAM
+#
+vlan 1416
+ name BOS-2
+#
+vlan 1417
+ name CUMBAS_APP2
+#
+vlan 1418
+ name TAK_APP
+#
+vlan 1419
+ name TAK_DB
+#
+vlan 1420
+ name TAK_DMZ
+#
+vlan 1421
+ name KIK_TRUST_3
+#
+vlan 1422
+ name KIK_MNGT
+#
+vlan 1425
+ name STRATEJI_DMZ
+#
+vlan 1426
+ name STRATEJI_VT
+#
+vlan 1427
+ name STRATEJI_YAS
+#
+vlan 1428
+ name KAMU_SHGM_WZ
+#
+vlan 1429
+ name KAMU_SHGM_RABBIT
+#
+vlan 1430
+ name KAMU_SHGM_LAN_OLDSOFTWARE
+#
+vlan 1431
+ name KAMU_ORTAK_HIZMET
+#
+vlan 1432
+ name SHGM_SANDBOX
+#
+vlan 1433
+ name SHGM_SPARKER
+#
+vlan 1434
+ description SHGM_NETWORK_20/12/23
+#
+vlan 1435
+ name SHGM_OTOMASYON
+#
+vlan 1436
+ name KAMU_CSB_TUCBS
+#
+vlan 1437
+ name KAMU_CSB_TUCBS_2
+#
+vlan 1438
+ name KAMU_CSB_TUCBS_3
+#
+vlan 1439
+ name KAMU_CSB_TUCBS_4
+#
+vlan 1440
+ name KAMU_CSB_TUCBS_5
+#
+vlan 1441
+ name KAMU_CSB_TUCBS_6
+#
+vlan 1442
+ name KAMU_CBIKO_PROD_DATA
+#
+vlan 1443
+ name KAMU_CBIKO_TEST_UYG
+#
+vlan 1444
+ name KAMU_CBIKO_TEST_DB
+#
+vlan 1445
+ name KAMU_CBIKO_TEST_DATA
+#
+vlan 1446
+ name KAMU_SHGM_LAN_NETMONITOR
+#
+vlan 1447
+ name KAMU_SHGM_VLAN1447
+#
+vlan 1448
+ name KAMU_SHGM_VLAN1448
+#
+vlan 1449
+ name KAMU_SHGM_VLAN1449
+#
+vlan 1450
+ name KAMU_SHGM_VLAN1450
+#
+vlan 1451
+ name KAMU_SHGM_VLAN1451
+#
+vlan 1452
+ name KAMU_SAYISTAY_6
+#
+vlan 1468
+ name KAMU_KIK_LAN_1468
+#
+vlan 1469
+ description KIK_DEVOPS
+#
+vlan 1470
+ name KIK_PROD
+#
+vlan 1471
+ name KIK_PREPROD
+#
+vlan 1486
+ name SAFIRBULUT_PROD_EXT_API
+#
+vlan 1487
+ name SAFIRBULUT_PROD_PUBLIC
+#
+vlan 1488
+ name SAFIRBULUT
+#
+vlan 1489
+ name KAMU_AUS_TEST
+#
+vlan 1491
+ name EGO_APP
+#
+vlan 1492
+ name EGO_DB
+#
+vlan 1493
+ name EGO_DMZ
+#
+vlan 1494
+ name EGO_LB
+#
+vlan 1498
+ name ASELSAN_KONYA
+#
+vlan 1499
+ name JITSI
+#
+vlan 1500
+ name SUREKLIACIKLIKTARAMA
+#
+vlan 1501
+ name TUA
+#
+vlan 1502
+ name TUA_LB
+#
+vlan 1503
+ name TUA_LAN_2
+#
+vlan 1506
+ name KAMU_ESENYURT_LAN
+#
+vlan 1507
+ name mustafa_test
+#
+vlan 1521
+ name CIMER_API
+#
+vlan 1522
+ name CIMER_APISRV
+#
+vlan 1523
+ name CIMER_MOB
+#
+vlan 1524
+ name CIMER_AD
+#
+vlan 1525
+ name CIMER_UPD
+#
+vlan 1526
+ name CIMER_ENT
+#
+vlan 1527
+ name CIMER_FILE
+#
+vlan 1528
+ name CIMER_MGW
+#
+vlan 1529
+ name CIMER_DB1
+#
+vlan 1530
+ name CIMER_DB2
+#
+vlan 1531
+ name CIMER_PORT
+#
+vlan 1532
+ name CIMER_PUB
+#
+vlan 1533
+ name CIMER_CENT
+#
+vlan 1534
+ name CIMER_TESTAPP
+#
+vlan 1535
+ name CIMER_TESTDB
+#
+vlan 1536
+ name CIMER_TFS
+#
+vlan 1537
+ name CIMER_YETKI
+#
+vlan 1538
+ name CIMER_YG
+#
+vlan 1539
+ name CIMER_MON
+#
+vlan 1540
+ name CIMER_DBMON
+#
+vlan 1541
+ name CIMER_ADPASS
+#
+vlan 1542
+ name CIMER_QRAP
+#
+vlan 1543
+ name CIMER_DCK
+#
+vlan 1544
+ name CIMER_YY
+#
+vlan 1545
+ name KAMU_AILE_LAN_DB
+#
+vlan 1546
+ name KAMU_AILE_LAN_DOCKER
+#
+vlan 1547
+ name KAMU_AILE_LAN_COMPUTE
+#
+vlan 1548
+ name KAMU_AILE_LAN_LB
+#
+vlan 1549
+ name KAMU_KIK_SQL
+#
+vlan 1550
+ name KAMU_MGK_SEKAPS_APP
+#
+vlan 1551
+ name KAMU_MGK_KDS_APP
+#
+vlan 1552
+ name KAMU_MGK_SEKAPS_KDS_DB
+#
+vlan 1553
+ name KAMU_BOS_LAN_VLAN
+#
+vlan 1556
+ name KAMU_TVGFBF_LAN_2
+#
+vlan 1557
+ name KAMU_K8S_PROD
+#
+vlan 1558
+ name KAMU_K8S_TEST
+#
+vlan 1559
+ name MGK_SEKAPS_KDS_TEST
+#
+vlan 1563
+ name DT-Cloud_public
+#
+vlan 1564
+ name KAMU_MGM_LAN
+#
+vlan 1565
+ name KAMU_MGM_MGMT
+#
+vlan 1566
+ name KAMU_MGK_SEKAPS_EGITIM_DB
+#
+vlan 1567
+ name KAMU_MGK_SEKAPS_APP_EGITIM
+#
+vlan 1568
+ name KAMU_MGK_SEKAPS_APP_TEST
+#
+vlan 1569
+ name KAMU_CIMER_BEYKOZ
+#
+vlan 1903
+ name KAMU_SHGM_MONITORING
+#
+vlan 2303
+ name CLOUD_PF_LB
+#
+vlan 2310
+ name CLOUD_PF_LB_ULASTIRMA
+#
+vlan 2320
+ name TRS_UUP
+#
+vlan 2321
+ name TRS_KUTUPHANE
+#
+vlan 2401
+ description MILLI_PARKLAR
+#
+vlan 2402
+ description MILLI_PARKLAR
+#
+vlan 2403
+ description MILLI_PARKLAR
+#
+vlan 2404
+ description MILLI_PARKLAR
+#
+vlan 2405
+ description MILLI_PARKLAR
+#
+vlan 2406
+ description MILLI_PARKLAR
+#
+vlan 2407
+ description MILLI_PARKLAR
+#
+vlan 2408
+ description MILLI_PARKLAR
+#
+vlan 2409
+ description MILLI_PARKLAR
+#
+vlan 2410
+ description MILLI_PARKLAR
+#
+vlan 2411
+ description MILLI_PARKLAR
+#
+vlan 2412
+ description MILLI_PARKLAR
+#
+vlan 2413
+ description MILLI_PARKLAR
+#
+vlan 2414
+ description MILLI_PARKLAR
+#
+vlan 2415
+ description MILLI_PARKLAR
+#
+vlan 2416
+ description MILLI_PARKLAR
+#
+vlan 2417
+ description MILLI_PARKLAR
+#
+vlan 2418
+ description MILLI_PARKLAR
+#
+vlan 2419
+ description MILLI_PARKLAR
+#
+vlan 2420
+ description MILLI_PARKLAR
+#
+vlan 2421
+ description MILLI_PARKLAR
+#
+vlan 2422
+ description MILLI_PARKLAR
+#
+vlan 2423
+ description MILLI_PARKLAR
+#
+vlan 2424
+ description MILLI_PARKLAR
+#
+vlan 2425
+ description MILLI_PARKLAR
+#
+vlan 2426
+ description MILLI_PARKLAR
+#
+vlan 2427
+ description MILLI_PARKLAR
+#
+vlan 2428
+ description MILLI_PARKLAR
+#
+vlan 2429
+ description MILLI_PARKLAR
+#
+vlan 2430
+ description MILLI_PARKLAR
+#
+vlan 2431
+ description MILLI_PARKLAR
+#
+vlan 2432
+ description MILLI_PARKLAR
+#
+vlan 2433
+ description MILLI_PARKLAR
+#
+vlan 2434
+ description MILLI_PARKLAR
+#
+vlan 2435
+ description MILLI_PARKLAR
+#
+vlan 2436
+ description MILLI_PARKLAR
+#
+vlan 2437
+ description MILLI_PARKLAR
+#
+vlan 2438
+ description MILLI_PARKLAR
+#
+vlan 2439
+ description MILLI_PARKLAR
+#
+vlan 2440
+ description MILLI_PARKLAR
+#
+vlan 2441
+ description MILLI_PARKLAR
+#
+vlan 2442
+ description MILLI_PARKLAR
+#
+vlan 2443
+ description MILLI_PARKLAR
+#
+vlan 2444
+ description MILLI_PARKLAR
+#
+vlan 2445
+ description MILLI_PARKLAR
+#
+vlan 2446
+ description MILLI_PARKLAR
+#
+vlan 2447
+ description MILLI_PARKLAR
+#
+vlan 2448
+ description MILLI_PARKLAR
+#
+vlan 2449
+ description MILLI_PARKLAR
+#
+vlan 2450
+ description MILLI_PARKLAR
+#
+vlan 2451
+ description MILLI_PARKLAR
+#
+vlan 2452
+ description MILLI_PARKLAR
+#
+vlan 2453
+ description MILLI_PARKLAR
+#
+vlan 2454
+ description MILLI_PARKLAR
+#
+vlan 2455
+ description MILLI_PARKLAR
+#
+vlan 2456
+ description MILLI_PARKLAR
+#
+vlan 2457
+ description MILLI_PARKLAR
+#
+vlan 2458
+ description MILLI_PARKLAR
+#
+vlan 2459
+ description MILLI_PARKLAR
+#
+vlan 2460
+ description MILLI_PARKLAR
+#
+vlan 2461
+ description MILLI_PARKLAR
+#
+vlan 2462
+ description MILLI_PARKLAR
+#
+vlan 2463
+ description MILLI_PARKLAR
+#
+vlan 2464
+ description MILLI_PARKLAR
+#
+vlan 2465
+ description MILLI_PARKLAR
+#
+vlan 2466
+ description MILLI_PARKLAR
+#
+vlan 2467
+ description MILLI_PARKLAR
+#
+vlan 2468
+ description MILLI_PARKLAR
+#
+vlan 2469
+ description MILLI_PARKLAR
+#
+vlan 2470
+ description MILLI_PARKLAR
+#
+vlan 2471
+ description MILLI_PARKLAR
+#
+vlan 2472
+ description MILLI_PARKLAR
+#
+vlan 2473
+ description MILLI_PARKLAR
+#
+vlan 2474
+ description MILLI_PARKLAR
+#
+vlan 2475
+ description MILLI_PARKLAR
+#
+vlan 2476
+ description MILLI_PARKLAR
+#
+vlan 2477
+ description MILLI_PARKLAR
+#
+vlan 2478
+ description MILLI_PARKLAR
+#
+vlan 2479
+ description MILLI_PARKLAR
+#
+vlan 2480
+ description MILLI_PARKLAR
+#
+vlan 2481
+ description MILLI_PARKLAR
+#
+vlan 2482
+ description MILLI_PARKLAR
+#
+vlan 2483
+ description MILLI_PARKLAR
+#
+vlan 2484
+ description MILLI_PARKLAR
+#
+vlan 2485
+ description MILLI_PARKLAR
+#
+vlan 2486
+ description MILLI_PARKLAR
+#
+vlan 2487
+ description MILLI_PARKLAR
+#
+vlan 2488
+ description MILLI_PARKLAR
+#
+vlan 2489
+ description MILLI_PARKLAR
+#
+vlan 2490
+ description MILLI_PARKLAR
+#
+vlan 2491
+ description MILLI_PARKLAR
+#
+vlan 2492
+ description MILLI_PARKLAR
+#
+vlan 2493
+ description MILLI_PARKLAR
+#
+vlan 2494
+ description MILLI_PARKLAR
+#
+vlan 2495
+ description MILLI_PARKLAR
+#
+vlan 2496
+ description MILLI_PARKLAR
+#
+vlan 2497
+ description MILLI_PARKLAR
+#
+vlan 2498
+ description MILLI_PARKLAR
+#
+vlan 2499
+ description MILLI_PARKLAR
+#
+vlan 2500
+ description MILLI_PARKLAR
+#
+vlan 3001
+ name Vmotion
+#
+vlan 3134
+ name VSAT_DENIZCILIK
+#
+vlan 3701
+ name DMO_DMZ
+#
+vlan 3702
+ name DMO_LOCAL
+#
+vlan 3703
+ name DMO_EBYS_DB
+#
+vlan 3704
+ name DMO_EXCHANGE
+#
+vlan 3705
+ name DMO_EXCHANGE_DAG
+#
+vlan 3706
+ name DMO_EXCHANGE2016_DAG
+#
+vlan 3719
+ name DMO_ESX
+#
+vlan 3720
+ name DMO_ILO
+#
+vlan 3730
+ name ASBU_31_SUBNET
+#
+vlan 3731
+ name ASBU_47_SUBNET
+#
+vlan 3732
+ name ASBU_48_SUBNET
+#
+vlan 3733
+ name ASBU_90_SUBNET
+#
+vlan 3734
+ name ASBU_96_SUBNET
+#
+vlan 3740
+ name METEOROLOJI_LAN
+#
+vlan 3961
+ name SRX_TRSCALER_WAN_GECIS
+#
+vlan 3966
+ name LB_LAN
+#
+vlan 3971
+ name HARITA
+#
+vlan 3981
+ name PALO_ALTO_GECIS
+#
+aaa
+ local-user restorepoint password irreversible-cipher $1c$At;d%w<C95$l-J#=Jl%EA]duUFV+XDC"#SN7&%Om8'wRgYfp^z'$
+ local-user restorepoint service-type ssh
+ local-user moozan password irreversible-cipher $1c$sK[CD88_$9$;<,=8n>d4H-jf4+/7_A+o|u\"wFS#D%T-7CrKSHF$
+ local-user moozan service-type ssh
+ local-user ssarikaya password irreversible-cipher $1c$%TLp5B<QoH$`^~gO{Pq*Fwsd>8K!}~EQ){.;qxk40.>t36siH-I$
+ local-user ssarikaya service-type ssh
+ local-user bbarisci password irreversible-cipher $1c$gT@WOtY[Z%$~7xA66`6E&sD02%YRm.PU91t3zU;W.:UP`0A*P_T$
+ local-user bbarisci service-type ssh
+ local-user mduzgun password irreversible-cipher $1c$M#qY@C=WBC$6AXE!Z/0.1m3g@W|\:pLsekG~C<T;.;A"$@Voz!>$
+ local-user mduzgun service-type ssh
+ local-user adeorouser password irreversible-cipher $1c$C%)r+aLf#Y$#'o+Ii`Qy&f/;r#f#TWW*Ci;(fLxbP0G',0((\]2$
+ local-user adeorouser service-type ssh
+ local-user adeorouser user-group system-ug
+ #
+ authentication-scheme default
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default
+ #
+ domain default
+ #
+ domain default_admin
+#
+stack
+ #
+ stack member 1 domain 10
+ stack member 1 priority 150
+ #
+ stack member 2 domain 10
+ stack member 2 priority 120
+#
+license
+#
+interface Vlanif451
+ shutdown
+ ip address 192.168.70.13 255.255.255.0
+#
+interface Vlanif500
+ ip address 100.64.135.201 255.255.255.0
+#
+interface Vlanif945
+#
+interface Vlanif1392
+ ip address 10.160.92.60 255.255.255.0
+#
+interface Vlanif1412
+ ip address 10.162.62.100 255.255.255.0
+#
+interface Vlanif1471
+ ip address 10.160.71.250 255.255.255.0
+#
+interface MEth0/0/0
+ ip address 10.111.11.15 255.255.255.0
+#
+interface Eth-Trunk7
+ description TO_NEXUS_PO451
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 500 507 516 945
+ port trunk allow-pass vlan 1101 1103 1106 to 1108 1113 to 1114 1117 to 1118 1120 1130 1132 1139 1214
+ port trunk allow-pass vlan 1270 1276 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402
+ port trunk allow-pass vlan 1404 to 1405 1407 1410 to 1422 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553
+ port trunk allow-pass vlan 1556 to 1559 1563 to 1569 1903 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706
+ port trunk allow-pass vlan 3719 to 3720 3730 to 3734 3740 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk19
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1117 to 1118 1120 1130 1132 1139 1214 1270
+ port trunk allow-pass vlan 1276 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405
+ port trunk allow-pass vlan 1410 to 1422 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569
+ port trunk allow-pass vlan 1903 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734
+ port trunk allow-pass vlan 3740 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk20
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1117 to 1118 1120 1130 1132 1139 1214 1270
+ port trunk allow-pass vlan 1276 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405
+ port trunk allow-pass vlan 1410 to 1422 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569
+ port trunk allow-pass vlan 1903 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734
+ port trunk allow-pass vlan 3740 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk29
+ description KAMU_SERVERS
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk30
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk31
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk32
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk33
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk34
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk35
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk36
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk37
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk38
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk39
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk40
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk41
+ description KAMU_SERVERS
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1282 to 1285 1298 1304 to 1308 1310 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk43
+ description RAFAY_SERVER
+ port default vlan 1431
+ mode lacp-static
+#
+interface Eth-Trunk44
+ description RAFAY_SERVER
+ port default vlan 1431
+ mode lacp-static
+#
+interface Eth-Trunk45
+ description RAFAY_SERVER
+ port default vlan 1431
+ mode lacp-static
+#
+interface Eth-Trunk100
+ description KAMU_SRV_45_103_PO100
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk101
+ description KAMU_SRV_45_104_PO101
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk102
+ description KAMU_SRV_45_105_PO102
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk103
+ description KAMU_SRV_45_106_PO103
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk104
+ description KAMU_SRV_45_107_PO104
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk105
+ description KAMU_SRV_45_108_PO105
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk106
+ description KAMU_SRV_45_109_PO106
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk107
+ description KAMU_SRV_45_110_PO107
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk108
+ description KAMU_SRV_45_88_PO108
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk111
+ description KAMU_SRV_45_71_PO111
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk112
+ description KAMU_SRV_45_72_PO112
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk113
+ description KAMU_SRV_45_73_PO113
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk114
+ description KAMU_SRV_45_74_PO114
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk115
+ description KAMU_SRV_45_75_PO115
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk116
+ description KAMU_SRV_45_76_PO116
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk117
+ description KAMU_SRV_45_77_PO117
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk118
+ description KAMU_SRV_45_78_PO118
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk119
+ description KAMU_SRV_45_79_PO119
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk120
+ description KAMU_SRV_45_80_PO120
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk121
+ description KAMU_SRV_45_81_PO121
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk122
+ description KAMU_SRV_45_82_PO122
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk123
+ description KAMU_SRV_45_83_PO123
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk124
+ description KAMU_SRV_45_84_PO124
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk125
+ description KAMU_SRV_45_85_PO125
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk126
+ description KAMU_SRV_45_86_PO126
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk127
+ description KAMU_SRV_45_87_PO127
+ port link-type trunk
+ port trunk allow-pass vlan 4 31 200 to 203 402 to 403 418 to 420 451 507 516 945 1101
+ port trunk allow-pass vlan 1103 1106 to 1108 1113 to 1114 1120 1130 1132 1139 1214 1270 1276
+ port trunk allow-pass vlan 1278 to 1279 1282 to 1285 1298 1304 to 1312 1315 to 1338 1340 to 1362 1365 1367 to 1402 1404 to 1405 1410 to 1422
+ port trunk allow-pass vlan 1425 to 1452 1468 to 1471 1486 to 1489 1491 to 1494 1498 to 1503 1506 to 1507 1521 to 1553 1556 to 1559 1563 to 1569 1903
+ port trunk allow-pass vlan 2303 2310 2320 to 2321 2401 to 2500 3001 3134 3701 to 3706 3719 to 3720 3730 to 3734 3740
+ port trunk allow-pass vlan 3961 3966 3971
+ mode lacp-static
+#
+interface Stack-Port1/1
+#
+interface Stack-Port2/1
+#
+interface 10GE1/0/1
+ eth-trunk 111
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/2
+ eth-trunk 112
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/3
+ eth-trunk 113
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/4
+ eth-trunk 114
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/5
+ eth-trunk 115
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/6
+ eth-trunk 116
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/7
+ eth-trunk 117
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/8
+ eth-trunk 118
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/9
+ eth-trunk 119
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/10
+ eth-trunk 120
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/11
+ eth-trunk 121
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/12
+ eth-trunk 122
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/13
+ eth-trunk 123
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/14
+ eth-trunk 124
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/15
+ eth-trunk 125
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/16
+ eth-trunk 126
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/17
+ eth-trunk 127
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/18
+ eth-trunk 108
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/19
+ eth-trunk 19
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/20
+ eth-trunk 20
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/21
+ eth-trunk 100
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/22
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/23
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/24
+ eth-trunk 103
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/25
+ eth-trunk 104
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/26
+ eth-trunk 105
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/27
+ eth-trunk 106
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/28
+ eth-trunk 107
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/29
+ eth-trunk 29
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/30
+ eth-trunk 30
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/31
+ eth-trunk 31
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/32
+ eth-trunk 32
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/33
+ eth-trunk 33
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/34
+ eth-trunk 34
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/35
+ eth-trunk 35
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/36
+ eth-trunk 36
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/37
+ eth-trunk 37
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/38
+ eth-trunk 38
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/39
+ eth-trunk 39
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/40
+ eth-trunk 40
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/41
+ eth-trunk 41
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/42
+ shutdown
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/43
+ eth-trunk 43
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/44
+ eth-trunk 44
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/45
+ eth-trunk 45
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/46
+ shutdown
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/47
+ port default vlan 1389
+ device transceiver 1000BASE-T
+#
+interface 10GE1/0/48
+ port default vlan 1389
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/1
+ eth-trunk 111
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/2
+ eth-trunk 112
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/3
+ eth-trunk 113
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/4
+ eth-trunk 114
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/5
+ eth-trunk 115
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/6
+ eth-trunk 116
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/7
+ eth-trunk 117
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/8
+ eth-trunk 118
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/9
+ eth-trunk 119
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/10
+ eth-trunk 120
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/11
+ eth-trunk 121
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/12
+ eth-trunk 122
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/13
+ eth-trunk 123
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/14
+ eth-trunk 124
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/15
+ eth-trunk 125
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/16
+ eth-trunk 126
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/17
+ eth-trunk 127
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/18
+ eth-trunk 108
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/19
+ eth-trunk 19
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/20
+ eth-trunk 20
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/21
+ eth-trunk 100
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/22
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/23
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/24
+ eth-trunk 103
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/25
+ eth-trunk 104
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/26
+ eth-trunk 105
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/27
+ eth-trunk 106
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/28
+ eth-trunk 107
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/29
+ eth-trunk 29
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/30
+ eth-trunk 30
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/31
+ eth-trunk 31
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/32
+ eth-trunk 32
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/33
+ eth-trunk 33
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/34
+ eth-trunk 34
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/35
+ eth-trunk 35
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/36
+ eth-trunk 36
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/37
+ eth-trunk 37
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/38
+ eth-trunk 38
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/39
+ eth-trunk 39
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/40
+ eth-trunk 40
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/41
+ eth-trunk 41
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/42
+ description SHGM_SANGFOR_VDI_POC
+ port link-type trunk
+ port trunk allow-pass vlan 1407
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/43
+ eth-trunk 43
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/44
+ eth-trunk 44
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/45
+ eth-trunk 45
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/46
+ shutdown
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/47
+ port default vlan 1389
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/48
+ port default vlan 1389
+ device transceiver 10GBASE-FIBER
+#
+interface 40GE1/0/1
+#
+interface 40GE1/0/2
+#
+interface 40GE1/0/3
+ eth-trunk 7
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE1/0/4
+ eth-trunk 7
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE1/0/5
+ port mode stack 
+ stack-port 1/1
+ port crc-statistics trigger error-down
+ device transceiver 40GBASE-COPPER
+#
+interface 40GE1/0/6
+ port mode stack 
+ stack-port 1/1
+ port crc-statistics trigger error-down
+ device transceiver 40GBASE-COPPER
+#
+interface 40GE2/0/1
+#
+interface 40GE2/0/2
+#
+interface 40GE2/0/3
+ eth-trunk 7
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE2/0/4
+ eth-trunk 7
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE2/0/5
+ port mode stack 
+ stack-port 2/1
+ port crc-statistics trigger error-down
+ device transceiver 40GBASE-COPPER
+#
+interface 40GE2/0/6
+ port mode stack 
+ stack-port 2/1
+ port crc-statistics trigger error-down
+ device transceiver 40GBASE-COPPER
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 10.111.11.1
+#
+snmp-agent
+snmp-agent local-engineid 800007DB03D0C65B30B501
+snmp-agent community read cipher %^%#e0g"=muT39Fnlb/-m@NX:.cS8LSwn(<ZZ%V*lI\Wv%Z,0UO[DGWK4=J(l7->io5WB(`ih7",^3;*yAw4%^%#
+snmp-agent community read cipher %^%#)rk`AUG-)$4Yu=;u!lN.Y3g|Fvxi~IZd\$O^|"i@.gMP$#:vW,d&(s*g[,-7_GuI!5-_4G:Ji|7,*gC7%^%#
+snmp-agent community read cipher %^%#1,'u/*sAi2xDl0:zV^d5=so{@x:g)Ch6<_UE67("|)\|OGG`L7eTFXG:@`ODBC(kC/SKOFX#_mERZCN-%^%#
+#
+snmp-agent sys-info contact TURKSAT NETWORK OPERATION CENTER
+snmp-agent sys-info version all
+snmp-agent target-host trap address udp-domain 10.101.11.108 udp-port 161 params securityname cipher %^%#xb]^NxH1[R|Ny8"$3c86{LU0IuyK%PXpad6p4L'@%^%#
+#
+snmp-agent trap enable
+#
+lldp enable
+#
+stelnet server enable
+ssh user bbarisci
+ssh user bbarisci authentication-type password
+ssh user bbarisci service-type all
+ssh user mduzgun
+ssh user mduzgun authentication-type password
+ssh user mduzgun service-type all
+ssh user moozan
+ssh user moozan authentication-type password
+ssh user moozan service-type all
+ssh user restorepoint
+ssh user restorepoint authentication-type password
+ssh user restorepoint service-type all
+ssh user ssarikaya
+ssh user ssarikaya authentication-type password
+ssh user ssarikaya service-type all
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_ctr aes128_ctr
+ssh server hmac sha2_256_96 sha2_256 sha1_96
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521 sm2_kep
+#
+ssh server dh-exchange min-len 2048
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr aes256_cbc aes128_cbc 3des_cbc
+#
+user-interface con 0
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+ protocol inbound ssh
+#
+vm-manager
+#
+return

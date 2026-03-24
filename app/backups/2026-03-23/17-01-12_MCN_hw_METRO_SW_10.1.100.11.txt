@@ -1,0 +1,680 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V600R023C10SPC500
+!Last configuration was updated at 2026-02-16 09:27:39+03:00 by moozan
+!Last configuration was saved at 2026-02-16 09:27:47+03:00 by moozan
+!grpc VRPV800R006C00B016D0127-0.0.1
+!md_tlm VRPV800R006C00B016D0127-0.0.1
+!ntid --
+!said VRPV800R006C00B016D0127-0.0.1
+!telem VRPV800R006C00B016D0127-0.0.1
+#
+pki realm default
+#
+clock timezone IST add 03:00:00
+#
+sysname MCN_hw_METRO_SW
+#
+undo ftp server source all-interface
+undo ftp ipv6 server source all-interface
+#
+ssl policy default
+ pki-domain default
+ ssl minimum version tls1.2
+ cipher-suite exclude key-exchange rsa
+ cipher-suite exclude cipher mode cbc
+ cipher-suite exclude hmac sha1
+ diffie-hellman modulus 3072
+ ecdh group curve brainpool
+ signature algorithm-list ed25519 ed448 rsa-pss-pss-sha256 rsa-pss-pss-sha384 rsa-pss-pss-sha512 rsa-pss-rsae-sha256 rsa-pss-rsae-sha384 rsa-pss-rsae-sha512
+#
+device board 1 board-type S6750-H48Y8C
+device board 2 board-type S6750-H48Y8C
+#
+authentication-profile name default_authen_profile
+authentication-profile name dot1x_authen_profile
+authentication-profile name dot1xmac_authen_profile
+authentication-profile name mac_authen_profile
+#
+drop-profile default
+#
+ntp server disable
+ntp ipv6 server disable
+ntp server source-interface all disable
+ntp ipv6 server source-interface all disable
+ntp unicast-peer 10.1.125.249 source-interface MEth0/0/0
+ntp unicast-peer 10.1.125.250 source-interface MEth0/0/0 preferred
+#
+vlan batch 104 124 503 to 508 546 548 551 2104 3619
+#
+stp instance 1 root primary
+stp instance 2 root primary
+stp instance 3 root primary
+stp pathcost-standard legacy
+#
+error-down auto-recovery cause link-flap interval 60
+#
+undo telnet server-source all-interface
+undo telnet ipv6 server-source all-interface
+#
+as-auth
+#
+diffserv domain default
+#
+ip vpn-instance _management_vpn_
+ ipv4-family
+#
+vlan 104
+ name MCN_INTERNET_070000024997
+#
+vlan 124
+ name BKM_TT_INTERNET
+#
+vlan 503
+ name BKM_VLAN_503
+#
+vlan 504
+ name BKM_VLAN_504
+#
+vlan 505
+ name BKM_VLAN_505
+#
+vlan 506
+ name BKM_VLAN_506
+#
+vlan 507
+ name BKM_VLAN_507
+#
+vlan 508
+ name MACUNKOY_KAMUNET
+#
+vlan 546
+ name BKM
+#
+vlan 548
+ name BKM_Discover
+#
+vlan 551
+ name BKM_VISA
+#
+vlan 2104
+ name RTR_TO_FW
+#
+vlan 3619
+ name TURKSAT_SOL_INTERNET
+#
+stp region-configuration
+ region-name MCN
+ instance 1 vlan 104 508 2104
+ instance 2 vlan 3619
+ instance 3 vlan 124 503 to 507 546 548 551
+#
+acl number 2001
+ rule 5 permit source 10.1.120.220 0
+ rule 10 deny
+#
+aaa
+ authentication-scheme default
+  authentication-mode local
+ authentication-scheme radius
+  authentication-mode radius
+ authorization-scheme default
+  authorization-mode local
+ accounting-scheme default
+  accounting-mode none
+ local-aaa-user password policy administrator
+  password history record number 0
+  password expire 0
+ domain default
+  authentication-scheme default
+  accounting-scheme default
+ domain default_admin
+  authentication-scheme default
+  accounting-scheme default
+ local-user bbarisci password irreversible-cipher $1d$AXe/,!ukz/6Pdr3S$=G9PCW(*6.'0czV&)'[K8YC;/9nP7JKtR/V9F&,E$
+ local-user bbarisci privilege level 3
+ local-user bbarisci service-type ssh
+ local-user duzgun service-type none
+ local-user mduzgun password irreversible-cipher $1d$,HmzPk[y|M4ShTNe$*LP,WY/A!-A~I(~MpK5LAw}MW[CaDBTxHoA%0g]4$
+ local-user mduzgun privilege level 3
+ local-user mduzgun service-type ssh
+ local-user mduzgunn password irreversible-cipher $1d$,Q"VHE4@V!cVFuCb$Rk:)E+)^(.,Mjz-H!ydWUk-TKhP3~5/3Pq7KP!:)$
+ local-user mduzgunn privilege level 3
+ local-user mduzgunn service-type ssh
+ local-user moozan password irreversible-cipher $1d$I3UMXpqcoFT(@CEy$7o`EOSGuk1g}Lz&z%m`<vU$2((Sz)VZx"_(_(1""$
+ local-user moozan privilege level 3
+ local-user moozan service-type ssh ftp http
+ local-user ssarikaya password irreversible-cipher $1d$n/AYD6eH'E(&e;5O$/yUWE''\\DJ{d4A)t~OE8V@!:(ehx/tAGS#hT-Q5$
+ local-user ssarikaya privilege level 3
+ local-user ssarikaya service-type ssh
+#
+free-rule-template name default_free_rule
+#
+dot1x-access-profile name dot1x_access_profile
+#
+mac-access-profile name mac_access_profile
+#
+remote-unit
+#
+stack
+#
+license
+#
+warranty
+#
+interface Vlanif508
+ ip address 100.64.142.2 255.255.255.0
+#
+interface MEth0/0/0
+ ip address 10.1.100.11 255.255.255.0
+#
+interface Eth-Trunk1
+ description BKM_TT_WAN
+ port link-type trunk
+ port trunk allow-pass vlan 124 503 to 507 548
+ stp root-protection
+ stp instance 3 port priority 0
+ mode lacp-static
+#
+interface Eth-Trunk33
+ description FW_1_WAN
+ port link-type trunk
+ port trunk allow-pass vlan 104 2104
+ mode lacp-static
+#
+interface Eth-Trunk34
+ description FW_2_WAN
+ port link-type trunk
+ port trunk allow-pass vlan 104 2104
+ mode lacp-static
+#
+interface Eth-Trunk44
+ description RTR_1_ETH_13_over_PB
+ port link-type trunk
+ port trunk allow-pass vlan 104 2104 3619
+ mode lacp-static
+#
+interface Eth-Trunk46
+ description RTR_2_ETH_13_over_PB
+ port link-type trunk
+ port trunk allow-pass vlan 104 2104 3619
+ mode lacp-static
+#
+interface Eth-Trunk47
+ description SUPERONLINE
+ port link-type trunk
+ port trunk allow-pass vlan 3619
+ mode lacp-static
+#
+interface Eth-Trunk103
+ description RTR_1_ETH_5253
+ port link-type trunk
+ port trunk allow-pass vlan 104 2104 3619
+ mode lacp-static
+#
+interface Eth-Trunk104
+ description RTR_2_ETH_5253
+ port link-type trunk
+ port trunk allow-pass vlan 104 2104
+ mode lacp-static
+#
+interface Stack-Port1/1
+#
+interface Stack-Port2/2
+#
+interface 25GE1/0/1
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/2
+ description ****BU_PORT_2.SW_1/0/1_E_ALINMALI*****
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/3
+ description ET103091-ANKARA
+ port link-type trunk
+ port trunk allow-pass vlan 546 548 551
+ stp root-protection
+ stp instance 3 port priority 0
+ jumboframe enable 1700
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/4
+ port default vlan 3619
+ device transceiver 1000BASE-T
+ port mode 10GE-GE
+#
+interface 25GE1/0/5
+ port mode 10GE-GE
+#
+interface 25GE1/0/6
+ port mode 10GE-GE
+#
+interface 25GE1/0/7
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/8
+ port mode 10GE-GE
+#
+interface 25GE1/0/9
+#
+interface 25GE1/0/10
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/11
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/12
+#
+interface 25GE1/0/13
+#
+interface 25GE1/0/14
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/15
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/16
+#
+interface 25GE1/0/17
+ port mode 10GE-GE
+#
+interface 25GE1/0/18
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/19
+ port mode 10GE-GE
+#
+interface 25GE1/0/20
+ port mode 10GE-GE
+#
+interface 25GE1/0/21
+ port mode 10GE-GE
+#
+interface 25GE1/0/22
+ port mode 10GE-GE
+#
+interface 25GE1/0/23
+ port mode 10GE-GE
+#
+interface 25GE1/0/24
+ device transceiver 1000BASE-T
+ port mode 10GE-GE
+#
+interface 25GE1/0/25
+#
+interface 25GE1/0/26
+#
+interface 25GE1/0/27
+#
+interface 25GE1/0/28
+#
+interface 25GE1/0/29
+#
+interface 25GE1/0/30
+#
+interface 25GE1/0/31
+#
+interface 25GE1/0/32
+#
+interface 25GE1/0/33
+ description FW_1_33
+ eth-trunk 33
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/34
+ description FW_2_WAN
+ eth-trunk 34
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/35
+ port link-type trunk
+ port trunk allow-pass vlan 104
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/36
+ port mode 10GE-GE
+#
+interface 25GE1/0/37
+ port mode 10GE-GE
+#
+interface 25GE1/0/38
+ port mode 10GE-GE
+#
+interface 25GE1/0/39
+ port mode 10GE-GE
+#
+interface 25GE1/0/40
+ port mode 10GE-GE
+#
+interface 25GE1/0/41
+ port mode 10GE-GE
+#
+interface 25GE1/0/42
+ port mode 10GE-GE
+#
+interface 25GE1/0/43
+ port mode 10GE-GE
+#
+interface 25GE1/0/44
+ eth-trunk 44
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/45
+ port mode 10GE-GE
+#
+interface 25GE1/0/46
+ eth-trunk 46
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE1/0/47
+ description SOL_ETH_1
+ eth-trunk 47
+ device transceiver 1000BASE-T
+ port mode 10GE-GE
+#
+interface 25GE1/0/48
+ description TT_06_camlica_h5_3_xg_0/0/3
+ port link-type trunk
+ port trunk allow-pass vlan 104 124 503 to 508 546 548 551
+ jumboframe enable 1700
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/1
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/2
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/3
+ port mode 10GE-GE
+#
+interface 25GE2/0/4
+ port default vlan 3619
+ device transceiver 1000BASE-T
+ port mode 10GE-GE
+#
+interface 25GE2/0/5
+ port mode 10GE-GE
+#
+interface 25GE2/0/6
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/7
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/8
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/9
+#
+interface 25GE2/0/10
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/11
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/12
+#
+interface 25GE2/0/13
+ device transceiver 1000BASE-T
+#
+interface 25GE2/0/14
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/15
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/16
+#
+interface 25GE2/0/17
+#
+interface 25GE2/0/18
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/19
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/20
+#
+interface 25GE2/0/21
+#
+interface 25GE2/0/22
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/23
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/24
+ device transceiver 1000BASE-T
+#
+interface 25GE2/0/25
+#
+interface 25GE2/0/26
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/27
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/28
+#
+interface 25GE2/0/29
+#
+interface 25GE2/0/30
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/31
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/32
+#
+interface 25GE2/0/33
+ description FW_1_34
+ eth-trunk 33
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/34
+ description FW_2_WAN
+ eth-trunk 34
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/35
+ port mode 10GE-GE
+#
+interface 25GE2/0/36
+ port mode 10GE-GE
+#
+interface 25GE2/0/37
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/38
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/39
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/40
+ port mode 10GE-GE
+#
+interface 25GE2/0/41
+ port mode 10GE-GE
+#
+interface 25GE2/0/42
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/43
+ port mode 10GE-GE
+#
+interface 25GE2/0/44
+ eth-trunk 44
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/45
+ port mode 10GE-GE
+#
+interface 25GE2/0/46
+ eth-trunk 46
+ device transceiver 10GBASE-FIBER
+ port mode 10GE-GE
+#
+interface 25GE2/0/47
+ eth-trunk 47
+ device transceiver 1000BASE-T
+ port mode 10GE-GE
+#
+interface 25GE2/0/48
+ port mode 10GE-GE
+#
+interface 100GE1/0/1
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/2
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/3
+ description RTR_1_52
+ eth-trunk 103
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/4
+ description RTR_2_52
+ eth-trunk 104
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/5
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/6
+#
+interface 100GE1/0/7
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/8
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/1
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/2
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/3
+ description RTR_1_53
+ eth-trunk 103
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/4
+ description RTR_2_53
+ eth-trunk 104
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/5
+#
+interface 100GE2/0/6
+#
+interface 100GE2/0/7
+#
+interface 100GE2/0/8
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 10.1.100.1
+#
+snmp-agent
+snmp-agent local-engineid 800007DB0348BD4A504391
+#
+snmp-agent sys-info contact *****noc@turksat.com.tr ile iletisime geciniz.!!!******
+snmp-agent sys-info version v3
+snmp-agent group v3 mcn privacy read-view iso notify-view iso
+snmp-agent target-host host-name __targetHost_1_1393 trap address udp-domain 10.1.120.220 params securityname mcnread v3 privacy
+#
+snmp-agent mib-view included iso iso
+snmp-agent usm-user v3 mcnread
+snmp-agent usm-user v3 mcnread group mcn
+snmp-agent usm-user v3 mcnread authentication-mode sha2-256 cipher %+%##!!!!!!!!!"!!!!"!!!!*!!!!7LTnVOK_g:7S{_GPQ=f/W71q,ESK8;7Ha}<!!!!!2jp5!!!!!!>!!!!+UiEC!$+\)1QXz%232&G}AMK$AKNdP#m1I3~D9>C%+%#
+snmp-agent usm-user v3 mcnread privacy-mode aes128 cipher %+%##!!!!!!!!!"!!!!"!!!!*!!!!7LTnVOK_g:N#8a40}|PE>#NC;t-;YBnF-2.!!!!!2jp5!!!!!!>!!!!a<0u*TTQsJ2KJ..n=c9!=+l^/oKAA<uK%&Yt]IL#%+%#
+snmp-agent usm-user v3 mcnread acl 2001
+#
+snmp-agent protocol source-interface MEth0/0/0
+snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+undo snmp-agent proxy protocol source-status all-interface
+undo snmp-agent proxy protocol source-status ipv6 all-interface
+#
+snmp-agent trap enable
+#
+#
+stelnet server enable
+ssh server rsa-key min-length 3072
+ssh user bbarisci
+ssh user bbarisci authentication-type password
+ssh user bbarisci service-type all
+ssh user mduzgun
+ssh user mduzgun authentication-type password
+ssh user mduzgun service-type all
+ssh user ssarikaya
+ssh user ssarikaya authentication-type password
+ssh user ssarikaya service-type all
+ssh server-source -i MEth0/0/0
+undo ssh server-source all-interface
+undo ssh ipv6 server-source all-interface
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh server hmac sha2_512 sha2_256
+ssh server key-exchange dh_group_exchange_sha256 dh_group16_sha512 curve25519_sha256
+#
+ssh server publickey rsa_sha2_256 rsa_sha2_512
+#
+ssh server dh-exchange min-len 3072
+#
+ssh client publickey rsa_sha2_256 rsa_sha2_512
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh client hmac sha2_512 sha2_256
+ssh client key-exchange dh_group_exchange_sha256 dh_group16_sha512 curve25519_sha256
+#
+user-interface maximum-vty 5
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1d$mQ9e>sl"tW"5=K-D$:Q)WYa,%k0`H;R%&b}xKUO=RT-HHa4sB:1"S\GvD$
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+#
+ztp domain-type registration-center domain register.naas.huawei.com port 10020
+#
+web-manager enable port 8443
+web-manager http forward enable
+#
+return

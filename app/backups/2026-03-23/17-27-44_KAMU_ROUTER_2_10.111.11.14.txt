@@ -1,0 +1,5 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+Error: Do not have permission to run the command or the command is incomplete.

@@ -1,0 +1,1531 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 40249 bytes
+!
+! Last configuration change at 14:40:06 GMT Mon Mar 16 2026 by mduzgun
+! NVRAM config last updated at 14:40:09 GMT Mon Mar 16 2026 by mduzgun
+!
+version 17.9
+service timestamps debug datetime msec
+service timestamps log datetime localtime
+service password-encryption
+service call-home
+service unsupported-transceiver
+platform punt-keepalive disable-kernel-core
+!
+hostname TG_DC1_B0203U41_ME
+!
+!
+vrf definition Mgmt-vrf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+aaa new-model
+!
+!
+aaa group server radius ISE-RADIUS
+ server name ISE1
+ server name ISE2
+!
+aaa authentication login default group tacacs+ local
+aaa authentication login console group tacacs+ local
+aaa authentication login vty group tacacs+ local
+aaa authentication dot1x default group ISE-RADIUS
+aaa authorization console
+aaa authorization exec default group tacacs+ local if-authenticated 
+aaa authorization commands 0 default group tacacs+ local if-authenticated 
+aaa authorization commands 15 default group tacacs+ local if-authenticated 
+aaa authorization network default group ISE-RADIUS 
+aaa authorization auth-proxy default group ISE-RADIUS 
+aaa accounting update periodic 5
+aaa accounting auth-proxy default start-stop group ISE-RADIUS
+aaa accounting dot1x default start-stop group ISE-RADIUS
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 0 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+!
+!
+aaa server radius dynamic-author
+ client 10.101.34.240 server-key 7 0232114900152F351F1C584D4456
+ client 10.101.34.241 server-key 7 0232114900152F351F1C584D4456
+!
+aaa session-id common
+clock timezone GMT 3 0
+boot system switch all flash:packages.conf
+switch 1 provision c9500-16x
+switch 2 provision c9500-16x
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+!
+ip name-server 10.101.30.249 10.101.30.250
+no ip domain lookup
+ip domain name turksat.local
+!
+!
+!
+login on-success log
+ipv6 unicast-routing
+vtp mode transparent
+vtp version 1
+device-sensor accounting
+device-sensor notify all-changes
+!
+!
+!
+!
+!
+!
+!
+stackwise-virtual
+ domain 1
+!
+flow record NETFLOW_RECORD
+ match ipv4 source address
+ match ipv4 destination address
+ match ipv4 protocol
+ match transport source-port
+ match transport destination-port
+ collect counter bytes long
+ collect counter packets long
+ collect timestamp absolute first
+ collect timestamp absolute last
+!
+!
+flow exporter NETFLOW_EXPORTER
+ destination 10.101.34.51
+ source Vlan3911
+ transport udp 9995
+ template data timeout 60
+!
+!
+flow monitor NETFLOW_MONITOR
+ exporter NETFLOW_EXPORTER
+ cache timeout active 60
+ record NETFLOW_RECORD
+!
+device-tracking tracking auto-source
+!
+!
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+crypto pki trustpoint TP-self-signed-3245736733
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3245736733
+ revocation-check none
+ rsakeypair TP-self-signed-3245736733
+!
+!
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+  	quit
+crypto pki certificate chain TP-self-signed-3245736733
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 33323435 37333637 3333301E 170D3233 30333137 31333536 
+  32395A17 0D333330 33313631 33353632 395A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 32343537 
+  33363733 33308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100B815 1F33BF48 4C60E385 AB7FFDAE 7346EC3A D105838F 3B486FB9 
+  7C337E35 26C921C3 A79E874B 465ABABB B2A2605C 10FD2D96 E94E476A 275E5C90 
+  9E4B4E4F 6622DCF3 32407505 52A63B35 51D33609 7C2E038B DFA053AC 4EC41CFB 
+  73B32BD3 08DA455C 4848469F 2694B9D6 53F88B37 52D0CE46 C1759581 0EF868C6 
+  DFF563D0 BE0266E9 E488523F 19326AC8 D9975C9C 708B83C4 F9660140 3A8411B3 
+  223AC0AB E6889A60 690FB1BF E292CB18 A70B316A AC764264 0C2D96FD C09B719C 
+  F1255222 1DB409AF C7AA4FE7 6870A3D5 FEA5FFFB FD002F38 9850D377 33894016 
+  502F24BF 6E6E2310 C432EBD3 AE0F4376 0D8C0E10 6D0EC1A3 3DA58024 AD8EEDDC 
+  79218DED 1EE90203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 1430C77C FC212BE3 290A1180 F209A17C CB2A194A 
+  76301D06 03551D0E 04160414 30C77CFC 212BE329 0A1180F2 09A17CCB 2A194A76 
+  300D0609 2A864886 F70D0101 05050003 82010100 5D1FEF8E 39CBC5DA 6308DE03 
+  E1C2083C CFA25570 8538CDAB 7AF0A851 E5E7C959 83ABF36B 174536DD 56E1897D 
+  1AE91D63 5A1BAE3A D1F22766 84A9CC75 E2111BC3 10E07235 4B592B55 D6ADBE6B 
+  918410C5 E56D5EBF 2FBA0BB1 E3FD56D7 B3E67CD3 08ED21A4 43C3767D 1839C44A 
+  F2A7DA81 3BB120D1 7ADA57D3 6EFAF827 5759DECC 419C8485 4A670FA9 8EAE7D7A 
+  91527485 A599B2D2 E5F414FB 3E58777D BBD15097 3A38F177 9C36E953 58A55281 
+  BF659462 066A49BF C3498C3C 6294EFAA A45C3DFA DA668484 80FFD544 4B2D4842 
+  8F921D6F 39A7E11C BA54BB3A A2D68BFC 51EDD095 75A4CE35 A494EE85 34452B03 
+  42C3AF93 126D5D9E 887B68DA 9F35A8EE 73939B76
+  	quit
+!
+!
+license boot level network-advantage addon dna-advantage
+dot1x system-auth-control
+memory free low-watermark processor 131688
+!
+system mtu 2000
+diagnostic bootup level minimal
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+spanning-tree pathcost method short
+spanning-tree vlan 87,367 priority 0
+!
+!
+no errdisable detect cause gbic-invalid
+!
+enable secret 9 $9$IK8TA8vWoHdSdU$Xy7aFW33Y7F1aTkzz/l7gofOFfUMaZqa31PsdTj8i8A
+!
+username bbarisci privilege 15 secret 9 $9$UwOQs6vbW10Jzk$DOt6BJ/1Nmu56ssCH4KRpKwgeIsakwwE3DDBgeQsStM
+username mozan privilege 15 secret 9 $9$oOTJ5Ox0CTN1Ok$cHFL.LFJZRIzvvfuTTPfcaT.IN9RTJqxMlR2SrRfOEg
+username mduzgun privilege 15 secret 9 $9$s57XqdFn634oWU$9IBvJbK3oKVara4d7IMNm7vtoHbowKJyWQM6pNUdDMw
+username ssarikaya privilege 15 secret 9 $9$RsetoT9lFSvLw.$DcccdagEcRJMZwDs3C/NR6ochR9EUplfKU2pHn1xDFU
+username restorepoint privilege 15 secret 9 $9$fE6AJkIAW2boi.$.yCGVePkWGB1Y3pyhMYRqYbFeiMCWAFIuSC9ae9vSbY
+!
+redundancy
+ mode sso
+crypto engine compliance shield disable
+!
+!
+!
+!
+!
+transceiver type all
+ monitoring
+!
+vlan 34
+ name gecici_sil
+!
+vlan 87
+ name MetroEthernet_1890060105
+!
+vlan 88
+ name TT-VPN_140000000000900
+!
+vlan 101
+ name ERZINCAN_HE
+!
+vlan 102
+ name GOLBASI_GAYRETTEPE
+!
+vlan 110
+ name GOLBASI_KARAMAN
+!
+vlan 111
+ name BTK_NTS-IVEI
+!
+vlan 123
+ name IVEI_SIP
+!
+vlan 172
+ name GIH_IVEI2VSAT
+!
+vlan 182
+ name GIH_VSAT2IVEI
+!
+vlan 199 
+!
+vlan 200
+ name BANDIRMA_1890105141
+!
+vlan 201
+ name EUROSTAR
+!
+vlan 210
+ name VDFONE_365_TV
+!
+vlan 211
+ name BERAT_TV_VODAFONE
+!
+vlan 215
+ name KayseriTV_1890385030
+!
+vlan 216
+ name DRIFT_CADDE_09/02/22
+!
+vlan 220
+ name GOLBASI_TEKIRDAG_SUBHE
+!
+vlan 222
+ name VSAT_KAZAN_MANAGEMENT
+!
+vlan 223
+ name VSAT_TKS_F79
+!
+vlan 230
+ name GOLBASI_GEBZE
+!
+vlan 250
+ name DIYANET_08.07.2013
+!
+vlan 305
+ name GOLBASI_ACIBADEM
+!
+vlan 306
+ name VSAT_KGM
+!
+vlan 307
+ name GOLBASI_KOCAELI
+!
+vlan 308
+ name GOLBASI_KAYSERI
+!
+vlan 310
+ name GOLBASI_ERZURUM
+!
+vlan 312
+ name GOLBASI_ANTALYA
+!
+vlan 313
+ name GOLBASI_BALIKESIR_MERKEZ
+!
+vlan 314
+ name GOLBASI_MANISA
+!
+vlan 315
+ name GOLBASI_DENIZLI
+!
+vlan 316
+ name GOLBASI_ADANA
+!
+vlan 317
+ name GOLBASI_GAZIANTEP
+!
+vlan 318
+ name GOLBASI_KONYA
+!
+vlan 319
+ name GOLBASI_SAMSUN
+!
+vlan 320
+ name GOLBASI_EDIRNE
+!
+vlan 321
+ name GOLBASI_ESKISEHIR
+!
+vlan 322
+ name GOLBASI_ZONGULDAK_MERKEZ
+!
+vlan 323
+ name GOLBASI_ZONGULDAK_EREGLI
+!
+vlan 324
+ name GOLBASI_YALOVA
+!
+vlan 325
+ name GOLBASI_IZMIR
+!
+vlan 326
+ name GOLBASI_TEKIRDAG_CORLU
+!
+vlan 327
+ name GOLBASI_MERSIN
+!
+vlan 329
+ name GOLBASI_BURSA
+!
+vlan 332
+ name VSAT_BR_GECIS
+!
+vlan 335
+ name POLIS_RADYOSU
+!
+vlan 340
+ name AS_RADYO
+!
+vlan 345
+ name UFGD_VAN
+!
+vlan 346
+ name AVESD_VAN
+!
+vlan 347
+ name SEFERIHISAR_CCTV
+!
+vlan 348
+ name UFGD_SEFERIHISAR
+!
+vlan 349
+ name UFGD_EMIRGAN
+!
+vlan 356
+ name AFEA_TV
+!
+vlan 357
+ name YID_ODTU
+!
+vlan 359
+ name TIVIBU
+!
+vlan 367
+ name ODTU_PERS
+!
+vlan 421
+ name VSAT_GARANTI
+!
+vlan 422
+ name VSAT_JANDARMA
+!
+vlan 449
+ name ESERTELEKOM_TO_VSAT
+!
+vlan 451
+ name VSAT_VMYD_DGM
+!
+vlan 453
+ name VSAT_TPIC
+!
+vlan 500
+ name YID_L2_MPLS
+!
+vlan 501
+ name ULUS_GOLBASI
+!
+vlan 508
+ name TURKSAT_KAMUNET
+!
+vlan 583
+ name ESTETIK_VODAFONE_MASLAK
+!
+vlan 593
+ name ESTETIK_YAYINCILIK
+!
+vlan 600
+ name OGM_VSAT
+!
+vlan 603
+ name VSAT_ISNET
+!
+vlan 604
+ name UFGD_INTERNET
+!
+vlan 605
+ name YID_INTERNET
+!
+vlan 701
+ name TURKSAT_FW_INTERNET
+!
+vlan 720
+ name EDK_TEST_INTERNET
+!
+vlan 801
+ name VSAT
+!
+vlan 889
+ name KANAL7
+!
+vlan 890
+ name VSAT_GECIS
+!
+vlan 893
+ name VSAT_PAM
+!
+vlan 897
+ name JDSU
+!
+vlan 901
+ name VSAT_SUNUCU
+!
+vlan 905
+ name YAZICI
+!
+vlan 911
+ name NETWORK_MANAGEMENT
+!
+vlan 924
+ name TELEPORT_DMZ
+!
+vlan 958
+ name MEGA_AJANS_YDK4
+!
+vlan 994
+ name VSAT_UNIVERSALSAT
+!
+vlan 996
+ name EDK_TURKSAT_GECIS
+!
+vlan 999
+ name VSAT_TEST
+!
+vlan 1111
+ name VSAT_DEFAULT
+!
+vlan 1112
+ name VSAT_TO_UFGD
+!
+vlan 1279
+ name EVR_U1-TCELL-UP6_MAP
+!
+vlan 1293
+ name AYDINDENGE
+!
+vlan 1375
+ name BTK_VSAT_1375
+!
+vlan 1376
+ name BTK_VSAT_1376
+!
+vlan 1377
+ name BTK_VSAT_1377
+!
+vlan 1378
+ name BTK_VSAT_1378
+!
+vlan 1388
+ name BTK_VSAT_EVR_F1
+!
+vlan 1396
+ name BTK_EVRENSEL_VSAT_FAZ3
+!
+vlan 1397
+ name BTK_VSAT_EVR_F3
+!
+vlan 1416
+ name TIKA_Superonline
+!
+vlan 1507
+ name VSAT_BAICELLS
+!
+vlan 2030
+ name sol_VSAT_ZIRAAT_IST_EVM
+!
+vlan 2101
+ name VSAT_SEFERIHISAR
+!
+vlan 2102
+ name VAN_VSAT
+!
+vlan 2112
+ name NUMBER_ONE
+!
+vlan 2865
+ name sol_VSAT_ZIRAAT
+!
+vlan 3000
+ name ROUTER_TEST
+!
+vlan 3001
+ name EDK_TEST
+!
+vlan 3061
+ name sol_YID_YEDEK_INTERNET
+!
+vlan 3102
+ name VSAT_ISNET_ATOM
+!
+vlan 3103
+ name DHMI
+!
+vlan 3107
+ name VSAT_TT_RTP
+!
+vlan 3108
+ name VSAT_SIGNALLING
+!
+vlan 3109
+ name VSAT_ALCATEL-OAM
+!
+vlan 3110
+ name VSAT_HUAWEI-OAM
+!
+vlan 3111
+ name VSAT_CIMIL_Baskoy
+!
+vlan 3112
+ name VSAT_SARIBIYIK
+!
+vlan 3113
+ name VSAT_Y_DORMELI
+!
+vlan 3114
+ name VSAT_CUMACAY
+!
+vlan 3115
+ name VSAT_ASAGI_KENT
+!
+vlan 3116
+ name VSAT_AKYUMAK
+!
+vlan 3117
+ name VSAT_KARAPINAR
+!
+vlan 3118
+ name VSAT_AKCATEPE
+!
+vlan 3119
+ name VSAT_KAYAPINAR
+!
+vlan 3120
+ name VSAT_NALDOKEN
+!
+vlan 3121
+ name VSAT_SUCATI
+!
+vlan 3122
+ name VSAT_SANCAR
+!
+vlan 3123
+ name VSAT_AKDAMAR
+!
+vlan 3124
+ name VSAT_YUVAKLI
+!
+vlan 3125
+ name VSAT_KONALGA
+!
+vlan 3126
+ name VSAT_DURUKOY
+!
+vlan 3127
+ name VSAT_COTE
+!
+vlan 3128
+ name VSAT_GUNES
+!
+vlan 3129
+ name VSAT_KULEKLI
+!
+vlan 3130
+ name VSAT_KORUBASI
+!
+vlan 3131
+ name VSAT_GES
+!
+vlan 3132
+ name VSAT_BAYKAR_TT_INTERNET
+!
+vlan 3133
+ name VSAT_BASBAKANLIK_3133
+!
+vlan 3134
+ name VSAT_DENIZCILIK
+!
+vlan 3136
+ name VSAT_DENIZ_KK
+!
+vlan 3139
+ name VSAT_BASBAKANLIK-2
+!
+vlan 3140
+ name BASBAKANLIK-4
+!
+vlan 3141
+ name VSAT_TT99_H5_MNG
+!
+vlan 3142
+ name VSAT_MEBS_SS
+!
+vlan 3143
+ name KANDILLI_RASATHANE
+!
+vlan 3144
+ name VSAT_AFAD_YENI
+!
+vlan 3145
+ name VSAT_TT111_RTP
+!
+vlan 3146
+ name VSAT_TT112_SIG
+!
+vlan 3147
+ name VSAT_TT114_OAM
+!
+vlan 3148
+ name VSAT_TT500_WiFi
+!
+vlan 3149
+ name vsat_ZIRAAT_TTVPN
+!
+vlan 3150
+ name GES_TEST
+!
+vlan 3151
+ name VSAT_TT_BOGAZICI_TEST
+!
+vlan 3152
+ name vsat_BASBAKANLIK_YM
+!
+vlan 3153
+ name VSAT_GES_YENI
+!
+vlan 3154
+ name VSAT_TT_DSL_3154
+!
+vlan 3155
+ name VSAT_TT_DSL_3155
+!
+vlan 3156
+ name VSAT_TT_DSL_3156
+!
+vlan 3157
+ name VSAT_TT_DSL_3157
+!
+vlan 3158
+ name VSAT_TT_DSL_3158
+!
+vlan 3159
+ name VSAT_TT_DSL_3159
+!
+vlan 3164
+ name vsat_TARIM_OR_BAK
+!
+vlan 3171
+ name vsat_TTVPN
+!
+vlan 3175
+ name VSAT_KAREL_SANTRAL
+!
+vlan 3176
+ name vsat_SAHIL_GUV
+!
+vlan 3177
+ name KIZILAY_TEST
+!
+vlan 3178
+ name ESER_TELEKOM
+!
+vlan 3179
+ name ICT_TELEKOM
+!
+vlan 3180
+ name AFAD_KA
+!
+vlan 3181
+ name VSAT_TURKKIZILAYGEBZ
+!
+vlan 3187
+ name VSAT_EGM
+!
+vlan 3188
+ name TT_YONET_WIFI
+!
+vlan 3190
+ name TURKSAT_SOL_YEDEK_INTERNET
+!
+vlan 3198
+ name VSAT_USOM_OUT
+!
+vlan 3199
+ name VSAT_USOM_IN
+!
+vlan 3205
+ name VSAT_NETFLOW
+!
+vlan 3219
+ name SOL_DDOS_1000_10023452
+!
+vlan 3256
+ name VSAT_TRT
+!
+vlan 3911
+ name NET_MNGT
+!
+vlan 3913
+ name WIFI_MNGT
+!
+vlan 3970
+ name IVEI_OVECLERtoKAMPUS
+!
+vlan 3991
+ name NOC
+!
+vlan 3999
+ name VSAT_NEW_4091
+!
+vlan 4040
+ name VSAT_MESHEEC
+!
+vlan 4091
+ name VSATMeshEcc4091
+no cdp run
+!
+lldp run
+!
+class-map match-any system-cpp-police-ewlc-control
+  description EWLC Control 
+class-map match-any system-cpp-police-topology-control
+  description Topology control
+class-map match-any system-cpp-police-sw-forward
+  description Sw forwarding, L2 LVX data packets, LOGGING, Transit Traffic
+class-map match-any system-cpp-default
+  description EWLC Data, Inter FED Traffic 
+class-map match-any system-cpp-police-sys-data
+  description Openflow, Exception, EGR Exception, NFL Sampled Data, RPF Failed
+class-map match-any system-cpp-police-punt-webauth
+  description Punt Webauth
+class-map match-any system-cpp-police-l2lvx-control
+  description L2 LVX control packets
+class-map match-any system-cpp-police-forus
+  description Forus Address resolution and Forus traffic
+class-map match-any system-cpp-police-multicast-end-station
+  description MCAST END STATION
+class-map match-any system-cpp-police-high-rate-app
+  description High Rate Applications 
+class-map match-any system-cpp-police-multicast
+  description MCAST Data
+class-map match-any system-cpp-police-l2-control
+  description L2 control
+class-map match-any system-cpp-police-dot1x-auth
+  description DOT1X Auth
+class-map match-any system-cpp-police-data
+  description ICMP redirect, ICMP_GEN and BROADCAST
+class-map match-any system-cpp-police-stackwise-virt-control
+  description Stackwise Virtual OOB
+class-map match-any non-client-nrt-class
+class-map match-any system-cpp-police-routing-control
+  description Routing control and Low Latency
+class-map match-any system-cpp-police-protocol-snooping
+  description Protocol snooping
+class-map match-any system-cpp-police-dhcp-snooping
+  description DHCP snooping
+class-map match-any system-cpp-police-ios-routing
+  description L2 control, Topology control, Routing control, Low Latency
+class-map match-any system-cpp-police-system-critical
+  description System Critical and Gold Pkt
+class-map match-any system-cpp-police-ios-feature
+  description ICMPGEN,BROADCAST,ICMP,L2LVXCntrl,ProtoSnoop,PuntWebauth,MCASTData,Transit,DOT1XAuth,Swfwd,LOGGING,L2LVXData,ForusTraffic,ForusARP,McastEndStn,Openflow,Exception,EGRExcption,NflSampled,RpfFailed
+!
+policy-map system-cpp-policy
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel11
+ description to_VSAT_METRO_SW
+ switchport trunk allowed vlan 421,422,449,451,453,600,801,890,893,901,994,1111
+ switchport trunk allowed vlan add 1279,1375-1378,1388,1396,1397,1416,1507,2030
+ switchport trunk allowed vlan add 2101,2102,2865,3103,3107-3131,3133,3134
+ switchport trunk allowed vlan add 3139-3153,3164,3171,3175-3181,3187,3188,3198
+ switchport trunk allowed vlan add 3199,3205,3256,3913,3999
+ switchport mode trunk
+ mtu 2000
+!
+interface Port-channel101
+ description TT_06_turksat_t3_r
+ switchport trunk native vlan 199
+ switchport trunk allowed vlan 87,101,102,110,111,123,200,220,230,305-308,310
+ switchport trunk allowed vlan add 312-327,329,345-349,367,421,422,451,453,500
+ switchport trunk allowed vlan add 508,600,603,2101,2102,3102,3103,3107-3134
+ switchport trunk allowed vlan add 3136,3139-3159,3164,3171,3176-3181,3187,3188
+ switchport trunk allowed vlan add 3256
+ switchport mode trunk
+ switchport nonegotiate
+ mtu 2000
+ spanning-tree bpdufilter enable
+ spanning-tree guard loop
+ spanning-tree port-priority 0
+!
+interface Port-channel102
+ description TV_YAYINLARISW_A
+ switchport trunk allowed vlan 88,201,210,211,215,216,250,335,340,356,359,583
+ switchport trunk allowed vlan add 593,889,897,911,958,1293,2112
+ switchport mode trunk
+ mtu 1900
+ load-interval 30
+ shutdown
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+ spanning-tree guard loop
+!
+interface Port-channel103
+ description SOL_nw_sc_h053_01
+ switchport trunk allowed vlan 1416,2030,3061,3190,3219
+ switchport mode trunk
+ mtu 1900
+ load-interval 30
+!
+interface Port-channel107
+ description EDK_TURKSAT_GECIS
+ switchport trunk allowed vlan 996
+ switchport mode trunk
+ spanning-tree bpdufilter enable
+!
+interface Port-channel112
+ description HE_SW_PO4
+ switchport trunk allowed vlan 102,110,200,230,305,307,308,310,312,314-327,329
+ switchport mode trunk
+ load-interval 30
+!
+interface Port-channel115
+ description VSAT_TKS_F48
+ switchport trunk allowed vlan 172,182,222,223,306,421,422,449,451,453,600,603
+ switchport trunk allowed vlan add 801,890,893,901,905,994,1111,1112,1279
+ switchport trunk allowed vlan add 1375-1378,1388,1396,1397,1416,1507,2030,2101
+ switchport trunk allowed vlan add 2102,2865,3102,3103,3107-3134,3139-3159,3164
+ switchport trunk allowed vlan add 3171,3175-3181,3187,3188,3198,3199,3205,3256
+ switchport trunk allowed vlan add 3913,3999
+ switchport mode trunk
+ mtu 2000
+!
+interface Port-channel118
+ description ESKI_METRO_SW
+ switchport trunk allowed vlan 88,250,328,335,340,356,359,583,593,801,889,897
+ switchport trunk allowed vlan add 911,924,958,994,1293,1388,1396,1397,2030
+ switchport trunk allowed vlan add 2112,3991
+ switchport mode trunk
+ mtu 1900
+ shutdown
+!
+interface Port-channel119
+ description T_BB_SW_PO1819
+ switchport trunk allowed vlan 101,111,123,172,182,220,222,223,313,345-349,357
+ switchport trunk allowed vlan add 367,451,500,501,508,604,605,701,720,890,893
+ switchport trunk allowed vlan add 897,901,905,911,924,1111,1112,1279,1375-1378
+ switchport trunk allowed vlan add 1388,1397,1507,3061,3175,3198,3199,3205,3911
+ switchport trunk allowed vlan add 3913,3991,3999
+ switchport mode trunk
+ mtu 2000
+!
+interface GigabitEthernet0/0
+ vrf forwarding Mgmt-vrf
+ no ip address
+ negotiation auto
+!
+interface TenGigabitEthernet1/0/1
+ description TT_06_turksat_t3_r
+ switchport trunk native vlan 199
+ switchport trunk allowed vlan 87,101,102,110,111,123,200,220,230,305-308,310
+ switchport trunk allowed vlan add 312-327,329,345-349,367,421,422,451,453,500
+ switchport trunk allowed vlan add 508,600,603,2101,2102,3102,3103,3107-3134
+ switchport trunk allowed vlan add 3136,3139-3159,3164,3171,3176-3181,3187,3188
+ switchport trunk allowed vlan add 3256
+ switchport mode trunk
+ switchport nonegotiate
+ mtu 2000
+ channel-group 101 mode active
+!
+interface TenGigabitEthernet1/0/2
+!
+interface TenGigabitEthernet1/0/3
+ switchport trunk allowed vlan 1416,2030,3061
+ switchport mode trunk
+ load-interval 30
+!
+interface TenGigabitEthernet1/0/4
+ description BB_pb_bypass
+ switchport trunk allowed vlan 101,111,123,172,182,220,222,223,313,345-349,357
+ switchport trunk allowed vlan add 367,451,500,501,508,604,605,701,720,890,893
+ switchport trunk allowed vlan add 897,901,905,911,924,1111,1112,1279,1375-1378
+ switchport trunk allowed vlan add 1388,1397,1507,3061,3175,3198,3199,3205,3911
+ switchport trunk allowed vlan add 3913,3991,3999
+ switchport mode trunk
+ mtu 2000
+ shutdown
+ channel-group 119 mode active
+!
+interface TenGigabitEthernet1/0/5
+!
+interface TenGigabitEthernet1/0/6
+!
+interface TenGigabitEthernet1/0/7
+ description EDK_TURKSAT_GECIS
+ switchport trunk allowed vlan 996
+ switchport mode trunk
+ channel-group 107 mode active
+ spanning-tree bpdufilter enable
+!
+interface TenGigabitEthernet1/0/8
+ switchport trunk allowed vlan 101,111,123,172,182,220,222,223,313,345-349,357
+ switchport trunk allowed vlan add 367,451,500,501,508,604,605,701,720,890,893
+ switchport trunk allowed vlan add 897,901,905,911,924,1111,1112,1279,1375-1378
+ switchport trunk allowed vlan add 1388,1397,1507,3061,3175,3198,3199,3205,3911
+ switchport trunk allowed vlan add 3913,3991,3999
+ switchport mode trunk
+ mtu 2000
+ channel-group 119 mode active
+!
+interface TenGigabitEthernet1/0/9
+ switchport trunk allowed vlan 101,111,123,172,182,220,222,223,313,345-349,357
+ switchport trunk allowed vlan add 367,451,500,501,508,604,605,701,720,890,893
+ switchport trunk allowed vlan add 897,901,905,911,924,1111,1112,1279,1375-1378
+ switchport trunk allowed vlan add 1388,1397,1507,3061,3175,3198,3199,3205,3911
+ switchport trunk allowed vlan add 3913,3991,3999
+ switchport mode trunk
+ mtu 2000
+ channel-group 119 mode active
+!
+interface TenGigabitEthernet1/0/10
+ description ESER_TELEKOM_VSAT
+ switchport trunk allowed vlan 449
+ switchport mode trunk
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface TenGigabitEthernet1/0/11
+!
+interface TenGigabitEthernet1/0/12
+!
+interface TenGigabitEthernet1/0/13
+!
+interface TenGigabitEthernet1/0/14
+ stackwise-virtual dual-active-detection
+!
+interface TenGigabitEthernet1/0/15
+ stackwise-virtual link 1
+!
+interface TenGigabitEthernet1/0/16
+ stackwise-virtual link 1
+!
+interface TenGigabitEthernet1/1/1
+ description VSAT_METRO_SW
+ switchport trunk allowed vlan 421,422,449,451,453,600,801,890,893,901,994,1111
+ switchport trunk allowed vlan add 1279,1375-1378,1388,1396,1397,1416,1507,2030
+ switchport trunk allowed vlan add 2101,2102,2865,3103,3107-3131,3133,3134
+ switchport trunk allowed vlan add 3139-3153,3164,3171,3175-3181,3187,3188,3198
+ switchport trunk allowed vlan add 3199,3205,3256,3913,3999
+ switchport mode trunk
+ mtu 2000
+ channel-group 11 mode active
+!
+interface TenGigabitEthernet1/1/2
+ description HE_SW_G1/2
+ switchport trunk allowed vlan 102,110,200,230,305,307,308,310,312,314-327,329
+ switchport mode trunk
+ channel-group 112 mode active
+!
+interface TenGigabitEthernet1/1/3
+!
+interface TenGigabitEthernet1/1/4
+!
+interface TenGigabitEthernet1/1/5
+ switchport trunk allowed vlan 172,182,222,223,306,421,422,449,451,453,600,603
+ switchport trunk allowed vlan add 801,890,893,901,905,994,1111,1112,1279
+ switchport trunk allowed vlan add 1375-1378,1388,1396,1397,1416,1507,2030,2101
+ switchport trunk allowed vlan add 2102,2865,3102,3103,3107-3134,3139-3159,3164
+ switchport trunk allowed vlan add 3171,3175-3181,3187,3188,3198,3199,3205,3256
+ switchport trunk allowed vlan add 3913,3999
+ switchport mode trunk
+ mtu 2000
+ channel-group 115 mode passive
+!
+interface TenGigabitEthernet1/1/6
+!
+interface TenGigabitEthernet1/1/7
+!
+interface TenGigabitEthernet1/1/8
+ switchport trunk allowed vlan 88,250,328,335,340,356,359,583,593,801,889,897
+ switchport trunk allowed vlan add 911,924,958,994,1293,1388,1396,1397,2030
+ switchport trunk allowed vlan add 2112,3991
+ switchport mode trunk
+ mtu 1900
+ shutdown
+ channel-group 118 mode active
+!
+interface FortyGigabitEthernet1/1/1
+!
+interface FortyGigabitEthernet1/1/2
+!
+interface TenGigabitEthernet2/0/1
+ description TT_T4/1/2
+ switchport trunk native vlan 199
+ switchport trunk allowed vlan 87,101,102,110,111,123,200,220,230,305-308,310
+ switchport trunk allowed vlan add 312-327,329,345-349,367,421,422,451,453,500
+ switchport trunk allowed vlan add 508,600,603,2101,2102,3102,3103,3107-3134
+ switchport trunk allowed vlan add 3136,3139-3159,3164,3171,3176-3181,3187,3188
+ switchport trunk allowed vlan add 3256
+ switchport mode trunk
+ switchport nonegotiate
+ mtu 2000
+ channel-group 101 mode active
+!
+interface TenGigabitEthernet2/0/2
+ description SOL_TEST
+ switchport access vlan 3190
+ switchport mode access
+!
+interface TenGigabitEthernet2/0/3
+ switchport trunk allowed vlan 1416,2030,3061,3190,3219
+ switchport mode trunk
+ mtu 1900
+ load-interval 30
+ channel-group 103 mode active
+!
+interface TenGigabitEthernet2/0/4
+!
+interface TenGigabitEthernet2/0/5
+!
+interface TenGigabitEthernet2/0/6
+!
+interface TenGigabitEthernet2/0/7
+ description EDK_TURKSAT_GECIS
+ switchport trunk allowed vlan 996
+ switchport mode trunk
+ channel-group 107 mode active
+ spanning-tree bpdufilter enable
+!
+interface TenGigabitEthernet2/0/8
+ switchport trunk allowed vlan 101,111,123,172,182,220,222,223,313,345-349,357
+ switchport trunk allowed vlan add 367,451,500,501,508,604,605,701,720,890,893
+ switchport trunk allowed vlan add 897,901,905,911,924,1111,1112,1279,1375-1378
+ switchport trunk allowed vlan add 1388,1397,1507,3061,3175,3198,3199,3205,3911
+ switchport trunk allowed vlan add 3913,3991,3999
+ switchport mode trunk
+ mtu 2000
+ channel-group 119 mode active
+!
+interface TenGigabitEthernet2/0/9
+ switchport trunk allowed vlan 101,111,123,172,182,220,222,223,313,345-349,357
+ switchport trunk allowed vlan add 367,451,500,501,508,604,605,701,720,890,893
+ switchport trunk allowed vlan add 897,901,905,911,924,1111,1112,1279,1375-1378
+ switchport trunk allowed vlan add 1388,1397,1507,3061,3175,3198,3199,3205,3911
+ switchport trunk allowed vlan add 3913,3991,3999
+ switchport mode trunk
+ mtu 2000
+ channel-group 119 mode active
+!
+interface TenGigabitEthernet2/0/10
+!
+interface TenGigabitEthernet2/0/11
+!
+interface TenGigabitEthernet2/0/12
+!
+interface TenGigabitEthernet2/0/13
+!
+interface TenGigabitEthernet2/0/14
+ stackwise-virtual dual-active-detection
+!
+interface TenGigabitEthernet2/0/15
+ stackwise-virtual link 1
+!
+interface TenGigabitEthernet2/0/16
+ stackwise-virtual link 1
+!
+interface TenGigabitEthernet2/1/1
+ description VSAT_METRO_SW
+ switchport trunk allowed vlan 421,422,449,451,453,600,801,890,893,901,994,1111
+ switchport trunk allowed vlan add 1279,1375-1378,1388,1396,1397,1416,1507,2030
+ switchport trunk allowed vlan add 2101,2102,2865,3103,3107-3131,3133,3134
+ switchport trunk allowed vlan add 3139-3153,3164,3171,3175-3181,3187,3188,3198
+ switchport trunk allowed vlan add 3199,3205,3256,3913,3999
+ switchport mode trunk
+ mtu 2000
+ channel-group 11 mode active
+!
+interface TenGigabitEthernet2/1/2
+ description HE_SW_G1/4
+ switchport trunk allowed vlan 102,110,200,220,230,305,307,308,310,312,314-327
+ switchport trunk allowed vlan add 329,501
+ switchport mode trunk
+ shutdown
+ channel-group 112 mode active
+!
+interface TenGigabitEthernet2/1/3
+ description HE_FW-1_PORT_3
+ switchport trunk allowed vlan 102,110,200,230,305,307,308,310,312,314-327,329
+ switchport mode trunk
+ shutdown
+ channel-group 112 mode active
+!
+interface TenGigabitEthernet2/1/4
+!
+interface TenGigabitEthernet2/1/5
+ switchport trunk allowed vlan 172,182,222,223,306,421,422,449,451,453,600,603
+ switchport trunk allowed vlan add 801,890,893,901,905,994,1111,1112,1279
+ switchport trunk allowed vlan add 1375-1378,1388,1396,1397,1416,1507,2030,2101
+ switchport trunk allowed vlan add 2102,2865,3102,3103,3107-3134,3139-3159,3164
+ switchport trunk allowed vlan add 3171,3175-3181,3187,3188,3198,3199,3205,3256
+ switchport trunk allowed vlan add 3913,3999
+ switchport mode trunk
+ mtu 2000
+ channel-group 115 mode passive
+!
+interface TenGigabitEthernet2/1/6
+ description IVEI_06CevizlidereSHUA01
+ switchport trunk allowed vlan 172,182,3970
+ switchport mode trunk
+ shutdown
+!
+interface TenGigabitEthernet2/1/7
+ description TURKSAT_RF_SDH_1890060443
+ no switchport
+ bandwidth 100000
+ ip address 212.156.64.98 255.255.255.252
+ load-interval 30
+ shutdown
+ ipv6 address 2A01:358:4000:D::2/64
+ ipv6 enable
+ ipv6 nd ra suppress
+!
+interface TenGigabitEthernet2/1/8
+ no switchport
+ no ip address
+ shutdown
+!
+interface FortyGigabitEthernet2/1/1
+!
+interface FortyGigabitEthernet2/1/2
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan87
+ description TURKSAT_INTERNET_1890060105
+ ip address 212.156.64.86 255.255.255.252
+ load-interval 30
+ ipv6 address 2A01:358:4000:C::2/64
+ ipv6 enable
+ ipv6 nd ra suppress
+!
+interface Vlan604
+ description UFGD_INTERNET
+ ip address 94.55.114.229 255.255.255.252
+!
+interface Vlan605
+ description YID_INTERNET
+ ip address 94.55.113.249 255.255.255.248
+ ip access-group YID out
+ load-interval 30
+!
+interface Vlan701
+ description TO_TURKSAT_FW
+ ip address 94.55.112.1 255.255.255.248
+ load-interval 30
+ ipv6 address 2A00:1D58:1000:1701::1/64
+ ipv6 enable
+!
+interface Vlan720
+ description ED_TEST_WAN
+ ip address 94.55.113.209 255.255.255.248
+ load-interval 30
+!
+interface Vlan801
+ description VSAT_INTERNET
+ ip address 94.55.64.1 255.255.255.248
+ load-interval 30
+!
+interface Vlan994
+ description VSAT_UNIVERSALSAT
+ ip address 172.31.110.10 255.255.255.248
+ load-interval 30
+!
+interface Vlan996
+ description TURKSAT_EDK_GECIS
+ ip address 94.55.116.1 255.255.255.248
+ load-interval 30
+ ipv6 address 2A00:1D58:1000:1996::1/64
+ ipv6 enable
+ ipv6 nd ra suppress
+ arp timeout 2
+!
+interface Vlan3190
+ description SUPERONLINE_BACKUP_INTERNET
+ ip address 213.74.47.126 255.255.255.252
+ ipv6 address 2A02:E0:3012:100::2/56
+ ipv6 enable
+ ipv6 nd ra suppress
+!
+interface Vlan3219
+ description SOL_DDOS_1000_10023452
+ ip address 10.247.76.26 255.255.255.252
+!
+interface Vlan3911
+ ip address 10.101.111.5 255.255.255.0
+!
+router bgp 47524
+ bgp log-neighbor-changes
+ neighbor 10.247.76.25 remote-as 34984
+ neighbor 10.247.76.25 description SUPERONLINE_DDOS
+ neighbor 2A01:358:4000:47::1 remote-as 9121
+ neighbor 2A01:358:4000:47::1 description TT_ME_IPv6
+ neighbor 2A01:358:4000:47::1 ebgp-multihop 3
+ neighbor 2A02:E0:3012:100::1 remote-as 34984
+ neighbor 2A02:E0:3012:100::1 description SUPERONLINE_IPv6
+ neighbor 212.175.74.97 remote-as 9121
+ neighbor 212.175.74.97 description TT_ME_IPv4
+ neighbor 212.175.74.97 ebgp-multihop 3
+ neighbor 213.74.47.125 remote-as 34984
+ neighbor 213.74.47.125 description SUPERONLINE_ME_IPv4
+ !
+ address-family ipv4
+  synchronization
+  network 45.194.94.0 mask 255.255.255.0
+  network 94.55.64.0 mask 255.255.240.0
+  network 94.55.80.0 mask 255.255.248.0
+  network 94.55.88.0 mask 255.255.252.0
+  network 94.55.92.0 mask 255.255.252.0
+  network 94.55.96.0 mask 255.255.240.0
+  network 94.55.112.0 mask 255.255.252.0
+  network 102.140.0.0 mask 255.255.254.0
+  network 146.19.251.0 mask 255.255.255.0
+  neighbor 10.247.76.25 activate
+  neighbor 10.247.76.25 weight 20000
+  neighbor 10.247.76.25 route-map SOL out
+  no neighbor 2A01:358:4000:47::1 activate
+  no neighbor 2A02:E0:3012:100::1 activate
+  neighbor 212.175.74.97 activate
+  neighbor 212.175.74.97 weight 65535
+  neighbor 212.175.74.97 soft-reconfiguration inbound
+  neighbor 212.175.74.97 route-map TTv4_ME out
+  neighbor 213.74.47.125 activate
+  neighbor 213.74.47.125 weight 20000
+  neighbor 213.74.47.125 route-map SOL out
+ exit-address-family
+ !
+ address-family ipv6
+  synchronization
+  network 2A00:1D58:1000::/36
+  network 2A00:1D58:2000::/36
+  neighbor 2A01:358:4000:47::1 activate
+  neighbor 2A01:358:4000:47::1 weight 65535
+  neighbor 2A01:358:4000:47::1 soft-reconfiguration inbound
+  neighbor 2A01:358:4000:47::1 prefix-list TURKSATv6 out
+  neighbor 2A02:E0:3012:100::1 activate
+  neighbor 2A02:E0:3012:100::1 weight 50000
+  neighbor 2A02:E0:3012:100::1 soft-reconfiguration inbound
+  neighbor 2A02:E0:3012:100::1 route-map SOL_IPv6-IN in
+  neighbor 2A02:E0:3012:100::1 route-map SOL_IPv6 out
+ exit-address-family
+!
+ip forward-protocol nd
+no ip http server
+ip http access-class 10
+no ip http secure-server
+ip route 10.0.99.254 255.255.255.255 94.55.113.210 name MACUNKOY_FW_LINKMONITOR_mustafa
+ip route 10.100.41.0 255.255.255.0 10.101.111.1 name BT_WIRELESS
+ip route 10.101.0.0 255.255.0.0 10.101.111.1 name SERVERS
+ip route 10.110.254.0 255.255.255.0 10.101.111.1 name NOC
+ip route 45.194.94.0 255.255.255.0 94.55.64.2 name VSAT_TATEM-BYM-117215
+ip route 94.55.64.0 255.255.240.0 94.55.64.2 name VSAT
+ip route 94.55.80.0 255.255.248.0 94.55.64.2 name VSAT
+ip route 94.55.88.0 255.255.252.0 94.55.64.2 name VSAT
+ip route 94.55.92.0 255.255.252.0 94.55.64.2 name VSAT
+ip route 94.55.92.0 255.255.252.0 Null0 240
+ip route 94.55.96.0 255.255.240.0 94.55.64.2 name VSAT
+ip route 94.55.112.0 255.255.252.0 94.55.112.2 name TURKSAT
+ip route 94.55.113.192 255.255.255.240 94.55.113.210 name E-DEVLET_DEV
+ip route 94.55.114.232 255.255.255.248 94.55.112.2 name BOLGELER_VPN_WAN
+ip route 94.55.116.0 255.255.252.0 94.55.116.2 name E-DEVLET
+ip route 94.55.120.0 255.255.254.0 94.55.116.2 name E-DEVLET
+ip route 94.55.124.0 255.255.254.0 94.55.116.2 name E-DEVLET
+ip route 102.140.0.0 255.255.254.0 94.55.64.2 name VSAT_BYM-107506
+ip route 146.19.251.0 255.255.255.0 172.31.110.9 name VSAT_UNIVERSALSC
+ip route 146.19.251.0 255.255.255.0 Null0 240 name VSAT_UNIVERSALSC
+ip route 195.174.144.22 255.255.255.255 212.156.64.85 name for-BGP-Route
+ip route 212.175.74.97 255.255.255.255 212.156.64.85 name for-BGP-Route
+ip ssh version 2
+!
+!
+ip access-list extended SW_ACC
+ 30 permit icmp 10.101.31.0 0.0.0.255 10.101.111.0 0.0.0.255
+ 40 permit tcp host 10.101.11.180 10.101.111.0 0.0.0.255 eq 22
+ 50 permit tcp 10.110.254.0 0.0.0.255 10.101.111.0 0.0.0.255 eq 22
+ 55 permit tcp 10.100.41.0 0.0.0.255 10.101.111.0 0.0.0.255 eq 22
+ 70 permit udp host 10.101.34.242 10.101.111.0 0.0.0.255 eq snmp
+ 75 permit udp host 10.101.34.242 10.101.111.0 0.0.0.255 eq snmptrap
+ 80 permit udp host 10.101.34.242 10.101.111.0 0.0.0.255 eq 22
+ 85 permit tcp host 10.101.34.242 10.101.111.0 0.0.0.255 eq 22
+ 90 deny ip any any
+ip access-list extended YID
+ 20 permit ip host 94.55.113.251 host 212.0.113.20
+ 21 permit ip host 212.0.113.20 host 94.55.113.251
+ 30 permit ip host 94.55.113.250 host 212.0.113.20
+ 31 permit ip host 212.0.113.20 host 94.55.113.250
+ 50 permit ip host 94.55.113.251 host 90.83.16.6
+ 60 permit ip host 94.55.113.250 host 90.83.16.6
+ 80 permit ip host 94.55.113.251 host 193.140.92.253
+ 90 permit ip host 94.55.113.250 host 193.140.92.253
+ 100 permit ip host 180.43.53.92 host 94.55.113.251
+ 110 permit ip host 180.43.53.93 host 94.55.113.251
+ 120 permit ip host 217.111.132.76 host 94.55.113.251
+ 130 permit ip host 90.83.16.6 host 94.55.113.251
+ 140 permit ip host 92.103.91.38 host 94.55.113.251
+ 150 permit ip host 88.255.59.2 host 94.55.113.251
+ 160 permit ip host 193.140.92.253 host 94.55.113.251
+ 210 permit ip host 164.86.192.205 host 94.55.113.252
+ 220 permit ip host 164.86.208.200 host 94.55.113.252
+ 230 permit ip host 164.86.130.200 host 94.55.113.252
+ 240 permit ip host 66.36.211.38 host 94.55.113.252
+ 250 permit ip host 80.255.39.186 host 94.55.113.252
+ 260 permit ip host 66.36.211.98 host 94.55.113.252
+ 262 permit ip host 94.55.113.252 host 94.55.113.249
+ 263 permit ip host 94.55.113.249 host 94.55.113.252
+ 264 permit ip host 195.142.140.146 host 94.55.113.251
+ 270 deny ip any any
+!
+!
+ip prefix-list TURKSATv4 seq 5 permit 94.55.112.0/22
+!
+ip prefix-list VSATv4 seq 1 permit 94.55.64.0/20
+ip prefix-list VSATv4 seq 2 permit 94.55.80.0/21
+ip prefix-list VSATv4 seq 3 permit 94.55.88.0/22
+ip prefix-list VSATv4 seq 10 permit 94.55.96.0/20
+ip prefix-list VSATv4 seq 11 permit 146.19.251.0/24
+ip prefix-list VSATv4 seq 13 permit 94.55.92.0/22
+ip prefix-list VSATv4 seq 14 permit 102.140.0.0/23
+ip prefix-list VSATv4 seq 15 permit 45.194.94.0/24
+logging host 10.101.18.80
+logging host 10.101.34.240 transport udp port 20514
+logging host 10.101.34.241 transport udp port 20514
+ip access-list standard 10
+ 10 permit 10.110.254.0 0.0.0.255 log
+ipv6 route 2A00:1D58:0:1900::/64 2A00:1D58:1000:1996::2
+ipv6 route 2A00:1D58:0:1901::/64 2A00:1D58:1000:1996::2
+ipv6 route 2A00:1D58:0:1902::/64 2A00:1D58:1000:1996::2
+ipv6 route 2A00:1D58:0:1903::/64 2A00:1D58:1000:1996::2
+ipv6 route 2A00:1D58::/36 2A00:1D58:1000:1996::2
+ipv6 route 2A00:1D58:1000:3991::/64 2A00:1D58:1000:1702::2
+ipv6 route 2A00:1D58:1000:4840::/64 2A00:1D58:1000:1702::2
+ipv6 route 2A00:1D58:1000::/36 2A00:1D58:1000:1701::2
+ipv6 route 2A00:1D58:2000::/36 Null0 240
+ipv6 route 2A01:358:4000:47::1/128 2A01:358:4000:C::1
+!
+!
+ipv6 prefix-list IPv6-DEFAULT seq 5 permit ::/0
+!
+ipv6 prefix-list TURKSATv6 seq 5 permit 2A00:1D58:1000::/36
+ipv6 prefix-list TURKSATv6 seq 10 permit 2A00:1D58:2000::/36
+route-map TTv4_ME permit 10 
+ match ip address prefix-list TURKSATv4
+!
+route-map TTv4_ME permit 20 
+ match ip address prefix-list VSATv4
+!
+route-map SOL permit 40 
+ match ip address prefix-list TURKSATv4
+ set as-path prepend 47524 47524 47524 47524 47524
+!
+route-map SOL permit 50 
+ match ip address prefix-list VSATv4
+ set as-path prepend 47524 47524 47524 47524 47524
+!
+route-map SOL_IPv6 permit 10 
+ match ipv6 address prefix-list TURKSATv6
+ set as-path prepend 47524 47524 47524
+!
+route-map SOL_IPv6-IN permit 10 
+ match ipv6 address prefix-list IPv6-DEFAULT
+!
+route-map SOL_IPv6-IN deny 1000 
+!
+snmp-server community trsatx RO
+snmp-server community nocx RO
+snmp-server community fnacx RO
+snmp-server enable traps snmp linkdown linkup
+snmp-server enable traps memory bufferpeak
+snmp-server enable traps config
+snmp-server enable traps power-ethernet police
+snmp-server enable traps cpu threshold
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps bgp
+snmp-server host 10.101.34.60 version 2c nocx 
+snmp-server host 10.101.31.210 version 2c trsatx 
+snmp-server host 10.101.31.220 version 2c trsatx 
+snmp-server host 10.101.34.242 version 2c trsatx 
+tacacs-server timeout 30
+tacacs server TURKSAT_TACACS_1
+ address ipv4 10.101.11.200
+ key 7 073B345E451A391144405A58456B
+ timeout 5
+tacacs server TURKSAT_TACACS_2
+ address ipv4 10.101.34.11
+ key 7 012713165018261B721E1F5D5844
+ timeout 5
+!
+!
+!
+!
+ipv6 access-list IPv6_Acc
+ sequence 10 permit ipv6 2A00:1D58:1000:3991::/64 any
+ sequence 20 deny ipv6 any any
+!
+control-plane
+ service-policy input system-cpp-policy
+!
+banner exec ^C
+###########################################################
+                                                           
+                                                           
+   YOU HAVE ENTERED SUCCESFULLY TURKSAT SWITCH SYSTEM.     
+   NEW_METRO on 1. BE ADVISED YOUR ACTIONS ARE     
+   LOGGED AND AUDITS ARE PERFORMED DAILY. IF YOU HAVE      
+   ANY QUESTIONS CONTACT THE SYSTEM ADMINISTRATOR.         
+   EMAIL ADDRESS IS noc@turksat.com.tr.                    
+                                                           
+   THANK YOU !                                             
+   NETWORK TEAM                                            
+                                                          
+                                                          
+###########################################################
+^C
+banner login ^C
+/////  /    /  ////   /  /   ////     /    /////
+  /    /    /  /   /  / /   /        / /     /
+  /    /    /  ////   //     ///    /   /    /
+  /    /    /  /   /  / /       /  ///////   /
+  /    //////  /   /  /  /  ////   /     /   /
+  
+        /      / /     /  /   /  /////
+         /    /  / / / /   / /   /    /
+          /  /   /  /  /    /    /    /
+           //    /     /    /    /////
+^C
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ access-class SW_ACC in
+ ipv6 access-class IPv6_Acc in
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+ntp server 10.101.30.249 prefer
+ntp server 10.101.30.250
+!
+!
+!
+!
+!
+!
+end
+
