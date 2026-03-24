@@ -1,0 +1,19 @@
+{
+    "successful": [
+        {
+            "device": "MCN_hw_MNGT_SW",
+            "ip": "10.1.100.10",
+            "brand": "Huawei",
+            "model": "S5735-S48P4XE-V2",
+            "software_version": null,
+            "version": "S5700 V600R023C00SPC500",
+            "patch": "V600R023SPH150",
+            "uptime": "51 days, 23 hours, 30 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

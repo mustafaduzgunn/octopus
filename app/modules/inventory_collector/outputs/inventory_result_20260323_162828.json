@@ -1,0 +1,24 @@
+{
+    "successful": [
+        {
+            "device": "KZN_ELEKTRIK_SW",
+            "ip": "10.101.111.202",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255104H4"
+                }
+            ],
+            "serial_no": "JAE255104H4",
+            "model": "C9200L-48P-4X",
+            "uptime": "2 weeks, 3 days, 17 hours, 46 minutes",
+            "hostname": "KZN_ELEKTRIK_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "KZN_ELEKTRIK_SW"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

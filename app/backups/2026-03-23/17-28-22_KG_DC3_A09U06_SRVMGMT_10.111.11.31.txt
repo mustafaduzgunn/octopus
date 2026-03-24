@@ -1,0 +1,448 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 10468 bytes
+!
+! Last configuration change at 10:41:05 GMT Mon Mar 16 2026 by mduzgun
+! NVRAM config last updated at 10:41:07 GMT Mon Mar 16 2026 by mduzgun
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service compress-config
+!
+hostname KG_DC3_A09U06_SRVMGMT
+!
+boot-start-marker
+boot-end-marker
+!
+logging event link-status global
+!
+username restorepoint privilege 15 secret 5 $1$CniI$QVM2pDyJ7I77tfd9g46x91
+username bbarisci privilege 15 secret 5 $1$ea23$KGxMqjSZMGWrEN1U1vmaF.
+username mozan privilege 15 secret 5 $1$TwyA$BZuzcTAvaTQlsp.hpi0Yk/
+username mduzgun privilege 15 secret 5 $1$7s2X$lWY8KoWLHv72If3WN/zUi0
+username ssarikaya privilege 15 secret 5 $1$gBRi$HcayVRuZrqYqXKz3bQ9U2.
+username bpolatkan privilege 15 secret 5 $1$ipE3$iBW8tPyeSyeNBxhn4tnLR1
+username adeorouser privilege 7 secret 5 $1$eAOO$BLQg4kBtfaw8tOVxOsbUk/
+!
+macro name iseopen
+ no switchport port-security maximum 2
+ no switchport port-security
+ switchport access vlan 810   
+ switchport mode access
+ switchport voice vlan 902
+ authentication event fail action next-method
+ authentication host-mode multi-auth
+ authentication order dot1x mab webauth
+ authentication priority dot1x mab webauth
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication timer inactivity server
+ authentication violation restrict
+ device-tracking
+ mab
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ dot1x pae authenticator
+ dot1x timeout tx-period 10
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+ spanning-tree bpdufilter enable
+@
+!
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ local
+aaa authentication login console group tacacs+ local
+aaa authentication login vty group tacacs+ local
+aaa authentication dot1x default group ISE-RADIUS
+aaa authorization console
+aaa authorization exec default group tacacs+ local if-authenticated 
+aaa authorization commands 0 default group tacacs+ local if-authenticated 
+aaa authorization commands 15 default group tacacs+ local if-authenticated 
+aaa authorization network default group ISE-RADIUS 
+aaa authorization auth-proxy default group ISE-RADIUS 
+aaa accounting update periodic 5
+aaa accounting auth-proxy default start-stop group ISE-RADIUS
+aaa accounting dot1x default start-stop group ISE-RADIUS
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 0 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+!
+!
+aaa server radius dynamic-author
+ client 10.101.34.240 server-key 7 13310200001F243E787679677463
+ client 10.101.34.241 server-key 7 13310200001F243E787679677463
+!
+aaa session-id common
+clock timezone GMT 3
+ip subnet-zero
+ip domain-name turksat.local
+ip name-server 10.101.30.249
+ip vrf mgmtVrf
+!
+!
+!
+vtp domain turksat.local
+vtp mode transparent
+!
+!
+!
+power redundancy-mode redundant
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+vlan 910
+ name SAN_MANAGEMENT
+!
+vlan 911
+ name NETWORK_MANAGEMENT
+!
+vlan 917
+ name UPS_KLIMA
+!
+vlan 936
+ name TEST_VLAN
+!
+vlan 940
+ name ILO
+!
+vlan 941
+ name ILOBLADE
+!
+vlan 1111
+ name NET.MGMT
+lldp run
+!
+ip ssh version 2
+!
+!
+interface FastEthernet1
+ ip vrf forwarding mgmtVrf
+ no ip address
+ speed auto
+ duplex auto
+!
+interface GigabitEthernet1/1
+ description KB4_SRV1
+ switchport access vlan 940
+ switchport mode access
+!
+interface GigabitEthernet1/2
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/3
+ description KAMU_KABIN_SW_145
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 911,940,941
+ switchport mode trunk
+!
+interface GigabitEthernet1/4
+ description YENI_TURKSAT_KABINI_SW-143-146
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 911,940,941
+ switchport mode trunk
+!
+interface GigabitEthernet1/5
+ description CITRIX-1
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/6
+ description CITRIX-2
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/7
+ description YENI_STORAGE_APO
+ switchport access vlan 940
+ switchport mode access
+!
+interface GigabitEthernet1/8
+ description YENI_STORAGE_APO
+ switchport access vlan 940
+ switchport mode access
+!
+interface GigabitEthernet1/9
+ description KAMU_FORTIGATE_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/10
+ description KAMU_FORTIGATE_2_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/11
+ description KAMU_FORTI_ANALYZER_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/12
+ description SAN_SW4
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/13
+ description KB4_SRV7
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/14
+ description PDU_42
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/15
+ description KB4_SRV8
+ switchport access vlan 940
+ switchport mode access
+!
+interface GigabitEthernet1/16
+ description PDU_41
+ switchport access vlan 940
+ switchport mode access
+!
+interface GigabitEthernet1/17
+ description RIVERBED_PoC
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/18
+ description PDU_40
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/19
+ description PDU_1
+ switchport access vlan 917
+ switchport mode access
+!
+interface GigabitEthernet1/20
+ description PDU_39
+ switchport access vlan 917
+ switchport mode access
+!
+interface GigabitEthernet1/21
+ description KB3_SRV3
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/22
+ description FORTI_IC_B
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/23
+ description KB3_SRV4
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/24
+ description FORTI_DIS_B
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/25
+ description KB3_SRV5
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/26
+ description EDK_TOR_TOPLAMA_SW2
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/27
+ description KB3_SRV6
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/28
+ description EDK_IC_SW2_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/29
+ description KB3_SRV7
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/30
+ description EDK_DIS_ROUTER_2_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/31
+ description KB3_SRV8
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/32
+ switchport trunk allowed vlan 911
+ shutdown
+!
+interface GigabitEthernet1/33
+ description EDK_STORAGE_FKM_p2
+ switchport access vlan 941
+ switchport mode access
+!
+interface GigabitEthernet1/34
+ description EDK_METRO_SW2_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/35
+ description EDK_STORAGE_FKM_MNGT_P1
+ switchport access vlan 910
+ switchport mode access
+!
+interface GigabitEthernet1/36
+ description EDK_DIS_SW2_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/37
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/38
+ description EDK_STORAGE
+ switchport access vlan 910
+ switchport mode access
+!
+interface GigabitEthernet1/39
+ description BOS
+ switchport access vlan 911
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/40
+ description EDK_STORAGE_2U_ACAGLAR
+ switchport access vlan 910
+ switchport mode access
+!
+interface GigabitEthernet1/41
+ description EDK_DIS_SW1_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/42
+ description EDK_SAN_SW_MNGT_APO
+ switchport access vlan 910
+ switchport mode access
+!
+interface GigabitEthernet1/43
+ description EDK_IC_SW1_MNGT
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/44
+ switchport access vlan 910
+!
+interface GigabitEthernet1/45
+ description KAMU_MGMT
+ switchport access vlan 1111
+ switchport mode access
+ media-type rj45
+!
+interface GigabitEthernet1/46
+ description KAMU_LB_f5
+ switchport access vlan 911
+ switchport mode access
+ media-type rj45
+!
+interface GigabitEthernet1/47
+ description to_MANAGEMENT_SW2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 910,911,917,940,941
+ switchport mode trunk
+!
+interface GigabitEthernet1/48
+ description to_HUAWEI_5300_G0/1/4
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 910,911,917,936,940,941
+ switchport mode trunk
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan911
+ ip address 10.101.11.6 255.255.255.0
+ shutdown
+!
+interface Vlan1111
+ ip address 10.111.11.31 255.255.255.0
+!
+interface Vlan3911
+ no ip address
+ shutdown
+!
+ip route 0.0.0.0 0.0.0.0 10.111.11.1
+no ip http server
+no ip http secure-server
+!
+!
+ip access-list extended ACL_WEBAUTH_REDIRECT
+ deny   udp any eq bootpc any eq bootps
+ deny   udp any host 10.101.30.249 eq domain
+ deny   udp any host 10.101.30.250 eq domain
+ deny   tcp any host 10.101.34.240 eq 8443
+ deny   tcp any host 10.101.34.241 eq 8443
+ permit tcp any any eq www
+ permit tcp any any eq 443
+!
+ip radius source-interface Vlan3911 
+logging 10.101.18.80
+logging host 10.101.34.240 transport udp port 20514
+logging host 10.101.34.241 transport udp port 20514
+access-list 40 permit 10.101.30.248
+access-list 50 deny   any
+!
+!
+snmp-server community trsatx RO
+radius-server attribute 6 on-for-login-auth
+radius-server attribute 6 support-multiple
+radius-server attribute 8 include-in-access-req
+radius-server attribute 25 access-request include
+radius-server dead-criteria time 30 tries 3
+radius-server deadtime 30
+radius-server vsa send accounting
+radius-server vsa send authentication
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ privilege level 15
+ transport input telnet ssh
+line vty 5 15
+ privilege level 15
+ transport input telnet ssh
+!
+ntp clock-period 17179383
+ntp access-group query-only 50
+ntp access-group peer 40
+ntp access-group serve-only 50
+ntp server 10.101.30.248 prefer
+ntp server 10.101.30.249
+mac address-table notification change interval 0
+mac address-table notification change
+end
+

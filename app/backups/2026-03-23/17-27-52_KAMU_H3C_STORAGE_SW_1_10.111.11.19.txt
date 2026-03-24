@@ -1,0 +1,1118 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+#
+ version 7.1.070, Release 6635
+#
+ sysname KG_DC3_D0807U41_40G_CLOUDTOR
+#
+ clock timezone IST add 03:00:00
+ clock protocol ntp
+#
+ alias wr save f
+#
+ undo copyright-info enable
+#
+ irf mac-address persistent timer
+ irf auto-update enable
+ undo irf link-delay
+ irf member 1 priority 32
+ irf member 2 priority 30
+#
+
+#
+
+ parity-error consistency-check log enable
+ parity-error unrecoverable log enable
+
+ parity-error unrecoverable reboot
+#
+ lldp global enable
+#
+ system-working-mode standard
+ fan prefer-direction slot 1 power-to-port 
+ password-recovery enable
+#
+vlan 1
+#
+vlan 554
+ name AZUR
+#
+vlan 555
+ name Bulut_Storage
+#
+vlan 556
+ name TRSAT_DB
+#
+vlan 1561
+ name DT-Cloud_overlay
+#
+vlan 1562
+ name DT-Cloud_private
+#
+irf-port 1/1
+ port group interface HundredGigE1/0/31
+ port group interface HundredGigE1/0/32
+#
+irf-port 2/2
+ port group interface HundredGigE2/0/31
+ port group interface HundredGigE2/0/32
+#
+ stp global enable
+#
+interface Bridge-Aggregation101
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation103
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation111
+ description SAFIR
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation112
+ description SAFIR
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation113
+ description SAFIR
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation114
+ description SAFIR
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation115
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ jumboframe enable 9216
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation116
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ jumboframe enable 9216
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation117
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ jumboframe enable 9216
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation118
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation119
+ description SAFIR
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation120
+ description SAFIR
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation121
+ description SAFIR
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation122
+ description SAFIR
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation127
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation128
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation129
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation130
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation140
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 556
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation141
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 556
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation142
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 556
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation143
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 556
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation144
+ description sangfor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation145
+ description sangforoor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation146
+ description sangforoor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation147
+ description sangforoor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation148
+ description sangfor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation149
+ description sangfor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation150
+ description sangfor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation151
+ description sangfor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation152
+ description SAFIR_EKRAN_KARTLI_SUNUCU
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation153
+ description sangfor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation154
+ description SAFIRBULUT
+ port access vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation155
+ description sangfor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation156
+ description sangfor
+ port access vlan 554
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation157
+ description NETAS_GPU
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation213
+ description DT-Cloud_S4
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation214
+ description DT-Cloud_S3
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation215
+ description DT-Cloud_S2
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation216
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation301
+ description KAYTUS_D08_U21-22
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation302
+ description KAYTUS_D08_U24-25
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation303
+ description KAYTUS_D08_U27-28
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation304
+ description KAYTUS_D08_U30-31
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation305
+ description KAYTUS_D08_U33-34
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation306
+ description KAYTUS_D08_U36-37
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation307
+ description KAYTUS_D08_U39-40
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation308
+ description KAYTUS_D07_U06-07
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation309
+ description KAYTUS_D07_U09-10
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation310
+ description KAYTUS_D07_U12-13
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation311
+ description KAYTUS_D07_U15-16
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation312
+ description KAYTUS_D07_U18-19
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation313
+ description KAYTUS_D07_U21-22
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation314
+ description KAYTUS_D07_U24-25
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation315
+ description KAYTUS_D07_U27-28
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation316
+ description KAYTUS_D07_U30-31
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation317
+ description KAYTUS_D07_U33-34
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface Bridge-Aggregation318
+ description KAYTUS_D07_U36-37
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ link-aggregation mode dynamic
+#
+interface NULL0
+#
+interface Vlan-interface1
+ dhcp client identifier ascii 00bcd0eb88f9dc-VLAN0001
+#
+interface GigabitEthernet1/0/33
+ port link-mode bridge
+#
+interface GigabitEthernet1/0/34
+ port link-mode bridge
+#
+interface GigabitEthernet2/0/33
+ port link-mode bridge
+#
+interface GigabitEthernet2/0/34
+ port link-mode bridge
+#
+interface HundredGigE1/0/1
+ port link-mode bridge
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ speed 100000 
+ port link-aggregation group 101
+#
+interface HundredGigE1/0/2
+ port link-mode bridge
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 556
+ port link-aggregation group 143
+#
+interface HundredGigE1/0/3
+ port link-mode bridge
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ speed 100000 
+ port link-aggregation group 103
+#
+interface HundredGigE1/0/4
+ port link-mode bridge
+ port access vlan 554
+ port link-aggregation group 147
+#
+interface HundredGigE1/0/5
+ port link-mode bridge
+ description KAYTUS_D08_U21-22_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 301
+#
+interface HundredGigE1/0/6
+ port link-mode bridge
+ description KAYTUS_D08_U24-25_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 302
+#
+interface HundredGigE1/0/7
+ port link-mode bridge
+ description KAYTUS_D08_U27-28_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 303
+#
+interface HundredGigE1/0/8
+ port link-mode bridge
+ description KAYTUS_D08_U30-31_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 304
+#
+interface HundredGigE1/0/9
+ port link-mode bridge
+ description KAYTUS_D08_U33-34_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 305
+#
+interface HundredGigE1/0/10
+ port link-mode bridge
+ description KAYTUS_D08_U36-37_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 306
+#
+interface HundredGigE1/0/11
+ port link-mode bridge
+ description KAYTUS_D08_U39-40_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 307
+#
+interface HundredGigE1/0/12
+ port link-mode bridge
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 100000 
+ port link-aggregation group 152
+#
+interface HundredGigE1/0/13
+ port link-mode bridge
+ description KAYTUS_D07_U06-07_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 308
+#
+interface HundredGigE1/0/14
+ port link-mode bridge
+ description KAYTUS_D07_U09-10_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 309
+#
+interface HundredGigE1/0/15
+ port link-mode bridge
+ description KAYTUS_D07_U12-13_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 310
+#
+interface HundredGigE1/0/16
+ port link-mode bridge
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ speed 40000 
+ port link-aggregation group 216
+#
+interface HundredGigE1/0/17
+ port link-mode bridge
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ jumboframe enable 9216
+ port link-aggregation group 115
+#
+interface HundredGigE1/0/18
+ port link-mode bridge
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ jumboframe enable 9216
+ port link-aggregation group 116
+#
+interface HundredGigE1/0/19
+ port link-mode bridge
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ jumboframe enable 9216
+ port link-aggregation group 117
+#
+interface HundredGigE1/0/20
+ port link-mode bridge
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ jumboframe enable 9216
+ port link-aggregation group 118
+#
+interface HundredGigE1/0/21
+ port link-mode bridge
+ description KAYTUS_D07_U15-16_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 311
+#
+interface HundredGigE1/0/22
+ port link-mode bridge
+ description KAYTUS_D07_U21-22_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ shutdown
+ port link-aggregation group 313
+#
+interface HundredGigE1/0/23
+ port link-mode bridge
+ description KAYTUS_D07_U21-22_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 313
+#
+interface HundredGigE1/0/24
+ port link-mode bridge
+ description KAYTUS_D07_U24-25_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 314
+#
+interface HundredGigE1/0/25
+ port link-mode bridge
+ speed 40000 
+#
+interface HundredGigE1/0/26
+ port link-mode bridge
+ description KAYTUS_D07_U27-28_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 315
+#
+interface HundredGigE1/0/27
+ port link-mode bridge
+ description KAYTUS_D07_U30-31_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 316
+#
+interface HundredGigE1/0/28
+ port link-mode bridge
+ description KAYTUS_D07_U33-34_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 317
+#
+interface HundredGigE1/0/29
+ port link-mode bridge
+ description KAYTUS_D07_U36-37_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 318
+#
+interface HundredGigE1/0/30
+ port link-mode bridge
+#
+interface HundredGigE2/0/1
+ port link-mode bridge
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ speed 100000 
+ port link-aggregation group 101
+#
+interface HundredGigE2/0/2
+ port link-mode bridge
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 112
+#
+interface HundredGigE2/0/3
+ port link-mode bridge
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ speed 100000 
+ port link-aggregation group 103
+#
+interface HundredGigE2/0/4
+ port link-mode bridge
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 114
+#
+interface HundredGigE2/0/5
+ port link-mode bridge
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ jumboframe enable 9216
+ port link-aggregation group 115
+#
+interface HundredGigE2/0/6
+ port link-mode bridge
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ jumboframe enable 9216
+ port link-aggregation group 116
+#
+interface HundredGigE2/0/7
+ port link-mode bridge
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ jumboframe enable 9216
+ port link-aggregation group 117
+#
+interface HundredGigE2/0/8
+ port link-mode bridge
+ description SAFIRBULUT
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ jumboframe enable 9216
+ port link-aggregation group 118
+#
+interface HundredGigE2/0/9
+ port link-mode bridge
+ description KAYTUS_D07_U06-07_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 308
+#
+interface HundredGigE2/0/10
+ port link-mode bridge
+ description KAYTUS_D07_U09-10_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 309
+#
+interface HundredGigE2/0/11
+ port link-mode bridge
+ description KAYTUS_D07_U12-13_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 310
+#
+interface HundredGigE2/0/12
+ port link-mode bridge
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 100000 
+ port link-aggregation group 152
+#
+interface HundredGigE2/0/13
+ port link-mode bridge
+ description KAYTUS_D07_U15-16_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 311
+#
+interface HundredGigE2/0/14
+ port link-mode bridge
+ description KAYTUS_D07_U18-19_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 312
+#
+interface HundredGigE2/0/15
+ port link-mode bridge
+ description KAYTUS_D07_U21-22_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 313
+#
+interface HundredGigE2/0/16
+ port link-mode bridge
+ description CEPH_STORAGE_SAFIRBULUT
+ port link-type trunk
+ port trunk permit vlan 1 555
+ speed 40000 
+ port link-aggregation group 216
+#
+interface HundredGigE2/0/17
+ port link-mode bridge
+ description KAYTUS_D07_U24-25_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 555
+ speed 40000 
+ port link-aggregation group 314
+#
+interface HundredGigE2/0/18
+ port link-mode bridge
+ description KAYTUS_D07_U27-28_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 315
+#
+interface HundredGigE2/0/19
+ port link-mode bridge
+ description KAYTUS_D07_U30-31_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 316
+#
+interface HundredGigE2/0/20
+ port link-mode bridge
+ description KAYTUS_D07_U33-34_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 317
+#
+interface HundredGigE2/0/21
+ port link-mode bridge
+ description KAYTUS_D07_U36-37_P1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 318
+#
+interface HundredGigE2/0/22
+ port link-mode bridge
+ description KAYTUS_D08_U21-22_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 301
+#
+interface HundredGigE2/0/23
+ port link-mode bridge
+ description KAYTUS_D08_U24-25_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 302
+#
+interface HundredGigE2/0/24
+ port link-mode bridge
+ description KAYTUS_D08_U27-28_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 303
+#
+interface HundredGigE2/0/25
+ port link-mode bridge
+#
+interface HundredGigE2/0/26
+ port link-mode bridge
+ description KAYTUS_D08_U30-31_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 304
+#
+interface HundredGigE2/0/27
+ port link-mode bridge
+ description KAYTUS_D08_U33-34_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 305
+#
+interface HundredGigE2/0/28
+ port link-mode bridge
+ description KAYTUS_D08_U36-37_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 306
+#
+interface HundredGigE2/0/29
+ port link-mode bridge
+ description KAYTUS_D08_U39-40_P0
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 1561 to 1562
+ speed 40000 
+ port link-aggregation group 307
+#
+interface HundredGigE2/0/30
+ port link-mode bridge
+#
+interface HundredGigE1/0/31
+#
+interface HundredGigE1/0/32
+#
+interface HundredGigE2/0/31
+#
+interface HundredGigE2/0/32
+#
+interface M-GigabitEthernet0/0/0
+ ip address 10.111.11.19 255.255.255.0
+#
+interface M-GigabitEthernet0/0/1
+ dhcp client identifier hex 02bcd0eb88f9dc
+#
+ scheduler logfile size 16
+#
+line class aux
+ user-role network-admin
+#
+line class vty
+ user-role network-operator
+#
+line aux 0
+ user-role network-admin
+ idle-timeout 35000 0
+#
+line aux 1
+ user-role network-admin
+#
+line vty 0 4
+ authentication-mode scheme
+ user-role network-admin
+ user-role network-operator
+ idle-timeout 2 0
+#
+line vty 5 63
+ authentication-mode scheme
+ user-role network-operator
+#
+ ip route-static 0.0.0.0 0 10.111.11.1
+#
+ info-center loghost 10.101.18.80
+#
+ snmp-agent
+ snmp-agent local-engineid 800063A280BCD0EB88F9E000000001
+ snmp-agent community read cipher $c$3$UyWg6saUkXYWYopY7uLr2psOLBdqCfBKlw==
+ snmp-agent sys-info contact VMYD_NOC
+ snmp-agent sys-info location GOLBASI_KAMPUS
+ snmp-agent sys-info version v2c v3 
+#
+ ssh server enable
+#
+ ntp-service enable
+ ntp-service server acl 2040
+ ntp-service unicast-server 10.101.30.249
+#
+acl basic 2040
+ description ntp-mode-6
+ rule 10 permit
+ rule 20 deny
+#
+ password-control length 8
+#
+radius scheme system
+ user-name-format without-domain
+#
+domain system
+#
+ domain default enable system
+#
+role name level-0
+ description Predefined level-0 role
+#
+role name level-1
+ description Predefined level-1 role
+#
+role name level-2
+ description Predefined level-2 role
+#
+role name level-3
+ description Predefined level-3 role
+#
+role name level-4
+ description Predefined level-4 role
+#
+role name level-5
+ description Predefined level-5 role
+#
+role name level-6
+ description Predefined level-6 role
+#
+role name level-7
+ description Predefined level-7 role
+#
+role name level-8
+ description Predefined level-8 role
+#
+role name level-9
+ description Predefined level-9 role
+#
+role name level-10
+ description Predefined level-10 role
+#
+role name level-11
+ description Predefined level-11 role
+#
+role name level-12
+ description Predefined level-12 role
+#
+role name level-13
+ description Predefined level-13 role
+#
+role name level-14
+ description Predefined level-14 role
+#
+user-group system
+#
+local-user adeorouser class manage
+ password hash $h$6$nVSbURfcI9OX4ZH4$od7JgPM6Uu5OYDakTHXCvN6bZTbq6D1fmwX5Nm/KfPh+VFWVOu2Xyoth4f39wsmWUtXHZZBxOlbGqa0CatUPGA==
+ service-type ssh
+ authorization-attribute user-role network-operator
+#
+local-user bbarisci class manage
+ password hash $h$6$9NmPY1m/J46EpnJW$67bwFkqyM5mu3rG6WUoSZyjTSA/RPHBox605ZkepvYEbgT8isD8gtkOmcNqThYvSbwpxs/35A15dDtFQ5R9gLg==
+ service-type ssh
+ authorization-attribute user-role network-admin
+#
+local-user bpolatkan class manage
+ password hash $h$6$otwTTBlREr+NJkFO$VX+jOEqzzS10UeyjVYJKmSesZmv2vznVbQSfPRNoQpZfeTmwbvxMwD8/sramXuEPSIGmrVMj2N1GbdTb5L2i8Q==
+ service-type ssh
+ authorization-attribute user-role network-admin
+#
+local-user mduzgun class manage
+ password hash $h$6$yNPNBJ3PmwKNvmNV$4shTPP3FvuSbp62Bk77kJfVsRnOJE8G0EveY4eSfWZKrnMqd+neuj8FZE1+9s9oEbwYIr0mmEcqUC9yxKNoz9A==
+ service-type ssh
+ authorization-attribute user-role network-admin
+#
+local-user mozan class manage
+ password hash $h$6$V6WTaXw1+FKK4Czy$gH1focnp+txDzn1aYdURuQ91o8So9QybZDxUwsGqurZgnIRNQm45zisytVVtZcxOl10BvTUZSXcwFuCFb5KYaw==
+ service-type ssh
+ authorization-attribute user-role network-admin
+#
+local-user restorepoint class manage
+ password hash $h$6$fz43VkKislsJutbJ$p/FYuLF2+1gEl7AxxWFjiThQbRUAQcq0kPVBMvyUtPtRDtfaXshmPGplWo+sV8RLUEmBaAIXQY2DrkO/IFmwWg==
+ service-type ssh
+ authorization-attribute user-role network-admin
+ authorization-attribute user-role network-operator
+#
+local-user ssarikaya class manage
+ password hash $h$6$kJaFkIS6gC1TSTE4$gXRdwwAuivXFOkGN9h4UjbSPLW+OsdgNXMX331uzWXoN+okH7yzK0AZ+KpM6MLxo3sNl2mB/EysyMHD5ghIeeg==
+ service-type ssh
+ authorization-attribute user-role network-admin
+#
+return

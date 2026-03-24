@@ -1,0 +1,16 @@
+{
+    "successful": [
+        {
+            "device": "KAMU_DELL_TOR",
+            "ip": "10.111.11.29",
+            "brand": "Dell Force10",
+            "model": "S4048-ON",
+            "software_version": "2.0",
+            "uptime": "4 year(s), 24 week(s), 2 day(s), 14 hour(s), 25 minute(s)",
+            "serial_no": null,
+            "stack_members": []
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

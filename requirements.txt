@@ -1,0 +1,14 @@
+netmiko>=4.3.0
+cryptography>=41.0.0
+pyperclip>=1.8.0
+pyfiglet>=0.8.0
+colorama>=0.4.6
+requests>=2.31.0
+urllib3>=2.0.0
+
+paramiko>=3.4.0
+flask
+flask-sock>=0.2.0
+tzlocal
+apscheduler
+git-filter-repo

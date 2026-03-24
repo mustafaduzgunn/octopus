@@ -1,0 +1,16 @@
+{
+    "successful": [
+        {
+            "device": "CISCO_113_35",
+            "ip": "10.101.113.35",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "4 days, 21 hours, 23 minutes",
+            "software_version": "3\""
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

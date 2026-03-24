@@ -1,0 +1,1142 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V100R005C00SPC300
+!Last configuration was updated at 2026-03-16 10:26:50+03:00
+!Last configuration was saved at 2026-03-16 10:29:20+03:00
+#
+sysname KG_DC3_A10U42_ME_OLD
+#
+info-center loghost 10.101.18.80
+#
+device board 1 board-type CE6850-48S6Q-HI
+device board 2 board-type CE6850-48S6Q-HI
+#
+clock timezone IST add 03:00:00
+#
+drop-profile default
+#
+dcb pfc
+#
+dcb ets-profile default
+#
+ntp ipv6 server disable
+ntp unicast-server 10.101.30.249
+#
+vlan batch 2 8 10 to 17 50 52 54 60 66 70 84
+vlan batch 90 102 104 to 106 108 120 to 121 130 132 154 160 162
+vlan batch 178 180 182 201 210 214 241 270 275 300
+vlan batch 311 to 312 402 to 403 427 429 474 to 476 489 500 to 501 504 to 507 509 514 to 515
+vlan batch 525 550 to 551 560 577 599 to 602 651 to 653 661 to 663 711 804 to 805 882
+vlan batch 884 893 900 911 917 936 945 990 to 992 995 997
+vlan batch 1000 1100 1200 to 1221 1227 to 1228 1234 to 1236 1238 1250 1256 1263 1270
+vlan batch 1277 1280 to 1281 1283 1286 to 1287 1289 to 1292 1294 to 1302 1319 1324 to 1325 1327 to 1328 1335
+vlan batch 1375 1401 1506 1999 2016 2052 2070 2128 2303 2310
+vlan batch 3422 3544 3589 3701 to 3706 3719 to 3720 3963 3965 to 3966 3987
+#
+multicast routing-enable
+#
+igmp snooping enable
+#
+telnet server disable
+telnet ipv6 server disable
+#
+diffserv domain default
+#
+vlan 2
+ name F5_SASE_CLUSTER
+#
+vlan 8
+ name SIL_FORTI_TEST
+#
+vlan 10
+ name IXIA_TEST_BAGLANTISI
+#
+vlan 11
+ name MNGT-1
+#
+vlan 12
+ name MNGT-2
+#
+vlan 13
+ name MNGT-3
+#
+vlan 14
+ name MNGT-4
+#
+vlan 15
+ name E-Devlet_TURKSAT-Gecis
+#
+vlan 16
+ name PFSENSE_MNGT
+#
+vlan 17
+ name outside_MNGT-6
+#
+vlan 50
+ name WWW
+#
+vlan 52
+ name GIRIS
+#
+vlan 54
+ name CMS
+#
+vlan 60
+ name DNS_1
+#
+vlan 66
+ name MAIL
+#
+vlan 70
+ name ANALITIK
+#
+vlan 84
+ name E-KAPI_ESB
+#
+vlan 90
+ name TEST_VLAN_WAN
+#
+vlan 102
+ name KAMU_INTERNET_TT
+#
+vlan 104
+ name SATCLOUD_NETWORK_NN
+#
+vlan 105
+ description EGM_NN
+ name EGM_NN
+#
+vlan 106
+ description SGK_NN
+ name SGK_NN
+#
+vlan 108
+ description TAPU_NN
+ name TAPU_NN
+#
+vlan 120
+ name KGM_OGS_ED
+#
+vlan 121
+ name YSK
+#
+vlan 130
+ name KAYIT_APP
+#
+vlan 132
+ name REGISTRATION_APP
+#
+vlan 154
+ name ACCESS_MANAGER
+#
+vlan 160
+ name INT-DMN_1
+#
+vlan 162
+ name INT-DMN_2
+#
+vlan 178
+ name TUIK_TTUNEL_NN
+#
+vlan 180
+ name DB_1
+#
+vlan 182
+ name DB-COMMUNICATIN
+#
+vlan 201
+ name DOGUS_TEST
+#
+vlan 210
+ name LOG_SERVERS
+#
+vlan 214
+ name LOG_SERVERS_2
+#
+vlan 241
+ name MSB_ED
+#
+vlan 270
+ name TELIF_NN
+#
+vlan 275
+ name CSGB_NN
+#
+vlan 300
+ description ULASTIRMA_TT2MB
+#
+vlan 311
+ name KIK_N.N_DEVRE_03/28/2022
+#
+vlan 312
+ name KIK_N.N_BALGAT_DEVRE_4/6/2023
+#
+vlan 402
+ name DMO_CLIENT
+#
+vlan 403
+ name DMO-APP
+#
+vlan 427
+ name TUIK_INTERNET_DEVRESI
+#
+vlan 429
+ name ILLER_BANKASI_N.N_DEVRE
+#
+vlan 474
+ name KDGM_NN_05/07/2017
+#
+vlan 475
+ name SAYISTAY_NN
+#
+vlan 476
+ name AVRUPA_BIRLIGI_NN
+#
+vlan 489
+ name KALKINMA_TURKNET
+#
+vlan 500
+ name KAMUNET-eDEVLET
+#
+vlan 501
+ name NDK_TTVPN_11/06/2023
+#
+vlan 504
+ name DHMI_TTVPN
+#
+vlan 505
+ name CSGB_FKM_2016_NN
+#
+vlan 506
+ name DMO_NN
+#
+vlan 507
+ name TCDD_TTVPN
+#
+vlan 509
+ name DHMI_MPLS
+#
+vlan 514
+ name TUIK_MPLS
+#
+vlan 515
+ name YSK_NN
+#
+vlan 525
+ name TAPU_YEDEKLEME
+#
+vlan 550
+ name MGNT-SEC-IMP_1
+#
+vlan 551
+ name MGNT-SEC-IDP_1
+#
+vlan 560
+ name KIK_FKM_KAMUNET
+#
+vlan 577
+ name CIMER_KAMUNET
+#
+vlan 599
+ name PENDIK_BLD_NN
+#
+vlan 600
+ name SHGM_NN
+#
+vlan 601
+ name GOC_IDARESI_NN
+#
+vlan 602
+ name MESLEKI_YETERLILIK_NN
+#
+vlan 651
+ name RAD_EXT_1
+#
+vlan 652
+ name RAD_EXT_2
+#
+vlan 653
+ name RAD_EXT_3
+#
+vlan 661
+ name RAD_INT_1
+#
+vlan 662
+ name RAD_INT_2
+#
+vlan 663
+ name RAD_INT_3
+#
+vlan 711
+ name CFCU_WAN
+#
+vlan 804
+ name VPN_FW_PFSENSE_WAN
+#
+vlan 805
+ name PTT_FO
+#
+vlan 882
+ name PTT_KEP_FO
+#
+vlan 884
+ name ADALET_FO
+#
+vlan 893
+ description KALKINMA_N.N
+#
+vlan 900
+ name to_F5_EXT
+#
+vlan 911
+ name MANAGEMENT
+#
+vlan 936
+ name TEST_SERVER
+#
+vlan 945
+ name KAMU_VMWARE
+#
+vlan 990
+ name FW2FW
+#
+vlan 991
+ name OUTSIDE_F5
+#
+vlan 992
+ name FW2FW2
+#
+vlan 995
+ name KAMU_INTERNET
+#
+vlan 997
+ name DIS_FIREWALL_WAN
+#
+vlan 1000
+ name TEST_ME_SW
+#
+vlan 1100
+ name PA_DEFAULT_UNTRUST_WAN
+#
+vlan 1200
+ name IBANK_WAN
+#
+vlan 1201
+ name KDGM_WAN
+#
+vlan 1202
+ name TAPU_WAN
+#
+vlan 1203
+ name ULASTIRMA_PORTAL_WAN
+#
+vlan 1204
+ name MGK_WAN
+#
+vlan 1205
+ name BASBAKANLIK_WAN
+#
+vlan 1206
+ name LRIT-WAN
+#
+vlan 1207
+ name EBA_LMS_WAN
+#
+vlan 1208
+ name SHGM_WAN
+#
+vlan 1209
+ name BYEGM_WAN
+#
+vlan 1210
+ name GOC_IDARESI_WAN
+#
+vlan 1211
+ name KAREL_WAN
+#
+vlan 1212
+ name KUTUPHANELER_WAN
+#
+vlan 1213
+ name PENDIK_WAN
+#
+vlan 1214
+ name CSGB_WAN
+#
+vlan 1215
+ name YURTDISI_TURKLER_WAN
+#
+vlan 1216
+ name ULASTIRMA_CLOUD_PF_WAN
+#
+vlan 1217
+ name ADEO_WAN
+#
+vlan 1218
+ name EKDS_WAN
+#
+vlan 1219
+ name EPDK_PFSENSE_WAN
+#
+vlan 1220
+ name TETAS_WAN
+#
+vlan 1221
+ description NEW_ROOT_UNTRUSTED
+#
+vlan 1227
+ name KGK
+#
+vlan 1228
+ name SAYISTAY_WAN
+#
+vlan 1234
+ name ERBAKAN_UNIVERSITESI_WAN
+#
+vlan 1235
+ name ILLER_BANKASI
+#
+vlan 1236
+ name SSB_WAN
+#
+vlan 1238
+ name CEVRE_SEHIRCILIK
+#
+vlan 1250
+ name TEST
+#
+vlan 1256
+ name MESLEKI_YETERLILIK_WAN
+#
+vlan 1263
+ name METEOROLOJI_WAN
+#
+vlan 1270
+ name TELIF_HAKLARI
+#
+vlan 1277
+ name ESB_WAN_2022
+#
+vlan 1280
+ name CIMER_UNTRUST
+#
+vlan 1281
+ name ASBU_WAN
+#
+vlan 1283
+ name DHMI_WAN
+#
+vlan 1286
+ name RTUK_WAN
+#
+vlan 1287
+ name ILKSAN_WAN
+#
+vlan 1289
+ description YOK_WAN
+ name KGM_WAN
+#
+vlan 1290
+ name ETVESUT_WAN
+#
+vlan 1291
+ name EGO
+#
+vlan 1292
+ name ESK_WAN
+#
+vlan 1294
+ name RUNSYS
+#
+vlan 1295
+ name CUMBAS
+#
+vlan 1296
+ name TIKA_WAN
+#
+vlan 1297
+ name ICERIK.GOV.TR
+#
+vlan 1298
+ name KIK_FORTI_WAN
+#
+vlan 1299
+ name BTIDER
+#
+vlan 1300
+ name GENEL_WAN
+#
+vlan 1301
+ name BITES_WAN
+#
+vlan 1302
+ name TUA_WAN
+#
+vlan 1319
+ name PENDIK
+#
+vlan 1324
+ name GOC
+#
+vlan 1325
+ name DMO
+#
+vlan 1327
+ name DMO_ORAC
+#
+vlan 1328
+ name SAYISTAY_DATADOMAIN
+#
+vlan 1335
+ name ULUSAL_AJANS
+#
+vlan 1375
+ name SATCLOUD_PALO_GECIS
+ igmp snooping enable
+#
+vlan 1506
+ name DMO_TTVPN_RIVERBED
+#
+vlan 1999
+ name DHMI_PA_GECIS
+#
+vlan 2016
+ name HGM
+#
+vlan 2052
+ name RTUK_26082019
+#
+vlan 2070
+ name TIKA_SOL
+#
+vlan 2128
+ name ESB_INTERNE
+#
+vlan 2303
+ name KUTUPHANELER_F5-PA_GECIS
+#
+vlan 2310
+ name UUP_F5-PA_GECIS
+#
+vlan 3422
+ name ESB
+#
+vlan 3544
+ name ULUSAL_AJANS_NN
+#
+vlan 3589
+ name TETAS_NN
+#
+vlan 3701
+ name DMO_DMZ
+#
+vlan 3702
+ name DMO_Local
+#
+vlan 3703
+ name DMO_EBYS_DB
+#
+vlan 3704
+ name DMO_Exchange
+#
+vlan 3705
+ name DMO_EXCHANGE_DAG
+#
+vlan 3706
+ name DMO_EXCHANGE2016_DAG
+#
+vlan 3719
+ name DMO_ESX-Host
+#
+vlan 3720
+ name DMO_ILO
+#
+vlan 3963
+ description KAMU_INTERNET_GECIS
+#
+vlan 3965
+ name VM_PF_LB_ZONE
+#
+vlan 3966
+ name KAMU_LB_INTERNET_F5-PA_GECIS
+#
+vlan 3987
+ name NDK_SUPERONLINE
+#
+stp region-configuration
+ region-name SUPERONLINE
+ revision-level 2
+ instance 1 vlan 102 104 178 270 474 to 476 489 504 509 525 577
+ instance 1 vlan 600 to 601
+ instance 2 vlan 2016 2052 2070 2128 3422 3544 3589
+ instance 3 vlan 506
+ instance 4 vlan 1506
+ instance 5 vlan 1296 1298
+ instance 6 vlan 1294
+#
+aaa
+ local-user restorepoint password irreversible-cipher $2a$t(E:UnErrA$Hs\Q8Bs<3&^~BARXS_SAydHFG'WkF!Ghr3P=@J|>$
+ local-user restorepoint service-type ssh
+ local-user mduzgun password irreversible-cipher $2a$pxH>'c"A`.$1&TaO2$M;7DPpq5^<hHL_|&J;=4g=RA(h-07R(h>$
+ local-user mduzgun service-type ssh
+ local-user bbarisci password irreversible-cipher $2a$*Y)=9e;v/>$G4XR-ps~EW*Z<[YX]`tN[~o(U+{&f(&kEA.&LO#X$
+ local-user bbarisci service-type ssh
+ local-user moozan password irreversible-cipher $2a$'w45;sJ''Y$NxeX8&m^1K!tc^X%st+Y-M>rUNILl'7x<g-@v'z5$
+ local-user moozan service-type ssh
+ local-user ssarikaya password irreversible-cipher $2a$uD7sEW~SHH$CJN|M489kR6,D~VoB{<S5FQhF~\4W!pywKY\eu/<$
+ local-user ssarikaya service-type ssh
+ local-user bpolatkan password irreversible-cipher $2a$'3'"9d>CFZ$kh4PSowlC"e7D~)dm3=:fB*@G}ZJA@jPts)H!G/H$
+ local-user bpolatkan service-type ssh
+ #
+ authentication-scheme default
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default
+ #
+ domain default
+ #
+ domain default_admin
+#
+stack
+ #
+ stack member 1 domain 10
+ stack member 1 priority 150
+ #
+ stack member 2 domain 10
+#
+interface Vlanif8
+ shutdown
+ ip address 8.8.8.1 255.255.255.252
+#
+interface Vlanif10
+ shutdown
+ ip address 1.0.0.2 255.0.0.0
+#
+interface Vlanif13
+ shutdown
+ ip address 192.168.123.187 255.255.255.0
+#
+interface Vlanif312
+ shutdown
+ ip address 10.100.211.139 255.255.255.248
+#
+interface Vlanif509
+ shutdown
+ ip address 172.20.2.27 255.255.255.248
+#
+interface Vlanif515
+ shutdown
+ ip address 10.100.248.138 255.255.255.248
+#
+interface Vlanif560
+ shutdown
+ ip address 100.64.85.101 255.255.255.0
+#
+interface Vlanif577
+ shutdown
+ ip address 100.64.38.50 255.255.255.0
+#
+interface Vlanif602
+ shutdown
+ ip address 10.100.253.26 255.255.255.248
+#
+interface Vlanif1000
+ shutdown
+ ip address 10.10.10.1 255.255.255.0
+#
+interface Vlanif1298
+ shutdown
+ ip address 94.55.123.177 255.255.255.240
+#
+interface Vlanif1375
+ shutdown
+ ip address 10.100.248.117 255.255.255.248
+#
+interface Vlanif2070
+ shutdown
+ ip address 172.22.22.25 255.255.255.0
+#
+interface MEth0/0/0
+ ip address 10.101.11.50 255.255.255.0
+#
+interface Eth-Trunk1
+ description to_7606-A_Po3
+ port link-type trunk
+ port trunk allow-pass vlan 900 995 3963
+ mode lacp-static
+#
+interface Eth-Trunk2
+ description to_METROETHERNET_Po2
+ port link-type trunk
+ port trunk allow-pass vlan 104 178 270 474 to 476 489 504 to 505 507 599 to 601 893 911
+ port trunk allow-pass vlan 917 936 1506 2128 3422 3544 3589
+ mode lacp-static
+#
+interface Eth-Trunk3
+ description to_7606-B_Po3
+ port link-type trunk
+ port trunk allow-pass vlan 900 995 3963
+ mode lacp-static
+#
+interface Eth-Trunk4
+ description to_ASR-1_Po1
+ port link-type trunk
+ port trunk allow-pass vlan 90 102 504 711 1100 1200 to 1221 1227 to 1228 1234 1236 1238
+ port trunk allow-pass vlan 1256 1263 1277 1280 to 1281 1283 1286 to 1287 1289 to 1292 1294 to 1302 1999 3965
+ mode lacp-static
+#
+interface Eth-Trunk5
+ description to_ASR-2_Po1
+ port link-type trunk
+ port trunk allow-pass vlan 90 102 504 711 995 1100 1200 to 1221 1227 to 1228 1234 1236
+ port trunk allow-pass vlan 1238 1256 1263 1277 1280 to 1281 1283 1286 to 1287 1289 to 1292 1294 to 1302 1999
+ port trunk allow-pass vlan 3965
+ mode lacp-static
+#
+interface Eth-Trunk6
+ description to_PA1_AE3
+ port link-type trunk
+ port trunk allow-pass vlan 1999
+ mode lacp-static
+#
+interface Eth-Trunk7
+ description to_PA2_AE3
+ port link-type trunk
+ port trunk allow-pass vlan 1999
+ mode lacp-static
+#
+interface Eth-Trunk8
+ description to_PP_ALT_HUAWEI_TRK8
+ port link-type trunk
+ port trunk allow-pass vlan 402 to 403 507 945 1219 1227 1319 1324 to 1325 1327 to 1328 1335 2128
+ port trunk allow-pass vlan 2303 2310 3422 3701 to 3706 3719 to 3720 3966
+#
+interface Eth-Trunk9
+ description to_TUIK_NEXUS
+ port link-type trunk
+ port trunk allow-pass vlan 178 427 514
+ mode lacp-static
+#
+interface Eth-Trunk10
+ description to_KAMU_SWITCH_DMO_ETH-10
+ shutdown
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 402 to 403 911 945 1319 1324 to 1325 1327 to 1328 1335 3701 to 3706 3719 to 3720
+#
+interface Eth-Trunk11
+ description EDEVLET_DB_5
+ port link-type trunk
+ port trunk allow-pass vlan 180 182
+ mode lacp-static
+#
+interface Eth-Trunk12
+ description to_MELLANOX
+ port link-type trunk
+ port trunk allow-pass vlan 11 to 17 50 52 54 60 66 70 84 121 130
+ port trunk allow-pass vlan 132 154 160 162 180 182 210 214 550 to 551
+ mode lacp-static
+#
+interface Eth-Trunk14
+ description SAYISTAY_UPLINK_WAN_NN
+ port link-type trunk
+ port trunk allow-pass vlan 475 1228
+ mode lacp-static
+#
+interface Eth-Trunk15
+ description SAYISTAY_UPLINK_WAN_NN
+ port link-type trunk
+ port trunk allow-pass vlan 475 1228
+ mode lacp-static
+#
+interface Eth-Trunk16
+ description to_FORTI-1-AE3
+ port link-type trunk
+ port trunk allow-pass vlan 8 10 90 104 270 300 429 474 to 476 489 504 to 506
+ port trunk allow-pass vlan 515 599 to 602 893 1100 1200 to 1221 1227 to 1228 1234 1236 1238 1256
+ port trunk allow-pass vlan 1263 1277 1281 1283 1286 to 1287 1289 to 1292 1294 to 1295 1297 1299 to 1302 1375
+ port trunk allow-pass vlan 1506 2016 2052 3544 3589 3965
+ mode lacp-static
+#
+interface Eth-Trunk17
+ description to_FORTI-2-AE3
+ port link-type trunk
+ port trunk allow-pass vlan 8 10 90 104 270 300 429 474 to 476 489 504 to 506
+ port trunk allow-pass vlan 515 599 to 602 893 1100 1200 to 1221 1227 to 1228 1234 1236 1238 1256
+ port trunk allow-pass vlan 1263 1277 1281 1283 1286 to 1287 1289 to 1292 1294 to 1295 1297 1299 to 1302 1375
+ port trunk allow-pass vlan 1506 2016 2052 3544 3589 3965
+ mode lacp-static
+#
+interface Eth-Trunk18
+ description KIK_FW_1_AE3
+ port link-type trunk
+ port trunk allow-pass vlan 311 to 312 560 577 1100 1200 1280 1295 1298
+ mode lacp-static
+#
+interface Eth-Trunk19
+ description KIK_FW_2_AE3
+ port link-type trunk
+ port trunk allow-pass vlan 311 to 312 560 577 1100 1200 1280 1295 1298
+ mode lacp-static
+#
+interface Eth-Trunk20
+ description DHMI_FORTIGATE_EXT_LACP
+ port link-type trunk
+ port trunk allow-pass vlan 504 509 1283
+ mode lacp-static
+#
+interface Eth-Trunk21
+ description DHMI_FORTIGATE_EXT_LACP
+ port link-type trunk
+ port trunk allow-pass vlan 504 509 1283
+ mode lacp-static
+#
+interface Eth-Trunk24
+ description to_RUNSYS
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 1294
+ mode lacp-static
+#
+interface Eth-Trunk36
+ description TO_NEXUS_PO436
+ port link-type trunk
+ port trunk allow-pass vlan 1296
+ mode lacp-static
+#
+interface Eth-Trunk37
+ description to_NEXUX_PO437
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 507
+ mode lacp-static
+#
+interface Eth-Trunk100
+ description TT_30G_LACP
+ port link-type trunk
+ port trunk allow-pass vlan 102 104 178 270 300 311 to 312 427 429 474 to 476 489
+ port trunk allow-pass vlan 501 504 506 509 514 to 515 560 577 600 to 602 1235
+ stp loop-protection
+ stp bpdu-filter enable
+ stp instance 0 port priority 0
+ mode lacp-static
+#
+interface Eth-Trunk101
+ description SUPERONLINE
+ port link-type trunk
+ port trunk allow-pass vlan 2016 2052 2070 2128 3422 3544 3987
+ stp loop-protection
+ stp bpdu-filter enable
+ stp instance 0 port priority 0
+ mode lacp-static
+#
+interface Eth-Trunk102
+ description YENI_KAMU_ME_SW
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 2 to 4094
+ mode lacp-static
+#
+interface Eth-Trunk110
+ shutdown
+#
+interface Stack-Port2/1
+#
+interface 10GE2/0/1
+ description TT_20G_PORTCHANNEL
+ eth-trunk 100
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/2
+ description to_ASR-1009X-B
+ eth-trunk 4
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/3
+ description ED_6509_B
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 180 651 to 653 661 to 663 900 991
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/4
+ eth-trunk 5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/5
+ eth-trunk 18
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/6
+ eth-trunk 18
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/7
+ description ESB_INTERNET
+ eth-trunk 19
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/8
+ eth-trunk 19
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/9
+ eth-trunk 19
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/10
+ eth-trunk 3
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/11
+ eth-trunk 3
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/12
+ port link-type trunk
+ port trunk allow-pass vlan 1227
+ qos lr cir 99240 kbps cbs 99240 kbytes outbound
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/13
+ eth-trunk 14
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/14
+ description to_MELLANOX_1_3
+ eth-trunk 15
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/15
+ description to_PA1_24
+ eth-trunk 6
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/16
+ description to_PA2_24
+ eth-trunk 7
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/17
+ eth-trunk 18
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/18
+ eth-trunk 19
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/19
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/20
+ eth-trunk 5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/21
+ description NDK
+ port link-type trunk
+ port trunk allow-pass vlan 501 3987
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/22
+ description EDEVLET_DB_5_ILO
+ port default vlan 13
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/23
+ description ORACLE
+ port default vlan 936
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/24
+ description RUNSYS
+ shutdown
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/25
+ eth-trunk 16
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/26
+ eth-trunk 16
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/27
+ shutdown
+ eth-trunk 16
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/28
+ shutdown
+ eth-trunk 16
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/29
+ description DHMI_MPLS_YENI_BAGLANTI
+ port default vlan 509
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/30
+ description QOS_TEST
+ port default vlan 1250
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/31
+ port default vlan 936
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/32
+ description CFCU_WAN
+ port default vlan 711
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/33
+ port mode stack 
+ stack-port 2/1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/34
+ port mode stack 
+ stack-port 2/1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/35
+ port link-type trunk
+ port trunk allow-pass vlan 11 to 17 50 52 54 60 66 70 84 121 130
+ port trunk allow-pass vlan 132 154 160 162 180 182 210 214 550 to 551
+ device transceiver 10GBASE-COPPER
+#
+interface 10GE2/0/36
+ eth-trunk 36
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/37
+ shutdown
+ eth-trunk 37
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/38
+ description DHMI_FORTIGATE_PORT_20
+ eth-trunk 20
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/39
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/40
+ description DHMI_FORTIGATE_PORT_20
+ eth-trunk 21
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/41
+ eth-trunk 17
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/42
+ eth-trunk 17
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/43
+ shutdown
+ eth-trunk 17
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/44
+ shutdown
+ eth-trunk 17
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/45
+ port link-type trunk
+ port trunk allow-pass vlan 1375
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/46
+ shutdown
+ eth-trunk 102
+ device transceiver 10GBASE-COPPER
+#
+interface 10GE2/0/47
+ shutdown
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/48
+ port link-type trunk
+ port trunk allow-pass vlan 911 917
+ device transceiver 1000BASE-T
+#
+interface 40GE2/0/1
+ description to_F5_B_40GE
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 2 50 180 651 to 653 661 to 663 900 911 991
+ device transceiver 40GBASE-COPPER
+ negotiation disable
+#
+interface 40GE2/0/2
+#
+interface 40GE2/0/3
+#
+interface 40GE2/0/4
+#
+interface 40GE2/0/5
+ device transceiver 40GBASE-FIBER
+#
+interface 40GE2/0/6
+ device transceiver 40GBASE-FIBER
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 10.101.11.1
+ip route-static 100.64.0.0 255.255.0.0 100.64.85.1
+#
+snmp-agent
+snmp-agent local-engineid 800007DB037CA23EF97B31
+snmp-agent community read cipher %^%#=5fc,F3!$#;G/;7h19<8ch'eL+EOTJRB>(<8;G-HVoX@9UW"kTu=f6&c-C>HE:6)IB`~L!;`0~0xvY+D%^%#
+snmp-agent community write cipher %^%#>viMQZV%<:Or;l/euA#Dfg<G>kveu!pKydDV/a5X0Y*\HeJIXB;/zEQve6QY;g2<'t)dK%DTFc406/Q*%^%#
+#
+snmp-agent sys-info contact Beijing Institute Huawei Tech, Inc
+snmp-agent sys-info version all
+snmp-agent target-host trap address udp-domain 10.101.11.108 udp-port 161 params securityname cipher %^%#F'!,-Hu27C%*\mVQgR:9Ti7P:GCvL+!)y~B$'nU@%^%# v2c
+#
+snmp-agent trap enable
+#
+lldp enable
+#
+stelnet server enable
+ssh user bbarisci
+ssh user bbarisci authentication-type password
+ssh user bbarisci service-type all
+ssh user bpolatkan
+ssh user bpolatkan authentication-type password
+ssh user bpolatkan service-type all
+ssh user mduzgun
+ssh user mduzgun authentication-type password
+ssh user mduzgun service-type all
+ssh user moozan
+ssh user moozan authentication-type password
+ssh user moozan service-type all
+ssh user restorepoint
+ssh user restorepoint authentication-type password
+ssh user restorepoint service-type all
+ssh user ssarikaya
+ssh user ssarikaya authentication-type password
+ssh user ssarikaya service-type all
+#
+ssh server cipher aes256_ctr aes128_ctr aes256_cbc aes128_cbc 3des_cbc blowfish_cbc
+ssh server hmac sha2_256_96 sha2_256 sha1 sha1_96
+#
+user-interface con 0
+ authentication-mode password
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 15
+#
+vm-manager
+#
+return

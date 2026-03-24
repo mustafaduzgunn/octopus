@@ -1,0 +1,796 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V600R024C00SPC500
+!Last configuration was updated at 2026-02-05 22:09:45+03:00 by mduzgun
+!Last configuration was saved at 2026-02-05 22:10:07+03:00 by mduzgun
+#
+pki realm default
+#
+clock timezone z5 add 03:00:00
+#
+sysname ED_MCN_TORSW_H4_31
+#
+undo ftp server source all-interface
+undo ftp ipv6 server source all-interface
+#
+ssl policy default
+ pki-domain default
+ ssl minimum version tls1.2
+ cipher-suite exclude key-exchange rsa
+ cipher-suite exclude cipher mode cbc
+ cipher-suite exclude hmac sha1
+ diffie-hellman modulus 3072
+ ecdh group nist curve brainpool
+ signature algorithm-list ed25519 ed448 rsa-pss-pss-sha256 rsa-pss-pss-sha384 rsa-pss-pss-sha512 rsa-pss-rsae-sha256 rsa-pss-rsae-sha384 rsa-pss-rsae-sha512
+#
+info-center loghost 10.10.18.60 source-ip 10.1.100.101
+info-center loghost 10.10.18.80 source-ip 10.1.100.101
+#
+device board 1 board-type S6750-H48Y8C
+device board 2 board-type S6750-H48Y8C
+#
+wlan
+ traffic-profile name default
+ security-profile name default
+ ssid-profile name default
+ vap-profile name default
+ regulatory-domain-profile name default
+ air-scan-profile name default
+ rrm-profile name default
+ radio-2g-profile name default
+ radio-5g-profile name default
+ ap-system-profile name default
+ port-link-profile name default
+ wired-port-profile name default
+ ap-group name default
+ provision-ap
+#
+authentication-profile name default_authen_profile
+authentication-profile name dot1x_authen_profile
+authentication-profile name dot1xmac_authen_profile
+authentication-profile name mac_authen_profile
+authentication-profile name multi_authen_profile
+authentication-profile name portal_authen_profile
+#
+drop-profile default
+#
+ntp server disable
+ntp ipv6 server disable
+ntp server source-interface all disable
+ntp ipv6 server source-interface all disable
+ntp unicast-server 172.16.51.11 source-interface MEth0/0/0
+#
+vlan batch 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+vlan batch 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+vlan batch 180 182 206 214 245
+#
+error-down auto-recovery cause link-flap interval 60
+#
+undo telnet server-source all-interface
+undo telnet ipv6 server-source all-interface
+#
+as-auth
+#
+diffserv domain default
+#
+ip vpn-instance _management_vpn_
+ ipv4-family
+#
+vlan 1
+#
+vlan 13
+ name MANAGEMENT_13
+#
+vlan 14
+ name MANAGEMENT_14
+#
+vlan 31
+#
+vlan 34
+ name EDK_K8S_TEST
+#
+vlan 35
+ name EDK_K8S_PROD
+#
+vlan 36
+ name EDK_K8S_TEST_DB
+#
+vlan 50
+ name WWWW
+#
+vlan 52
+ name GIRIS
+#
+vlan 54
+ name KAMU_TURKIYE
+#
+vlan 60
+ name DNS
+#
+vlan 66
+ name MAIL
+#
+vlan 70
+ name ANALITIK
+#
+vlan 72
+ name EDK_PAM
+#
+vlan 75
+ name ANKET_YONETIM_WEB
+#
+vlan 84
+ name EKAPI_XML
+#
+vlan 121
+ name E_ODEME_APP
+#
+vlan 130
+ name KAYI_APP
+#
+vlan 132
+ name JSON_GW
+#
+vlan 135
+ name CI_CD
+#
+vlan 136
+ name Z_ANAHTAR_BLOKCHAIN
+#
+vlan 137
+ name Z_ANAHTAR_DB
+#
+vlan 138
+ name EDK_ANALITIK
+#
+vlan 139
+ name IB_BILTEK
+#
+vlan 145
+ name EDK_PROD_MCN_K8S_NODE
+#
+vlan 154
+ name OTURUM
+#
+vlan 155
+ name SYSTEM
+#
+vlan 160
+ name IC_DNS_1
+#
+vlan 162
+ name IC_DNS_2
+#
+vlan 180
+ name DB
+#
+vlan 182
+ name DB_2
+#
+vlan 206
+#
+vlan 214
+ name LOG
+#
+vlan 245
+ name EDK_PROD_MCN_K8S_F5
+#
+stp region-configuration
+ region-name TURKSAT
+ revision-level 2
+ instance 1 vlan 10 651 to 653 661 to 663 900
+ instance 2 vlan 14 31 33 to 36 50 52 60 66 70 to 73 75 80
+ instance 2 vlan 84 130 132 154 160 162 180 182 214 550
+#
+aaa
+ authentication-scheme default
+  authentication-mode local
+ authentication-scheme radius
+  authentication-mode radius
+ authorization-scheme default
+  authorization-mode local
+ accounting-scheme default
+  accounting-mode none
+ local-aaa-user password policy administrator
+  password history record number 0
+  password expire 0
+ domain default
+  authentication-scheme default
+  accounting-scheme default
+ domain default_admin
+  authentication-scheme default
+  accounting-scheme default
+ local-user adeorouser password irreversible-cipher $1d$&,@tTuAm1<q[E2N*$t/DSKY-@CN_i6*;tT]u)a\'gEyt'FRwI|cWHGCr<$
+ local-user adeorouser privilege level 3
+ local-user adeorouser service-type terminal ssh
+ local-user bapolatkan password irreversible-cipher $1d$v^CB#Iblh&1<!,D^$*Y%r)dfT\Ge=ck3PxJ,8a5k3Bq6Xm;zrtU9B`5#~$
+ local-user bapolatkan privilege level 3
+ local-user bapolatkan service-type terminal ssh
+ local-user bbarisci password irreversible-cipher $1d$_EWz~#;O}0/"(fW$$17e3PUf4I;WA!m<%#D=4}%s_:c2Q*7BE"zVTGbYK$
+ local-user bbarisci privilege level 3
+ local-user bbarisci service-type terminal ssh
+ local-user mduzgun password irreversible-cipher $1d$fvEY3<'A8X._qT,($4I&Z$EopWTBJiJC^UvyQYg`'I[f"*90,n~IqC745$
+ local-user mduzgun privilege level 3
+ local-user mduzgun service-type terminal ssh
+ local-user muozan password irreversible-cipher $1d$;s_J60v|)UcPt"Zz$yRim2s39+6U{0%&8asM%&9403cwL"G_9RIR}3E:Q$
+ local-user muozan privilege level 3
+ local-user muozan service-type terminal ssh
+ local-user restorepoint password irreversible-cipher $1d$<#YHWzOb47l`5EN!$h@XmWig43Z;lFA:G6GZ10t9UE>$y[,&-\&JgH(s$$
+ local-user restorepoint privilege level 3
+ local-user restorepoint service-type terminal ssh
+ local-user ssarikaya password irreversible-cipher $1d$DxpU:a_XWKTA0z"H$`D~V<s&R9-VYgkK#"GBRdVWZ/kgK~04hfQ3Z&f)2$
+ local-user ssarikaya privilege level 3
+ local-user ssarikaya service-type terminal ssh
+#
+free-rule-template name default_free_rule
+#
+portal-access-profile name portal_access_profile
+#
+dot1x-access-profile name dot1x_access_profile
+#
+mac-access-profile name mac_access_profile
+#
+remote-unit
+#
+stack
+#
+license
+#
+warranty
+#
+isis purge-source-trace disable
+#
+interface MEth0/0/0
+ ip address 10.1.100.101 255.255.255.0
+#
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 2 to 4094
+ mode lacp-static
+ dhcp snooping trusted
+#
+interface Stack-Port1/1
+#
+interface Stack-Port1/2
+#
+interface Stack-Port2/1
+#
+interface Stack-Port2/2
+#
+interface 25GE1/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/3
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/4
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/5
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/6
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/7
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/8
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/9
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/10
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/11
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/12
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/13
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/14
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/15
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/16
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE1/0/17
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/18
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE1/0/19
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE1/0/20
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE1/0/21
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE1/0/22
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE1/0/23
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE1/0/24
+#
+interface 25GE1/0/25
+#
+interface 25GE1/0/26
+#
+interface 25GE1/0/27
+#
+interface 25GE1/0/28
+#
+interface 25GE1/0/29
+#
+interface 25GE1/0/30
+#
+interface 25GE1/0/31
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/32
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/33
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/34
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE1/0/35
+#
+interface 25GE1/0/36
+#
+interface 25GE1/0/37
+#
+interface 25GE1/0/38
+#
+interface 25GE1/0/39
+#
+interface 25GE1/0/40
+#
+interface 25GE1/0/41
+#
+interface 25GE1/0/42
+#
+interface 25GE1/0/43
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE1/0/44
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE1/0/45
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE1/0/46
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE1/0/47
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE1/0/48
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE2/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/3
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/4
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/5
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/6
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/7
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/8
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/9
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/10
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/11
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/12
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/13
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/14
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/15
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/16
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 214 245
+#
+interface 25GE2/0/17
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE2/0/18
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE2/0/19
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE2/0/20
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE2/0/21
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE2/0/22
+ port link-type trunk
+ port trunk allow-pass vlan 13 to 14 31 34 to 36 50 52 54 70 75 84 121
+ port trunk allow-pass vlan 130 132 135 to 139 145 154 to 155 160 162 180 182 206
+ port trunk allow-pass vlan 214 245
+#
+interface 25GE2/0/23
+#
+interface 25GE2/0/24
+#
+interface 25GE2/0/25
+#
+interface 25GE2/0/26
+#
+interface 25GE2/0/27
+#
+interface 25GE2/0/28
+#
+interface 25GE2/0/29
+#
+interface 25GE2/0/30
+#
+interface 25GE2/0/31
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/32
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/33
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/34
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 25GE2/0/35
+#
+interface 25GE2/0/36
+#
+interface 25GE2/0/37
+#
+interface 25GE2/0/38
+#
+interface 25GE2/0/39
+#
+interface 25GE2/0/40
+#
+interface 25GE2/0/41
+#
+interface 25GE2/0/42
+#
+interface 25GE2/0/43
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE2/0/44
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE2/0/45
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE2/0/46
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE2/0/47
+ device transceiver 25GBASE-FIBER
+#
+interface 25GE2/0/48
+ device transceiver 25GBASE-FIBER
+#
+interface 100GE1/0/1
+#
+interface 100GE1/0/2
+#
+interface 100GE1/0/3
+#
+interface 100GE1/0/4
+#
+interface 100GE1/0/5
+#
+interface 100GE1/0/6
+#
+interface 100GE1/0/7
+ device transceiver 100GBASE-FIBER
+#
+interface 100GE1/0/8
+ device transceiver 100GBASE-FIBER
+#
+interface 100GE2/0/1
+#
+interface 100GE2/0/2
+#
+interface 100GE2/0/3
+#
+interface 100GE2/0/4
+#
+interface 100GE2/0/5
+#
+interface 100GE2/0/6
+#
+interface 100GE2/0/7
+ device transceiver 100GBASE-FIBER
+#
+interface 100GE2/0/8
+ device transceiver 100GBASE-FIBER
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 10.1.100.1
+#
+snmp-agent
+snmp-agent local-engineid 800007DB0390F9706770C1
+snmp-agent community read cipher %@%##!!!!!!!!!"!!!!"!!!!*!!!!7LTnVOK_g:$d|LX]Iqv;4YcFLHFkKTc+~kW!!!!!2jp5!!!!!!U!!!!okj7)B"$>+sPDa/lqm-Gk}G^<t$^N2+Sw88]fh\PG;vS1ziRW8>.UJM2V+TN(_FM8!!!!!!!!!!!!!!!%@%# alias __CommunityAliasName_01_38207
+#
+snmp-agent sys-info version v2c v3
+snmp-agent target-host host-name __targetHost_1_6617 trap address udp-domain 192.168.31.220 params securityname cipher %+%##!!!!!!!!!"!!!!"!!!!*!!!!7LTnVOK_g:_tx\Q9*6\DPg@Z6>S~8ONfcUH!!!!!2jp5!!!!!!;!!!!=2Vh9<e8`O/"*BR*|XySi!tDEI]HHO!@W*+!!!!!%+%# v2c
+snmp-agent target-host host-name __targetHost_2_57733 trap address udp-domain 192.168.31.240 params securityname cipher %+%##!!!!!!!!!"!!!!"!!!!*!!!!7LTnVOK_g:`2WJ8lA%D(x5`,-%r;MU%=%LR!!!!!2jp5!!!!!!;!!!!ILx^T.3Y[+n2.4#L@L~0ImHvXK74>Xc@KDS!!!!!%+%# v2c
+snmp-agent target-host host-name __targetHost_3_44832 trap address udp-domain 192.168.31.5 params securityname cipher %+%##!!!!!!!!!"!!!!"!!!!*!!!!7LTnVOK_g:rIc`AomT@,{=<U6d;.|+0T;:B!!!!!2jp5!!!!!!;!!!!7D|)Wyq,v+jK!+G'fo\JbM%7<1HJUWp(J=:!!!!!%+%# v2c
+#
+undo snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+undo snmp-agent proxy protocol source-status all-interface
+undo snmp-agent proxy protocol source-status ipv6 all-interface
+#
+snmp-agent trap enable
+#
+#
+stelnet server enable
+sftp server enable
+ssh server rsa-key min-length 3072
+ssh user adeorouser
+ssh user adeorouser authentication-type password
+ssh user adeorouser service-type all
+ssh user adeorouser sftp-directory flash:
+ssh user bapolatkan
+ssh user bapolatkan authentication-type password
+ssh user bapolatkan service-type all
+ssh user bapolatkan sftp-directory flash:
+ssh user bbarisci
+ssh user bbarisci authentication-type password
+ssh user bbarisci service-type all
+ssh user bbarisci sftp-directory flash:
+ssh user mduzgun
+ssh user mduzgun authentication-type password
+ssh user mduzgun service-type all
+ssh user mduzgun sftp-directory flash:
+ssh user muozan
+ssh user muozan authentication-type password
+ssh user muozan service-type all
+ssh user muozan sftp-directory flash:
+ssh user restorepoint
+ssh user restorepoint authentication-type password
+ssh user restorepoint service-type all
+ssh user restorepoint sftp-directory flash:
+ssh user ssarikaya
+ssh user ssarikaya authentication-type password
+ssh user ssarikaya service-type all
+ssh user ssarikaya sftp-directory flash:
+ssh server-source all-interface
+undo ssh ipv6 server-source all-interface
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh server hmac sha2_512 sha2_256
+ssh server key-exchange dh_group_exchange_sha256 dh_group16_sha512 curve25519_sha256
+#
+ssh server publickey ecc
+#
+ssh server dh-exchange min-len 3072
+#
+ssh client first-time enable
+#
+ssh client publickey rsa_sha2_256 rsa_sha2_512
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh client hmac sha2_512 sha2_256
+ssh client key-exchange dh_group_exchange_sha256 dh_group16_sha512 curve25519_sha256
+#
+user-interface maximum-vty 10
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1d$Ae%4Kt:*T)^=`fL\$y&oX/#7pZ88feD2)`,i)t.}~N7}L\$tH`>>6H,S($
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+ idle-timeout 120 0
+ protocol inbound ssh
+#
+ztp domain-type registration-center domain register.naas.huawei.com port 10020
+#
+web-manager enable port 8443
+web-manager http forward enable
+#
+return

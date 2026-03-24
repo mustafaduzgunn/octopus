@@ -1,0 +1,39 @@
+{
+    "successful": [
+        {
+            "device": "MCN_CAGRIMER_SW",
+            "ip": "10.101.111.189",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105QN"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105DP"
+                },
+                {
+                    "member": "3",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106CC"
+                },
+                {
+                    "member": "4",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106GQ"
+                }
+            ],
+            "serial_no": "JAE255105QN",
+            "model": "C9200L-48P-4X",
+            "uptime": "2 weeks, 3 days, 16 hours, 22 minutes",
+            "hostname": "MCN_CAGRIMER_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "MCN_CAGRIMER_SW"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

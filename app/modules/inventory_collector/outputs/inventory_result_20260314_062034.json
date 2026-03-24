@@ -1,0 +1,24 @@
+{
+    "successful": [
+        {
+            "device": "CISCO_113_11",
+            "ip": "10.101.113.11",
+            "brand": "Cisco",
+            "hostname": "ULUS_KORIDOR_1",
+            "uptime": "382 days, 17 hours, 22 minutes",
+            "model": "C9115AXI-E",
+            "serial_no": "FCW2545Z1B5",
+            "pcb_serial": "FOC25441BLW",
+            "software_version": "17.9.6.40",
+            "primary_image": "17.9.6.40",
+            "backup_image": "17.9.4.27",
+            "mac_address": "A4:9B:CD:2D:31:E0",
+            "ap_chipset": "ap1g7",
+            "ap_platform": "C9115",
+            "last_reload_reason": "unknown",
+            "collected_hostname": "ULUS_KORIDOR_1"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

@@ -1,0 +1,668 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V200R002C50SPC800
+!Last configuration was updated at 2026-02-05 21:57:42+00:00 by mduzgunn
+!Last configuration was saved at 2025-11-28 18:11:57+00:00 by mduzgunn
+#
+sysname EDK_TOR_TOPLAMA_MCN
+#
+info-center channel 6 name loghost1
+info-center source hwtacacs channel 2 log level notification
+info-center source im channel 2 log level notification
+info-center source aaa channel 6 log level warning
+info-center source pp4 channel 6 log level warning
+info-center loghost 10.10.18.60 source-ip 192.168.123.51 local-time
+info-center loghost 10.10.18.80 source-ip 10.255.11.23 facility local2 local-time
+#
+device board 1 board-type CE6870-48S6CQ-EI
+device board 2 board-type CE6870-48S6CQ-EI
+#
+drop-profile default
+#
+dcb pfc
+#
+dcb ets-profile default
+#
+vlan batch 2 9 11 to 14 31 34 to 36 41 to 42 50 52 54 60
+vlan batch 66 70 72 75 84 121 130 132 135 to 139 144 to 145
+vlan batch 154 to 155 160 162 180 182 206 214 244 to 245 550 990
+vlan batch 3995 3997
+#
+telnet server disable
+telnet ipv6 server disable
+#
+diffserv domain default
+#
+vlan 2
+ name F5_EDEVLET_FAILOVER
+#
+vlan 9
+ name E-DEVLET_TRANSIT
+#
+vlan 11
+ name EDK_NOC_MGMT
+#
+vlan 12
+ name MNGT-2
+#
+vlan 13
+ name MNGT-3
+#
+vlan 14
+ name MANAGEMENT-14
+#
+vlan 31
+ description MONITORING
+#
+vlan 34
+ name EDK_K8S_TEST
+#
+vlan 35
+ name EDK_K8S_PROD
+#
+vlan 36
+ name EDK_K8S_TEST_DB
+#
+vlan 41
+ name S3_MANAGEMENT
+#
+vlan 42
+ name S3_REPLICATION
+#
+vlan 50
+ name WWWW
+#
+vlan 52
+ name GIRIS
+#
+vlan 54
+ name KAMU_TURKIYE
+#
+vlan 60
+ name DNS
+#
+vlan 66
+ name MAIL
+#
+vlan 70
+ name ANALITIK
+#
+vlan 72
+ name EDK_PAM
+#
+vlan 75
+ name ANKET_YONETIM_WEB
+#
+vlan 84
+ name EKAPI_XML
+#
+vlan 121
+ name E-ODEME_APP
+#
+vlan 130
+ name KAYI_APP
+#
+vlan 132
+ name JSON_GW
+#
+vlan 135
+ name CI-CD
+#
+vlan 136
+ name EDK_Z-ANAHTAR_BLOCKCHAIN
+#
+vlan 137
+ name EDK_Z-ANAHTAR_DB
+#
+vlan 138
+ name EDK_ANALITIK
+#
+vlan 139
+ name IB_BILTEK
+#
+vlan 144
+ name EDK_TEST_MCN_K8S_NODE
+#
+vlan 145
+ name EDK_PROD_MCN_K8S_NODE
+#
+vlan 154
+ name OTURUM
+#
+vlan 155
+ description SYSTEM
+#
+vlan 160
+ name IC_DNS-1
+#
+vlan 162
+ name IC_DNS-2
+#
+vlan 180
+ name DB
+#
+vlan 182
+ name DB_2
+#
+vlan 206
+ name DDO_LOG
+#
+vlan 214
+ name LOG
+#
+vlan 244
+ name EDK_TEST_MCN_K8S_F5
+#
+vlan 245
+ name EDK_PROD_MCN_K8S_F5
+#
+vlan 550
+ name IPS_MNGT
+#
+vlan 990
+ name FW2FW
+#
+vlan 3995
+ name TRSAT_to_EDK
+#
+vlan 3997
+ name VPN_CLIENT
+#
+stp region-configuration
+ region-name TURKSAT
+ revision-level 2
+ instance 1 vlan 10 651 to 653 661 to 663 900
+ instance 2 vlan 14 31 33 to 36 50 52 60 66 70 to 73 75 80
+ instance 2 vlan 84 130 132 154 160 162 180 182 214 550
+#
+aaa
+ local-user moozan password irreversible-cipher $1c$hfEW7DT]nT$SCAq#8ETxMkpf;5slb|3n`Fu>~x;I4LYN[R5m'S>$
+ local-user moozan service-type ssh
+ local-user moozan level 3
+ local-user ssarikaya password irreversible-cipher $1c$,,A(9g\ga.$/32`TDAO~"#_::BMx8;EFGGY$&JL0Y0ZyBEq7;-M$
+ local-user ssarikaya service-type ssh
+ local-user ssarikaya level 3
+ local-user adeorouser password irreversible-cipher $1c$Utd*P.<hEJ$}K(u~Cj`i0*FhK>-Y.Q#e6AS%\G$M$]Zw`T`hlkK$
+ local-user adeorouser service-type ssh
+ local-user adeorouser level 1
+ local-user bbarisci password irreversible-cipher $1c$al4xXhS*;P$s4&-,6rV@9;*[xJ.{f.F*U#zL]w~\Q1}zFM7$p]6$
+ local-user bbarisci service-type ssh
+ local-user bbarisci level 3
+ local-user restorepoint password irreversible-cipher $1c$NxB%=4Vk/M$Qrxr-`>eS~q,16K'J,,(`RxJ58}Iz#nvT@+joezC$
+ local-user restorepoint service-type ssh
+ local-user restorepoint level 3
+ local-user onurozan password irreversible-cipher $1c$gn.OWBg*n9$gR||!kxHZ&,Xnd<,I%325!5\NB@WQ)"\9;<dfPDN$
+ local-user onurozan service-type ssh
+ local-user onurozan level 3
+ local-user mduzgunn password irreversible-cipher $1c$.iM@"p~;u4$S\>Y"ylz,88Ia4:h]$cL}HSF#iv+v,m]^ZR(k]]O$
+ local-user mduzgunn service-type ssh
+ local-user mduzgunn level 3
+ #
+ authentication-scheme default
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default
+ #
+ domain default
+ #
+ domain default_admin
+#
+stack
+ #
+ stack member 1 domain 10
+ stack member 1 priority 150
+ #
+ stack member 2 domain 10
+#
+interface Vlanif11
+ ip address 10.255.11.23 255.255.255.0
+#
+interface Vlanif13
+ shutdown
+ ip address 192.168.123.60 255.255.255.0
+#
+interface MEth0/0/0
+ description MNGT
+#
+interface Eth-Trunk1
+ description GOLBASI_MACUNKOY
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 9 11 to 17 31 34 to 36 41 to 42 50 52 54 60 66
+ port trunk allow-pass vlan 70 72 75 84 121 130 132 135 to 139 145 154 to 155
+ port trunk allow-pass vlan 160 162 180 182 206 210 214 245 550 to 551 990
+#
+interface Eth-Trunk3
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 11 to 17 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 210 214 550 to 551 990
+ mode lacp-static
+#
+interface Eth-Trunk4
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 11 to 17 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 210 214 550 to 551 990
+ mode lacp-static
+#
+interface Eth-Trunk5
+ description EDK_FW1_LAN_AGG
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 9 144 to 145 244 to 245
+ mode lacp-static
+#
+interface Eth-Trunk6
+ description EDK_FW2_LAN_AGG
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 9 144 to 145 244 to 245
+ mode lacp-static
+#
+interface Eth-Trunk7
+ description EDK_F5
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 2 244 to 245
+ mode lacp-static
+#
+interface Eth-Trunk8
+ description ED_MCN_TORSW_H5_31
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 11 to 17 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 210 214 550 to 551 990
+ mode lacp-static
+#
+interface Eth-Trunk9
+ description ED_MCN_TORSW_H4_31
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 11 to 17 31 34 to 36 50 52 54 60 66 70 72
+ port trunk allow-pass vlan 75 84 121 130 132 135 to 139 145 154 to 155 160 162
+ port trunk allow-pass vlan 180 182 206 210 214 550 to 551 990
+ mode lacp-static
+#
+interface Eth-Trunk53
+ description S3_STORAGE
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 42 214
+ mode lacp-static
+#
+interface Stack-Port1/1
+#
+interface Stack-Port2/1
+#
+interface 10GE1/0/1
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/2
+ description to_MNGT_SW_G0/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 13
+ device transceiver 1000BASE-T
+#
+interface 10GE1/0/3
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/4
+#
+interface 10GE1/0/5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/6
+#
+interface 10GE1/0/7
+ device transceiver 1000BASE-X
+#
+interface 10GE1/0/8
+#
+interface 10GE1/0/9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/10
+#
+interface 10GE1/0/11
+ description EDK_FW1_LAN_P1
+ eth-trunk 5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/12
+ description EDK_FW2_LAN_P1
+ eth-trunk 6
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/13
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/14
+#
+interface 10GE1/0/15
+ port link-type trunk
+ port trunk allow-pass vlan 13
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/16
+#
+interface 10GE1/0/17
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/18
+#
+interface 10GE1/0/19
+#
+interface 10GE1/0/20
+#
+interface 10GE1/0/21
+ device transceiver 1000BASE-X
+#
+interface 10GE1/0/22
+#
+interface 10GE1/0/23
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/24
+#
+interface 10GE1/0/25
+#
+interface 10GE1/0/26
+#
+interface 10GE1/0/27
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/28
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/29
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/30
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/31
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/32
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/33
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/34
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/35
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/36
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/37
+#
+interface 10GE1/0/38
+#
+interface 10GE1/0/39
+#
+interface 10GE1/0/40
+#
+interface 10GE1/0/41
+#
+interface 10GE1/0/42
+#
+interface 10GE1/0/43
+#
+interface 10GE1/0/44
+#
+interface 10GE1/0/45
+#
+interface 10GE1/0/46
+#
+interface 10GE1/0/47
+#
+interface 10GE1/0/48
+ description to_MNGT_SW_G0/0/48
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 11 13 41
+ device transceiver 1000BASE-T
+#
+interface 10GE2/0/1
+ eth-trunk 1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/2
+#
+interface 10GE2/0/3
+#
+interface 10GE2/0/4
+#
+interface 10GE2/0/5
+#
+interface 10GE2/0/6
+#
+interface 10GE2/0/7
+#
+interface 10GE2/0/8
+#
+interface 10GE2/0/9
+#
+interface 10GE2/0/10
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/11
+ description EDK_FW1_LAN_P2
+ eth-trunk 5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/12
+ description EDK_FW2_LAN_P2
+ eth-trunk 6
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/13
+#
+interface 10GE2/0/14
+#
+interface 10GE2/0/15
+#
+interface 10GE2/0/16
+#
+interface 10GE2/0/17
+#
+interface 10GE2/0/18
+#
+interface 10GE2/0/19
+#
+interface 10GE2/0/20
+#
+interface 10GE2/0/21
+#
+interface 10GE2/0/22
+#
+interface 10GE2/0/23
+#
+interface 10GE2/0/24
+#
+interface 10GE2/0/25
+#
+interface 10GE2/0/26
+#
+interface 10GE2/0/27
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/28
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/29
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/30
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/31
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/32
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/33
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/34
+ eth-trunk 9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/35
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/36
+ eth-trunk 8
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/37
+#
+interface 10GE2/0/38
+#
+interface 10GE2/0/39
+#
+interface 10GE2/0/40
+#
+interface 10GE2/0/41
+#
+interface 10GE2/0/42
+#
+interface 10GE2/0/43
+#
+interface 10GE2/0/44
+#
+interface 10GE2/0/45
+#
+interface 10GE2/0/46
+#
+interface 10GE2/0/47
+#
+interface 10GE2/0/48
+#
+interface 100GE1/0/1
+ description F5_VELOS-4/1.0
+ eth-trunk 7
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/2
+#
+interface 100GE1/0/3
+#
+interface 100GE1/0/4
+ device transceiver 100GBASE-COPPER
+#
+interface 100GE1/0/5
+ description S3
+ eth-trunk 53
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/6
+ port mode stack 
+ stack-port 1/1
+ port crc-statistics trigger error-down
+ device transceiver 100GBASE-COPPER
+#
+interface 100GE2/0/1
+ description F5_VELOS-4/2.0
+ eth-trunk 7
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/2
+#
+interface 100GE2/0/3
+#
+interface 100GE2/0/4
+#
+interface 100GE2/0/5
+ description S3
+ eth-trunk 53
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/6
+ port mode stack 
+ stack-port 2/1
+ port crc-statistics trigger error-down
+ device transceiver 100GBASE-COPPER
+#
+interface NULL0
+#
+ip route-static 0.0.0.0 0.0.0.0 10.255.11.1
+#
+snmp-agent
+snmp-agent local-engineid 800007DB03F898EF6E0151
+snmp-agent community read cipher %^%#6'T!Pk7nH1/ZcaNR-~P@46>]We+21C,'#G<<z>u>&rL_K/7v^S;gToK-8wv2diNw-mp,GQQV$C<ou{\K%^%#
+#
+snmp-agent sys-info version all
+snmp-agent target-host trap address udp-domain 192.168.31.5 params securityname cipher %^%#ATH-P{BaALq2z|8p~9rFXPrF2G8-aI)=Q`OwX;a3%^%#
+#
+snmp-agent trap enable
+#
+lldp enable
+#
+stelnet ipv4 server enable
+stelnet ipv6 server enable
+ssh user adeorouser
+ssh user adeorouser authentication-type password
+ssh user adeorouser service-type all
+ssh user bbarisci
+ssh user bbarisci authentication-type password
+ssh user bbarisci service-type all
+ssh user mduzgunn
+ssh user mduzgunn authentication-type password
+ssh user mduzgunn service-type all
+ssh user mduzgunn sftp-directory flash:
+ssh user moozan
+ssh user moozan authentication-type password
+ssh user moozan service-type all
+ssh user restorepoint
+ssh user restorepoint authentication-type password
+ssh user restorepoint service-type all
+ssh user ssarikaya
+ssh user ssarikaya authentication-type password
+ssh user ssarikaya service-type all
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_ctr aes128_ctr
+ssh server hmac sha2_256_96 sha2_256 sha1_96
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521 sm2_kep
+#
+user-interface con 0
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+ protocol inbound ssh
+#
+port-group group1
+ group-member 100GE1/0/6
+#
+vm-manager
+#
+return

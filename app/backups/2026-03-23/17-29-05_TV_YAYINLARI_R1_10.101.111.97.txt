@@ -1,0 +1,2610 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V800R022C10SPC500
+!Last configuration was updated at 2026-02-10 08:32:33+03:00 by root
+!Last configuration was saved at 2026-02-10 08:43:05+03:00 by root
+#
+loop-detect trigger enable
+#
+mpls ldp-srbe convergence enhance
+#
+clock timezone TR add 03:00:00
+#
+sysname TV_YAYINLARI_R1
+#
+set neid 5ff70f
+lldp enable-dcn authentication %^%#/vH]8;MUZ$kCQ=R-i!<-CADoCJ*zC3k]UwY)bg($%^%#
+#
+FTP server enable
+undo FTP server-source all-interface
+undo FTP ipv6 server-source all-interface
+#
+info-center channel 7 name Log
+info-center loghost 10.101.18.80
+#
+ntp-service ipv6 server disable
+ntp-service server source-interface all enable
+ntp-service ipv6 server source-interface all disable
+ntp-service unicast-server 10.101.11.4
+#
+stp enable
+#
+undo icmp name timestamp-reply send
+#
+vrrp recover-delay 60
+#
+undo telnet server enable
+undo telnet server-source all-interface
+undo telnet ipv6 server-source all-interface
+#
+diffserv domain default
+#
+soc
+#
+priority-template default
+#
+ip vpn-instance __LOCAL_OAM_VPN__
+ ipv4-family
+ ipv6-family
+#
+ip dcn vpn-instance __dcn_vpn__
+ ipv4-family
+#
+undo pnp enable
+#
+dhcp server request-packet all-interface disable
+#
+dot1x-template 1
+#
+acl number 2000
+#
+acl number 2003
+ rule 5 permit source 10.101.31.0 0.0.0.255
+ rule 10 permit source 10.110.254.0 0.0.0.255
+ rule 15 permit source 10.100.41.0 0.0.0.255
+ rule 20 permit source 10.101.23.0 0.0.0.255
+ rule 25 permit source 10.101.11.0 0.0.0.255
+ rule 30 permit source 10.101.10.0 0.0.0.255
+#
+security password
+ #
+ rule admin
+  forbidden word changeme_123
+#
+aaa
+ user-password password-force-change disable
+ local-user root password irreversible-cipher $1c$W+zB0@VTP!$P%QBV9_D%PEHjkA_e"`%kSK'+fDi[7,;7%)~:BcU$
+ local-user root service-type ftp ssh http
+ local-user root state block fail-times 3 interval 5
+ local-user root user-group manage-ug
+ local-user bbarisci password irreversible-cipher $1c$m-7+C[bwzK$l_*_7'K/*2+rlyFTOH~2gK2V:oIJW>..UtMYmlO!$
+ local-user bbarisci service-type ssh
+ local-user bbarisci state block fail-times 3 interval 5
+ local-user bbarisci user-group manage-ug
+ local-user ssarikaya password irreversible-cipher $1c$`B+L;[ba2N$GD7_S|s>H9TNQfPq=:_MSeao!Qz3O7w9L\7I`"IW$
+ local-user ssarikaya service-type ssh
+ local-user ssarikaya state block fail-times 3 interval 5
+ local-user ssarikaya user-group manage-ug
+ local-user moozan password irreversible-cipher $1c$_77G0_S'(0$8{WNE{.)WN<P+jD.HPl.8|=AB-]ig"fx:QQ$=LnG$
+ local-user moozan service-type ssh
+ local-user moozan state block fail-times 3 interval 5
+ local-user moozan user-group manage-ug
+ local-user restorepoint password irreversible-cipher $1c$AE-rGwTn~G$!|1Y*'D.%#5%JN<1lqM%3~&J4hyyo$`F\A6}xi-E$
+ local-user restorepoint service-type ftp ssh
+ local-user restorepoint state block fail-times 3 interval 5
+ local-user restorepoint user-group manage-ug
+ local-user mduzgunn password irreversible-cipher $1c$nb,/0Whs~B$9g=/V1IS4LsvDW(K(c!4pD[:F}-fMAB{h&8u)qU9$
+ local-user mduzgunn service-type ssh
+ local-user mduzgunn state block fail-times 3 interval 5
+ local-user mduzgunn user-group manage-ug
+ #
+ authentication-scheme default0
+ #
+ authentication-scheme default1
+ #
+ authentication-scheme default
+  authentication-mode local radius
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default0
+ #
+ accounting-scheme default1
+ #
+ domain default0
+ #
+ domain default1
+ #
+ domain default_admin
+#
+license
+ active port-basic slot 2 port 0-27
+#
+warranty
+#
+interface Eth-Trunk1
+ mtu 1700
+ mode lacp-static
+#
+interface Eth-Trunk1.50
+ description ESKI_ROUTER_GECIS
+ ip address 1.1.1.5 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 50
+ arp broadcast enable
+#
+interface Eth-Trunk1.88
+ description TT_VPN_TELEKOM
+ ip address 10.150.254.251 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 88
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 10.150.254.254
+ vrrp vrid 1 priority 120
+ vrrp vrid 1 preempt-mode timer delay 60
+ vrrp vrid 1 authentication-mode simple cipher %^%#}:c3~cxX;I#mL47fn^EPa-vSBk$k29O%.qRb~wTO%^%#
+#
+interface Eth-Trunk2
+ mode lacp-static
+#
+interface Eth-Trunk2.610
+ description ODAK_TV
+ ip address 10.150.1.4 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 610
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.1
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Xu4k03=9-<xkRz>#^OWJ/,5}6MDg0$6Ur1EMI+}>%^%#
+#
+interface Eth-Trunk2.611
+ description TV5_AnadoluIletisim
+ ip address 10.150.1.12 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 611
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.9
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#X$6k(JCUV:T"5zMkQi`L(yBo"[HycH|]C|/TD/nS%^%#
+#
+interface Eth-Trunk2.612
+ description EGEMAX
+ ip address 10.150.1.20 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 612
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.17
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#rv=l/.xFUG'[sg=X_)YM2a{@(K-h6MYG&@(v\7I.%^%#
+#
+interface Eth-Trunk2.613
+ description 2023_TV_140000000363442
+ ip address 10.150.1.28 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 613
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.25
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#$ys09G[oU9=$10&yYnn;iAFy90]T3-9xp7~xD~(7%^%#
+#
+interface Eth-Trunk2.614
+ description BENGU_TURK_TV
+ ip address 10.150.1.36 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 614
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.33
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#yrN',8JhAH&*jh@SJQx=@JBg;`l%;JJHl2GB;jH$%^%#
+#
+interface Eth-Trunk2.615
+ description ERBOY_BILGISAYAR_140000000380078
+ ip address 10.150.1.44 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 615
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.41
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#>Ai!2YkSC04I.qI#Ylm~;'s=J:nZ03l2czOxGLaO%^%#
+#
+interface Eth-Trunk2.616
+ description VATANIN_SESI
+ ip address 10.150.1.52 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 616
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.49
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#LJYwVmuh'P/Yy8QlXXV913VkU"oc($L"^zB[@[K3%^%#
+#
+interface Eth-Trunk2.617
+ description ULUSAL_KANAL
+ ip address 10.150.1.60 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 617
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.57
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#'hS7!]wVlPh75rS!}\((s^r;,]_LrXHVzq.2YhpP%^%#
+#
+interface Eth-Trunk2.618
+ description SEMERKAND
+ ip address 10.150.1.68 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 618
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.65
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#s;7EI/jW0Bt!+kYu|fOIrS5})+0.)5k9iC(to~'0%^%#
+#
+interface Eth-Trunk2.619
+ description SEMERKAND
+ ip address 10.150.1.76 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 619
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.73
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#~h\x"_baQKO%(]69JHwXHYv[$sP!|KJIA9:~l!Y7%^%#
+#
+interface Eth-Trunk2.620
+ description ERT_TV_140000000319739
+ ip address 10.150.1.84 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 620
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.81
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#BqU>U}fU"Co{nL82a.rF[5,>Y"QaT>-c2p8NLJk,%^%#
+#
+interface Eth-Trunk2.621
+ description AKSU_TV
+ ip address 10.150.1.92 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 621
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.89
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#u7ciMscuw%+.E|8aI*2>!/B!Hvo*#SdS3^89^W"$%^%#
+#
+interface Eth-Trunk2.622
+ description AKSU_TV
+ ip address 10.150.1.100 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 622
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.97
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#/]-@5${S+RVUK+8(vbV4Vgm'99!IA-9dUj</-G/J%^%#
+#
+interface Eth-Trunk2.623
+ description VIZYONTURK_TV
+ ip address 10.150.1.108 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 623
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.105
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#xrv>U}zUJ,)XAhJMXW\R!0`C4+;"XL5cG`~z&ol<%^%#
+#
+interface Eth-Trunk2.624
+ description KONTV
+ ip address 10.150.1.116 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 624
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.113
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#fPAUTi>&-*.tSN7.q$h0:`B`;mH<GMS`WwTir26J%^%#
+#
+interface Eth-Trunk2.625
+ description SOZ_TV-(UZAY)
+ ip address 10.150.1.124 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 625
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.121
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%##yyiX*o8pB0y^MAZJeX'f@+\-HewMFwto1*v,5j1%^%#
+#
+interface Eth-Trunk2.626
+ description BEDIR_TV
+ ip address 10.150.1.132 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 626
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.129
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#|_Rp%om#$Alg=b>nS[-&QlDH'cu#)R_H2|CW5n,Q%^%#
+#
+interface Eth-Trunk2.627
+ description FLASH_TV
+ ip address 10.150.1.140 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 627
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.137
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#3&%4=zzQrYJ.-AWV*~tRY5\B<4e56""'eTPsZ)/#%^%#
+#
+interface Eth-Trunk2.628
+ description DIYAR_TV_140000000387925
+ ip address 10.150.1.148 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 628
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.145
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#LEjl>;SQdQ!V2C%k<Fa,peXu#3T$cToT:w4Zy6t:%^%#
+#
+interface Eth-Trunk2.629
+ description KANAL_43
+ ip address 10.150.1.156 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 629
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.153
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#n+f6@ij.;!"PU:+Nkc"L^yB]QO![."~X>P*TXavE%^%#
+#
+interface Eth-Trunk2.630
+ description KANAL_58
+ ip address 10.150.1.164 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 630
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.161
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#AG,)Oew\7DAOp>3d:x.UN"VDP.CM'LaQ9L&`td;3%^%#
+#
+interface Eth-Trunk2.631
+ description TV63URFA
+ ip address 10.150.1.172 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 631
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.169
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#bK;H;g}~)H5\1)2"1&N"Z5mE)TF_h'is+|+E@^jM%^%#
+#
+interface Eth-Trunk2.632
+ description TV63URFA
+ ip address 10.150.1.180 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 632
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.177
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#%4^W$-FU`1Kd>$DMacv!WxQzQ_i[="GiW|CQ#d=K%^%#
+#
+interface Eth-Trunk2.633
+ description MARMARA_KOY_TV
+ ip address 10.150.1.188 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 633
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.185
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#b)z*UCr;F''N&%(77j<OBm[0L#^]'86p8{=aa=iU%^%#
+#
+interface Eth-Trunk2.634
+ description MARMARA_KOY_TV
+ ip address 10.150.1.196 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 634
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.193
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#gcKrXbByD5|_!)4G\sPS<-G[;BMR"GZ'o0(Xv2i8%^%#
+#
+interface Eth-Trunk2.635
+ description BENGUTURK_140000000446678
+ ip address 10.150.1.204 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 635
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.201
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#QrtXW}W7mQ3P\~M4BG[3vkX7WdH*aH0calB;w*UN%^%#
+#
+interface Eth-Trunk2.636
+ description DIGITURK
+ ip address 10.150.1.212 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 636
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.209
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#bj613DPCaQ#v4-&-Y's0}X'$2Hd0Z@Z$o#'T8#^6%^%#
+#
+interface Eth-Trunk2.637
+ description DIZISMART_PLATIN_HD
+ ip address 10.150.1.220 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 637
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.217
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#/c:-#N~rj4sEY=%rB/v==Y(AS$S$1/$\4p,h*MN"%^%#
+#
+interface Eth-Trunk2.638
+ description AVANTAJ_TV
+ ip address 10.150.1.228 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 638
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.225
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#qBeh&/w,WNY'9~BvZ^M%<~#h*<v!s%~\}(UNNqpX%^%#
+#
+interface Eth-Trunk2.639
+ description **KONYA_TV**
+ ip address 10.150.1.238 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 639
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.233
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#:rQc!4).T:,|j#P0#M[:CnH1Ahz568alB~(@65-*%^%#
+#
+interface Eth-Trunk2.640
+ description DURU_TV
+ ip address 10.150.1.244 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 640
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.241
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#)rVI~8;i0HJ!"YB5fq&Yg"@(7R7K@+3o@lHyGaAW%^%#
+#
+interface Eth-Trunk2.641
+ description YILDIZ_TOPRAK_TV
+ ip address 10.150.1.252 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 641
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.1.249
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Civw/0vxX84"vR*l]f}Jiv8P:N:j[$nRS]*W\nC%%^%#
+#
+interface Eth-Trunk2.642
+ description TORU_MEDYA
+ ip address 10.150.2.4 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 642
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.1
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#RJ=tQ;2c1;(,rc2iwl>3Hry1VK~uS1kA{$Vp'KiT%^%#
+#
+interface Eth-Trunk2.643
+ description REHBER_TV
+ ip address 10.150.2.12 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 643
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.9
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#QR|+%8V~^8h~!1+Ub%kSJ0LY%qQqU%!Hb>Gi'IwT%^%#
+#
+interface Eth-Trunk2.644
+ description YILDIZ_RIZE_TV_140000000386665
+ ip address 10.150.2.20 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 644
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.17
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#h)6J5'@*gOo%;yLNtA<'H\~.$awP(Y-'Y'Z|Tf-O%^%#
+#
+interface Eth-Trunk2.645
+ description TARIM_TURK_TV
+ ip address 10.150.2.28 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 645
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.25
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#=RLH(96%"JX@a@O%;D9&/P8iLopc4VOKQ{C67LaK%^%#
+#
+interface Eth-Trunk2.646
+ description DOLUNAY_RADYO
+ ip address 10.150.2.36 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 646
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.33
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#zS5)Ca9Hj3bw{TO4EUk8X2w)ZJdxa+r{=MWQ=XWP%^%#
+#
+interface Eth-Trunk2.647
+ description BAYRAM_FM
+ ip address 10.150.2.44 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 647
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.41
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#"}*'AbSY_;HD845p0fg!V^Dh)ALZX:vnKo!w1Ur.%^%#
+#
+interface Eth-Trunk2.648
+ description BIRINCI_RTV_BERAT
+ ip address 10.150.2.52 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 648
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.49
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#3kt@TxG3U*@FB^QUri/~&+@7!wz=oI4_/~:ljlJR%^%#
+#
+interface Eth-Trunk2.649
+ description BNN_TURK
+ ip address 10.150.2.60 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 649
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.57
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#'1q`J_bV$=|/@wS,]C2N;A~&GV@0%="{bR1P}ZL#%^%#
+#
+interface Eth-Trunk2.650
+ description ON4_TV
+ ip address 10.150.2.68 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 650
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.65
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#4d"\W`}"0@1EBY~V2(w)~q>r#_KOk"X{Qp9tIOqX%^%#
+#
+interface Eth-Trunk2.651
+ description RF_MUHENDISLIK_140000000372009
+ ip address 10.150.2.76 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 651
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.73
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#6zuT$tH"v)x1Y*U[&<k(X/]I6[^/@&+mVB~Wo(QI%^%#
+#
+interface Eth-Trunk2.652
+ description T-LIFE
+ ip address 10.150.2.84 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 652
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.81
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#rV%0YE7y*1`_<cB8iO$-f8Ok9$Zhv>5{)lN$/rv6%^%#
+#
+interface Eth-Trunk2.653
+ description AS TV
+ ip address 10.150.2.92 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 653
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.89
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#6f]&'<2j}Qi]6X=Jp`q~M'oz19Vm@IL@Sd"Ux>s<%^%#
+#
+interface Eth-Trunk2.654
+ description PAMUKKALE_TV
+ ip address 10.150.2.100 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 654
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.97
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#u<B/9t-OhEhkMsY={(%=]{0cJVP~{:$6|-S!Oq=-%^%#
+#
+interface Eth-Trunk2.655
+ description ABANT_TV
+ ip address 10.150.2.108 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 655
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.105
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#:=8R=pbHI9pPk["9dM,4z=`Y1|kkN")YI))_eDUR%^%#
+#
+interface Eth-Trunk2.656
+ description KARDELEN_TV
+ ip address 10.150.2.116 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 656
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.113
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#)#V^~(5-t$qihw*j\ST$:Y&4E&:hH,l4`=;):F_4%^%#
+#
+interface Eth-Trunk2.657
+ description FLASH_HABER
+ ip address 10.150.2.124 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 657
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.121
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#TZ!t#=c)+WSB,&"5*bx%)Pit2vX\<Clf/.*]N4KD%^%#
+#
+interface Eth-Trunk2.658
+ description TEKMEN_YAYINCILIK
+ ip address 10.150.2.132 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 658
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.129
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#g6w"$[$6OFkN/#1}yRH;PQK.6mc=K~L0vQDnwIAP%^%#
+#
+interface Eth-Trunk2.659
+ description DURU_TV_BASKENT_RADYO
+ ip address 10.150.2.140 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 659
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.137
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Rp~PB_PC`@ommG+_e-G3\V=j*.e\VT`83X$U7"zC%^%#
+#
+interface Eth-Trunk2.660
+ description LINE_TV
+ ip address 10.150.2.148 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 660
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.145
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#_LR/A82khLxPlP;E/@V-#b}@1Vh#mUGZBV5{G_;V%^%#
+#
+interface Eth-Trunk2.661
+ description KANAL_5
+ ip address 10.150.2.156 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 661
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.153
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#RuPDFH|cRLdxn6MH_6z!qUnB21Ctu.<kp)3s]yv/%^%#
+#
+interface Eth-Trunk2.662
+ description BAHAROGLU
+ ip address 10.150.2.164 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 662
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.161
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#C5w=/Bzv"R&x@>NE1}r1B[WvUU@G;&K*al%$9)=+%^%#
+#
+interface Eth-Trunk2.663
+ description TV_2000
+ ip address 10.150.2.172 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 663
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.169
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#T{~0"pqY%#RH4)B#GiDPe4!36GFC9G]VIJ0NWs7R%^%#
+#
+interface Eth-Trunk2.664
+ description TV_EM
+ ip address 10.150.2.180 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 664
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.177
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#=LArP8$}R5EDA:3GktKMh!.cSEksoO%6)l"nO.*(%^%#
+#
+interface Eth-Trunk2.665
+ description MEB_YEGITEK
+ ip address 10.150.2.188 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 665
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.185
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#iKy#D3Fg8>rIS:403fl:JP;/Tn)+707ket;nO,P>%^%#
+#
+interface Eth-Trunk2.666
+ description SEYMEN_TV_140000000367557
+ ip address 10.150.2.196 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 666
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.193
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#xfw(QmQhqM#x7S'bYFT.ul*3+pW*>8`yyy>C@*h5%^%#
+#
+interface Eth-Trunk2.670
+ description TEST_SIVAS
+ ip address 10.150.2.204 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 670
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.201
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%##_6u"JI(p6mh$AF%}{v:[pk~(rvr1G1S/K"{1n\~%^%#
+#
+interface Eth-Trunk2.671
+ description DOST_TV
+ ip address 10.150.2.212 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 671
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.209
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#zT7ZT`&DrQb2b31z9"7R|jL-X1t+HD`g(g(o"#vT%^%#
+#
+interface Eth-Trunk2.672
+ description ISTANBUL_FM
+ ip address 10.150.2.220 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 672
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.217
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#=F!1'/MQ|I;8B$Jo^OB"#M;1G;/O+"G=-VU|OJc*%^%#
+#
+interface Eth-Trunk2.673
+ description DOST_TV
+ ip address 10.150.2.228 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 673
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.225
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#yt(u$]F71%hcET/kp{_2O/D6Fe;<T$-rT95.%fHO%^%#
+#
+interface Eth-Trunk2.674
+ description KANAL32
+ ip address 10.150.2.238 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 674
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.233
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#:~"]Bm@e96N>jS0KkaoC57:b'FDp\@|j]tIP<M2"%^%#
+#
+interface Eth-Trunk2.675
+ description FB_TV
+ ip address 10.150.2.244 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 675
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.241
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#W~y{DQPye!W4A&*p8@m3*6+X(4#%*;Ap_&A++;hC%^%#
+#
+interface Eth-Trunk2.676
+ description KARA_RADYO
+ ip address 10.150.2.252 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 676
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.2.249
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#/X(k&aEVSDj|D:Bu=UOWV|2")O6W7%N`i|'+ZTr(%^%#
+#
+interface Eth-Trunk2.677
+ description KANAL_URFA
+ ip address 10.150.3.4 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 677
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.1
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#n|A;HVS=M.&=O'PP\2G3}1)^JQXSq4hg@/XW1|^U%^%#
+#
+interface Eth-Trunk2.678
+ description DIYANET_TV
+ ip address 10.150.3.12 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 678
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.9
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#S!KK"PKJG4ri4d6.LC=7iYzI~AG=v-.()`Kq^IXH%^%#
+#
+interface Eth-Trunk2.679
+ description BLT_TURK
+ ip address 10.150.3.20 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 679
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.17
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#<!mc!r1_z.K]Gi(D;@1Hg1G_M+w6>%6/}AT||-U)%^%#
+#
+interface Eth-Trunk2.680
+ description KANAL_33
+ ip address 10.150.3.28 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 680
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.25
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#$QV*$otA_Nxj,2;>Jo8ViM2)3jZ(gG11$#HMZ.3O%^%#
+#
+interface Eth-Trunk2.681
+ description TV_10
+ ip address 10.150.3.36 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 681
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.33
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#8>;U988|V#+_c+J<$g>V)2xA"`}<$TA=6%/t9h,#%^%#
+#
+interface Eth-Trunk2.682
+ description MISKET_MEDYA
+ ip address 10.150.3.44 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 682
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.41
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#|*:=3p=<Y1gFa_;V2L+:H}GoMu^]$W1WVd*PzHu/%^%#
+#
+interface Eth-Trunk2.683
+ description ODAK_TV
+ ip address 10.150.3.52 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 683
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.49
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#=z'g*e'&HCBX0aN>hHZC-4cT<R`Vx%%ghU-UiF#/%^%#
+#
+interface Eth-Trunk2.684
+ description HEDEF_TV
+ ip address 10.150.3.60 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 684
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.57
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#p^|\0,{f/I1n-w0\w,UH4dgJOOh[BL6uYi>(rY%&%^%#
+#
+interface Eth-Trunk2.685
+ description GOZDE_TV
+ ip address 10.150.3.68 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 685
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.65
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#={xS$FZ=z&W]7W2&@7nSkg7/6"X#)Y3F_JTjsLaP%^%#
+#
+interface Eth-Trunk2.686
+ description VATAN_TV_25112019
+ ip address 10.150.3.76 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 686
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.73
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#)`R`>.Cv17f*hHQDBVq8p<BP(jDyi%TPUr4[,6G+%^%#
+#
+interface Eth-Trunk2.687
+ description HALK_TV_21022020
+ ip address 10.150.3.84 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 687
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.81
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#z;F{%#a)Z!9=e:+s|.THu*}oE(Ao($IiXn4sI+$#%^%#
+#
+interface Eth-Trunk2.688
+ description YAFA_MEDYA_MISK_DORAR_TV
+ ip address 10.150.3.92 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 688
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.89
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Z:i;>!/PY$Rr/x8Q_Z=H|s:L!s0_l/jWC:/#~O)&%^%#
+#
+interface Eth-Trunk2.689
+ description DENG_TV_140000000126811
+ ip address 10.150.3.100 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 689
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.97
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#|xav4rs|5<OqswS2aj{.6)rcQ<&}W#jv(y(1ZdD2%^%#
+#
+interface Eth-Trunk2.690
+ description KUDUS_TV
+ ip address 10.150.3.108 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 690
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.105
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#[@{VGNH[S3N*94WX#MX+VO*i!x#PcMy9^X5[pmd,%^%#
+#
+interface Eth-Trunk2.691
+ description KANAL_3
+ ip address 10.150.3.116 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 691
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.113
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#jGzW)qO-&YCS=QLL(oKNE|ZLIqkB%J5d0xI_YV$8%^%#
+#
+interface Eth-Trunk2.692
+ description 67_TV
+ ip address 10.150.3.124 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 692
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.121
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#rmn%6kdXu8HpYJN^5VJ>b.L5RlLA=F{ZJ[&)~8UG%^%#
+#
+interface Eth-Trunk2.693
+ description HALKTV
+ ip address 10.150.3.132 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 693
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.129
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#F^LG'*0)y:9KiG;1WP<2iB6h,~jO*(*+bG(7.fh$%^%#
+#
+interface Eth-Trunk2.694
+ description AKRA_FM_06122022
+ ip address 10.150.3.140 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 694
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.137
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#S!,l-;m5K":S4EZ_sDa*=OKPFa8tx.coW;XjNTs+%^%#
+#
+interface Eth-Trunk2.695
+ description EDASSA
+ ip address 10.150.3.148 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 695
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.145
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#fB)T4K#5D&9Q'LJE}se5Q_4t$fIv2NaA&f~TWZrM%^%#
+#
+interface Eth-Trunk2.696
+ description MANISA_MEDYA
+ ip address 10.150.3.156 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 696
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.153
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#YARW#;A92Xd;{91m7zf-Z10%"O7]BIg}ak/z++v$%^%#
+#
+interface Eth-Trunk2.697
+ description KANAL_TEK_YENI
+ ip address 10.150.3.164 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 697
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.161
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#IiU44a:H17wEz-5KnNY<Q.DvL]I{_.bwx568(^!4%^%#
+#
+interface Eth-Trunk2.698
+ description BAYRAM_FM
+ ip address 10.150.3.172 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 698
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.169
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#.7kMYKMWJRd-*,"qwB&3.gf8X@}MfT:+42$2\MEN%^%#
+#
+interface Eth-Trunk2.699
+ description MEK_TV
+ ip address 10.150.3.180 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 699
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.177
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#PwRTP!0(-1=H{'!cyUgI1fd9D{8DiKV@,kN|0._0%^%#
+#
+interface Eth-Trunk2.700
+ description EDASSA_TV_YENI_BINA_04082025
+ ip address 10.150.3.196 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 700
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.193
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#J'6\Uu~d>7k`yN#+f\5N"cG!R0Zgx$UB$d3Kd]'~%^%#
+#
+interface Eth-Trunk2.701
+ description KANAL_3
+ ip address 10.150.3.188 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 701
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.185
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#J'6\Uu~d>7k`yN#+f\5N"cG!R0Zgx$UB$d3Kd]'~%^%#
+#
+interface Eth-Trunk2.702
+ description RTV
+ ip address 10.150.3.204 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 702
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.201
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#<^g9X2::y88QG5@6Cg.IOuRRD=Ia"UDDwl%VA:ZU%^%#
+#
+interface Eth-Trunk2.703
+ description SUPER_TV_140000000381059
+ ip address 10.150.3.212 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 703
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.209
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#f`.=:lRODAU!S|V{^;*Nf^~iUYgh2')X$0~0%<<R%^%#
+#
+interface Eth-Trunk2.704
+ description YABAN_TV_140000000151403
+ ip address 10.150.3.220 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 704
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.217
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#}:sf8OB>aATy.@7f"Z8#,KyB>v,v|-i#cZUth;1C%^%#
+#
+interface Eth-Trunk2.705
+ description EKINTURK_140000000151329
+ ip address 10.150.3.228 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 705
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.225
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#GLAvCSpFLXAt3z!"&XDE)'G:I#e}f9Yq$W#RH2ON%^%#
+#
+interface Eth-Trunk2.706
+ description MUJDE_FM_140000000148952
+ ip address 10.150.3.238 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 706
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.233
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#u:QP<J/f/Roq\Y$UA5r'D!0\HujM7)a{-CDzmu;,%^%#
+#
+interface Eth-Trunk2.707
+ description GAZIANTEP_OLAY_TV_140000000151608
+ ip address 10.150.3.244 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 707
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.241
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#gZT*S"I2"XgV6V=F<poXvKv~'b`22Y4Ur<Q@80J7%^%#
+#
+interface Eth-Trunk2.708
+ description ONE_SUPER_TV_140000000152639
+ ip address 10.150.3.252 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 708
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.3.249
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#8e/M>l=Dz~4gj~Dn}0~9}q|>:qNSn<Gbh9Qfr~3I%^%#
+#
+interface Eth-Trunk2.709
+ description ONE_BAL_TV_140000000152491
+ ip address 10.150.4.4 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 709
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.1
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#zXSUO#`"AS/=8#:\+YnB9L0@RA)y,:\e^7UG>.u(%^%#
+#
+interface Eth-Trunk2.710
+ description ES_TV_140000000130474
+ ip address 10.150.4.12 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 710
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.9
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#[1fNX84~dVtA*BW`|IxLrrg52Yfrn#8OD16j%K\C%^%#
+#
+interface Eth-Trunk2.711
+ description MAKSIMUM_RADYO_140000000152531
+ ip address 10.150.4.20 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 711
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.17
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#%-'BF@q6i>#|ge.P-!d,S-TB-,d[YATT!xI&H8.D%^%#
+#
+interface Eth-Trunk2.712
+ description GUNEYDOGU_TV
+ ip address 10.150.4.28 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 712
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.25
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#YAYW<fz/nAm,D6~H&\%XXn|%4J)1E$a!c[U>%amD%^%#
+#
+interface Eth-Trunk2.713
+ description NATUREL_TV
+ ip address 10.150.4.36 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 713
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.33
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#4^i,,T9j(*@@ux"|D#/Su^992WQYbTQR%KHdoKT/%^%#
+#
+interface Eth-Trunk2.714
+ description VIZYON_58_140000000152141
+ ip address 10.150.4.44 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 714
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.41
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#<u'8<*_WPQK&lfM72eo(FgM}En.XTMS|3dY{u`FX%^%#
+#
+interface Eth-Trunk2.715
+ description SZC_MEGA_AJANS_IST_YDK
+ ip address 10.150.4.52 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 715
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.49
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#:U^*'cx4`5u|\`;TpGn'N_k*W@VLa@%!fQ4#k~U3%^%#
+#
+interface Eth-Trunk2.716
+ description DRT_TV_140000000152673
+ ip address 10.150.4.60 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 716
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.57
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#V)Cs*:r(iELA;B7|Ir>$exE6CY+76D@{Qn2QOY'$%^%#
+#
+interface Eth-Trunk2.717
+ description TVDEN
+ ip address 10.150.4.68 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 717
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.65
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#VeT{>mVvUA&Q'c-)0)i".}8:PgtWbEoJ^H!Y21='%^%#
+#
+interface Eth-Trunk2.718
+ description GLOBAL_MEDYA
+ ip address 10.150.4.76 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 718
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.73
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#5],M"C9cIL`wkDPC7B6,%pe:$%`DzO<w>X&^wW/6%^%#
+#
+interface Eth-Trunk2.719
+ description A9_TV_140000000152839
+ ip address 10.150.4.84 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 719
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.81
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#qI8iDOAB")Pp:`'#M_AM6xH=L,Ip(B|Bqq'F>*o9%^%#
+#
+interface Eth-Trunk2.720
+ description HABER_ISTANBUL_072020
+ ip address 10.150.4.92 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 720
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.89
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#bl,.;+d+E+"H;n#t_WM180_V<p+>J=$,yoT@6].)%^%#
+#
+interface Eth-Trunk2.721
+ description BERAT_TV_140000000153139
+ ip address 10.150.4.100 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 721
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.97
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#%FbjLW8F.F'>l0L/l]<Lw{*I=T1OmUhCq83`lyWO%^%#
+#
+interface Eth-Trunk2.722
+ description TGRT_HD_10072020
+ ip address 10.150.4.108 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 722
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.105
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#wUd]@^1-s,)%[9#O4^F-GEtZ7F{Bb1y_|-9{bKSY%^%#
+#
+interface Eth-Trunk2.723
+ description URFA_TV
+ ip address 10.150.4.116 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 723
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.113
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#H$3h<>zHV0nB&"2RDLm(I=&~R-vmXFg$|BM:l`I-%^%#
+#
+interface Eth-Trunk2.724
+ description FLASH_TV_140000000152751
+ ip address 10.150.4.124 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 724
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.121
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#N2hBG6V)RSfWvHW+P$CW4M~EF^a<kY[=DR$a8n8E%^%#
+#
+interface Eth-Trunk2.725
+ description MEDYAM14_140000000152592
+ ip address 10.150.4.132 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 725
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.129
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#>g:3VM-7m@GQ"rHr83$X)jy3W8V>OYp_nYWFl60:%^%#
+#
+interface Eth-Trunk2.726
+ description TV_100
+ ip address 10.150.4.140 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 726
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.137
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#9>w@OflC!L1g\q#{/1,L^{6L4Lk~zL.B$LU>c/Q=%^%#
+#
+interface Eth-Trunk2.727
+ description EGE_TV_140000000153286
+ ip address 10.150.4.148 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 727
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.145
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#ADS.3@eCaJPbrjL]%8bVYS('CWcH@3UXKS9/9\H"%^%#
+#
+interface Eth-Trunk2.728
+ description MAVIKARADENIZ_140000000152965
+ ip address 10.150.4.156 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 728
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.153
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#X&9S0^^*^T]m`aNUG/lO"RyQ4pn+>EpXaL%`4:`.%^%#
+#
+interface Eth-Trunk2.729
+ description KARADENIZ_TV_140000000153074
+ ip address 10.150.4.164 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 729
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.161
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#4i@`78`q&Dpft;,$Jt4"5bR*Q;F|F2'@^@,h4B/~%^%#
+#
+interface Eth-Trunk2.730
+ description OLAY_TV
+ ip address 10.150.4.172 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 730
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.169
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#XlHDZ~jbiK@|+x)[%oH,'7YaU,%jP!Jc85IG%k`2%^%#
+#
+interface Eth-Trunk2.731
+ description HRT_TV_140000000152166
+ ip address 10.150.4.180 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 731
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.177
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#]Fsg1vvxw+Mz7+@Eb>)"~3HX"V5wmGA1*7#>&@r2%^%#
+#
+interface Eth-Trunk2.732
+ description EVIN_TV_140000000153450
+ ip address 10.150.4.188 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 732
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.185
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#l@S8JL5LH"bfSC8cH^PNlb9MR|6='Ea{opEg$=3&%^%#
+#
+interface Eth-Trunk2.733
+ description PLANET_TV_140000000152948
+ ip address 10.150.4.196 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 733
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.193
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#'}V"LH]yw:E<8D-q5V*YooYlR&\mW28+SRT\gydL%^%#
+#
+interface Eth-Trunk2.734
+ description EGETURK_TV_140000000153006
+ ip address 10.150.4.204 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 734
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.201
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#i3RM6+82J58yS}YjYY](\>;_Lp~egLB[==NnULI'%^%#
+#
+interface Eth-Trunk2.735
+ description DELTA_28082020
+ ip address 10.150.4.212 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 735
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.209
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Ix`-1L!BGJH^V[0)u<}Kf+f!Eu+Vt2joDUAIM;"L%^%#
+#
+interface Eth-Trunk2.736
+ description TARIM_WEB
+ ip address 10.150.4.220 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 736
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.217
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#<t$jA~2x!>0UED=y_/J.]0sK;:SSg53,\;3HwsmB%^%#
+#
+interface Eth-Trunk2.737
+ description BEYAZ_TV_ASIL
+ ip address 10.150.4.228 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 737
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.225
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#7`p[K'10O+'z%N#I|*1<neRk86Z`$Q<hjM!qU>IR%^%#
+#
+interface Eth-Trunk2.738
+ description LALEGUL_TV_140000000154180
+ ip address 10.150.4.238 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 738
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.233
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#5MF]Mz#QMYC5V$Wr(>&6czL*TPA!:%:5+t4l;%EE%^%#
+#
+interface Eth-Trunk2.739
+ description BEYAZ_TV_YEDEK
+ ip address 10.150.4.244 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 739
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.241
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#49s/KXG.:H|{7nFvp;2E.7$ZYZ7bYBP"SvP!lv8=%^%#
+#
+interface Eth-Trunk2.740
+ description HEVI_TV_140000000154314
+ ip address 10.150.4.252 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 740
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.4.249
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#`UH<QlOn:WzS<yGROtOOoGXIVDo$*L9)TM4O8P#P%^%#
+#
+interface Eth-Trunk2.741
+ description DOLUNAY_FM
+ ip address 10.150.5.4 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 741
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.1
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#j&y`MGhu3#M^Jh@+aGOBK|h<*txzrD;ma&N%-90B%^%#
+#
+interface Eth-Trunk2.742
+ description BITLIS_TV
+ ip address 10.150.5.12 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 742
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.9
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#zyh#XkyoS#$(.&80b(gR-GY50~l9<:S-kqUZ'c59%^%#
+#
+interface Eth-Trunk2.743
+ description CAY_TV_140000000153863
+ ip address 10.150.5.20 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 743
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.17
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#{[TQJ]>2/TfoldGytzYF\ZU"4EF[7*6x+;D=dE-H%^%#
+#
+interface Eth-Trunk2.744
+ description TEK_RUMELI
+ ip address 10.150.5.28 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 744
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.25
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#p7I7..kve0*t=bWCLo(R!U[AV_|zoOL3uHY&Hc1&%^%#
+#
+interface Eth-Trunk2.745
+ description HAK_MESAJ
+ ip address 10.150.5.36 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 745
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.33
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#kM)W-bM,2Ux`bp$\e{xLhpj^Pj)W2<}YCTGCT>,F%^%#
+#
+interface Eth-Trunk2.746
+ description RUMELI_TV-OZUN_SESI
+ ip address 10.150.5.44 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 746
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.41
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#mb<@P(\#3T,=oqJ&VLM#393I-QFW\7=*.YH>39t:%^%#
+#
+interface Eth-Trunk2.747
+ description EDASSA_TV
+ ip address 10.150.5.52 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 747
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.49
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#yNF^&J!mg4ATPmLzRpSJIPdsP2Hru(*~x4&XNHo9%^%#
+#
+interface Eth-Trunk2.748
+ description KOZA_TV
+ ip address 10.150.5.60 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 748
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.57
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Hu|hVD!`]%k(B5#n+md1IC4.W_z5{$cWYD>A%Qz7%^%#
+#
+interface Eth-Trunk2.749
+ description TV_100
+ ip address 10.150.5.68 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 749
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.65
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#TXv6+DbT}OrD}UNfrcQ9-.G#CL_w9$N0RKUe*6II%^%#
+#
+interface Eth-Trunk2.750
+ description TV_100_YENIBINA
+ ip address 10.150.5.76 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 750
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.73
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#z"|DJC$Yh,0l8lKT2.L#fHo@4Kq(*+PN!o=e,h$<%^%#
+#
+interface Eth-Trunk2.751
+ description YESILIRMAK_TV
+ ip address 10.150.5.84 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 751
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.81
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Oplv!69>fS`%m359:1|LqkjS%q.#96i]wFMUj5C:%^%#
+#
+interface Eth-Trunk2.752
+ description CNBC-E
+ ip address 10.150.5.92 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 752
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.89
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#cV}A:|XazQOI/H,GXj|,(TU&T)4[FK\4881yA8C9%^%#
+#
+interface Eth-Trunk2.753
+ description EKOL_TV
+ ip address 10.150.5.100 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 753
+ arp broadcast enable
+ vrrp vrid 2
+ vrrp vrid 2 virtual-ip 10.150.5.97
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 authentication-mode simple cipher %^%#4hDHU(FQ!J1ukJBWb_RN0`gn%a7JT&P9U):Ru_\X%^%#
+#
+interface Eth-Trunk2.754
+ description URFA_TV_TTVPN
+ ip address 10.150.5.108 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 754
+ arp broadcast enable
+ vrrp vrid 2
+ vrrp vrid 2 virtual-ip 10.150.5.105
+ vrrp vrid 2 authentication-mode simple cipher %^%#4Gl(8|'Wo+do*s6GqAi47_[$GG<'+E|*4]BSrU0<%^%#
+#
+interface Eth-Trunk2.755
+ description BIR_TV
+ ip address 10.150.5.116 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 755
+ arp broadcast enable
+ vrrp vrid 2
+ vrrp vrid 2 virtual-ip 10.150.5.113
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#4Gl(8|'Wo+do*s6GqAi47_[$GG<'+E|*4]BSrU0<%^%#
+#
+interface Eth-Trunk2.756
+ description SERAP_TV
+ ip address 10.150.5.132 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 756
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.129
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#tRK@,#/;R$uXkTI%-"w~T&S4++K0tT~Ti8@f//x5%^%#
+#
+interface Eth-Trunk2.757
+ description FLASH_HABER
+ ip address 10.150.5.140 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 757
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.137
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#tRK@,#/;R$uXkTI%-"w~T&S4++K0tT~Ti8@f//x5%^%#
+#
+interface Eth-Trunk2.758
+ description MORAL_FM
+ ip address 10.150.5.124 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 758
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.121
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#c6l\E~,hAV(4t[(L|X+N)0m2@Xy=y;lHj!-N$g\R%^%#
+#
+interface Eth-Trunk2.759
+ description UCANKUS_TV
+ ip address 10.150.5.148 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 759
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.145
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#stlQ59lctHg%=UDCkQu9%%^v,b!54QsQMMHk(u.1%^%#
+#
+interface Eth-Trunk2.760
+ description TEKRAR_TV
+ ip address 10.150.5.156 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 760
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.153
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#stlQ59lctHg%=UDCkQu9%%^v,b!54QsQMMHk(u.1%^%#
+#
+interface Eth-Trunk2.761
+ description TV56
+ ip address 10.150.5.164 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 761
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.161
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#_O6eP<6i*L$z(k2oSRJ:w!87"d>!lS{{@H.$^us$%^%#
+#
+interface Eth-Trunk2.762
+ description NOW_TV
+ ip address 10.150.5.172 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 762
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.169
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#stlQ59lctHg%=UDCkQu9%%^v,b!54QsQMMHk(u.1%^%#
+#
+interface Eth-Trunk2.763
+ description EMAX_TV
+ ip address 10.150.5.180 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 763
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.177
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#stlQ59lctHg%=UDCkQu9%%^v,b!54QsQMMHk(u.1%^%#
+#
+interface Eth-Trunk2.764
+ description AS_TV
+ ip address 10.150.5.188 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 764
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.185
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Ki0F;jQcH=NA/gM\dPe1ZLD60'<-&>&15K<V8B2-%^%#
+#
+interface Eth-Trunk2.765
+ description AKIT_TV
+ ip address 10.150.5.196 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 765
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.193
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Ki0F;jQcH=NA/gM\dPe1ZLD60'<-&>&15K<V8B2-%^%#
+#
+interface Eth-Trunk2.766
+ description BEST_FM
+ ip address 10.150.5.204 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 766
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.201
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Ki0F;jQcH=NA/gM\dPe1ZLD60'<-&>&15K<V8B2-%^%#
+#
+interface Eth-Trunk2.767
+ description ULUSAL_KANAL
+ ip address 10.150.5.212 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 767
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.209
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Ki0F;jQcH=NA/gM\dPe1ZLD60'<-&>&15K<V8B2-%^%#
+#
+interface Eth-Trunk2.768
+ description ISMAILAGA_140000000196878
+ ip address 10.150.5.220 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 768
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.217
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Yz)uIoWO"O'axb0~:VzYUGiK8t4`eYx|".Sr[O)E%^%#
+#
+interface Eth-Trunk2.769
+ description ERKAM_RADYO
+ ip address 10.150.5.228 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 769
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.225
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#q]ng1b}@l@N)&|Rfd#8TVrQ!0w4XK"ex/^:F!@B-%^%#
+#
+interface Eth-Trunk2.770
+ description SRT1
+ ip address 10.150.5.238 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 770
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.233
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Fd8WE~0'C%,l6b#Qn8_*~v\Y,Kw)l=r9uR7kihnU%^%#
+#
+interface Eth-Trunk2.771
+ description TV52
+ ip address 10.150.5.244 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 771
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.241
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#Roh:U}AIB7+Lyl~^D!:=>{3HP)R{;~W1_zV`Ib#A%^%#
+#
+interface Eth-Trunk2.772
+ description AKILLITV
+ ip address 10.150.5.252 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 772
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.5.249
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#}>peY3aL#:2)VIKgGwG,#[2g/nj#D~;`m$PoM[DY%^%#
+#
+interface Eth-Trunk2.773
+ description POWER_GROUP_YENI
+ ip address 10.150.6.4 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 773
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.1
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#u'3#Zd+hESQarY*[OYK0|.]M)d(xz;G_tm-\"CpY%^%#
+#
+interface Eth-Trunk2.774
+ description TTM_YAYINCILIK
+ ip address 10.150.6.12 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 774
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.9
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#CqWR3y'jx,5t)2Pxm1488\/E2f.gj59D9+ERvy-!%^%#
+#
+interface Eth-Trunk2.775
+ description CNBC-E
+ ip address 10.150.6.20 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 775
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.17
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#QT<wG9<lGO'4T_P\qP|Y;;D0*#M4M!0;8j'._o$;%^%#
+#
+interface Eth-Trunk2.777
+ description ON4
+ ip address 10.150.6.36 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 777
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.33
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#C9H3CtfeH2}GV#)86zN2)>Mf!w/IXG|(wYSoI7>M%^%#
+#
+interface Eth-Trunk2.778
+ description AKRA_TV_140000000221093
+ ip address 10.150.6.44 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 778
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.41
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#QZdNY4CKvVr-mw=h"C8YTyifNsMM'M/g_o1rGBM/%^%#
+#
+interface Eth-Trunk2.779
+ description YURDUM_TV
+ ip address 10.150.6.52 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 779
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.49
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#4xuY@c5}EJpvl>9>s[}Cq{|cWn(<',i/p:*oP%cU%^%#
+#
+interface Eth-Trunk2.780
+ description FUL_TV
+ ip address 10.150.6.60 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 780
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.57
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#)WC#Yj7U]-)\[R2:9rtAP4k"/)sb&2T"AN)_wUjV%^%#
+#
+interface Eth-Trunk2.781
+ description VATAN_TV_140000000320787
+ ip address 10.150.6.68 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 781
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.65
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#fPa7TAbYs4;IbV3h!B3ZXJCrI#""00Ls=n:YoiDL%^%#
+#
+interface Eth-Trunk2.782
+ description HALK_TV
+ ip address 10.150.6.76 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 782
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.73
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#}RipHMJX(X/IFt><".UMK}v7,/dV;-Py'0>v$G*P%^%#
+#
+interface Eth-Trunk2.783
+ description 365_TV
+ ip address 10.150.6.84 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 783
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.81
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#X6=m$jLc<OktV/.~#]8)4<}KIkKguU0^TP@@XS@V%^%#
+#
+interface Eth-Trunk2.784
+ description DERYA_TV
+ ip address 10.150.6.92 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 784
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.89
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#(h)eWX[.Z=.95vYeay-@)iNO"hVpOJ2l-5T'bgv*%^%#
+#
+interface Eth-Trunk2.785
+ description FARKLI_TV
+ ip address 10.150.6.100 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 785
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.97
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#s"oK,}qWG4)pMCVmlUXFPi/gO)yRKIcq~vU.,Y:.%^%#
+#
+interface Eth-Trunk2.786
+ description SON_HEDEF
+ ip address 10.150.6.108 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 786
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.105
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#)3d43&m~eO2"MiLb`zeL~80v~lup/XGQ3<G8Ot.O%^%#
+#
+interface Eth-Trunk2.787
+ description TIVITI
+ ip address 10.150.6.116 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 787
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.113
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#EU~O&lP|-D9`!$W<JlUN\+t11qylB+Qi1Q0[W*AO%^%#
+#
+interface Eth-Trunk2.788
+ description NEHIR
+ ip address 10.150.6.124 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 788
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.121
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#{_ZWMB0-P=rA'0!/zQ"2({TmE]Suh-$.1g'4C)L5%^%#
+#
+interface Eth-Trunk2.789
+ description TV_A
+ ip address 10.150.6.132 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 789
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.129
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#3UD!H"T&=ORPf@>'#'-5XFGYKp#SK2[6^QYtakB3%^%#
+#
+interface Eth-Trunk2.790
+ description NUBERONE_TTVPN_YEDEK
+ ip address 10.150.6.140 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 790
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.137
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#F/c>:[l%>&;gm:HqANe9j"1/8'QV/ST/$">,>}#V%^%#
+#
+interface Eth-Trunk2.791
+ description YEK_TV
+ ip address 10.150.6.148 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 791
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.145
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#1%WJAHj~J;C>0VWggIA(=l4(Kq:SVD%Fa;<E0<vE%^%#
+#
+interface Eth-Trunk2.792
+ description MEGASUARE
+ ip address 10.150.6.156 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 792
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.153
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#`k!]6Yj-Z>l$i[,G^zzOct&%~>wWt%P6*G6\g-TD%^%#
+#
+interface Eth-Trunk2.793
+ description 1ANTV
+ ip address 10.150.6.164 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 793
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.161
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#"gk5Xzqpe697:C9+hEw;lE*+Y01m/QlU2{"`GADT%^%#
+#
+interface Eth-Trunk2.794
+ description MAKSIMTV
+ ip address 10.150.6.172 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 794
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.169
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#*AV]HJa>{>aL8uKNBV**g/RG:gwGqP&cY>BoC$f,%^%#
+#
+interface Eth-Trunk2.795
+ description AKDENIZ_TV
+ ip address 10.150.6.180 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 795
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.177
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#IDS,4w&jU=*h'_VPz%R/t9h<FNjlf&}I!@7xK];-%^%#
+#
+interface Eth-Trunk2.796
+ description DENGE_TV
+ ip address 10.150.6.188 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 796
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.185
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#s.RaOSvf6&-H_J><+D1OzWCK@p_4MU.\iPNXT'x'%^%#
+#
+interface Eth-Trunk2.797
+ description A_SHOPPING
+ ip address 10.150.6.196 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 797
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.193
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#<f\-FD|</)|j8<RC/j*.w+hRP1R8+1+1WD4c82{+%^%#
+#
+interface Eth-Trunk2.798
+ description GONCA_TV
+ ip address 10.150.6.204 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 798
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.201
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#C.'<V2d!,4HhMsC]ki3!6;}[YY5xV/x[FLN@NSVS%^%#
+#
+interface Eth-Trunk2.799
+ description HTV
+ ip address 10.150.6.212 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 799
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.209
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#OB3Y*F>),7K\.;)=Ah}@DdXj')J'(1+cx7K);ZZ/%^%#
+#
+interface Eth-Trunk2.800
+ description YENI_SINEMA
+ ip address 10.150.6.220 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 800
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.217
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#y|uLW_xLWDOX>k"GBE6!=GCt;F1@2FY#1v9G1J@0%^%#
+#
+interface Eth-Trunk2.803
+ description ALTAS_TV
+ ip address 10.150.6.244 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 803
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.6.241
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#&*Hw()Gry"kQZ-.|/.MX(7LKV[Jn>0l)Hf,wl">7%^%#
+#
+interface Eth-Trunk2.805
+ description METRO_TURK
+ ip address 10.150.7.4 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 805
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.1
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#N@z(=#JStHGP\x.gHzS#)@7.(u(V]"s'00"Wi5nX%^%#
+#
+interface Eth-Trunk2.806
+ description TV1_140000000256200
+ ip address 10.150.7.12 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 806
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.9
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#_K)b29LY42YxWU6#gt[TD;//<rb~V/8.R(EaGx@T%^%#
+#
+interface Eth-Trunk2.807
+ description FB_TV_YENI
+ ip address 10.150.7.20 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 807
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.17
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#p}:)X"@xXUkW*=)_)wp<t<x8KfjC*#/_*2J`to\E%^%#
+#
+interface Eth-Trunk2.808
+ description KANAL16_140000526460000
+ ip address 10.150.7.28 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 808
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.25
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#=>4pFc]{C2-.#8"d_+w=qVD4)$b_&%EL\s7qo".B%^%#
+#
+interface Eth-Trunk2.809
+ description TV_19
+ ip address 10.150.7.36 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 809
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.33
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#4m_e6vkZ93)PTs5Z:G]T!2Fj*$)TD77qI/Mm,#]U%^%#
+#
+interface Eth-Trunk2.810
+ description KANAL_B
+ ip address 10.150.7.44 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 810
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.41
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#3su/5@ZJU9G')W!jgB]5PmZP+p^,m!t.{ES}:={~%^%#
+#
+interface Eth-Trunk2.811
+ description TURKIYEM_TV_140000000222410
+ ip address 10.150.7.52 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 811
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.49
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#J$vQ@dA|^!JhtO++j@24s.~9@%TwUL`$',JJbd1W%^%#
+#
+interface Eth-Trunk2.812
+ description VATAN_TV_140000000307650
+ ip address 10.150.7.60 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 812
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.57
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#3z]*ULo'7PID-,3w4x/F_{^h%eqze0''PR3hCym)%^%#
+#
+interface Eth-Trunk2.813
+ description MERKEZ_TV
+ ip address 10.150.7.68 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 813
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.65
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#40C42kL8"2DUl(SS@Qr,ae2;3OOOrB,,'7Y=g9VO%^%#
+#
+interface Eth-Trunk2.814
+ description HEDEF_TV
+ ip address 10.150.7.76 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 814
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.73
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#-gLa']6`}X*4L&"HZ7<U95_}BXG605ksxz&lwa~4%^%#
+#
+interface Eth-Trunk2.815
+ description KARADENIZ_TURK_MMC_140000000314085
+ ip address 10.150.7.84 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 815
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.81
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#W:-TOFoB0V(C)8=g7Gr#U`97Cju*oS=;}+&soNC.%^%#
+#
+interface Eth-Trunk2.816
+ description NEHIR_TV_140000000361437
+ ip address 10.150.7.92 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 816
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.89
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#^KEB1|>*F)Lj7LNx'p*Z1dp1@Ae:nDT\42(TWA}!%^%#
+#
+interface Eth-Trunk2.818
+ description AKSARAY_TV
+ ip address 10.150.7.108 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 818
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.105
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#&I#_9:<ydAR&Ni~ERL+>WQ%R!T/3i-@uFI&_36E&%^%#
+#
+interface Eth-Trunk2.819
+ description SAHIL_GUVENLIK_RADYO
+ ip address 10.150.7.116 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 819
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.113
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#&I#_9:<ydAR&Ni~ERL+>WQ%R!T/3i-@uFI&_36E&%^%#
+#
+interface Eth-Trunk2.820
+ description ANADOLUM_TV
+ ip address 10.150.7.124 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 820
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.121
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#&I#_9:<ydAR&Ni~ERL+>WQ%R!T/3i-@uFI&_36E&%^%#
+#
+interface Eth-Trunk2.821
+ description ILKE_TV
+ ip address 10.150.7.132 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 821
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 10.150.7.129
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+ vrrp vrid 2 authentication-mode simple cipher %^%#&I#_9:<ydAR&Ni~ERL+>WQ%R!T/3i-@uFI&_36E&%^%#
+#
+interface Ethernet0/0/0
+ undo shutdown
+ ip binding vpn-instance __LOCAL_OAM_VPN__
+ ip address 10.101.111.97 255.255.255.0
+#
+interface GigabitEthernet0/2/0
+ undo shutdown
+ eth-trunk 1
+ undo dcn
+#
+interface GigabitEthernet0/2/1
+ undo shutdown
+ eth-trunk 1
+ undo dcn
+#
+interface GigabitEthernet0/2/2
+ undo shutdown
+ eth-trunk 2
+ undo dcn
+#
+interface GigabitEthernet0/2/3
+ undo shutdown
+ eth-trunk 2
+ undo dcn
+#
+interface GigabitEthernet0/2/4
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/5
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/6
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/7
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/8
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/9
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/10
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/11
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/12
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/13
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/14
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/15
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/16
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/17
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/18
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/19
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/20
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/21
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/22
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/23
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/24
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/25
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/26
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/2/27
+ undo shutdown
+ dcn
+#
+interface LoopBack1023
+ description DCN loopback interface
+ ip binding vpn-instance __dcn_vpn__
+ ip address 128.95.247.15 255.255.0.0
+#
+interface NULL0
+#
+ospf 65534 vpn-instance __dcn_vpn__
+ description DCN ospf create by default
+ opaque-capability enable
+ hostname
+ vpn-instance-capability simple
+ area 0.0.0.0
+  network 0.0.0.0 255.255.255.255
+#
+!The DCN function implements the capability of plug-and-play for this device.
+!A NE IP address based on the unique NE ID is automatically generated in VPN
+!of DCN. It is recommended that the NE IP address be changed to the planned
+!one by running the ne-ip X.X.X.X <MASK> command after the device being online.
+dcn
+#
+ip route-static 10.100.41.215 255.255.255.255 10.101.111.1
+ip route-static 10.101.11.180 255.255.255.255 10.101.111.1
+ip route-static 10.101.23.241 255.255.255.255 10.101.111.1
+ip route-static 10.101.31.0 255.255.255.0 10.101.111.1
+ip route-static 10.110.254.0 255.255.255.0 10.101.111.1
+ip route-static 10.151.0.0 255.255.0.0 10.150.254.253 description to_KANALLAR_TTVPN
+ip route-static vpn-instance __LOCAL_OAM_VPN__ 10.100.41.0 255.255.255.0 10.101.111.1
+ip route-static vpn-instance __LOCAL_OAM_VPN__ 10.101.11.0 255.255.255.0 10.101.111.1
+ip route-static vpn-instance __LOCAL_OAM_VPN__ 10.101.11.180 255.255.255.255 10.101.111.1
+ip route-static vpn-instance __LOCAL_OAM_VPN__ 10.101.18.80 255.255.255.255 10.101.111.1
+ip route-static vpn-instance __LOCAL_OAM_VPN__ 10.110.254.0 255.255.255.0 10.101.111.1
+#
+snmp-agent local-engineid 800007DB03082FE9C167C0
+#
+snmp-agent sys-info version v3
+#
+snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+undo snmp-agent proxy protocol source-status all-interface
+undo snmp-agent proxy protocol source-status ipv6 all-interface
+#
+lldp enable
+#
+stelnet server enable
+sftp server enable
+ssh server rsa-key min-length 3072
+ssh user moozan
+ssh user moozan authentication-type password
+ssh user moozan service-type stelnet
+ssh user restorepoint
+ssh user restorepoint authentication-type password
+ssh user restorepoint service-type all
+ssh server-source -i Ethernet0/0/0
+ssh server-source -i LoopBack1023
+ssh server-source all-interface
+ssh ipv6 server-source all-interface
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh server hmac sha2_512 sha2_256
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+ssh server publickey ecc rsa rsa_sha2_256 rsa_sha2_512
+#
+ssh server dh-exchange min-len 3072
+#
+ssh client first-time enable
+#
+ssh client publickey ecc rsa rsa_sha2_256 rsa_sha2_512
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh client hmac sha2_512 sha2_256
+ssh client key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+user-interface maximum-vty 21
+#
+user-interface con 0
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound ssh
+#
+netconf
+ activate module huawei-ip
+#
+local-aaa-server
+#
+pki domain 1
+#
+pki domain default
+#
+return

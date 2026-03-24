@@ -1,0 +1,18 @@
+{
+    "successful": [
+        {
+            "device": "AK-32",
+            "ip": "10.101.111.44",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "42 weeks, 18 hours, 38 minutes",
+            "hostname": "AK-32",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "AK-32"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

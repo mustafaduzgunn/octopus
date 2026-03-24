@@ -1,0 +1,16 @@
+{
+    "successful": [
+        {
+            "device": "KAMU_ROUTER_1",
+            "ip": "10.111.11.13",
+            "brand": "Huawei",
+            "model": "NetEngine 8000 F1A-8H20Q",
+            "software_version": "8.230",
+            "patch": null,
+            "uptime": "661 days, 1 hour, 31 minutes",
+            "serial_no": "2102355KVX10PC100003"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

@@ -1,0 +1,2292 @@
+{
+    "successful": [
+        {
+            "device": "EDK_ROUTER-1",
+            "ip": "10.255.11.11",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "FXS2203Q1P8",
+            "model": "ASR1009-X",
+            "uptime": "7 years, 36 weeks, 1 day, 15 hours, 16 minutes",
+            "hostname": "EDK_ROUTER-1",
+            "software_version": "16.6.3",
+            "collected_hostname": "EDK_ROUTER-1"
+        },
+        {
+            "device": "EDK_ROUTER-2",
+            "ip": "10.255.11.12",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "FXS2203Q1P7",
+            "model": "ASR1009-X",
+            "uptime": "7 years, 36 weeks, 1 day, 14 hours, 0 minutes",
+            "hostname": "EDK_ROUTER-2",
+            "software_version": "16.6.3",
+            "collected_hostname": "EDK_ROUTER-2"
+        },
+        {
+            "device": "EDK_DIS_SW1",
+            "ip": "10.255.11.10",
+            "brand": "Huawei",
+            "model": "CE6870-48S6CQ-EI",
+            "software_version": "8.150",
+            "version": "R",
+            "patch": "V200R002SPH008",
+            "uptime": "2804 days, 15 hours, 55 minutes",
+            "serial_slot_1": "2102350RXD10J3000034",
+            "serial_slot_2": "2102350RXD10J3000007",
+            "serial_no": "2102350RXD10J3000034"
+        },
+        {
+            "device": "EDK_IC_SW1",
+            "ip": "10.255.11.13",
+            "brand": "Huawei",
+            "model": "CE6870-48S6CQ-EI",
+            "software_version": "8.150",
+            "version": "R",
+            "patch": "V200R002SPH008",
+            "uptime": "1598 days, 16 hours, 13 minutes",
+            "serial_slot_1": "2102350RXD10J3000015",
+            "serial_slot_2": "2102350RXD10J3000009",
+            "serial_no": "2102350RXD10J3000015"
+        },
+        {
+            "device": "EDK_METRO_SW1",
+            "ip": "10.255.11.18",
+            "brand": "Huawei",
+            "model": "CE6851-48S6Q-HI",
+            "software_version": "8.150",
+            "version": "R",
+            "patch": "V200R002SPH008",
+            "uptime": "2804 days, 17 hours, 16 minutes",
+            "serial_slot_1": "2102350JAR6TJ2000350",
+            "serial_slot_2": "2102350JAR6TJ3000142",
+            "serial_no": "2102350JAR6TJ2000350"
+        },
+        {
+            "device": "EDK_TOR_TOPLAMA_SW1",
+            "ip": "10.255.11.19",
+            "brand": "Huawei",
+            "model": "CE6870-48S6CQ-EI",
+            "software_version": "8.150",
+            "version": "R",
+            "patch": "V200R002SPH008",
+            "uptime": "2804 days, 15 hours, 47 minutes",
+            "serial_slot_1": "2102350RXD10J3000002",
+            "serial_slot_2": "2102350RXD10J3000008",
+            "serial_no": "2102350RXD10J3000002"
+        },
+        {
+            "device": "EDK_NOC_MGMT_SW",
+            "ip": "10.255.11.2",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE25510505"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105N5"
+                }
+            ],
+            "serial_no": "JAE25510505",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 14 hours, 59 minutes",
+            "hostname": "EDK_NOC_MGMT_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "EDK_NOC_MGMT_SW"
+        },
+        {
+            "device": "EDK_TOR_KB1_SW_2",
+            "ip": "10.255.11.15",
+            "brand": "Dell Force10",
+            "model": "S4048-ON",
+            "software_version": "2.0",
+            "uptime": "7 year(s), 44 week(s), 0 day(s), 12 hour(s), 45 minute(s)",
+            "serial_no": null,
+            "stack_members": []
+        },
+        {
+            "device": "EDK_TOR_KB2_SW_1",
+            "ip": "10.255.11.16",
+            "brand": "Dell Force10",
+            "model": "S4048-ON",
+            "software_version": "2.0",
+            "uptime": "4 year(s), 20 week(s), 2 day(s), 21 hour(s), 42 minute(s)",
+            "serial_no": null,
+            "stack_members": []
+        },
+        {
+            "device": "EDK_TOR_KB1_SW_1",
+            "ip": "10.255.11.14",
+            "brand": "Dell Force10",
+            "model": "S4048-ON",
+            "software_version": "2.0",
+            "uptime": "7 year(s), 44 week(s), 0 day(s), 19 hour(s), 6 minute(s)",
+            "serial_no": null,
+            "stack_members": []
+        },
+        {
+            "device": "EDK_TOR_KB2_SW_2",
+            "ip": "10.255.11.17",
+            "brand": "Dell Force10",
+            "model": "S4048-ON",
+            "software_version": "2.0",
+            "uptime": "4 year(s), 20 week(s), 2 day(s), 15 hour(s), 52 minute(s)",
+            "serial_no": null,
+            "stack_members": []
+        },
+        {
+            "device": "SW2_SIEM_E-DEVLET_MNGT",
+            "ip": "10.101.11.208",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "4 years, 12 weeks, 5 hours, 47 minutes",
+            "hostname": "SW2_SIEM_E-DEVLET_MNGT",
+            "software_version": "15.0(2)SG4",
+            "collected_hostname": "SW2_SIEM_E-DEVLET_MNGT"
+        },
+        {
+            "device": "EDK_ILO_SW",
+            "ip": "10.255.11.30",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106G3"
+                }
+            ],
+            "serial_no": "JAE255106G3",
+            "model": "C9200L-48P-4X",
+            "uptime": "43 weeks, 15 hours, 28 minutes",
+            "hostname": "EDK_ILO_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "EDK_ILO_SW"
+        },
+        {
+            "device": "N7K1",
+            "ip": "10.111.11.11",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "JPG2114000R",
+            "model": "N7K-C7009",
+            "uptime": "3166 day(s), 14 hour(s), 14 minute(s), 44 second(s)",
+            "hostname": "Kernel",
+            "software_version": null,
+            "collected_hostname": "Kernel",
+            "_hostname_diff": {
+                "inv_name": "N7K1",
+                "hostname": "KERNEL"
+            }
+        },
+        {
+            "device": "N7K1_VDC1",
+            "ip": "10.101.45.251",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "JPG2114001L",
+            "model": "N7K-C7009",
+            "uptime": "3166 day(s), 14 hour(s), 3 minute(s), 59 second(s)",
+            "hostname": "Kernel",
+            "software_version": null,
+            "collected_hostname": "Kernel",
+            "_hostname_diff": {
+                "inv_name": "N7K1_VDC1",
+                "hostname": "KERNEL"
+            }
+        },
+        {
+            "device": "N7K2_VDC1",
+            "ip": "10.101.45.252",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "JPG2114000R",
+            "model": "N7K-C7009",
+            "uptime": "3166 day(s), 14 hour(s), 14 minute(s), 45 second(s)",
+            "hostname": "Kernel",
+            "software_version": null,
+            "collected_hostname": "Kernel",
+            "_hostname_diff": {
+                "inv_name": "N7K2_VDC1",
+                "hostname": "KERNEL"
+            }
+        },
+        {
+            "device": "N7K2",
+            "ip": "10.111.11.12",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "JPG2114001L",
+            "model": "N7K-C7009",
+            "uptime": "3166 day(s), 14 hour(s), 4 minute(s), 0 second(s)",
+            "hostname": "Kernel",
+            "software_version": null,
+            "collected_hostname": "Kernel",
+            "_hostname_diff": {
+                "inv_name": "N7K2",
+                "hostname": "KERNEL"
+            }
+        },
+        {
+            "device": "KAMU_ME_SWITCH",
+            "ip": "10.111.11.10",
+            "brand": "HP/H3C Comware",
+            "model": "S6825-54HF",
+            "software_version": null,
+            "release": "6710",
+            "uptime": "110 weeks, 4 days, 16 hours, 45 minutes",
+            "serial_no": null
+        },
+        {
+            "device": "EDK_MACUNKOY_MNGT_SW",
+            "ip": "10.255.11.24",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "5.130",
+            "version": "R",
+            "patch": null,
+            "uptime": "7 weeks, 0 day, 16 hours, 11 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "EDK_TOR_TOPLAMA_MCN",
+            "ip": "10.255.11.23",
+            "brand": "Huawei",
+            "model": "CE6870-48S6CQ-EI",
+            "software_version": "8.150",
+            "version": "R",
+            "patch": "V200R002SPH008",
+            "uptime": "49 days, 16 hours, 21 minutes",
+            "serial_slot_1": "2102350RXD10J3000010",
+            "serial_slot_2": "2102350RXD10J3000033",
+            "serial_no": "2102350RXD10J3000010"
+        },
+        {
+            "device": "KAMU_ROUTER_1",
+            "ip": "10.111.11.13",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "8.230",
+            "version": "R",
+            "patch": null,
+            "uptime": "651 days, 14 hours, 38 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "kamu_metrosw_hw_stack",
+            "ip": "10.101.11.50",
+            "brand": "Huawei",
+            "model": "CE6850-48S6Q-HI",
+            "software_version": "8.91",
+            "version": "R",
+            "patch": "V100R005SPH001",
+            "uptime": "2737 days, 4 hours, 20 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": "210235931410F5000048",
+            "serial_no": null
+        },
+        {
+            "device": "KAMU_CISCO_TOR_1",
+            "ip": "10.111.11.16",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "FOC234046TQ",
+            "model": "N3K-C31108PC-V",
+            "uptime": "875 day(s), 10 hour(s), 16 minute(s), 47 second(s)",
+            "hostname": "Kernel",
+            "software_version": null,
+            "collected_hostname": "Kernel",
+            "_hostname_diff": {
+                "inv_name": "KAMU_CISCO_TOR_1",
+                "hostname": "KERNEL"
+            }
+        },
+        {
+            "device": "KAMU_ROUTER_2",
+            "ip": "10.111.11.14",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": null,
+            "version": null,
+            "patch": null,
+            "uptime": null,
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "KAMU_TOR_HW1",
+            "ip": "10.111.11.15",
+            "brand": "Huawei",
+            "model": "CE6851-48S6Q-HI",
+            "software_version": "8.180",
+            "version": "R",
+            "patch": "V200R005SPH007",
+            "uptime": "2278 days, 15 hours, 22 minutes",
+            "serial_slot_1": "2102350JASDMK9000129",
+            "serial_slot_2": "2102350JASDMK9000125",
+            "serial_no": "2102350JASDMK9000129"
+        },
+        {
+            "device": "H3C_ILO_2023",
+            "ip": "10.111.11.24",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600WC"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600PG"
+                }
+            ],
+            "serial_no": "JAE254600WC",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 15 hours, 27 minutes",
+            "hostname": "H3C_ILO_2023",
+            "software_version": "17.9.5",
+            "collected_hostname": "H3C_ILO_2023"
+        },
+        {
+            "device": "KAMU_ILO_SW_3",
+            "ip": "10.111.11.23",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "1 year, 10 weeks, 4 days, 14 hours, 45 minutes",
+            "hostname": "KAMU_ILO_SW_3",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "KAMU_ILO_SW_3"
+        },
+        {
+            "device": "KAMU_CISCO_TOR_2",
+            "ip": "10.111.11.17",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "FOC233950BE",
+            "model": "N3K-C31108PC-V",
+            "uptime": "875 day(s), 10 hour(s), 53 minute(s), 50 second(s)",
+            "hostname": "Kernel",
+            "software_version": null,
+            "collected_hostname": "Kernel",
+            "_hostname_diff": {
+                "inv_name": "KAMU_CISCO_TOR_2",
+                "hostname": "KERNEL"
+            }
+        },
+        {
+            "device": "KAMU_H3C_SW_1",
+            "ip": "10.111.11.18",
+            "brand": "HP/H3C Comware",
+            "model": "S6850-56HF",
+            "software_version": null,
+            "release": "6635",
+            "uptime": "153 weeks, 3 days, 20 hours, 59 minutes",
+            "serial_no": null
+        },
+        {
+            "device": "KAMU_H3C_STORAGE_SW_1",
+            "ip": "10.111.11.19",
+            "brand": "HP/H3C Comware",
+            "model": "S9850-32H",
+            "software_version": null,
+            "release": "6635",
+            "uptime": "155 weeks, 3 days, 18 hours, 31 minutes",
+            "serial_no": null
+        },
+        {
+            "device": "KAMU_SERVER_ILO_SW",
+            "ip": "10.111.11.21",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600PC"
+                }
+            ],
+            "serial_no": "JAE254600PC",
+            "model": "C9200L-24P-4X",
+            "uptime": "24 weeks, 3 days, 19 hours, 1 minute",
+            "hostname": "KAMU_SERVER_ILO_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "KAMU_SERVER_ILO_SW"
+        },
+        {
+            "device": "KAMU_ILO_SW_2",
+            "ip": "10.111.11.22",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106MC"
+                }
+            ],
+            "serial_no": "JAE255106MC",
+            "model": "C9200L-48P-4X",
+            "uptime": "2 years, 8 weeks, 2 days, 15 hours, 36 minutes",
+            "hostname": "KAMU_ILO_SW_2",
+            "software_version": "17.9.4a",
+            "collected_hostname": "KAMU_ILO_SW_2"
+        },
+        {
+            "device": "KAMU_SERVER_MGMT_SW",
+            "ip": "10.111.11.20",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106HE"
+                }
+            ],
+            "serial_no": "JAE255106HE",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 14 hours, 22 minutes",
+            "hostname": "KAMU_SERVER_MGMT_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "KAMU_SERVER_MGMT_SW"
+        },
+        {
+            "device": "MANAGEMENT_SW1",
+            "ip": "10.111.11.31",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "7 years, 45 weeks, 2 days, 16 hours, 18 minutes",
+            "hostname": "MANAGEMENT_SW1",
+            "software_version": "15.0(2)SG4",
+            "collected_hostname": "MANAGEMENT_SW1"
+        },
+        {
+            "device": "MANAGEMENT_SW2",
+            "ip": "10.111.11.32",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "7 years, 45 weeks, 2 days, 14 hours, 11 minutes",
+            "hostname": "MANAGEMENT_SW2",
+            "software_version": "15.0(2)SG4",
+            "collected_hostname": "MANAGEMENT_SW2"
+        },
+        {
+            "device": "SO2_MNGT_SW_1",
+            "ip": "10.101.111.51",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105GC"
+                }
+            ],
+            "serial_no": "JAE255105GC",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 16 hours, 8 minutes",
+            "hostname": "SO2_MNGT_SW_1",
+            "software_version": "17.9.5",
+            "collected_hostname": "SO2_MNGT_SW_1"
+        },
+        {
+            "device": "CYBER_DDOS_SSLPB_MGMT",
+            "ip": "10.101.111.59",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600M7"
+                }
+            ],
+            "serial_no": "JAE254600M7",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 year, 8 weeks, 3 days, 18 hours, 44 minutes",
+            "hostname": "CYBER_DDOS_SSLPB_MGMT",
+            "software_version": "17.9.5",
+            "collected_hostname": "CYBER_DDOS_SSLPB_MGMT"
+        },
+        {
+            "device": "VELOS_SW_A",
+            "ip": "10.101.111.231",
+            "brand": "Huawei",
+            "model": "CE6870-48S6CQ-EI",
+            "software_version": "8.150",
+            "version": "R",
+            "patch": "V200R002SPH008",
+            "uptime": "1137 days, 9 hours, 22 minutes",
+            "serial_slot_1": "2102350RXD10J3000023",
+            "serial_slot_2": "2102350RXD10J3000024",
+            "serial_no": "2102350RXD10J3000023"
+        },
+        {
+            "device": "SIEM_TURKSAT_MNGT_SW",
+            "ip": "10.101.11.207",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "4 years, 14 weeks, 6 days, 18 hours, 31 minutes",
+            "hostname": "SIEM_TURKSAT_MNGT_SW",
+            "software_version": "12.2(31)SG3",
+            "collected_hostname": "SIEM_TURKSAT_MNGT_SW"
+        },
+        {
+            "device": "YSO_MNGT_SW",
+            "ip": "10.101.111.52",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105X7"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551055C"
+                }
+            ],
+            "serial_no": "JAE255105X7",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 14 hours, 42 minutes",
+            "hostname": "KAMU_TURKSAT_MGMTBB",
+            "software_version": "17.9.5",
+            "collected_hostname": "KAMU_TURKSAT_MGMTBB",
+            "_hostname_diff": {
+                "inv_name": "YSO_MNGT_SW",
+                "hostname": "KAMU_TURKSAT_MGMTBB"
+            }
+        },
+        {
+            "device": "TRSATBB1",
+            "ip": "10.101.111.3",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "FOX2549P8JS",
+            "model": "N9K-C9504",
+            "uptime": "511 day(s), 3 hour(s), 16 minute(s), 59 second(s)",
+            "hostname": "Kernel",
+            "software_version": null,
+            "collected_hostname": "Kernel",
+            "_hostname_diff": {
+                "inv_name": "TRSATBB1",
+                "hostname": "KERNEL"
+            }
+        },
+        {
+            "device": "TRSATBB2",
+            "ip": "10.101.111.4",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "FOX2549P8JR",
+            "model": "N9K-C9504",
+            "uptime": "511 day(s), 2 hour(s), 44 minute(s), 55 second(s)",
+            "hostname": "Kernel",
+            "software_version": null,
+            "collected_hostname": "Kernel",
+            "_hostname_diff": {
+                "inv_name": "TRSATBB2",
+                "hostname": "KERNEL"
+            }
+        },
+        {
+            "device": "TRSAT_METRO_SW",
+            "ip": "10.101.111.5",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9500-16X",
+                    "serial_number": "FOC2548Y1L0"
+                },
+                {
+                    "member": "2",
+                    "model": "C9500-16X",
+                    "serial_number": "FOC2548Y90S"
+                }
+            ],
+            "serial_no": "FOC2548Y1L0",
+            "model": "C9500-16X",
+            "uptime": "2 years, 3 weeks, 5 days, 6 hours, 38 minutes",
+            "hostname": "TRSAT_METRO_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "TRSAT_METRO_SW"
+        },
+        {
+            "device": "KAMU_DELL_TOR",
+            "ip": "10.111.11.28",
+            "brand": "Dell Force10",
+            "model": "S4048-ON",
+            "software_version": "2.0",
+            "uptime": "4 year(s), 24 week(s), 2 day(s), 8 hour(s), 26 minute(s)",
+            "serial_no": null,
+            "stack_members": []
+        },
+        {
+            "device": "KAMU_DELL_TOR",
+            "ip": "10.111.11.29",
+            "brand": "Dell Force10",
+            "model": "S4048-ON",
+            "software_version": "2.0",
+            "uptime": "4 year(s), 24 week(s), 2 day(s), 6 hour(s), 31 minute(s)",
+            "serial_no": null,
+            "stack_members": []
+        },
+        {
+            "device": "TURKSAT_ILO_SW",
+            "ip": "10.101.111.96",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551056D"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106US"
+                }
+            ],
+            "serial_no": "JAE2551056D",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 15 hours, 11 minutes",
+            "hostname": "TURKSAT_ILO_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "TURKSAT_ILO_SW"
+        },
+        {
+            "device": "TVYAYINLARI_SW-A",
+            "ip": "10.101.111.81",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "6 years, 50 weeks, 6 days, 23 hours, 26 minutes",
+            "hostname": "TVYAYINLARI_SW-A",
+            "software_version": "15.2(1)E1",
+            "collected_hostname": "TVYAYINLARI_SW-A"
+        },
+        {
+            "device": "TV_YAYINLARI_R1",
+            "ip": "10.101.111.97",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "8.221",
+            "version": "R",
+            "patch": null,
+            "uptime": "626 days, 17 hours, 54 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "TV_YAYINLARI_R2",
+            "ip": "10.101.111.98",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "8.221",
+            "version": "R",
+            "patch": null,
+            "uptime": "788 days, 14 hours, 44 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "TVYAYINLARI_SW-B",
+            "ip": "10.101.111.82",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "2 years, 36 weeks, 18 hours, 39 minutes",
+            "hostname": "TVYAYINLARI_SW-B",
+            "software_version": "15.2(1)E1",
+            "collected_hostname": "TVYAYINLARI_SW-B"
+        },
+        {
+            "device": "TEST_BB_SW",
+            "ip": "10.101.111.223",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600LF"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600W0"
+                }
+            ],
+            "serial_no": "JAE254600LF",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 14 hours, 37 minutes",
+            "hostname": "TEST_BB_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "TEST_BB_SW"
+        },
+        {
+            "device": "switch-tvyayinlari1",
+            "ip": "10.101.111.80",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "9 years, 32 weeks, 2 days, 17 hours, 16 minutes",
+            "hostname": "switch-tvyayinlari1",
+            "software_version": "12.2(31)SGA1",
+            "collected_hostname": "switch-tvyayinlari1"
+        },
+        {
+            "device": "MCN_hw_RTR_01",
+            "ip": "10.1.100.12",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "8.231",
+            "version": "R",
+            "patch": null,
+            "uptime": "49 days, 16 hours, 39 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "MCN_hw_METRO_SW",
+            "ip": "10.1.100.11",
+            "brand": "Huawei",
+            "model": "S6750-H48Y8C",
+            "software_version": null,
+            "version": "S6700 V600R023C10SPC500",
+            "patch": null,
+            "uptime": "49 days, 16 hours, 44 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "MCN_hw_MNGT_SW",
+            "ip": "10.1.100.10",
+            "brand": "Huawei",
+            "model": "S5735-S48P4XE-V2",
+            "software_version": null,
+            "version": "S5700 V600R023C00SPC500",
+            "patch": "V600R023SPH150",
+            "uptime": "49 days, 16 hours, 37 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "MCN_hw_BB",
+            "ip": "10.1.100.20",
+            "brand": "Huawei",
+            "model": "ET1BS12704E0",
+            "software_version": "5.170",
+            "version": "Master Switch",
+            "patch": null,
+            "uptime": "7 weeks, 0 day, 16 hours, 40 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "MCN_hw_RTR_02",
+            "ip": "10.1.100.13",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "8.231",
+            "version": "R",
+            "patch": null,
+            "uptime": "49 days, 16 hours, 36 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "MACUNKOY_VM_RJ",
+            "ip": "10.101.11.124",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": null,
+            "software_version": null
+        },
+        {
+            "device": "MCN_hw_TOR_G4",
+            "ip": "10.1.100.14",
+            "brand": "Huawei",
+            "model": "S6750-H48Y8C",
+            "software_version": null,
+            "version": "S6700 V600R023C10SPC500",
+            "patch": null,
+            "uptime": "49 days, 16 hours, 33 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "MACUNKOY_WIRELESS",
+            "ip": "10.101.111.181",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600MG"
+                }
+            ],
+            "serial_no": "JAE254600MG",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 week, 1 day, 5 hours, 7 minutes",
+            "hostname": "MCN_ILMD_WIFI_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "MCN_ILMD_WIFI_SW",
+            "_hostname_diff": {
+                "inv_name": "MACUNKOY_WIRELESS",
+                "hostname": "MCN_ILMD_WIFI_SW"
+            }
+        },
+        {
+            "device": "KAMU_NETWORK_MGMT_SW",
+            "ip": "10.111.11.254",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106NP"
+                }
+            ],
+            "serial_no": "JAE255106NP",
+            "model": "C9200L-48P-4X",
+            "uptime": "38 weeks, 1 day, 16 hours, 14 minutes",
+            "hostname": "KAMU_NETWORK_MGMT_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "KAMU_NETWORK_MGMT_SW"
+        },
+        {
+            "device": "ADALET_BINASI",
+            "ip": "10.101.111.55",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE25510556"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105VQ"
+                }
+            ],
+            "serial_no": "JAE25510556",
+            "model": "C9200L-48P-4X",
+            "uptime": "18 weeks, 18 hours, 46 minutes",
+            "hostname": "ADALET_BINASI",
+            "software_version": "17.9.5",
+            "collected_hostname": "ADALET_BINASI"
+        },
+        {
+            "device": "MACUNKOY_DC_SW",
+            "ip": "10.101.111.183",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106G1"
+                }
+            ],
+            "serial_no": "JAE255106G1",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 week, 1 day, 3 hours, 22 minutes",
+            "hostname": "MCN_DC_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "MCN_DC_SW",
+            "_hostname_diff": {
+                "inv_name": "MACUNKOY_DC_SW",
+                "hostname": "MCN_DC_SW"
+            }
+        },
+        {
+            "device": "AHMET_OZSOY_UPLINK_SW",
+            "ip": "10.101.111.34",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600W8"
+                }
+            ],
+            "serial_no": "JAE254600W8",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 17 hours, 38 minutes",
+            "hostname": "AHMET_OZSOY_UPLINK_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "AHMET_OZSOY_UPLINK_SW"
+        },
+        {
+            "device": "AKA_3_SW",
+            "ip": "10.101.111.39",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "18 weeks, 3 days, 14 hours, 35 minutes",
+            "hostname": "AKA_3_SW",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "AKA_3_SW"
+        },
+        {
+            "device": "AK-32",
+            "ip": "10.101.111.44",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "40 weeks, 6 days, 13 hours, 34 minutes",
+            "hostname": "AK-32",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "AK-32"
+        },
+        {
+            "device": "AKA-3",
+            "ip": "10.101.111.45",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "18 weeks, 3 days, 17 hours, 6 minutes",
+            "hostname": "AKA-3",
+            "software_version": "15.2(7)E4",
+            "collected_hostname": "AKA-3"
+        },
+        {
+            "device": "AKA_TKS_34",
+            "ip": "10.101.111.32",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "1 year, 10 weeks, 4 days, 16 hours, 51 minutes",
+            "hostname": "AKA_TKS_34",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "AKA_TKS_34"
+        },
+        {
+            "device": "ANKUTEK-ST2",
+            "ip": "10.101.111.166",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551062V"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105DA"
+                },
+                {
+                    "member": "3",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105UE"
+                },
+                {
+                    "member": "4",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106VR"
+                },
+                {
+                    "member": "5",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105MV"
+                },
+                {
+                    "member": "6",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255104B8"
+                }
+            ],
+            "serial_no": "JAE2551062V",
+            "model": "C9200L-48P-4X",
+            "uptime": "14 weeks, 6 hours, 41 minutes",
+            "hostname": "ANK_ST2_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "ANK_ST2_SW",
+            "_hostname_diff": {
+                "inv_name": "ANKUTEK-ST2",
+                "hostname": "ANK_ST2_SW"
+            }
+        },
+        {
+            "device": "ANKUTEK-ST1",
+            "ip": "10.101.111.165",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106SX"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551055K"
+                },
+                {
+                    "member": "3",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255104HS"
+                },
+                {
+                    "member": "4",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551057K"
+                },
+                {
+                    "member": "5",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105ML"
+                },
+                {
+                    "member": "6",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105PR"
+                }
+            ],
+            "serial_no": "JAE255106SX",
+            "model": "C9200L-48P-4X",
+            "uptime": "5 days, 5 hours, 31 minutes",
+            "hostname": "ANK_ST1_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "ANK_ST1_SW",
+            "_hostname_diff": {
+                "inv_name": "ANKUTEK-ST1",
+                "hostname": "ANK_ST1_SW"
+            }
+        },
+        {
+            "device": "ANKU_EK_BINA_SW",
+            "ip": "10.101.111.167",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551049M"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106YQ"
+                }
+            ],
+            "serial_no": "JAE2551049M",
+            "model": "C9200L-48P-4X",
+            "uptime": "5 days, 6 hours, 58 minutes",
+            "hostname": "ANK_EKBINA_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "ANK_EKBINA_SW",
+            "_hostname_diff": {
+                "inv_name": "ANKU_EK_BINA_SW",
+                "hostname": "ANK_EKBINA_SW"
+            }
+        },
+        {
+            "device": "DC_WIRELESS_SW",
+            "ip": "10.101.111.36",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "1 year, 10 weeks, 4 days, 16 hours, 51 minutes",
+            "hostname": "DC_WIRELESS_SW",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "DC_WIRELESS_SW"
+        },
+        {
+            "device": "BT_SWITCH_ST",
+            "ip": "10.101.111.20",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106GP"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106YL"
+                }
+            ],
+            "serial_no": "JAE255106GP",
+            "model": "C9200L-48P-4X",
+            "uptime": "41 weeks, 4 days, 1 hour, 26 minutes",
+            "hostname": "GLB_BT_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "GLB_BT_SW",
+            "_hostname_diff": {
+                "inv_name": "BT_SWITCH_ST",
+                "hostname": "GLB_BT_SW"
+            }
+        },
+        {
+            "device": "ELEKTRIK_ODASI",
+            "ip": "10.101.111.27",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "4 weeks, 5 hours, 25 minutes",
+            "hostname": "ELEKTRIK_ODASI",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "ELEKTRIK_ODASI"
+        },
+        {
+            "device": "BT_UPS_ROOM",
+            "ip": "10.101.111.17",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600NF"
+                }
+            ],
+            "serial_no": "JAE254600NF",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 17 hours, 2 minutes",
+            "hostname": "BT_UPS_ROOM",
+            "software_version": "17.9.5",
+            "collected_hostname": "BT_UPS_ROOM"
+        },
+        {
+            "device": "GENEL_EVRAK_SW",
+            "ip": "10.101.111.23",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255104FK"
+                }
+            ],
+            "serial_no": "JAE255104FK",
+            "model": "C9200L-48P-4X",
+            "uptime": "46 weeks, 1 day, 14 hours, 54 minutes",
+            "hostname": "GENEL_EVRAK_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "GENEL_EVRAK_SW"
+        },
+        {
+            "device": "EDK_NOC_MGMT_SW",
+            "ip": "10.101.111.211",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE25510505"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105N5"
+                }
+            ],
+            "serial_no": "JAE25510505",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 15 hours, 0 minutes",
+            "hostname": "EDK_NOC_MGMT_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "EDK_NOC_MGMT_SW"
+        },
+        {
+            "device": "GARAGE_SW",
+            "ip": "10.101.111.16",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600VD"
+                }
+            ],
+            "serial_no": "JAE254600VD",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 week, 1 day, 16 hours, 0 minutes",
+            "hostname": "GARAGE_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "GARAGE_SW"
+        },
+        {
+            "device": "GENEL_TRAFO_SW",
+            "ip": "10.101.111.38",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "5 weeks, 5 days, 2 hours, 24 minutes",
+            "hostname": "GENEL_TRAFO_SW",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "GENEL_TRAFO_SW"
+        },
+        {
+            "device": "GOZLEMEVI",
+            "ip": "10.101.111.43",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "1 year, 10 weeks, 4 days, 16 hours, 13 minutes",
+            "hostname": "GOZLEMEVI",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "GOZLEMEVI"
+        },
+        {
+            "device": "IDARI_BINA_TEKNIK",
+            "ip": "10.101.111.49",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "1 year, 3 weeks, 3 days, 13 hours, 33 minutes",
+            "hostname": "IDARI_BINA_TEKNIK",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "IDARI_BINA_TEKNIK"
+        },
+        {
+            "device": "KAZAN_OMURGA_SW_1",
+            "ip": "10.101.111.201",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106NJ"
+                }
+            ],
+            "serial_no": "JAE255106NJ",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 week, 1 day, 6 hours, 54 minutes",
+            "hostname": "KAZAN_OMURGA_SW_1",
+            "software_version": "17.12.6",
+            "collected_hostname": "KAZAN_OMURGA_SW_1"
+        },
+        {
+            "device": "IDARI_BINA_AP_SW",
+            "ip": "10.101.111.13",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "29 weeks, 5 hours, 45 minutes",
+            "hostname": "IDARI_BINA_AP_SW",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "IDARI_BINA_AP_SW"
+        },
+        {
+            "device": "IDARI_BINA",
+            "ip": "10.101.111.12",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105BP"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105JX"
+                },
+                {
+                    "member": "3",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106CH"
+                },
+                {
+                    "member": "4",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105KX"
+                }
+            ],
+            "serial_no": "JAE255105BP",
+            "model": "C9200L-48P-4X",
+            "uptime": "40 weeks, 6 days, 14 hours, 7 minutes",
+            "hostname": "IDARI_BINA",
+            "software_version": "17.9.5",
+            "collected_hostname": "IDARI_BINA"
+        },
+        {
+            "device": "MACUNKOY_ANK_IL_MDR",
+            "ip": "10.101.111.182",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255104D3"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE25510605"
+                },
+                {
+                    "member": "3",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600W4"
+                }
+            ],
+            "serial_no": "JAE255104D3",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 week, 1 day, 5 hours, 52 minutes",
+            "hostname": "MCN_ILMD_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "MCN_ILMD_SW",
+            "_hostname_diff": {
+                "inv_name": "MACUNKOY_ANK_IL_MDR",
+                "hostname": "MCN_ILMD_SW"
+            }
+        },
+        {
+            "device": "MACUNKOY_EDEVLET_ARSIV",
+            "ip": "10.101.111.185",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600Y9"
+                }
+            ],
+            "serial_no": "JAE254600Y9",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 week, 1 day, 3 hours, 39 minutes",
+            "hostname": "MCN_EDKARSIV_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "MCN_EDKARSIV_SW",
+            "_hostname_diff": {
+                "inv_name": "MACUNKOY_EDEVLET_ARSIV",
+                "hostname": "MCN_EDKARSIV_SW"
+            }
+        },
+        {
+            "device": "MACUNKOY_WIRELESS",
+            "ip": "10.101.111.181",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600MG"
+                }
+            ],
+            "serial_no": "JAE254600MG",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 week, 1 day, 5 hours, 7 minutes",
+            "hostname": "MCN_ILMD_WIFI_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "MCN_ILMD_WIFI_SW",
+            "_hostname_diff": {
+                "inv_name": "MACUNKOY_WIRELESS",
+                "hostname": "MCN_ILMD_WIFI_SW"
+            }
+        },
+        {
+            "device": "MACUNKOY_BB",
+            "ip": "10.101.111.180",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551064E"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551061G"
+                },
+                {
+                    "member": "3",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105Q7"
+                },
+                {
+                    "member": "4",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106LT"
+                }
+            ],
+            "serial_no": "JAE2551064E",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 week, 1 day, 4 hours, 15 minutes",
+            "hostname": "MACUNKOY_BB",
+            "software_version": "17.12.6",
+            "collected_hostname": "MACUNKOY_BB"
+        },
+        {
+            "device": "NEW_EGNOS",
+            "ip": "10.101.111.47",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "6 days, 19 hours, 36 minutes",
+            "hostname": "NEW_EGNOS",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "NEW_EGNOS"
+        },
+        {
+            "device": "MONITORING_SW",
+            "ip": "10.101.111.18",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255104CH"
+                }
+            ],
+            "serial_no": "JAE255104CH",
+            "model": "C9200L-48P-4X",
+            "uptime": "47 weeks, 7 hours, 12 minutes",
+            "hostname": "MONITORING_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "MONITORING_SW"
+        },
+        {
+            "device": "OVECLER_KAT_1_1",
+            "ip": "10.101.111.151",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106K8"
+                }
+            ],
+            "serial_no": "JAE255106K8",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 week, 6 hours, 40 minutes",
+            "hostname": "OVC_KAT1_UPLINK_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "OVC_KAT1_UPLINK_SW",
+            "_hostname_diff": {
+                "inv_name": "OVECLER_KAT_1_1",
+                "hostname": "OVC_KAT1_UPLINK_SW"
+            }
+        },
+        {
+            "device": "OVECLER_BB",
+            "ip": "10.101.111.152",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105F4"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105ZN"
+                }
+            ],
+            "serial_no": "JAE255105F4",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 week, 5 hours, 44 minutes",
+            "hostname": "OVECLER_KAT2_BB",
+            "software_version": "17.12.6",
+            "collected_hostname": "OVECLER_KAT2_BB",
+            "_hostname_diff": {
+                "inv_name": "OVECLER_BB",
+                "hostname": "OVECLER_KAT2_BB"
+            }
+        },
+        {
+            "device": "OVECLER_KAT_3",
+            "ip": "10.101.111.153",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105KK"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105K3"
+                }
+            ],
+            "serial_no": "JAE255105KK",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 week, 6 hours, 14 minutes",
+            "hostname": "OVC_KAT3_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "OVC_KAT3_SW",
+            "_hostname_diff": {
+                "inv_name": "OVECLER_KAT_3",
+                "hostname": "OVC_KAT3_SW"
+            }
+        },
+        {
+            "device": "OVECLER_KAT_1_2",
+            "ip": "10.101.111.154",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600LW"
+                }
+            ],
+            "serial_no": "JAE254600LW",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 week, 6 hours, 43 minutes",
+            "hostname": "OVC_KAT1_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "OVC_KAT1_SW",
+            "_hostname_diff": {
+                "inv_name": "OVECLER_KAT_1_2",
+                "hostname": "OVC_KAT1_SW"
+            }
+        },
+        {
+            "device": "PREFABRIK_BIM",
+            "ip": "10.101.111.10",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105WF"
+                }
+            ],
+            "serial_no": "JAE255105WF",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 15 hours, 53 minutes",
+            "hostname": "PREFABRIK_BIM",
+            "software_version": "17.9.5",
+            "collected_hostname": "PREFABRIK_BIM"
+        },
+        {
+            "device": "PROTOKOL_EVI_SW",
+            "ip": "10.101.111.67",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106ZG"
+                }
+            ],
+            "serial_no": "JAE255106ZG",
+            "model": "C9200L-48P-4X",
+            "uptime": "10 weeks, 6 days, 10 hours, 10 minutes",
+            "hostname": "PROTOKOL_EVI_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "PROTOKOL_EVI_SW"
+        },
+        {
+            "device": "OVECLER_ZEMIN",
+            "ip": "10.101.111.150",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105AZ"
+                }
+            ],
+            "serial_no": "JAE255105AZ",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 week, 7 hours, 38 minutes",
+            "hostname": "OVC_ZEMIN_UPLINK_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "OVC_ZEMIN_UPLINK_SW",
+            "_hostname_diff": {
+                "inv_name": "OVECLER_ZEMIN",
+                "hostname": "OVC_ZEMIN_UPLINK_SW"
+            }
+        },
+        {
+            "device": "PREFABRIK_UPLINK",
+            "ip": "10.101.111.11",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE25510555"
+                }
+            ],
+            "serial_no": "JAE25510555",
+            "model": "C9200L-48P-4X",
+            "uptime": "25 weeks, 19 hours, 5 minutes",
+            "hostname": "PREFABRIK_UPLINK",
+            "software_version": "17.9.5",
+            "collected_hostname": "PREFABRIK_UPLINK"
+        },
+        {
+            "device": "S_ALI_KARSLI_UK_1",
+            "ip": "10.101.111.15",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600LX"
+                }
+            ],
+            "serial_no": "JAE254600LX",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 17 hours, 36 minutes",
+            "hostname": "S_ALI_KARSLI_UK_1",
+            "software_version": "17.9.5",
+            "collected_hostname": "S_ALI_KARSLI_UK_1"
+        },
+        {
+            "device": "SANTRAL_AKA_1_SW",
+            "ip": "10.101.111.19",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE2551059B"
+                }
+            ],
+            "serial_no": "JAE2551059B",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 15 hours, 50 minutes",
+            "hostname": "SANTRAL_AKA_1_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "SANTRAL_AKA_1_SW"
+        },
+        {
+            "device": "S.ALI_KARSLI-UK-2",
+            "ip": "10.101.111.14",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600WR"
+                }
+            ],
+            "serial_no": "JAE254600WR",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 year, 10 weeks, 4 days, 17 hours, 38 minutes",
+            "hostname": "S_ALI_KARSLI_UK-2",
+            "software_version": "17.9.5",
+            "collected_hostname": "S_ALI_KARSLI_UK-2",
+            "_hostname_diff": {
+                "inv_name": "S.ALI_KARSLI-UK-2",
+                "hostname": "S_ALI_KARSLI_UK-2"
+            }
+        },
+        {
+            "device": "TEAS",
+            "ip": "10.101.111.186",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600NM"
+                }
+            ],
+            "serial_no": "JAE254600NM",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 week, 1 day, 5 hours, 34 minutes",
+            "hostname": "MCN_TEASARSIV_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "MCN_TEASARSIV_SW",
+            "_hostname_diff": {
+                "inv_name": "TEAS",
+                "hostname": "MCN_TEASARSIV_SW"
+            }
+        },
+        {
+            "device": "UFGD_SW",
+            "ip": "10.101.111.35",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE25510629"
+                }
+            ],
+            "serial_no": "JAE25510629",
+            "model": "C9200L-48P-4X",
+            "uptime": "22 weeks, 3 days, 13 hours, 10 minutes",
+            "hostname": "UFGD_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "UFGD_SW"
+        },
+        {
+            "device": "XRAY_NIZAMIYE",
+            "ip": "10.101.111.29",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "FVH290413YS"
+                }
+            ],
+            "serial_no": "FVH290413YS",
+            "model": "C9200L-24P-4X",
+            "uptime": "10 weeks, 3 days, 16 hours, 0 minutes",
+            "hostname": "XRAY_NIZAMIYE_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "XRAY_NIZAMIYE_SW",
+            "_hostname_diff": {
+                "inv_name": "XRAY_NIZAMIYE",
+                "hostname": "XRAY_NIZAMIYE_SW"
+            }
+        },
+        {
+            "device": "TURKUAZ-DEPO",
+            "ip": "10.101.111.31",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600WN"
+                }
+            ],
+            "serial_no": "JAE254600WN",
+            "model": "C9200L-24P-4X",
+            "uptime": "1 year, 4 weeks, 3 days, 19 hours, 52 minutes",
+            "hostname": "TURKUAZ-DEPO",
+            "software_version": "17.9.5",
+            "collected_hostname": "TURKUAZ-DEPO"
+        },
+        {
+            "device": "ULUS",
+            "ip": "10.101.111.37",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106EE"
+                }
+            ],
+            "serial_no": "JAE255106EE",
+            "model": "C9200L-48P-4X",
+            "uptime": "1 year, 2 weeks, 3 days, 17 hours, 8 minutes",
+            "hostname": "ULUS",
+            "software_version": "17.9.5",
+            "collected_hostname": "ULUS"
+        },
+        {
+            "device": "UHD_SW",
+            "ip": "10.101.111.21",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105F9"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600W7"
+                }
+            ],
+            "serial_no": "JAE255105F9",
+            "model": "C9200L-48P-4X",
+            "uptime": "41 weeks, 2 days, 5 hours, 36 minutes",
+            "hostname": "UHD_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "UHD_SW"
+        },
+        {
+            "device": "YEMEKHANE_SW",
+            "ip": "10.101.111.24",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "JAE254600W3"
+                }
+            ],
+            "serial_no": "JAE254600W3",
+            "model": "C9200L-24P-4X",
+            "uptime": "24 weeks, 5 days, 17 hours, 12 minutes",
+            "hostname": "YEMEKHANE_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "YEMEKHANE_SW"
+        },
+        {
+            "device": "YENI_DEPO",
+            "ip": "10.101.111.22",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106SQ"
+                }
+            ],
+            "serial_no": "JAE255106SQ",
+            "model": "C9200L-48P-4X",
+            "uptime": "3 weeks, 2 days, 15 hours, 41 minutes",
+            "hostname": "YENI_DEPO",
+            "software_version": "17.9.5",
+            "collected_hostname": "YENI_DEPO"
+        },
+        {
+            "device": "ED_MCN_TORSW_H4_31",
+            "ip": "10.1.100.101",
+            "brand": "Huawei",
+            "model": "S6750-H48Y8C",
+            "software_version": null,
+            "version": "S6700 V600R024C00SPC500",
+            "patch": "V600R024SPH180",
+            "uptime": "37 days, 16 hours, 31 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "EDK_GLB_DC_RTR1",
+            "ip": "10.255.11.104",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "8.240",
+            "version": "R",
+            "patch": "V800R024SPH1b0",
+            "uptime": "31 days, 8 hours, 40 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "YOL_NIZAMIYE",
+            "ip": "10.101.111.30",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "4 weeks, 2 days, 7 hours, 38 minutes",
+            "hostname": "YOL_NIZAMIYE",
+            "software_version": "15.2(7)E11",
+            "collected_hostname": "YOL_NIZAMIYE"
+        },
+        {
+            "device": "TRSATFW",
+            "ip": "trsatfw.turksat.com.tr",
+            "brand": "Fortinet FortiGate",
+            "model": "FortiGate",
+            "hostname": "TRSATFW-MASTER",
+            "serial_no": null,
+            "software_version": null,
+            "build": null,
+            "uptime": null,
+            "vdom_enabled": false,
+            "ha_mode": null,
+            "ha_role": null,
+            "ha_serial": null,
+            "ha_members": [
+                {
+                    "serial": "FG34E1TB20900283",
+                    "hostname": "TRSATFW-MASTER",
+                    "role": ""
+                },
+                {
+                    "serial": "FG34E1TB20900289",
+                    "hostname": "TRSATFW-STANDBY",
+                    "role": ""
+                }
+            ]
+        },
+        {
+            "device": "ED_MCN_TORSW_H5_31",
+            "ip": "10.1.100.102",
+            "brand": "Huawei",
+            "model": "S6750-H48Y8C",
+            "software_version": null,
+            "version": "S6700 V600R024C00SPC500",
+            "patch": "V600R024SPH180",
+            "uptime": "37 days, 16 hours, 20 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "EDKFW",
+            "ip": "edkfw.turksat.com.tr",
+            "brand": "Fortinet FortiGate",
+            "model": "FortiGate",
+            "hostname": "EG_DC3_B08U12_FGT1",
+            "serial_no": null,
+            "software_version": null,
+            "build": null,
+            "uptime": null,
+            "vdom_enabled": false,
+            "ha_mode": null,
+            "ha_role": null,
+            "ha_serial": null,
+            "ha_members": [
+                {
+                    "serial": "FG34E1TB20900276",
+                    "hostname": "EG_DC3_B08U12_FGT1",
+                    "role": ""
+                },
+                {
+                    "serial": "FG34E1TB20900282",
+                    "hostname": "EG_DC3_B09U12_FGT2",
+                    "role": ""
+                }
+            ]
+        },
+        {
+            "device": "KAMUFW",
+            "ip": "kamufw.turksat.com.tr",
+            "brand": "Fortinet FortiGate",
+            "model": "FortiGate",
+            "hostname": "KAMU-FW2",
+            "serial_no": null,
+            "software_version": null,
+            "build": null,
+            "uptime": null,
+            "vdom_enabled": false,
+            "ha_mode": null,
+            "ha_role": null,
+            "ha_serial": null,
+            "ha_members": [
+                {
+                    "serial": "FG34E1TB19900456",
+                    "hostname": "KAMU-FW2",
+                    "role": ""
+                },
+                {
+                    "serial": "FG34E1TB19900514",
+                    "hostname": "KAMU-FW1",
+                    "role": ""
+                }
+            ]
+        },
+        {
+            "device": "MCNFW",
+            "ip": "macunkoyfw.turksat.com.tr",
+            "brand": "Fortinet FortiGate",
+            "model": "FortiGate",
+            "hostname": "MACUNKOY_FW-1",
+            "serial_no": null,
+            "software_version": null,
+            "build": null,
+            "uptime": null,
+            "vdom_enabled": false,
+            "ha_mode": null,
+            "ha_role": null,
+            "ha_serial": null,
+            "ha_members": [
+                {
+                    "serial": "FG9H1GTB24901491",
+                    "hostname": "MACUNKOY_FW-1",
+                    "role": ""
+                },
+                {
+                    "serial": "FG9H1GTB24901467",
+                    "hostname": "MACUNKOY_FW-2",
+                    "role": ""
+                }
+            ]
+        },
+        {
+            "device": "TESTFW",
+            "ip": "testfw.turksat.com.tr",
+            "brand": "Fortinet FortiGate",
+            "model": "FortiGate",
+            "hostname": "TESTFW1",
+            "serial_no": null,
+            "software_version": null,
+            "build": null,
+            "uptime": null,
+            "vdom_enabled": false,
+            "ha_mode": null,
+            "ha_role": null,
+            "ha_serial": null,
+            "ha_members": [
+                {
+                    "serial": "FG380D3917800015",
+                    "hostname": "TESTFW1",
+                    "role": ""
+                },
+                {
+                    "serial": "FG380D3917800007",
+                    "hostname": "TESTFW2",
+                    "role": ""
+                }
+            ]
+        },
+        {
+            "device": "EDK_GLB_DC_RTR2",
+            "ip": "10.255.11.105",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "8.240",
+            "version": "R",
+            "patch": "V800R024SPH1b0",
+            "uptime": "31 days, 8 hours, 43 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "ED-GLB-METRO_SW",
+            "ip": "10.255.11.102",
+            "brand": "Huawei",
+            "model": "S6750-H48Y8C",
+            "software_version": null,
+            "version": "S6700 V600R024C00SPC500",
+            "patch": "V600R024SPH180",
+            "uptime": "31 days, 8 hours, 10 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        },
+        {
+            "device": "KTANALYZER",
+            "ip": "ktanalyzer.turksat.com.tr",
+            "brand": "Fortinet FortiAnalyzer",
+            "model": "FortiAnalyzer-1000G",
+            "hostname": "turksat_kamu-faz",
+            "serial_no": "FAZ1KGT924000350",
+            "software_version": "7.4.6",
+            "build": "2588",
+            "ha_mode": null,
+            "last_reboot_reason": null,
+            "bios_version": "00030004"
+        },
+        {
+            "device": "EDKANALYZER",
+            "ip": "edkanalyzer.turksat.com.tr",
+            "brand": "Fortinet FortiAnalyzer",
+            "model": "FortiAnalyzer-1000G",
+            "hostname": "EG_DC3_B09U15_FAZ",
+            "serial_no": "FAZ1KGT924000311",
+            "software_version": "7.4.6",
+            "build": "2588",
+            "ha_mode": null,
+            "last_reboot_reason": null,
+            "bios_version": "00030004"
+        },
+        {
+            "device": "MCNANALYZER",
+            "ip": "isanalyzer.turksat.com.tr",
+            "brand": "Fortinet FortiAnalyzer",
+            "model": "FortiAnalyzer-1000G",
+            "hostname": "MACUNKOY-FAZ",
+            "serial_no": "FAZ1KGT924000322",
+            "software_version": "7.4.6",
+            "build": "2588",
+            "ha_mode": null,
+            "last_reboot_reason": null,
+            "bios_version": "00030004"
+        },
+        {
+            "device": "MANAGER",
+            "ip": "fmanager.turksat.com.tr",
+            "brand": "Fortinet FortiManager",
+            "model": "FortiManager-VM64",
+            "hostname": "FORTIMANAGER",
+            "serial_no": "FMG-VMTM23007815",
+            "software_version": "7.6.6",
+            "build": "3654",
+            "ha_mode": null,
+            "last_reboot_reason": null,
+            "bios_version": "04000002"
+        },
+        {
+            "device": "F5_MCN_EDK",
+            "ip": "10.1.116.51",
+            "brand": "F5 BIG-IP",
+            "software_version": "17.5.1.3",
+            "build": "0.0.19",
+            "edition": "Point Release 3",
+            "product": "BIG-IP",
+            "model": "Z101",
+            "serial_no": "chs701919s",
+            "hostname": "mcn-lb1.turkiye.gov.tr",
+            "machine_id": "48500d5e-d77b-46b1-891c-549545469e59",
+            "management_ip": "172.31.255.253",
+            "uptime": null
+        },
+        {
+            "device": "CISCO_111_41",
+            "ip": "10.101.111.41",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "3 years, 12 weeks, 13 hours, 15 minutes",
+            "hostname": "BOLGELER_SW",
+            "software_version": "15.0(2)SG4",
+            "collected_hostname": "BOLGELER_SW",
+            "_hostname_diff": {
+                "inv_name": "CISCO_111_41",
+                "hostname": "BOLGELER_SW"
+            }
+        },
+        {
+            "device": "SANDBOX",
+            "ip": "fsandbox.turksat.com.tr",
+            "brand": "Fortinet FortiSandbox",
+            "model": null,
+            "hostname": null,
+            "serial_no": null,
+            "software_version": null,
+            "build": null,
+            "ha_mode": null,
+            "last_reboot_reason": null,
+            "bios_version": null
+        },
+        {
+            "device": "CISCO_111_130",
+            "ip": "10.101.111.130",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "25 weeks, 3 days, 17 hours, 28 minutes",
+            "software_version": "7.1.070"
+        }
+    ],
+    "failed": [
+        {
+            "device": "SIEM_TOR_1",
+            "ip": "10.101.11.205",
+            "error": "Authentication to device failed.\n\nCommon causes of this problem are:\n1. Invalid username and password\n2. Incorrect SSH-key file\n3. Connecting to the wrong device\n\nDevice settings: huawei 10.101.11.205:22\n\n\nAuthentication failed."
+        },
+        {
+            "device": "HP_KAMU_BLADE_SW1",
+            "ip": "10.101.45.208",
+            "error": "TCP connection to device failed.\n\nCommon causes of this problem are:\n1. Incorrect hostname or IP address.\n2. Wrong TCP port.\n3. Intermediate firewall blocking access.\n\nDevice settings: hp_procurve 10.101.45.208:22\n\n"
+        },
+        {
+            "device": "HP_KAMU_BLADE_SW2",
+            "ip": "10.101.45.207",
+            "error": "TCP connection to device failed.\n\nCommon causes of this problem are:\n1. Incorrect hostname or IP address.\n2. Wrong TCP port.\n3. Intermediate firewall blocking access.\n\nDevice settings: hp_procurve 10.101.45.207:22\n\n"
+        },
+        {
+            "device": "CEPH_STORAGE_TOR",
+            "ip": "10.101.11.243",
+            "error": "TCP connection to device failed.\n\nCommon causes of this problem are:\n1. Incorrect hostname or IP address.\n2. Wrong TCP port.\n3. Intermediate firewall blocking access.\n\nDevice settings: huawei 10.101.11.243:22\n\n"
+        },
+        {
+            "device": "MACUNKOY_EK_SW",
+            "ip": "10.101.111.187",
+            "error": "TCP connection to device failed.\n\nCommon causes of this problem are:\n1. Incorrect hostname or IP address.\n2. Wrong TCP port.\n3. Intermediate firewall blocking access.\n\nDevice settings: cisco_ios 10.101.111.187:22\n\n"
+        },
+        {
+            "device": "ODTU",
+            "ip": "10.100.254.158",
+            "error": "TCP connection to device failed.\n\nCommon causes of this problem are:\n1. Incorrect hostname or IP address.\n2. Wrong TCP port.\n3. Intermediate firewall blocking access.\n\nDevice settings: cisco_ios 10.100.254.158:22\n\n"
+        },
+        {
+            "device": "AUTHENTICATOR",
+            "ip": "fortiauth.turksat.com.tr",
+            "error": "Bad authentication type; allowed types: ['keyboard-interactive']"
+        },
+        {
+            "device": "EMS",
+            "ip": "fems.turksat.com.tr",
+            "error": "Authentication failed."
+        },
+        {
+            "device": "DEVICE_111_156",
+            "ip": "10.101.111.156",
+            "error": "Desteklenmeyen SSH cihaz tipi: unknown"
+        },
+        {
+            "device": "DEVICE_111_161",
+            "ip": "10.101.111.161",
+            "error": "Desteklenmeyen SSH cihaz tipi: unknown"
+        },
+        {
+            "device": "DEVICE_111_69",
+            "ip": "10.101.111.69",
+            "error": "Desteklenmeyen SSH cihaz tipi: unknown"
+        },
+        {
+            "device": "DEVICE_111_202",
+            "ip": "10.101.111.202",
+            "error": "Desteklenmeyen SSH cihaz tipi: unknown"
+        },
+        {
+            "device": "F5_MCN_PART",
+            "ip": "10.1.116.20",
+            "error": "404 Client Error: Not Found for url: https://10.1.116.20:8888/mgmt/tm/sys/version"
+        },
+        {
+            "device": "DEVICE_111_189",
+            "ip": "10.101.111.189",
+            "error": "Desteklenmeyen SSH cihaz tipi: unknown"
+        },
+        {
+            "device": "F5_MCN_CHS",
+            "ip": "10.1.116.11",
+            "error": "404 Client Error: Not Found for url: https://10.1.116.11:8888/mgmt/tm/sys/version"
+        },
+        {
+            "device": "S_ALI_KARSLI_BASEBAND_SW",
+            "ip": "10.101.111.60",
+            "error": "Authentication to device failed.\n\nCommon causes of this problem are:\n1. Invalid username and password\n2. Incorrect SSH-key file\n3. Connecting to the wrong device\n\nDevice settings: cisco_ios 10.101.111.60:22\n\n\nAuthentication failed."
+        },
+        {
+            "device": "GBKZS_UYDU_AR-GE_SW",
+            "ip": "10.101.111.48",
+            "error": "Authentication to device failed.\n\nCommon causes of this problem are:\n1. Invalid username and password\n2. Incorrect SSH-key file\n3. Connecting to the wrong device\n\nDevice settings: cisco_ios 10.101.111.48:22\n\n\nAuthentication failed."
+        },
+        {
+            "device": "F5-Management",
+            "ip": "10.101.111.239",
+            "error": "\nPattern not detected: '\\\\^' in output.\n\nThings you might try to fix this:\n1. Explicitly set your pattern using the expect_string argument.\n2. Increase the read_timeout to a larger value.\n\nYou can also look at the Netmiko session_log or debug log for more information.\n\n"
+        },
+        {
+            "device": "CISCO_111_184",
+            "ip": "10.101.111.184",
+            "error": "\nPattern not detected: 'MCN_UPS_SW\\\\.3\\\\ \\\\#' in output.\n\nThings you might try to fix this:\n1. Explicitly set your pattern using the expect_string argument.\n2. Increase the read_timeout to a larger value.\n\nYou can also look at the Netmiko session_log or debug log for more information.\n\n"
+        }
+    ],
+    "skipped": []
+}

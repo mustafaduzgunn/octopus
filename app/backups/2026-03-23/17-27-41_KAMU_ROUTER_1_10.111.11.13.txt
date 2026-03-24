@@ -1,0 +1,1221 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V800R023C00SPC500
+!Last configuration was updated at 2026-03-16 10:28:18+03:00
+!Last configuration was saved at 2026-03-16 10:28:28+03:00
+!kms_feature --
+#
+clock timezone IST add 03:00:00
+#
+sysname KG_DC3_A11U31_RTR1
+#
+set neid 60d0c7
+#
+undo FTP server-source all-interface
+undo FTP ipv6 server-source all-interface
+#
+ssl policy router_default
+ ssl minimum version tls1.2
+ cipher-suite exclude key-exchange rsa
+ cipher-suite exclude cipher mode cbc
+ cipher-suite exclude hmac sha1
+ diffie-hellman modulus 3072
+ binding cipher-suite-customization default_cipher_suite
+ ecdh group nist
+ signature algorithm-list rsa-pss-rsae-sha256 rsa-pss-rsae-sha384 rsa-pss-rsae-sha512
+#
+ssl cipher-suite-list default_cipher_suite
+ set cipher-suite tls12_ck_dhe_rsa_with_aes_128_gcm_sha256
+ set cipher-suite tls12_ck_dhe_rsa_with_aes_256_gcm_sha384
+ set cipher-suite tls12_ck_ecdhe_rsa_with_aes_128_gcm_sha256
+ set cipher-suite tls12_ck_ecdhe_rsa_with_aes_256_gcm_sha384
+ set cipher-suite tls13_aes_128_gcm_sha256
+ set cipher-suite tls13_aes_256_gcm_sha384
+ set cipher-suite tls13_aes_128_ccm_sha256
+#
+info-center channel 7 name loghost1
+info-center loghost 10.101.18.80 channel 7
+#
+service-template template-default0
+#
+service-template template-default1
+#
+service-template template-default2
+#
+service-template template-default3
+#
+service-template template-default4
+#
+ntp-service server source-interface all disable
+ntp-service ipv6 server source-interface all disable
+#
+vlan batch 1223
+#
+undo icmp name timestamp-reply send
+#
+undo telnet server enable
+undo telnet ipv6 server enable
+undo telnet server-source all-interface
+undo telnet ipv6 server-source all-interface
+#
+diffserv domain default
+#
+diffserv domain 5p3d
+#
+qos-profile 10Mbps
+ user-queue cir 10000 pir 10000 inbound
+ user-queue cir 10000 pir 10000 outbound
+#
+soc
+#
+ip vpn-instance Kamu
+ ipv4-family
+  route-distinguisher 65535:65530
+  apply-label per-instance
+#
+ip vpn-instance __LOCAL_OAM_VPN__
+ ipv4-family
+ ipv6-family
+#
+ip dcn vpn-instance __dcn_vpn__
+ ipv4-family
+#
+undo radius local-ip all
+#
+vlan 1223
+ name SBB
+#
+dhcp server request-packet all-interface disable
+#
+dot1x-template 1
+#
+acl number 2000
+ rule 5 permit vpn-instance-any source 10.110.254.0 0.0.0.255
+ rule 6 permit vpn-instance-any source 10.101.11.0 0.0.0.255
+ rule 10 deny
+#
+acl number 2001
+ rule 5 permit source 10.101.31.0 0.0.0.255
+ rule 10 permit source 10.101.34.0 0.0.0.255
+ rule 15 deny
+#
+traffic classifier MATCH_ALL operator or
+ if-match any
+#
+traffic behavior LIMIT_1000M
+ car cir 1000000 pir 1000000 cbs 187000000 pbs 187000000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_100M
+ car cir 100000 pir 100000 cbs 18700000 pbs 18700000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_10M
+ car cir 10000 pir 10000 cbs 1870000 pbs 1870000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_2000M
+ car cir 2000000 pir 2000000 cbs 374000000 pbs 374000000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_200M
+ car cir 200000 pir 200000 cbs 37400000 pbs 37400000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_20M
+ car cir 20000 pir 20000 cbs 3740000 pbs 3740000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_2500M
+ car cir 2500000 pir 2500000 cbs 467500000 pbs 467500000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_30M
+ car cir 30000 pir 30000 cbs 5610000 pbs 5610000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_40M
+ car cir 40000 pir 40000 cbs 7480000 pbs 7480000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_500M
+ car cir 500000 pir 500000 cbs 93500000 pbs 93500000 green pass yellow pass red discard
+#
+traffic behavior LIMIT_50M
+ car cir 50000 pir 50000 cbs 9350000 pbs 9350000 green pass yellow pass red discard
+#
+traffic policy LIMIT_1000M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_1000M precedence 1
+#
+traffic policy LIMIT_100M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_100M precedence 1
+#
+traffic policy LIMIT_10M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_10M precedence 1
+#
+traffic policy LIMIT_2000M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_2000M precedence 1
+#
+traffic policy LIMIT_200M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_200M precedence 1
+#
+traffic policy LIMIT_20M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_20M precedence 1
+#
+traffic policy LIMIT_2500M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_2500M precedence 1
+#
+traffic policy LIMIT_30M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_30M precedence 1
+#
+traffic policy LIMIT_40M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_40M precedence 1
+#
+traffic policy LIMIT_500M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_500M precedence 1
+#
+traffic policy LIMIT_50M
+ share-mode
+ classifier MATCH_ALL behavior LIMIT_50M precedence 1
+#
+security password
+ #
+ rule admin
+  forbidden word changeme_123
+#
+aaa
+ user-password password-force-change disable
+ local-user mozan@turksat password irreversible-cipher $1c$E@urBl9QO>$ukT6CJp4X~UjW*1]T>*DT_E}XJG957#Vn~7p&O{$$
+ local-user mozan@turksat service-type ftp ssh http
+ local-user mozan@turksat level 3
+ local-user mozan@turksat state block fail-times 3 interval 5
+ local-user hamit.hasancebi password irreversible-cipher $1c${dCS/9eM.U$N+`U<9cH_>uA0"&T5sSJ}pRABY&aF<l:3Y<ds_@M$
+ local-user hamit.hasancebi service-type ssh
+ local-user hamit.hasancebi level 3
+ local-user hamit.hasancebi state block fail-times 3 interval 5
+ local-user bbarisci password irreversible-cipher $1c$/G'EDbOZ:#$Klto~2BAsG6jZ#(P42VNyFYtU^)a]A]5a!V~^6.2$
+ local-user bbarisci service-type ssh
+ local-user bbarisci state block fail-times 3 interval 5
+ local-user bbarisci user-group manage-ug
+ local-user mduzgun password irreversible-cipher $1c$|<`*1Wm<>B$'+<y*~.7!C3,1)4kh:+RBAv>4(b&*GHW6%NgK~!H$
+ local-user mduzgun service-type ftp ssh http
+ local-user mduzgun state block fail-times 3 interval 5
+ local-user mduzgun user-group manage-ug
+ local-user ssarikaya password irreversible-cipher $1c$(JOM+(kE>#${)8lI>/HFJZAd03Mvm**O\TKB@4Ge+Lsh3F$.SCZ$
+ local-user ssarikaya service-type ftp ssh http
+ local-user ssarikaya level 3
+ local-user ssarikaya state block fail-times 3 interval 5
+ local-user restorepoint password irreversible-cipher $1c$0#T51`S@"I$G0]AOu,lv.VUg.BSRe_:{l4N1;hJ<Ioe'W,KBh3R$
+ local-user restorepoint service-type ssh
+ local-user restorepoint state block fail-times 3 interval 5
+ local-user restorepoint user-group manage-ug
+ #
+ authentication-scheme default0
+ #
+ authentication-scheme default1
+ #
+ authentication-scheme default
+  authentication-mode local radius
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default0
+ #
+ accounting-scheme default1
+ #
+ domain default0
+ #
+ domain default1
+ #
+ domain default_admin
+#
+license
+#
+warranty
+#
+interface Eth-Trunk1
+ description KAMU_INTERNET_KAMU_METRO_BAGG5
+ ip binding vpn-instance Kamu
+ mode lacp-static
+#
+interface Eth-Trunk1.50
+ ip binding vpn-instance Kamu
+ ip address 10.50.50.2 255.255.255.252
+ encapsulation dot1q-termination
+ dot1q termination vid 50
+ arp broadcast enable
+#
+interface Eth-Trunk1.102
+ ip binding vpn-instance Kamu
+ ip address 212.174.18.138 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 102
+ arp broadcast enable
+#
+interface Eth-Trunk1.129
+#
+interface Eth-Trunk1.711
+ description CFCU_WAN
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.50 255.255.255.240
+ encapsulation dot1q-termination
+ dot1q termination vid 711
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 94.55.122.49
+ vrrp vrid 1 priority 120
+ vrrp vrid 1 preempt-mode timer delay 60
+#
+interface Eth-Trunk1.995
+ description KAMU_EDK_GECIS
+ shutdown
+ ip binding vpn-instance Kamu
+ ip address 94.55.116.14 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 995
+ arp broadcast enable
+ vrrp vrid 2 virtual-ip 94.55.116.12
+ vrrp vrid 2 priority 120
+ vrrp vrid 2 preempt-mode timer delay 60
+#
+interface Eth-Trunk1.1200
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.145 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1200
+ arp broadcast enable
+#
+interface Eth-Trunk1.1201
+ description DMO
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.81 255.255.255.240
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1201
+ arp broadcast enable
+#
+interface Eth-Trunk1.1203
+ description MILLI_PARKLAR
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.66 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1203
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 94.55.123.65
+ vrrp vrid 1 priority 120
+ vrrp vrid 1 preempt-mode timer delay 60
+#
+interface Eth-Trunk1.1204
+ description MGK
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.137 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1204
+ arp broadcast enable
+#
+interface Eth-Trunk1.1206
+ description LRIT
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.33 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1206
+ arp broadcast enable
+#
+interface Eth-Trunk1.1208
+ description SHGM
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.206 255.255.255.240
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1208
+ arp broadcast enable
+#
+interface Eth-Trunk1.1209
+ description AB_BAKANLIGI
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.210 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1209
+ arp broadcast enable
+#
+interface Eth-Trunk1.1210
+ description VUCUT_GELISTIRME
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.97 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1210
+ arp broadcast enable
+#
+interface Eth-Trunk1.1211
+ description KIYI_EMNIYETI
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.13 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1211
+ arp broadcast enable
+#
+interface Eth-Trunk1.1212
+ description TITCK
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.217 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1212
+ arp broadcast enable
+#
+interface Eth-Trunk1.1213
+ description PENDIK_BEL
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.221 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1213
+ arp broadcast enable
+#
+interface Eth-Trunk1.1215
+ description YURTDISI_TURKLER
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.193 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1215
+ arp broadcast enable
+#
+interface Eth-Trunk1.1216
+ description ULASTIRMA
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.233 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1216
+ arp broadcast enable
+#
+interface Eth-Trunk1.1217
+ description ADEO
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.241 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1217
+ arp broadcast enable
+#
+interface Eth-Trunk1.1218
+ description EKDS
+ ip binding vpn-instance Kamu
+ ip address 10.100.248.235 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1218
+ arp broadcast enable
+#
+interface Eth-Trunk1.1219
+ description EPDK
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.245 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1219
+ arp broadcast enable
+#
+interface Eth-Trunk1.1220
+ description AFAD
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.113 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1220
+ arp broadcast enable
+#
+interface Eth-Trunk1.1221
+ description NEW_KAMU_FW_ROOT_UNTRUST
+ ip binding vpn-instance Kamu
+ ip address 94.55.127.57 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1221
+ arp broadcast enable
+#
+interface Eth-Trunk1.1223
+ description SBB
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.74 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1223
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 94.55.123.73
+ vrrp vrid 1 priority 120
+ vrrp vrid 1 preempt-mode timer delay 60
+ traffic-policy LIMIT_10M outbound vlan 1223
+ traffic-policy LIMIT_10M inbound vlan 1223
+#
+interface Eth-Trunk1.1227
+ description KGK
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.177 255.255.255.240
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1227
+ arp broadcast enable
+#
+interface Eth-Trunk1.1228
+ description SAYISTAY
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.162 255.255.255.240
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1228
+ arp broadcast enable
+ vrrp vrid 3 virtual-ip 94.55.122.163
+ vrrp vrid 3 priority 120
+ vrrp vrid 3 preempt-mode timer delay 60
+#
+interface Eth-Trunk1.1229
+ description KurumX
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.9 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1229
+ arp broadcast enable
+#
+interface Eth-Trunk1.1236
+ description SSB_WAN
+ shutdown
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.41 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1236
+ arp broadcast enable
+#
+interface Eth-Trunk1.1237
+ description KAMU_CSOC_WAN
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.73 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1237
+ arp broadcast enable
+#
+interface Eth-Trunk1.1238
+ description CEVRE_SEHIRCILIK
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.107 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1238
+ arp broadcast enable
+#
+interface Eth-Trunk1.1239
+ description AILE_BAKANLIGI
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.121 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1239
+ arp broadcast enable
+#
+interface Eth-Trunk1.1250
+ ip binding vpn-instance Kamu
+ ip address 94.55.127.65 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1250
+ arp broadcast enable
+ qos-profile 10Mbps inbound vlan 1250 identifier vlan-id 
+ qos-profile 10Mbps outbound vlan 1250 identifier vlan-id 
+#
+interface Eth-Trunk1.1256
+ description MESLEKI_YETERLILIK_KURUMU
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.3 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1256
+ arp broadcast enable
+#
+interface Eth-Trunk1.1262
+ description ESENYURT
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.117 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1262
+ arp broadcast enable
+#
+interface Eth-Trunk1.1263
+ description METEOROLOJI
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.17 255.255.255.240
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1263
+ arp broadcast enable
+#
+interface Eth-Trunk1.1277
+ description ESB
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.145 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1277
+ arp broadcast enable
+#
+interface Eth-Trunk1.1280
+ description CIMER
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.83 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1280
+ arp broadcast enable
+#
+interface Eth-Trunk1.1281
+ description STRATEJI_BUTCE_KALKINMA
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.17 255.255.255.240
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1281
+ arp broadcast enable
+#
+interface Eth-Trunk1.1286
+ description RTUK
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.41 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1286
+ arp broadcast enable
+#
+interface Eth-Trunk1.1287
+ description ILKSAN
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.35 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1287
+ arp broadcast enable
+#
+interface Eth-Trunk1.1288
+ description KAMU_TUCBS
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.253 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1288
+ arp broadcast enable
+#
+interface Eth-Trunk1.1289
+ description YOK_WAN
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.133 255.255.255.252
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1289
+ arp broadcast enable
+#
+interface Eth-Trunk1.1290
+ description TCCB_DDO
+ shutdown
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.227 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1290
+ arp broadcast enable
+#
+interface Eth-Trunk1.1291
+ description EGO
+ ip binding vpn-instance Kamu
+ ip address 94.55.122.66 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1291
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 94.55.122.65
+ vrrp vrid 1 priority 120
+ vrrp vrid 1 preempt-mode timer delay 60
+#
+interface Eth-Trunk1.1292
+ description ESK_WAN
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.59 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1292
+ arp broadcast enable
+#
+interface Eth-Trunk1.1294
+ description RUNSYS
+ ip binding vpn-instance Kamu
+ ip address 94.55.127.17 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1294
+ arp broadcast enable
+#
+interface Eth-Trunk1.1295
+ description CBIKO
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.139 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1295
+ arp broadcast enable
+#
+interface Eth-Trunk1.1296
+ description TIKA_WAN_FORTIGATE
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.161 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1296
+ arp broadcast enable
+#
+interface Eth-Trunk1.1298
+ description KIK
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.177 255.255.255.240
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1298
+ arp broadcast enable
+#
+interface Eth-Trunk1.1299
+ description BTIDER
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.201 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1299
+ arp broadcast enable
+#
+interface Eth-Trunk1.1300
+ description DTCLOUD
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.209 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1300
+ arp broadcast enable
+#
+interface Eth-Trunk1.1301
+ description SANCAKTEPE
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.235 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1301
+ arp broadcast enable
+#
+interface Eth-Trunk1.1302
+ description TUA
+ ip binding vpn-instance Kamu
+ ip address 94.55.123.242 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 1302
+ arp broadcast enable
+#
+interface Eth-Trunk1.3260
+ description SOL_BACKUP_INTERNET
+ ip binding vpn-instance Kamu
+ ip address 217.131.10.107 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 3260
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 217.131.10.106
+ vrrp vrid 1 priority 120
+ vrrp vrid 1 preempt-mode timer delay 60
+#
+interface Eth-Trunk1.3265
+ description SOL_BACKUP_INTERNET_DDOS
+ ip binding vpn-instance Kamu
+ ip address 10.247.75.179 255.255.255.248
+ statistic enable
+ encapsulation dot1q-termination
+ dot1q termination vid 3265
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 10.247.75.178
+ vrrp vrid 1 priority 120
+ vrrp vrid 1 preempt-mode timer delay 60
+#
+interface Virtual-Template0
+ ppp authentication-mode auto
+#
+interface GigabitEthernet0/0/0
+ speed auto
+ duplex auto
+ undo shutdown
+ ip binding vpn-instance __LOCAL_OAM_VPN__
+ ip address 10.111.11.13 255.255.255.0
+#
+interface GigabitEthernet0/1/0
+ port-mode 1GE
+ portswitch
+ undo shutdown
+ undo dcn
+#
+interface GigabitEthernet0/1/1
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/2
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/3
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/4
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/5
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/6
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/7
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/8
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/9
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/10
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/11
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/12
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/13
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/14
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/15
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/16
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/17
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/18
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/19
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/20
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/21
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/22
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/23
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/24
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/25
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/26
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/27
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/28
+ portswitch
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/29
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/30
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/31
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/32
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/33
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/34
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/35
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/36
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/37
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/38
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/39
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/40
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/41
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/42
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/43
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/44
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/45
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/46
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/47
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/48
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/49
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/50
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/51
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/52
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/53
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/54
+ undo shutdown
+ eth-trunk 1
+ undo dcn
+#
+interface 100GE0/1/55
+ undo shutdown
+ eth-trunk 1
+ undo dcn
+#
+interface LoopBack1023
+ description DCN loopback interface
+ ip binding vpn-instance __dcn_vpn__
+ ip address 128.96.208.199 255.255.0.0
+#
+interface NULL0
+#
+bgp 47524
+ router-id 212.174.18.138
+ graceful-restart
+ private-4-byte-as disable
+ #
+ ipv4-family unicast
+  undo synchronization
+ #
+ vpn-instance Kamu
+ #
+ ipv4-family vpn-instance Kamu
+  network 94.55.122.0 255.255.254.0
+  network 94.55.127.0 255.255.255.0
+  peer 10.247.75.177 as-number 34984
+  peer 10.247.75.177 connect-interface Eth-Trunk1.3265
+  peer 10.247.75.177 bfd min-tx-interval 300 min-rx-interval 300
+  peer 10.247.75.177 bfd enable
+  peer 10.247.75.177 route-policy SOL-IN import
+  peer 10.247.75.177 route-policy KAMU-SOL-OUT export
+  peer 212.174.18.137 as-number 9121
+  peer 212.174.18.137 connect-interface Eth-Trunk1.102
+  peer 212.174.18.137 bfd min-tx-interval 300 min-rx-interval 300
+  peer 212.174.18.137 bfd enable
+  peer 212.174.18.137 route-policy TT-IN import
+  peer 212.174.18.137 route-policy KAMU-TT-OUT export
+  peer 217.131.10.105 as-number 34984
+  peer 217.131.10.105 connect-interface Eth-Trunk1.3260
+  peer 217.131.10.105 bfd min-tx-interval 300 min-rx-interval 300
+  peer 217.131.10.105 bfd enable
+  peer 217.131.10.105 route-policy SOL-IN import
+  peer 217.131.10.105 route-policy KAMU-SOL-OUT export
+#
+ospf 65534 vpn-instance __dcn_vpn__
+ description DCN ospf create by default
+ opaque-capability enable
+ hostname
+ vpn-instance-capability simple
+ area 0.0.0.0
+  network 0.0.0.0 255.255.255.255
+#
+!The DCN function implements the capability of plug-and-play for this device.
+!A NE IP address based on the unique NE ID is automatically generated in VPN
+!of DCN. It is recommended that the NE IP address be changed to the planned
+!one by running the ne-ip X.X.X.X <MASK> command after the device being online.
+dcn
+#
+ip ip-prefix DEFAULT-ROUTE index 10 permit 0.0.0.0 0
+ip ip-prefix KAMU_v4 index 10 permit 94.55.122.0 23
+ip ip-prefix KAMU_v4 index 20 permit 94.55.127.0 24
+#
+route-policy KAMU-SOL-OUT permit node 10
+ if-match ip-prefix KAMU_v4
+ apply as-path 47524 47524 47524 additive
+ apply local-preference 100
+#
+route-policy KAMU-SOL-OUT deny node 20
+#
+route-policy KAMU-TT-OUT permit node 10
+ if-match ip-prefix KAMU_v4
+ apply local-preference 200
+#
+route-policy KAMU-TT-OUT deny node 20
+#
+route-policy SOL-IN permit node 10
+ if-match ip-prefix DEFAULT-ROUTE
+ apply local-preference 100
+#
+route-policy SOL-IN deny node 20
+#
+route-policy TT-IN permit node 10
+ if-match ip-prefix DEFAULT-ROUTE
+ apply local-preference 200
+#
+route-policy TT-IN deny node 20
+#
+ip route-static vpn-instance __LOCAL_OAM_VPN__ 0.0.0.0 0.0.0.0 10.111.11.1
+ip route-static vpn-instance Kamu 94.55.116.22 255.255.255.255 212.174.18.137 description mustafa_test
+ip route-static vpn-instance Kamu 94.55.116.216 255.255.255.252 94.55.122.237
+ip route-static vpn-instance Kamu 94.55.122.0 255.255.254.0 NULL0 preference 240
+ip route-static vpn-instance Kamu 94.55.122.56 255.255.255.248 94.55.123.254 description TUCBS
+ip route-static vpn-instance Kamu 94.55.122.100 255.255.255.252 94.55.123.140 description CUMBAS_DESTEK_PORTAL
+ip route-static vpn-instance Kamu 94.55.122.104 255.255.255.248 94.55.122.42 description SSB
+ip route-static vpn-instance Kamu 94.55.122.112 255.255.255.240 94.55.123.140 description CBIKO_2
+ip route-static vpn-instance Kamu 94.55.122.156 255.255.255.255 94.55.123.140 description CUMBAS_WAN_GORUSME
+ip route-static vpn-instance Kamu 94.55.122.224 255.255.255.248 94.55.122.237 description FORTI_ROOT_WAN
+ip route-static vpn-instance Kamu 94.55.122.248 255.255.255.252 94.55.123.178 description KIK_ROUTE_BLOK
+ip route-static vpn-instance Kamu 94.55.122.252 255.255.255.252 94.55.122.237
+ip route-static vpn-instance Kamu 94.55.123.8 255.255.255.255 94.55.122.146 description YUZUNCUYIL
+ip route-static vpn-instance Kamu 94.55.123.48 255.255.255.248 94.55.123.140 description CBIKO_3
+ip route-static vpn-instance Kamu 94.55.123.88 255.255.255.248 94.55.122.209 description AVRUPA_BIRLIGI
+ip route-static vpn-instance Kamu 94.55.123.96 255.255.255.248 94.55.123.178 description KIK_FW_ROUTE_BLOK
+ip route-static vpn-instance Kamu 94.55.123.128 255.255.255.252 94.55.123.178 description kik
+ip route-static vpn-instance Kamu 94.55.123.136 255.255.255.248 94.55.123.140 description CBIKO_4
+ip route-static vpn-instance Kamu 94.55.123.144 255.255.255.248 94.55.123.150 description ESB_WAN_2022
+ip route-static vpn-instance Kamu 94.55.123.152 255.255.255.252 94.55.122.138 description MGK_WAN_EK
+ip route-static vpn-instance Kamu 94.55.123.168 255.255.255.248 94.55.123.140 description CUMBAS_IKO_ROUTE
+ip route-static vpn-instance Kamu 94.55.127.0 255.255.255.0 NULL0 preference 240
+ip route-static vpn-instance Kamu 94.55.127.2 255.255.255.255 10.100.248.236 description EKDS_KALE
+ip route-static vpn-instance Kamu 94.55.127.3 255.255.255.255 10.100.248.236 description EKDS_EGA
+ip route-static vpn-instance Kamu 94.55.127.4 255.255.255.255 10.100.248.236 description EKDS_EB
+ip route-static vpn-instance Kamu 94.55.127.5 255.255.255.255 94.55.122.246 description EPDK_WAN_OPT_POC
+ip route-static vpn-instance Kamu 94.55.127.6 255.255.255.255 94.55.122.237 description DDO_LRETEST
+ip route-static vpn-instance Kamu 94.55.127.7 255.255.255.255 10.100.248.236 description EKDS_ETB
+ip route-static vpn-instance Kamu 94.55.127.8 255.255.255.255 10.100.248.236 description EKDS_ETB_2
+ip route-static vpn-instance Kamu 94.55.127.9 255.255.255.255 94.55.122.246 description EPDK_WAN_OPT_POC_2
+ip route-static vpn-instance Kamu 94.55.127.10 255.255.255.255 94.55.123.140 description CUMBAS
+ip route-static vpn-instance Kamu 94.55.127.11 255.255.255.255 94.55.123.140 description CUMBAS_12092024_REQ
+ip route-static vpn-instance Kamu 94.55.127.12 255.255.255.255 94.55.123.84 description CIMER_21102024
+ip route-static vpn-instance Kamu 94.55.127.13 255.255.255.255 94.55.123.140 description CUMBAS_30102024
+ip route-static vpn-instance Kamu 94.55.127.14 255.255.255.255 94.55.123.140 description CBIKO_25032025
+ip route-static vpn-instance Kamu 94.55.127.15 255.255.255.255 94.55.123.140 description CBIKO_25032025
+ip route-static vpn-instance Kamu 94.55.127.24 255.255.255.248 94.55.123.140 description CBIKO_25032025
+ip route-static vpn-instance Kamu 94.55.127.32 255.255.255.248 94.55.123.210 description DT-Cloud_Public
+ip route-static vpn-instance Kamu 94.55.127.64 255.255.255.255 94.55.127.58 description SAFIR
+ip route-static vpn-instance Kamu 94.55.127.65 255.255.255.255 94.55.127.58 description SAFIR
+ip route-static vpn-instance Kamu 94.55.127.68 255.255.255.255 94.55.123.68 description DKMP
+ip route-static vpn-instance Kamu 94.55.127.69 255.255.255.255 94.55.123.68 description DKMP
+ip route-static vpn-instance Kamu 94.55.127.70 255.255.255.255 94.55.122.98 description VUCUT_SSLVPN_TEST
+#
+snmp-agent
+snmp-agent local-engineid 800007DB03984874A16F51
+snmp-agent community read cipher %^%#*"\M!-u"!"@Q>_Su[Dq@)!N+L|LP^!Ji=gC@4<\W~;CL91b.pHc|$21)R+W9~6dL#c0z08PT=M7./cfV%^%# acl 2001 alias __CommunityAliasName_01_18244
+snmp-agent community read cipher %^%#Q7=3Oq4>3S+UGeJG-7H1*V%n,>Ho2'<nSg-olROCy~m/WOL<fX0Hn9(:UD5Ty=;.<RN_'U|$n)*PU_;;%^%# alias __CommunityAliasName_02_27092
+snmp-agent community read cipher %^%#f:fd9a;<rEVHQu#Oy2^Ps$H,@Kkv#U(}lJEe/;a$S&HYBB5=QLx#pmN=Fj#0qT7;2Fq-<*YO)(1m&v_T%^%# alias __CommunityAliasName_03_59911
+#
+snmp-agent sys-info version v2c
+undo snmp-agent sys-info version v3
+snmp-agent target-host host-name __targetHost_1_47591 trap address udp-domain 10.101.34.242 udp-port 161 params securityname cipher %^%#`qVHN!+Ip=N`~-D7;K)$W[!wKU$L\K&pOW>2rZd-%^%#
+snmp-agent target-host host-name __targetHost_3_28356 trap address udp-domain 10.101.31.245 udp-port 161 params securityname cipher %^%#>i;09}&gSMq.nLQi-{{%;Zf}JDd<Q%OSH&FrvN>K%^%#
+snmp-agent target-host host-name __targetHost_4_40415 trap address udp-domain 10.101.31.210 udp-port 161 params securityname cipher %^%#l]$tF86KOO_5V|/V}owV,kaU'FS4GZ+SW$6y.OY(%^%#
+snmp-agent target-host host-name __targetHost_4_40994 trap address udp-domain 10.101.31.240 params securityname cipher %^%#8Z=i9Nl=k=",Wy0/$av+&[.]P%H5':jTTg:(BZ|!%^%# v2c
+snmp-agent target-host host-name __targetHost_5_58907 trap address udp-domain 10.101.31.220 params securityname cipher %^%#WWMp$n5cr.\=5e93j@S)}h!)4O*OMPSS;sT1&)a=%^%# v2c
+snmp-agent target-host host-name cacti_turksat inform address udp-domain 10.101.34.60 udp-port 161 params securityname cipher %^%#2_O<6&~we9wBnYOz5$\Xy|hYA%D~|I5y+)&]87I;%^%# v2c
+#
+snmp-agent mib-view included fnacx123 iso
+#
+snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+undo snmp-agent proxy protocol source-status all-interface
+undo snmp-agent proxy protocol source-status ipv6 all-interface
+#
+lldp enable
+#
+undo web-auth-server source-ip all
+#
+undo web-auth-server source-ipv6 all
+#
+stelnet server enable
+snetconf server enable
+ssh server rsa-key min-length 3072
+ssh user bbarisci
+ssh user bbarisci authentication-type password
+ssh user bbarisci service-type all
+ssh user bpolatkan
+ssh user bpolatkan authentication-type password
+ssh user bpolatkan service-type all
+ssh user destek
+ssh user destek authentication-type password
+ssh user destek service-type all
+ssh user hamit.hasancebi
+ssh user hamit.hasancebi authentication-type password
+ssh user hamit.hasancebi service-type all
+ssh user mduzgun
+ssh user mduzgun authentication-type password
+ssh user mduzgun service-type all
+ssh user mozan@turksat
+ssh user mozan@turksat authentication-type password
+ssh user mozan@turksat service-type all
+ssh user restorepoint
+ssh user restorepoint authentication-type password
+ssh user restorepoint service-type all
+ssh user ssarikaya
+ssh user ssarikaya authentication-type password
+ssh user ssarikaya service-type all
+ssh server-source -i GigabitEthernet0/0/0
+undo ssh server-source all-interface
+ssh ipv6 server-source all-interface
+ssh server acl 2000
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh server hmac sha2_512 sha2_256
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+ssh server publickey ecc rsa rsa_sha2_256 rsa_sha2_512
+#
+ssh server dh-exchange min-len 3072
+#
+ssh client publickey ecc rsa rsa_sha2_256 rsa_sha2_512
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh client hmac sha2_512 sha2_256
+ssh client key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+user-interface maximum-vty 21
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1c$yv6&EPG;=1$SN}y1K(ug!2y.dYD{qk-R7.z$I(R7+\XJCYPTlFA$
+#
+user-interface vty 0 4
+ acl 2000 inbound
+ authentication-mode aaa
+ protocol inbound ssh
+#
+netconf
+ activate module huawei-ip
+#
+local-aaa-server
+#
+pki domain default
+#
+l2tp-group default-lac
+ tunnel name HUAWEI
+#
+l2tp-group default-lns
+ tunnel name HUAWEI
+#
+return

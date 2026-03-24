@@ -1,0 +1,16 @@
+{
+    "successful": [
+        {
+            "device": "TV_YAYINLARI_R2",
+            "ip": "10.101.111.98",
+            "brand": "Huawei",
+            "model": "NetEngine 8000 M1C",
+            "software_version": "8.221",
+            "patch": null,
+            "uptime": "798 days, 1 hour, 39 minutes",
+            "serial_no": "1023C5462694"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

@@ -1,0 +1,16 @@
+{
+    "successful": [
+        {
+            "device": "EDK_GLB_DC_RTR2",
+            "ip": "10.255.11.105",
+            "brand": "Huawei",
+            "model": "NetEngine 8000 F1A-8H20Q",
+            "software_version": "8.240",
+            "patch": "V800R024SPH1b0",
+            "uptime": "40 days, 19 hours, 34 minutes",
+            "serial_no": "2102355KVX10RC100098"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

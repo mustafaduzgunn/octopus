@@ -1,0 +1,18 @@
+{
+    "successful": [
+        {
+            "device": "CISCO_113_11",
+            "ip": "10.101.113.11",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": null,
+            "model": null,
+            "uptime": "382 days, 17 hours, 07 minutes",
+            "hostname": "ULUS_KORIDOR_1",
+            "software_version": "3\"",
+            "collected_hostname": "ULUS_KORIDOR_1"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

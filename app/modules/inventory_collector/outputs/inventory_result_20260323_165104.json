@@ -1,0 +1,16 @@
+{
+    "successful": [
+        {
+            "device": "MCN_hw_RTR_02",
+            "ip": "10.1.100.13",
+            "brand": "Huawei",
+            "model": "NetEngine 8000 F1A-8H20Q",
+            "software_version": "8.231",
+            "patch": null,
+            "uptime": "59 days, 3 hours, 29 minutes",
+            "serial_no": "2102355KVX10QB100187"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

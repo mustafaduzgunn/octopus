@@ -1,0 +1,3916 @@
+[
+  {
+    "name": "EDK_METRO_SW1",
+    "ip": "10.255.11.18",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_metro_sw1",
+      "testsw"
+    ]
+  },
+  {
+    "name": "EDK_DIS_SW1",
+    "ip": "10.255.11.10",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_dis_sw1"
+    ]
+  },
+  {
+    "name": "EDK_ROUTER-1",
+    "ip": "10.255.11.11",
+    "device_type": "cisco_ios",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_router-1",
+      "testsw"
+    ]
+  },
+  {
+    "name": "EDK_ROUTER-2",
+    "ip": "10.255.11.12",
+    "device_type": "cisco_ios",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_router-2"
+    ]
+  },
+  {
+    "name": "EDK_IC_SW1",
+    "ip": "10.255.11.13",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_ic_sw1"
+    ]
+  },
+  {
+    "name": "EDK_TOR_TOPLAMA_SW1",
+    "ip": "10.255.11.19",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_tor_toplama_sw1"
+    ]
+  },
+  {
+    "name": "EG_DC3_B07U3937_NOCMGMT",
+    "ip": "10.255.11.2",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_noc_mgmt_sw"
+    ]
+  },
+  {
+    "name": "EDK_TOR_KB1_SW_1",
+    "ip": "10.255.11.14",
+    "device_type": "dell_force10",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "dell",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_tor_kb1_sw_1"
+    ]
+  },
+  {
+    "name": "EDK_TOR_KB1_SW_2",
+    "ip": "10.255.11.15",
+    "device_type": "dell_force10",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "dell",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_tor_kb1_sw_2"
+    ]
+  },
+  {
+    "name": "EDK_TOR_KB2_SW_1",
+    "ip": "10.255.11.16",
+    "device_type": "dell_force10",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "dell",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_tor_kb2_sw_1"
+    ]
+  },
+  {
+    "name": "EDK_TOR_KB2_SW_2",
+    "ip": "10.255.11.17",
+    "device_type": "dell_force10",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "dell",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_tor_kb2_sw_2"
+    ]
+  },
+  {
+    "name": "TG_DC3_B04U41_SIBERMGMT",
+    "ip": "10.101.11.208",
+    "device_type": "cisco_ios",
+    "credential_id": "trsataim",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "sw2_siem_e-devlet_mngt"
+    ]
+  },
+  {
+    "name": "EDK_TOR_TOPLAMA_MCN",
+    "ip": "10.255.11.23",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "edk_tor_toplama_mcn"
+    ]
+  },
+  {
+    "name": "EDK_MACUNKOY_MNGT_SW",
+    "ip": "10.255.11.24",
+    "device_type": "huawei",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "edk_macunkoy_mngt_sw"
+    ]
+  },
+  {
+    "name": "EG_DC3_B09U05_ILO",
+    "ip": "10.255.11.30",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_ilo_sw",
+      "testsw"
+    ]
+  },
+  {
+    "name": "KG_DC3_A11U16_N7K1_BB",
+    "ip": "10.111.11.11",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "n7k1"
+    ]
+  },
+  {
+    "name": "KG_DC3_A10U16_N7K2_BB",
+    "ip": "10.111.11.12",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "n7k2"
+    ]
+  },
+  {
+    "name": "KG_DC3_A10U16_N7K2_BB-VDC1",
+    "ip": "10.101.45.251",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "n7k1_vdc1",
+      "customer_new_vlan"
+    ]
+  },
+  {
+    "name": "KG_DC3_A11U16_N7K1_BB-VDC1",
+    "ip": "10.101.45.252",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "n7k2_vdc1",
+      "customer_new_vlan"
+    ]
+  },
+  {
+    "name": "KAMU_TOR_HW1",
+    "ip": "10.111.11.15",
+    "device_type": "huawei",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_tor_hw1",
+      "customer_new_vlan"
+    ]
+  },
+  {
+    "name": "kamu_metrosw_hw_stack",
+    "ip": "10.101.11.50",
+    "device_type": "huawei",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_metrosw_hw_stack"
+    ]
+  },
+  {
+    "name": "KAMU_ME_SWITCH",
+    "ip": "10.111.11.10",
+    "device_type": "hp_comware",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "h3c",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_me_switch"
+    ]
+  },
+  {
+    "name": "KAMU_ROUTER_1",
+    "ip": "10.111.11.13",
+    "device_type": "huawei",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_router_1"
+    ]
+  },
+  {
+    "name": "KAMU_ROUTER_2",
+    "ip": "10.111.11.14",
+    "device_type": "huawei",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_router_2"
+    ]
+  },
+  {
+    "additional_ips": [],
+    "credential_id": "noc",
+    "device_type": "cisco_ios",
+    "ip": "10.111.11.16",
+    "name": "KAMU_CISCO_TOR_1",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_cisco_tor_1"
+    ],
+    "notes": "test"
+  },
+  {
+    "name": "KAMU_CISCO_TOR_2",
+    "ip": "10.111.11.17",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_cisco_tor_2"
+    ]
+  },
+  {
+    "name": "KAMU_H3C_SW_1",
+    "ip": "10.111.11.18",
+    "device_type": "hp_comware",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "h3c",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_h3c_sw_1"
+    ]
+  },
+  {
+    "name": "KAMU_H3C_STORAGE_SW_1",
+    "ip": "10.111.11.19",
+    "device_type": "hp_comware",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "h3c",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_h3c_storage_sw_1"
+    ]
+  },
+  {
+    "name": "KG_DC3_A12U00_ILO",
+    "ip": "10.111.11.23",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_ilo_sw_3"
+    ]
+  },
+  {
+    "name": "KG_DC3_D0807U01_CLOUDILO",
+    "ip": "10.111.11.24",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "h3c_ilo_2023"
+    ]
+  },
+  {
+    "name": "KG_DC3_B17U03_ILO",
+    "ip": "10.111.11.21",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_server_ilo_sw"
+    ]
+  },
+  {
+    "name": "KG_DC3_B16U01_ILO",
+    "ip": "10.111.11.22",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_ilo_sw_2"
+    ]
+  },
+  {
+    "name": "KG_DC3_B17U04_SRVMGMT",
+    "ip": "10.111.11.20",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_server_mgmt_sw"
+    ]
+  },
+  {
+    "name": "TG_DC2_A04U15_MGMT",
+    "ip": "10.101.111.51",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "so2_mngt_sw_1"
+    ]
+  },
+  {
+    "name": "F5-Management",
+    "ip": "10.101.111.239",
+    "device_type": "huawei",
+    "credential_id": "trsataim",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "f5-management"
+    ]
+  },
+  {
+    "name": "KG_DC3_A09U06_SRVMGMT",
+    "ip": "10.111.11.31",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "management_sw1"
+    ]
+  },
+  {
+    "name": "KG_DC3_A09U14_SRVMGMT",
+    "ip": "10.111.11.32",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "management_sw2"
+    ]
+  },
+  {
+    "name": "VELOS_SW_A",
+    "ip": "10.101.111.231",
+    "device_type": "huawei",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "velos_sw_a"
+    ]
+  },
+  {
+    "name": "TG_DC3_B06U03_SIBERMGMT",
+    "ip": "10.101.111.59",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "cyber_ddos_sslpb_mgmt"
+    ]
+  },
+  {
+    "name": "SIEM_TOR_1",
+    "ip": "10.101.11.205",
+    "device_type": "huawei",
+    "credential_id": "trsataim",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "siem_tor_1"
+    ]
+  },
+  {
+    "name": "TG_DC3_B03U41_SIBERMGMT",
+    "ip": "10.101.11.207",
+    "device_type": "cisco_ios",
+    "credential_id": "trsataim",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "siem_turksat_mngt_sw"
+    ]
+  },
+  {
+    "name": "KTG_DC3_A09U3635_MGMTBB",
+    "ip": "10.101.111.52",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "yso_mngt_sw"
+    ]
+  },
+  {
+    "name": "TG_DC1_B02U07_BB1",
+    "ip": "10.101.111.3",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "trsatbb1"
+    ]
+  },
+  {
+    "name": "TG_DC1_B03U07_BB2",
+    "ip": "10.101.111.4",
+    "device_type": "cisco_ios",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "trsatbb2"
+    ]
+  },
+  {
+    "name": "TG_DC1_B0203U41_ME",
+    "ip": "10.101.111.5",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "trsat_metro_sw"
+    ]
+  },
+  {
+    "name": "KAMU_DELL_TOR",
+    "ip": "10.111.11.28",
+    "device_type": "dell_force10",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "dell",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_dell_tor"
+    ]
+  },
+  {
+    "name": "KAMU_DELL_TOR",
+    "ip": "10.111.11.29",
+    "device_type": "dell_force10",
+    "credential_id": "noc",
+    "tags": [
+      "all",
+      "dell",
+      "local",
+      "kamu",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_dell_tor"
+    ]
+  },
+  {
+    "name": "TG_DC1_A03U01_ILO",
+    "ip": "10.101.111.96",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "turksat_ilo_sw"
+    ]
+  },
+  {
+    "name": "TG_DC1_B02U2826_TESTBB",
+    "ip": "10.101.111.223",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "test_bb_sw"
+    ]
+  },
+  {
+    "name": "TV_YAYINLARI_R1",
+    "ip": "10.101.111.97",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "tv_yayinlari",
+      "tv_yayinlari_r1"
+    ]
+  },
+  {
+    "name": "TV_YAYINLARI_R2",
+    "ip": "10.101.111.98",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "tv_yayinlari",
+      "tv_yayinlari_r2"
+    ]
+  },
+  {
+    "name": "TVYAYINLARI_SW-A",
+    "ip": "10.101.111.81",
+    "device_type": "cisco_ios",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "cisco",
+      "tv_yayinlari",
+      "tvyayinlari_sw-a"
+    ]
+  },
+  {
+    "name": "TVYAYINLARI_SW-B",
+    "ip": "10.101.111.82",
+    "device_type": "cisco_ios",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "cisco",
+      "tv_yayinlari",
+      "tvyayinlari_sw-b"
+    ]
+  },
+  {
+    "name": "switch-tvyayinlari1",
+    "ip": "10.101.111.80",
+    "device_type": "cisco_ios",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "cisco",
+      "tv_yayinlari",
+      "switch-tvyayinlari1"
+    ]
+  },
+  {
+    "name": "MCN_hw_BB",
+    "ip": "10.1.100.20",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "mcn_hw_bb"
+    ]
+  },
+  {
+    "name": "MCN_hw_METRO_SW",
+    "ip": "10.1.100.11",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "mcn_hw_metro_sw"
+    ]
+  },
+  {
+    "name": "MCN_hw_MNGT_SW",
+    "ip": "10.1.100.10",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "mcn_hw_mngt_sw"
+    ]
+  },
+  {
+    "name": "MCN_hw_RTR_01",
+    "ip": "10.1.100.12",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "mcn_hw_rtr_01"
+    ]
+  },
+  {
+    "name": "MCN_hw_RTR_02",
+    "ip": "10.1.100.13",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "mcn_hw_rtr_02"
+    ]
+  },
+  {
+    "name": "MCN_hw_TOR_G4",
+    "ip": "10.1.100.14",
+    "device_type": "huawei",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "turksat",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "mcn_hw_tor_g4"
+    ]
+  },
+  {
+    "name": "MCN_ILMD_WIFI_SW",
+    "ip": "10.101.111.181",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "macunkoy_wireless"
+    ]
+  },
+  {
+    "name": "MCN_DC_SW",
+    "ip": "10.101.111.183",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "macunkoy_dc_sw"
+    ]
+  },
+  {
+    "name": "KG_DC3_A09U28_NOCMGMT",
+    "ip": "10.111.11.254",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "local",
+      "turksat",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "kamu_network_mgmt_sw"
+    ]
+  },
+  {
+    "name": "ADALET_BINASI",
+    "ip": "10.101.111.55",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "adalet_binasi"
+    ]
+  },
+  {
+    "name": "AHMET_OZSOY_UPLINK_SW",
+    "ip": "10.101.111.34",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "ahmet_ozsoy_uplink_sw"
+    ]
+  },
+  {
+    "name": "AK-32",
+    "ip": "10.101.111.44",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "ak-32"
+    ]
+  },
+  {
+    "name": "AKA_3_SW",
+    "ip": "10.101.111.39",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "aka_3_sw"
+    ]
+  },
+  {
+    "name": "AKA_TKS_34",
+    "ip": "10.101.111.32",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "aka_tks_34"
+    ]
+  },
+  {
+    "name": "AKA-3",
+    "ip": "10.101.111.45",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "anku",
+      "aka-3"
+    ]
+  },
+  {
+    "name": "ANK_EKBINA_SW",
+    "ip": "10.101.111.167",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "anku",
+      "anku_ek_bina_sw"
+    ]
+  },
+  {
+    "name": "ANK_ST1_SW",
+    "ip": "10.101.111.165",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "anku",
+      "ankutek-st1"
+    ]
+  },
+  {
+    "name": "ANK_ST2_SW",
+    "ip": "10.101.111.166",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "anku",
+      "ankutek-st2"
+    ]
+  },
+  {
+    "name": "GLB_BT_SW",
+    "ip": "10.101.111.20",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "bt_switch_st",
+      "testsw"
+    ]
+  },
+  {
+    "name": "BT_UPS_ROOM",
+    "ip": "10.101.111.17",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "bt_ups_room"
+    ]
+  },
+  {
+    "name": "TG_DC1_B02U08_DCWIFI",
+    "ip": "10.101.111.36",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "dc_wireless_sw"
+    ]
+  },
+  {
+    "name": "EG_DC3_B07U3937_NOCMGMT",
+    "ip": "10.101.111.211",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "edk_noc_mgmt_sw"
+    ]
+  },
+  {
+    "name": "ELEKTRIK_ODASI",
+    "ip": "10.101.111.27",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "elektrik_odasi"
+    ]
+  },
+  {
+    "name": "GARAGE_SW",
+    "ip": "10.101.111.16",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "garage_sw"
+    ]
+  },
+  {
+    "name": "GENEL_EVRAK_SW",
+    "ip": "10.101.111.23",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "genel_evrak_sw"
+    ]
+  },
+  {
+    "name": "GENEL_TRAFO_SW",
+    "ip": "10.101.111.38",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "genel_trafo_sw"
+    ]
+  },
+  {
+    "name": "GOZLEMEVI",
+    "ip": "10.101.111.43",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "gozlemevi"
+    ]
+  },
+  {
+    "name": "IDARI_BINA",
+    "ip": "10.101.111.12",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "idari_bina"
+    ]
+  },
+  {
+    "name": "IDARI_BINA_AP_SW",
+    "ip": "10.101.111.13",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "idari_bina_ap_sw"
+    ]
+  },
+  {
+    "name": "IDARI_BINA_TEKNIK",
+    "ip": "10.101.111.49",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "idari_bina_teknik"
+    ]
+  },
+  {
+    "name": "KAZAN_OMURGA_SW_1",
+    "ip": "10.101.111.201",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "kazan",
+      "kazan_omurga_sw_1"
+    ]
+  },
+  {
+    "name": "MCN_ILMD_SW",
+    "ip": "10.101.111.182",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "macunkoy",
+      "macunkoy_ank_il_mdr"
+    ]
+  },
+  {
+    "name": "MACUNKOY_BB",
+    "ip": "10.101.111.180",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "macunkoy",
+      "macunkoy_bb"
+    ]
+  },
+  {
+    "name": "MCN_EDKARSIV_SW",
+    "ip": "10.101.111.185",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "macunkoy",
+      "macunkoy_edevlet_arsiv"
+    ]
+  },
+  {
+    "name": "MCN_ILMD_WIFI_SW",
+    "ip": "10.101.111.181",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "macunkoy",
+      "macunkoy_wireless"
+    ]
+  },
+  {
+    "name": "MONITORING_SW",
+    "ip": "10.101.111.18",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "monitoring_sw"
+    ]
+  },
+  {
+    "name": "NEW_EGNOS",
+    "ip": "10.101.111.47",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "new_egnos"
+    ]
+  },
+  {
+    "name": "OVECLER_KAT2_BB",
+    "ip": "10.101.111.152",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "ovecler",
+      "ovecler_bb"
+    ]
+  },
+  {
+    "name": "OVC_KAT1_UPLINK_SW",
+    "ip": "10.101.111.151",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "ovecler",
+      "ovecler_kat_1_1"
+    ]
+  },
+  {
+    "name": "OVC_KAT1_SW",
+    "ip": "10.101.111.154",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "ovecler",
+      "ovecler_kat_1_2"
+    ]
+  },
+  {
+    "name": "OVC_KAT3_SW",
+    "ip": "10.101.111.153",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "ovecler",
+      "ovecler_kat_3"
+    ]
+  },
+  {
+    "name": "OVC_ZEMIN_UPLINK_SW",
+    "ip": "10.101.111.150",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "ovecler",
+      "ovecler_zemin"
+    ]
+  },
+  {
+    "name": "PREFABRIK_BIM",
+    "ip": "10.101.111.10",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "prefabrik_bim"
+    ]
+  },
+  {
+    "name": "PREFABRIK_UPLINK",
+    "ip": "10.101.111.11",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "prefabrik_uplink"
+    ]
+  },
+  {
+    "name": "PROTOKOL_EVI_SW",
+    "ip": "10.101.111.67",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "protokol_evi_sw"
+    ]
+  },
+  {
+    "name": "S_ALI_KARSLI_UK-2",
+    "ip": "10.101.111.14",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "s.ali_karsli-uk-2"
+    ]
+  },
+  {
+    "name": "S_ALI_KARSLI_UK_1",
+    "ip": "10.101.111.15",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "s_ali_karsli_uk_1"
+    ]
+  },
+  {
+    "name": "SANTRAL_AKA_1_SW",
+    "ip": "10.101.111.19",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "santral_aka_1_sw"
+    ]
+  },
+  {
+    "name": "MCN_TEASARSIV_SW",
+    "ip": "10.101.111.186",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "MACUNKOY",
+      "teas"
+    ]
+  },
+  {
+    "name": "TURKUAZ-DEPO",
+    "ip": "10.101.111.31",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "turkuaz-depo"
+    ]
+  },
+  {
+    "name": "UFGD_SW",
+    "ip": "10.101.111.35",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "ufgd_sw"
+    ]
+  },
+  {
+    "name": "UHD_SW",
+    "ip": "10.101.111.21",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "uhd_sw"
+    ]
+  },
+  {
+    "name": "ULUS",
+    "ip": "10.101.111.37",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "ulus",
+      "ulus"
+    ]
+  },
+  {
+    "name": "XRAY_NIZAMIYE_SW",
+    "ip": "10.101.111.29",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "xray_nizamiye"
+    ]
+  },
+  {
+    "name": "YEMEKHANE_SW",
+    "ip": "10.101.111.24",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "yemekhane_sw"
+    ]
+  },
+  {
+    "name": "YENI_DEPO",
+    "ip": "10.101.111.22",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "yeni_depo"
+    ]
+  },
+  {
+    "name": "YOL_NIZAMIYE",
+    "ip": "10.101.111.30",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "cisco",
+      "tacacs",
+      "turksat",
+      "user_net",
+      "golbasi",
+      "yol_nizamiye"
+    ]
+  },
+  {
+    "name": "ED_MCN_TORSW_H4_31",
+    "ip": "10.1.100.101",
+    "device_type": "huawei",
+    "credential_id": "noc2",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "edk_new",
+      "ed_mcn_torsw_h4_31"
+    ]
+  },
+  {
+    "name": "ED_MCN_TORSW_H5_31",
+    "ip": "10.1.100.102",
+    "device_type": "huawei",
+    "credential_id": "noc2",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "macunkoy_dc",
+      "macunkoy",
+      "edk_new",
+      "ed_mcn_torsw_h5_31"
+    ]
+  },
+  {
+    "name": "EDK_GLB_DC_RTR1",
+    "ip": "10.255.11.104",
+    "device_type": "huawei",
+    "credential_id": "noc2",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_new",
+      "edk_glb_dc_rtr1"
+    ]
+  },
+  {
+    "name": "EDK_GLB_DC_RTR2",
+    "ip": "10.255.11.105",
+    "device_type": "huawei",
+    "credential_id": "noc2",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_new",
+      "edk_glb_dc_rtr2"
+    ]
+  },
+  {
+    "name": "ED-GLB-METRO_SW",
+    "ip": "10.255.11.102",
+    "device_type": "huawei",
+    "credential_id": "noc2",
+    "tags": [
+      "all",
+      "huawei",
+      "local",
+      "edevlet",
+      "datacenter",
+      "golbasi_dc",
+      "golbasi",
+      "edk_new",
+      "ed-glb-metro-sw"
+    ]
+  },
+  {
+    "name": "TRSATFW",
+    "ip": "trsatfw.turksat.com.tr",
+    "device_type": "fortigate",
+    "credential_id": "tg-fgt",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "turksat",
+      "datacenter",
+      "firewall",
+      "trsatfw"
+    ],
+    "additional_ips": [
+      "10.101.111.1",
+      "10.101.111.111"
+    ]
+  },
+  {
+    "name": "KAMUFW",
+    "ip": "kamufw.turksat.com.tr",
+    "additional_ips": "10.101.11.104",
+    "device_type": "fortigate",
+    "credential_id": "kg-fgt",
+    "vdom": "root",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "kamu",
+      "datacenter",
+      "firewall"
+    ]
+  },
+  {
+    "name": "EDKFW",
+    "ip": "edkfw.turksat.com.tr",
+    "additional_ips": "10.255.11.1",
+    "device_type": "fortigate",
+    "credential_id": "eg-fgt",
+    "vdom": "root",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "edevlet",
+      "datacenter",
+      "firewall"
+    ]
+  },
+  {
+    "name": "MCNFW",
+    "ip": "macunkoyfw.turksat.com.tr",
+    "additional_ips": "10.1.100.254",
+    "device_type": "fortigate",
+    "credential_id": "tm-fgt",
+    "vdom": "root",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "turksat",
+      "datacenter",
+      "firewall"
+    ]
+  },
+  {
+    "name": "TESTFW",
+    "ip": "testfw.turksat.com.tr",
+    "additional_ips": [
+      "10.101.111.222"
+    ],
+    "device_type": "fortigate",
+    "credential_id": "eg-fgt-test",
+    "vdom": "root",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "edevlet_test",
+      "datacenter",
+      "firewall"
+    ]
+  },
+  {
+    "name": "KTANALYZER",
+    "ip": "ktanalyzer.turksat.com.tr",
+    "device_type": "fortianalyzer",
+    "port": 22,
+    "sftp_port": 2220,
+    "credential_id": "lc",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "kamu",
+      "turksat",
+      "datacenter",
+      "analyzer"
+    ]
+  },
+  {
+    "name": "EDKANALYZER",
+    "ip": "edkanalyzer.turksat.com.tr",
+    "device_type": "fortianalyzer",
+    "port": 22,
+    "sftp_port": 2230,
+    "credential_id": "lc",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "edevlet",
+      "datacenter",
+      "analyzer"
+    ]
+  },
+  {
+    "name": "MCNANALYZER",
+    "ip": "isanalyzer.turksat.com.tr",
+    "device_type": "fortianalyzer",
+    "port": 22,
+    "sftp_port": 2240,
+    "credential_id": "lc",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "kamu",
+      "turksat",
+      "datacenter",
+      "analyzer"
+    ]
+  },
+  {
+    "name": "MANAGER",
+    "ip": "fmanager.turksat.com.tr",
+    "device_type": "fortimanager",
+    "port": 22,
+    "sftp_port": 2221,
+    "credential_id": "lc",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "turksat",
+      "datacenter",
+      "manager"
+    ]
+  },
+  {
+    "name": "AUTHENTICATOR",
+    "ip": "fortiauth.turksat.com.tr",
+    "device_type": "fortiauthenticator",
+    "port": 22,
+    "sftp_port": 2222,
+    "credential_id": "lc",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "turksat",
+      "datacenter",
+      "authenticator"
+    ]
+  },
+  {
+    "name": "SANDBOX",
+    "ip": "fsandbox.turksat.com.tr",
+    "device_type": "fortisandbox",
+    "port": 22,
+    "sftp_port": 2223,
+    "credential_id": "lc",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "turksat",
+      "datacenter",
+      "sandbox"
+    ]
+  },
+  {
+    "name": "EMS",
+    "ip": "fems.turksat.com.tr",
+    "device_type": "forticlientems",
+    "port": 22,
+    "sftp_port": 2224,
+    "credential_id": "lc",
+    "tags": [
+      "all",
+      "fortinet",
+      "local",
+      "turksat",
+      "datacenter",
+      "ems"
+    ]
+  },
+  {
+    "name": "F5_MCN_EDK",
+    "ip": "10.1.116.51",
+    "device_type": "bigip",
+    "port": 443,
+    "credential_id": "f5",
+    "tags": [
+      "all",
+      "local",
+      "turksat",
+      "datacenter",
+      "f5"
+    ]
+  },
+  {
+    "name": "F5_MCN_PART",
+    "ip": "10.1.116.20",
+    "device_type": "bigip",
+    "port": 8888,
+    "credential_id": "f5",
+    "tags": [
+      "all",
+      "local",
+      "turksat",
+      "datacenter",
+      "f5_prt"
+    ]
+  },
+  {
+    "name": "F5_MCN_CHS",
+    "ip": "10.1.116.11",
+    "device_type": "bigip",
+    "port": 8888,
+    "credential_id": "f5",
+    "tags": [
+      "all",
+      "local",
+      "turksat",
+      "datacenter",
+      "f5_chs"
+    ]
+  },
+  {
+    "name": "TG_DC1_B02U34_BOLGELERSW",
+    "ip": "10.101.111.41",
+    "device_type": "cisco_ios",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-10 13:25:47"
+  },
+  {
+    "name": "OVC_ZEMIN_SW",
+    "ip": "10.101.111.156",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "ovc_zemin_sw"
+    ],
+    "port": 22,
+    "discovered_at": "2026-03-10 13:27:00"
+  },
+  {
+    "name": "KT_DC3_B07U03_F5MGMT",
+    "ip": "10.101.111.161",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "kt_dc3_b07u03_f5mgmt"
+    ],
+    "port": 22,
+    "discovered_at": "2026-03-10 13:28:09"
+  },
+  {
+    "name": "AHMET_OZSOY_UTD",
+    "ip": "10.101.111.69",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "ahmet_ozsoy_utd"
+    ],
+    "discovered_at": "2026-03-10 13:44:27"
+  },
+  {
+    "name": "KZN_ELEKTRIK_SW",
+    "ip": "10.101.111.202",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "kzn_elektrik_sw"
+    ],
+    "port": 22,
+    "discovered_at": "2026-03-10 13:45:27"
+  },
+  {
+    "name": "S_ALI_KARSLI_BASEBAND_SW",
+    "ip": "10.101.111.60",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-10 13:55:43"
+  },
+  {
+    "name": "MCN_CAGRIMER_SW",
+    "ip": "10.101.111.189",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "mcn_cagrimer_sw"
+    ],
+    "discovered_at": "2026-03-10 13:59:33"
+  },
+  {
+    "name": "GBKZS_UYDU_AR-GE_SW",
+    "ip": "10.101.111.48",
+    "device_type": "cisco_ios",
+    "credential_id": "ld",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-10 14:32:41"
+  },
+  {
+    "name": "OVECLER_KAT_3_4",
+    "ip": "10.101.113.13",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "a4:9b:cd:2d:3b:cc"
+  },
+  {
+    "name": "OVECLER_KAT_3_3",
+    "ip": "10.101.113.18",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "10:06:ed:47:5c:78"
+  },
+  {
+    "name": "KAMPUS_UHD_SERVER_ODASI",
+    "ip": "10.101.113.19",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "a4:9b:cd:2d:40:e4"
+  },
+  {
+    "name": "KAMPUS_YEMEKHANE_OFIS",
+    "ip": "10.101.113.17",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "a4:9b:cd:2d:44:58"
+  },
+  {
+    "name": "ANKU_EKBINA_TOPLANTI_SALONU",
+    "ip": "10.101.113.16",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "a4:9b:cd:29:2d:d4"
+  },
+  {
+    "name": "KAMPUS_UFGD_CMC_SOL",
+    "ip": "10.101.113.12",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "a4:9b:cd:2d:32:c0"
+  },
+  {
+    "name": "MACUNKOY_MAKAM",
+    "ip": "10.101.113.14",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "a4:9b:cd:2d:42:54"
+  },
+  {
+    "name": "OVECLER_KAT_1_3",
+    "ip": "10.101.113.15",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "a4:9b:cd:2d:3e:cc"
+  },
+  {
+    "name": "ULUS_KORIDOR_1",
+    "ip": "10.101.113.11",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:51",
+    "mac_address": "a4:9b:cd:2d:31:e0"
+  },
+  {
+    "name": "KAMPUS_KAZAN_DAIRESI",
+    "ip": "10.101.113.20",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:55",
+    "mac_address": "a4:9b:cd:2d:41:50"
+  },
+  {
+    "name": "OVECLER_KAT_2_4",
+    "ip": "10.101.113.22",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:55",
+    "mac_address": "a4:9b:cd:2d:1b:c8"
+  },
+  {
+    "name": "OVECLER_KAT_2_1",
+    "ip": "10.101.113.21",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:55",
+    "mac_address": "10:06:ed:47:16:d4"
+  },
+  {
+    "name": "OVECLER_KAT_2_3",
+    "ip": "10.101.113.23",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:56",
+    "mac_address": "10:06:ed:47:51:2c"
+  },
+  {
+    "name": "OVECLER_KAT_Z_2",
+    "ip": "10.101.113.26",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:56",
+    "mac_address": "a4:9b:cd:2d:4a:84"
+  },
+  {
+    "name": "OVECLER_KAT_1_1",
+    "ip": "10.101.113.27",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:56",
+    "mac_address": "a4:9b:cd:2d:3a:90"
+  },
+  {
+    "name": "OVECLER_KAT_2_2",
+    "ip": "10.101.113.28",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:56",
+    "mac_address": "a4:9b:cd:2d:38:3c"
+  },
+  {
+    "name": "OVECLER_KAT_3_2",
+    "ip": "10.101.113.25",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:56",
+    "mac_address": "a4:9b:cd:2d:25:a8"
+  },
+  {
+    "name": "OVECLER_KAT_ZEMIN_OFIS_1",
+    "ip": "10.101.113.24",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:04:56",
+    "mac_address": "a4:9b:cd:2d:31:98"
+  },
+  {
+    "name": "OVECLER_KAT_Z_1",
+    "ip": "10.101.113.29",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:05:00",
+    "mac_address": "10:06:ed:47:ee:94"
+  },
+  {
+    "name": "OVECLER_KAT_1_2",
+    "ip": "10.101.113.30",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:05:00",
+    "mac_address": "a4:9b:cd:2d:3f:58"
+  },
+  {
+    "name": "KAMPUS_PREFABRIK_1_BIM",
+    "ip": "10.101.113.32",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:50",
+    "mac_address": "a4:9b:cd:2d:35:cc"
+  },
+  {
+    "name": "ANKU_KAT_3_3",
+    "ip": "10.101.113.37",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:50",
+    "mac_address": "10:06:ed:4c:83:80"
+  },
+  {
+    "name": "ANKU_KAT_Z_2",
+    "ip": "10.101.113.38",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:50",
+    "mac_address": "a4:9b:cd:2d:3c:e8"
+  },
+  {
+    "name": "ANKU_KAT_3_2",
+    "ip": "10.101.113.34",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:51",
+    "mac_address": "a4:9b:cd:2d:2c:54"
+  },
+  {
+    "name": "ANKU_KAT_Z_3",
+    "ip": "10.101.113.36",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:51",
+    "mac_address": "a4:9b:cd:2d:16:88"
+  },
+  {
+    "name": "ANKU_KAT_3_1",
+    "ip": "10.101.113.35",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:51",
+    "mac_address": "a4:9b:cd:2d:2c:e0"
+  },
+  {
+    "name": "MACUNKOY_D_KAT_1_2",
+    "ip": "10.101.113.33",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:51",
+    "mac_address": "a4:9b:cd:27:80:cc"
+  },
+  {
+    "name": "ANKU_KAT_1_1",
+    "ip": "10.101.113.39",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:53",
+    "mac_address": "a4:9b:cd:2d:1e:64"
+  },
+  {
+    "name": "ANKU_KAT_2_2",
+    "ip": "10.101.113.40",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:55",
+    "mac_address": "a4:9b:cd:2d:2b:94"
+  },
+  {
+    "name": "ANKU_KAT_2_3",
+    "ip": "10.101.113.41",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:55",
+    "mac_address": "10:06:ed:47:71:24"
+  },
+  {
+    "name": "ANKU_KAT_Z_1",
+    "ip": "10.101.113.44",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:55",
+    "mac_address": "a4:9b:cd:2d:24:d0"
+  },
+  {
+    "name": "ANKU_KAT_2_1",
+    "ip": "10.101.113.46",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:55",
+    "mac_address": "a4:9b:cd:2d:28:80"
+  },
+  {
+    "name": "ANKU_KAT_1_2",
+    "ip": "10.101.113.45",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:55",
+    "mac_address": "a4:9b:cd:2d:29:90"
+  },
+  {
+    "name": "ANKU_KAT_1_3",
+    "ip": "10.101.113.42",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:56",
+    "mac_address": "10:06:ed:4c:6e:f8"
+  },
+  {
+    "name": "ANKU_KAT_Z_4",
+    "ip": "10.101.113.43",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:56",
+    "mac_address": "10:06:ed:4c:61:b8"
+  },
+  {
+    "name": "ANKU_KAT-1_1",
+    "ip": "10.101.113.47",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:21:57",
+    "mac_address": "a4:9b:cd:2d:18:30"
+  },
+  {
+    "name": "ANKU_EKBINA_1",
+    "ip": "10.101.113.48",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:00",
+    "mac_address": "a4:9b:cd:2d:36:c4"
+  },
+  {
+    "name": "MACUNKOY_D_Z_5",
+    "ip": "10.101.113.50",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:00",
+    "mac_address": "a4:9b:cd:29:28:68"
+  },
+  {
+    "name": "MACUNKOY_D_Z_3",
+    "ip": "10.101.113.51",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:00",
+    "mac_address": "a4:9b:cd:29:1a:f8"
+  },
+  {
+    "name": "MACUNKOY_D_Z_2",
+    "ip": "10.101.113.49",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:00",
+    "mac_address": "a4:9b:cd:29:2e:38"
+  },
+  {
+    "name": "MACUNKOY_D_Z_4",
+    "ip": "10.101.113.52",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:00",
+    "mac_address": "a4:9b:cd:29:23:2c"
+  },
+  {
+    "name": "MACUNKOY_D_Z_1",
+    "ip": "10.101.113.54",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:00",
+    "mac_address": "a4:9b:cd:27:80:70"
+  },
+  {
+    "name": "MACUNKOY_D_KAT_1_1",
+    "ip": "10.101.113.53",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:01",
+    "mac_address": "a4:9b:cd:29:19:74"
+  },
+  {
+    "name": "MACUNKOY_D_Z_6",
+    "ip": "10.101.113.55",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:02",
+    "mac_address": "a4:9b:cd:28:d7:34"
+  },
+  {
+    "name": "MACUNKOY_D_KAT_1_3",
+    "ip": "10.101.113.56",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:04",
+    "mac_address": "a4:9b:cd:27:59:e0"
+  },
+  {
+    "name": "KAMPUS_PREFABRIK_2",
+    "ip": "10.101.113.58",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:05",
+    "mac_address": "a4:9b:cd:2d:29:98"
+  },
+  {
+    "name": "KAMPUS_GARAJ_GIRIS",
+    "ip": "10.101.113.61",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:05",
+    "mac_address": "a4:9b:cd:2b:a0:7c"
+  },
+  {
+    "name": "KAMPUS_YEMEKHANE_UST_YODASI",
+    "ip": "10.101.113.59",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:05",
+    "mac_address": "a4:9b:cd:2d:1b:bc"
+  },
+  {
+    "name": "KAMPUS_BT_ODASI_2",
+    "ip": "10.101.113.62",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:05",
+    "mac_address": "a4:9b:cd:2d:36:b4"
+  },
+  {
+    "name": "MACUNKOY_D_Z_HOLE",
+    "ip": "10.101.113.57",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:05",
+    "mac_address": "a4:9b:cd:27:7d:e4"
+  },
+  {
+    "name": "KAMPUS_GARAJ_ODA",
+    "ip": "10.101.113.60",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:05",
+    "mac_address": "a4:9b:cd:2c:f7:c4"
+  },
+  {
+    "name": "KAMPUS_BT_ODASI_1",
+    "ip": "10.101.113.63",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:06",
+    "mac_address": "a4:9b:cd:29:67:bc"
+  },
+  {
+    "name": "KAMPUS_BT_ODASI_4",
+    "ip": "10.101.113.64",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:09",
+    "mac_address": "a4:9b:cd:2d:1b:ec"
+  },
+  {
+    "name": "KAMPUS_BT_ODASI_3",
+    "ip": "10.101.113.65",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:10",
+    "mac_address": "a4:9b:cd:2d:33:54"
+  },
+  {
+    "name": "KAMPUS_GENEL_EVRAK_ALT",
+    "ip": "10.101.113.67",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:10",
+    "mac_address": "a4:9b:cd:2c:ed:3c"
+  },
+  {
+    "name": "KAMPUS_SANTRAL_ODA",
+    "ip": "10.101.113.66",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:10",
+    "mac_address": "a4:9b:cd:29:9e:40"
+  },
+  {
+    "name": "KAMPUS_GENEL_EVRAK_UST",
+    "ip": "10.101.113.68",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:10",
+    "mac_address": "a4:9b:cd:2c:ed:14"
+  },
+  {
+    "name": "KAMPUS_IDARI_BINA_KANTIN",
+    "ip": "10.101.113.69",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:10",
+    "mac_address": "a4:9b:cd:2d:36:f8"
+  },
+  {
+    "name": "KAMPUS_UHD_KORIDOR",
+    "ip": "10.101.113.70",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:10",
+    "mac_address": "a4:9b:cd:29:6e:f8"
+  },
+  {
+    "name": "KAMPUS_UHD_GIRIS",
+    "ip": "10.101.113.71",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:11",
+    "mac_address": "a4:9b:cd:2c:f7:00"
+  },
+  {
+    "name": "KAMPUS_YEMEKHANE_ALT",
+    "ip": "10.101.113.72",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:12",
+    "mac_address": "a4:9b:cd:2d:54:b8"
+  },
+  {
+    "name": "KAMPUS_YEMEKHANE_VIP_SALONU",
+    "ip": "10.101.113.73",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:12",
+    "mac_address": "a4:9b:cd:2c:f4:fc"
+  },
+  {
+    "name": "KAMPUS_YEMEKHANE_TS_HOLE",
+    "ip": "10.101.113.74",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:14",
+    "mac_address": "a4:9b:cd:2d:45:80"
+  },
+  {
+    "name": "KAMPUS_ALI_KARSLI_ALT",
+    "ip": "10.101.113.75",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:14",
+    "mac_address": "a4:9b:cd:2d:1c:f0"
+  },
+  {
+    "name": "KAMPUS_ELEKTRIK_ATOLYESI",
+    "ip": "10.101.113.76",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:15",
+    "mac_address": "a4:9b:cd:2c:f6:8c"
+  },
+  {
+    "name": "KAMPUS_TV_TELEPORT",
+    "ip": "10.101.113.77",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:15",
+    "mac_address": "a4:9b:cd:2b:a3:74"
+  },
+  {
+    "name": "KAMPUS_XRAY_NIZAMIYE",
+    "ip": "10.101.113.78",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:15",
+    "mac_address": "a4:9b:cd:2d:1a:fc"
+  },
+  {
+    "name": "KAMPUS_POLIKLINIK",
+    "ip": "10.101.113.80",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:15",
+    "mac_address": "a4:9b:cd:2d:38:b0"
+  },
+  {
+    "name": "ULUS_KORIDOR_2",
+    "ip": "10.101.113.79",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:15",
+    "mac_address": "a4:9b:cd:29:23:60"
+  },
+  {
+    "name": "KAMPUS_IDARI_ALT_IK",
+    "ip": "10.101.113.81",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:16",
+    "mac_address": "10:06:ed:4b:df:14"
+  },
+  {
+    "name": "KAMPUS_IDARI_MUHASEBE_DR.ALT",
+    "ip": "10.101.113.82",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:17",
+    "mac_address": "10:06:ed:48:53:fc"
+  },
+  {
+    "name": "KAMPUS_IDARI_UST_EWC_ONU",
+    "ip": "10.101.113.83",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:17",
+    "mac_address": "10:06:ed:47:b4:6c"
+  },
+  {
+    "name": "KAMPUS_IDARI_GM_SOL",
+    "ip": "10.101.113.84",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:18",
+    "mac_address": "10:06:ed:48:6d:a4"
+  },
+  {
+    "name": "KAMPUS_IDARI_FINANS_ALT",
+    "ip": "10.101.113.85",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:19",
+    "mac_address": "10:06:ed:48:44:0c"
+  },
+  {
+    "name": "KAMPUS_IDARI_TEFTIS_KB_ONU",
+    "ip": "10.101.113.86",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:19",
+    "mac_address": "10:06:ed:48:38:6c"
+  },
+  {
+    "name": "KAMPUS_IDARI_EWC_ALT",
+    "ip": "10.101.113.87",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:19",
+    "mac_address": "e4:4e:2d:f5:d1:e8"
+  },
+  {
+    "name": "KAMPUS_IDARI_GM_SAG",
+    "ip": "10.101.113.88",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:19",
+    "mac_address": "10:06:ed:48:44:c4"
+  },
+  {
+    "name": "KAMPUS_ALI_KARSLI_UST-WC",
+    "ip": "10.101.113.91",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:20",
+    "mac_address": "a4:9b:cd:2d:39:bc"
+  },
+  {
+    "name": "KAMPUS_ALI_KARSLI_UST",
+    "ip": "10.101.113.92",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:21",
+    "mac_address": "a4:9b:cd:2d:3c:6c"
+  },
+  {
+    "name": "KAMPUS_DEPO",
+    "ip": "10.101.113.94",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:22",
+    "mac_address": "a4:9b:cd:2c:ed:98"
+  },
+  {
+    "name": "KAMPUS_JENERATOR_ODASI",
+    "ip": "10.101.113.97",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:23",
+    "mac_address": "a4:9b:cd:2d:33:c4"
+  },
+  {
+    "name": "KAMPUS_ADALET_BINASI_3",
+    "ip": "10.101.113.100",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:24",
+    "mac_address": "a4:9b:cd:2d:25:f8"
+  },
+  {
+    "name": "KAMPUS_UFGD_T_A",
+    "ip": "10.101.113.101",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:24",
+    "mac_address": "a4:9b:cd:2d:3f:0c"
+  },
+  {
+    "name": "KAMPUS_BT_KANTIN_GIRIS",
+    "ip": "10.101.113.102",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:25",
+    "mac_address": "10:06:ed:48:6b:0c"
+  },
+  {
+    "name": "MACUNKOY_AIM_K1_1",
+    "ip": "10.101.113.103",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:25",
+    "mac_address": "a4:9b:cd:26:5c:00"
+  },
+  {
+    "name": "MACUNKOY_AIM_Z_1",
+    "ip": "10.101.113.104",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:26",
+    "mac_address": "a4:9b:cd:29:34:94"
+  },
+  {
+    "name": "MACUNKOY_AIM_K1_2",
+    "ip": "10.101.113.105",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:26",
+    "mac_address": "a4:9b:cd:27:4d:64"
+  },
+  {
+    "name": "MACUNKOY_AIM_Z_3",
+    "ip": "10.101.113.106",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:27",
+    "mac_address": "a4:9b:cd:29:39:70"
+  },
+  {
+    "name": "MACUNKOY_AIM_Z_2",
+    "ip": "10.101.113.107",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:27",
+    "mac_address": "a4:9b:cd:29:1b:20"
+  },
+  {
+    "name": "MACUNKOY_DC_2",
+    "ip": "10.101.113.108",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:27",
+    "mac_address": "a4:9b:cd:29:27:d0"
+  },
+  {
+    "name": "MACUNKOY_DC_1",
+    "ip": "10.101.113.109",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:28",
+    "mac_address": "a4:9b:cd:29:36:fc"
+  },
+  {
+    "name": "MACUNKOY_ARSIV_1",
+    "ip": "10.101.113.110",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:29",
+    "mac_address": "a4:9b:cd:29:2e:8c"
+  },
+  {
+    "name": "KAMPUS_DC_EDK_INDOOR",
+    "ip": "10.101.113.112",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:29",
+    "mac_address": "a4:9b:cd:2d:43:ac"
+  },
+  {
+    "name": "KAMPUS_DC_TURKSAT_INDOOR",
+    "ip": "10.101.113.113",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:29",
+    "mac_address": "a4:9b:cd:2d:43:f0"
+  },
+  {
+    "name": "KAMPUS_UFGD_CMC_SAG",
+    "ip": "10.101.113.116",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:31",
+    "mac_address": "a4:9b:cd:2d:36:80"
+  },
+  {
+    "name": "KAMPUS_UFGD_T_B",
+    "ip": "10.101.113.117",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:31",
+    "mac_address": "a4:9b:cd:2d:29:1c"
+  },
+  {
+    "name": "KAMPUS_BT_MONITORING",
+    "ip": "10.101.113.118",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:31",
+    "mac_address": "a4:9b:cd:29:9e:fc"
+  },
+  {
+    "name": "OVECLER_KAT_3_1_9120AX",
+    "ip": "10.101.113.119",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:32",
+    "mac_address": "10:06:ed:48:29:00"
+  },
+  {
+    "name": "ANKU_EKBINA_KAT-3",
+    "ip": "10.101.113.120",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:32",
+    "mac_address": "a4:9b:cd:28:f7:9c"
+  },
+  {
+    "name": "KAMPUS_IDARI_BINA_GMY_AP",
+    "ip": "10.101.113.121",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:33",
+    "mac_address": "a4:9b:cd:2d:1f:58"
+  },
+  {
+    "name": "MACUNKOY_SISTEM_ODASI",
+    "ip": "10.101.113.123",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:33",
+    "mac_address": "a4:9b:cd:2c:f4:4c"
+  },
+  {
+    "name": "MACUNKOY_AIM_TOPLANTI_SALONU_ONU",
+    "ip": "10.101.113.122",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:33",
+    "mac_address": "a4:9b:cd:2d:55:f4"
+  },
+  {
+    "name": "KAMPUS_KIS_BAHCESI",
+    "ip": "10.101.113.124",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:34",
+    "mac_address": "a4:9b:cd:2d:28:a4"
+  },
+  {
+    "name": "KAMPUS_ADALET_BINASI_4",
+    "ip": "10.101.113.126",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:36",
+    "mac_address": "a4:9b:cd:2d:36:1c"
+  },
+  {
+    "name": "KAMPUS_ADALET_BINASI_1",
+    "ip": "10.101.113.127",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:36",
+    "mac_address": "a4:9b:cd:27:68:48"
+  },
+  {
+    "name": "KAMPUS_YOL_NIZAMIYE_KONTROL",
+    "ip": "10.101.113.128",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:36",
+    "mac_address": "a4:9b:cd:2d:1c:48"
+  },
+  {
+    "name": "KAMPUS_AHMET_OZSOY_DRK_OFIS",
+    "ip": "10.101.113.129",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:36",
+    "mac_address": "a4:9b:cd:2d:2c:44"
+  },
+  {
+    "name": "KAMPUS_ADALET_BINASI_2",
+    "ip": "10.101.113.130",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:37",
+    "mac_address": "a4:9b:cd:27:81:54"
+  },
+  {
+    "name": "MACUNKOY_CM_3",
+    "ip": "10.101.113.132",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:37",
+    "mac_address": "a4:9b:cd:2d:24:a0"
+  },
+  {
+    "name": "MACUNKOY_CM_2",
+    "ip": "10.101.113.133",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:38",
+    "mac_address": "a4:9b:cd:2d:1f:80"
+  },
+  {
+    "name": "MACUNKOY_CM_1",
+    "ip": "10.101.113.134",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:38",
+    "mac_address": "a4:9b:cd:29:39:44"
+  },
+  {
+    "name": "OVECLER_KAT_ZEMIN_OFIS_2",
+    "ip": "10.101.113.135",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:38",
+    "mac_address": "a4:9b:cd:2b:a6:5c"
+  },
+  {
+    "name": "OVECLER_KAT_ZEMIN_OFIS_3",
+    "ip": "10.101.113.136",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:40",
+    "mac_address": "a4:9b:cd:2c:e9:68"
+  },
+  {
+    "name": "OVECLER_KAT_ZEMIN_OFIS_4",
+    "ip": "10.101.113.138",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:41",
+    "mac_address": "a4:9b:cd:28:fe:4c"
+  },
+  {
+    "name": "MACUNKOY_CM_4",
+    "ip": "10.101.113.137",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:41",
+    "mac_address": "a4:9b:cd:2d:25:80"
+  },
+  {
+    "name": "ANKU_KAT_3_TOPLANTI_SALONU",
+    "ip": "10.101.113.139",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:41",
+    "mac_address": "2c:e3:8e:71:96:84"
+  },
+  {
+    "name": "ANKU_KAT_3_4",
+    "ip": "10.101.113.140",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:41",
+    "mac_address": "2c:e3:8e:71:97:3c"
+  },
+  {
+    "name": "MACUNKOY_CM_5",
+    "ip": "10.101.113.141",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:41",
+    "mac_address": "2c:e3:8e:71:94:7c"
+  },
+  {
+    "name": "ANKU_KAT_3_EDK",
+    "ip": "10.101.113.142",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:42",
+    "mac_address": "2c:e3:8e:71:98:cc"
+  },
+  {
+    "name": "AP2CE3.8EBF.11A8",
+    "ip": "10.101.113.143",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:43",
+    "mac_address": "2c:e3:8e:bf:11:a8"
+  },
+  {
+    "name": "KAMPUS_ORTA_NIZAMIYE",
+    "ip": "10.101.113.149",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:45",
+    "mac_address": "a4:9b:cd:2d:36:38"
+  },
+  {
+    "name": "KAMPUS_GOZLEMEVI",
+    "ip": "10.101.113.164",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:50",
+    "mac_address": "a4:9b:cd:2d:4a:88"
+  },
+  {
+    "name": "IZMIR_VSAT_ISTASYON",
+    "ip": "10.101.113.177",
+    "device_type": "cisco_ios",
+    "credential_id": "ap",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_113",
+      "cisco"
+    ],
+    "discovered_at": "2026-03-14 06:22:55",
+    "mac_address": "a4:9b:cd:2d:53:e4"
+  },
+  {
+    "name": "TG_DC1_A0302U42_40G_H3C",
+    "ip": "10.101.111.130",
+    "device_type": "hp_comware",
+    "credential_id": "noc2",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111"
+    ],
+    "discovered_at": "2026-03-23 09:55:29",
+    "mac_address": "78:a1:3e:99:ce:66"
+  },
+  {
+    "name": "MACUNKOY_VM_RJ",
+    "ip": "10.101.11.124",
+    "device_type": "ruijie_os",
+    "credential_id": "sw",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_11",
+      "ruijie"
+    ],
+    "discovered_at": "2026-03-23 13:57:09",
+    "mac_address": "80:05:88:b5:85:ae",
+    "serial_no": "G1NTAYD101243"
+  },
+  {
+    "name": "MCN_UPS_SW",
+    "ip": "10.101.111.184",
+    "device_type": "extreme_exos",
+    "credential_id": "trsataim",
+    "tags": [
+      "all",
+      "discovered",
+      "subnet_10_101_111",
+      "mcn_ups_sw"
+    ],
+    "mac_address": "00:04:96:fd:66:b7",
+    "discovered_at": "2026-03-23 13:57:24"
+  }
+]

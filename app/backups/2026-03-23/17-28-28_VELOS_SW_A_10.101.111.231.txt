@@ -1,0 +1,788 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V200R002C50SPC800
+!Last configuration was updated at 2026-03-16 12:30:33+03:00 by mduzgun
+!Last configuration was saved at 2026-03-16 11:13:41+03:00
+#
+clock timezone IST add 03:00:00
+#
+sysname KTG_DC3_B07U4241_VELOS
+#
+info-center loghost 10.101.18.80
+#
+transceiver non-certified-alarm disable
+#
+device board 1 board-type CE6870-48S6CQ-EI
+device board 2 board-type CE6870-48S6CQ-EI
+#
+drop-profile default
+#
+dcb pfc
+#
+dcb ets-profile default
+#
+ntp ipv6 server disable
+ntp unicast-server 10.101.30.249
+#
+vlan batch 3 to 4 670 to 672 875 to 876 878 914 919 to 921 925 to 926 929 to 930 937 956 to 958
+vlan batch 988 1312 1338 1366 1392 1403 1418 to 1420 1436 1440 1468 to 1471
+vlan batch 1494 1499 1502 1512 1548 1557 to 1558 1584 2303 2310 2501
+vlan batch 3721 3792 to 3793 3966 3971
+#
+telnet server disable
+telnet ipv6 server disable
+#
+diffserv domain default
+#
+vlan 3
+ name f5_FAILOVER_TURKSAT
+#
+vlan 4
+ name KAMU_COMMUNICATION
+#
+vlan 670
+ name EDK_TEST_K8S_NODE
+#
+vlan 671
+ name EDK_PROD_K8S_NODE
+#
+vlan 672
+ name EDK_PREPROD_F5
+#
+vlan 875
+ name KODSIS_DMZ_EXT
+#
+vlan 876
+ name KODSIS_INT
+#
+vlan 878
+ name KODSIS_INTRANET_DMZ
+#
+vlan 914
+ name VERITABANI
+#
+vlan 919
+ name PROXY.MG.MGMT
+#
+vlan 920
+ name DMZ_INT
+#
+vlan 921
+ name DMZ_EXT
+#
+vlan 925
+ name GUEST_DMZ_INT
+#
+vlan 926
+ name MISAFIR_DMZ2
+#
+vlan 929
+ name CYBER_101.29
+#
+vlan 930
+ name GUVENLI_DMZ
+#
+vlan 937
+ name KBSD_K8S
+#
+vlan 956
+ name TURKSAT_KUBERNETES
+#
+vlan 957
+ name TURKSAT_KUBERNETES_2
+#
+vlan 958
+ name TAKBIS_K8S_58
+#
+vlan 988
+ description KUBERNETES
+#
+vlan 1312
+ description DENIZCILIK
+#
+vlan 1338
+ name CEVRE_SEHIRCILIK
+#
+vlan 1366
+ name SHGM_F5
+#
+vlan 1392
+ name ICERIK_YUZUNCUYIL
+#
+vlan 1403
+ name CIMER_LB_GECIS
+#
+vlan 1418
+ name KIK_TRUST
+#
+vlan 1419
+ name KIK_LOCAL_1
+#
+vlan 1420
+ name KIK_LOCAL_2
+#
+vlan 1436
+ name TUCBS
+#
+vlan 1440
+ name TUCBS_LTM
+#
+vlan 1468
+ name KIK
+#
+vlan 1469
+ description KIK_DEVOPS
+#
+vlan 1470
+ name KIK_PROD
+#
+vlan 1471
+ name KIK_PREPROD
+#
+vlan 1494
+ name EGO_LB
+#
+vlan 1499
+ name JITSI
+#
+vlan 1502
+ name TUA_LB
+#
+vlan 1512
+ description DENIZCILIK_LB
+#
+vlan 1548
+ name KAMU_AILE_LAN_LB
+#
+vlan 1557
+ name KAMU_K8S_PROD
+#
+vlan 1558
+ name KAMU_K8S_TEST
+#
+vlan 1584
+ name Safir_Bulut_F5
+#
+vlan 2303
+ name CLOUD_PF_LB
+#
+vlan 2310
+ name CLOUD_PF_LB_ULASTIRMA
+#
+vlan 2501
+ name DKMP_LB
+#
+vlan 3721
+ name DMO_F5
+#
+vlan 3792
+ name YUZUNCUYIL_LTM
+#
+vlan 3793
+ name ICERIK_LB_GECIS
+#
+vlan 3966
+ name LB_LAN
+#
+vlan 3971
+ name CBIKO_F5
+#
+stp region-configuration
+ region-name F5_VELOS
+ revision-level 3
+ instance 1 vlan 875 to 876 878 920 to 921 925 930 937 956 to 958 988
+ instance 3 vlan 1418 to 1420
+#
+aaa
+ local-user restorepoint password irreversible-cipher $1c$c'%KN<`15E$+x._2BDw*AukAkBh._vCy0GES:m1T*`[Zi>eo}n.$
+ local-user restorepoint service-type ssh
+ local-user moozan password irreversible-cipher $1c$P=dGV+uKM=$!aH\7PzCoF;t[l1t"t\V~<xVJZ4)JQ+-~*X1[wHG$
+ local-user moozan service-type ssh
+ local-user ssarikaya password irreversible-cipher $1c$~Jd54\SZo=$Jhq<ZOQt+8do$[P3Ze~KRs-0~TDm"-kzqvE7:j7P$
+ local-user ssarikaya service-type ssh
+ local-user ckuruyuz password irreversible-cipher $1c$9Jdm@E!m_Y$r4yT)/N-lXA-+]S2,,!N.=U(-Qz#H>N37<%^MC7V$
+ local-user ckuruyuz service-type ssh
+ local-user bbarisci password irreversible-cipher $1c$|a2LR+Co{#$~Lv;A{#-UH3\`,$I=$II|P`u(0BH.PK*[=M+CbzI$
+ local-user bbarisci service-type ssh
+ local-user mduzgun password irreversible-cipher $1c$>>aP)(S9NR$Q{ekAC^`K&4:sT'>Y5N6vzh8+C*|<EcZVa$"!%)($
+ local-user mduzgun service-type ssh
+ local-user adeorouser password irreversible-cipher $1c$0+f3-#|fbL$FIZy37n8vCa,p!(T^4XRRGy0/5`3E)Ivw'BY5,#F$
+ local-user adeorouser service-type ssh
+ local-user adeorouser level 1
+ #
+ authentication-scheme default
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default
+ #
+ domain default
+ #
+ domain default_admin
+#
+stack
+ #
+ stack member 1 domain 10
+ stack member 1 priority 150
+ #
+ stack member 2 domain 10
+#
+interface Vlanif929
+ ip address 10.101.29.250 255.255.255.0
+#
+interface Vlanif1403
+ ip address 10.200.153.111 255.255.255.0
+#
+interface Vlanif1584
+ ip address 10.200.184.240 255.255.255.0
+#
+interface Vlanif3721
+ ip address 10.200.154.154 255.255.255.0
+#
+interface Vlanif3792
+ ip address 10.200.92.9 255.255.255.0
+#
+interface MEth0/0/0
+ ip address 10.101.111.231 255.255.255.0
+#
+interface Eth-Trunk13
+ description TEST_BB
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 672
+ mode lacp-static
+#
+interface Eth-Trunk15
+ description TURKSAT_F5_N7K_LAG515
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 875 to 876 878 914 919 to 921 925 to 926 929 to 930 937 956 to 958 988
+ mode lacp-static
+#
+interface Eth-Trunk41
+ description KAMU_N7K_100GE_PORT
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 1312 1338 1366 1392 1403 1418 to 1420 1436 1440 1468 to 1471 1494
+ port trunk allow-pass vlan 1499 1502 1512 1515 1548 1557 to 1558 1584 2501 3721 3792 to 3793
+ port trunk allow-pass vlan 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk71
+ description EDK_DIS_SW_PORT_100GE/3
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 900
+ mode lacp-static
+#
+interface Eth-Trunk72
+ description EDK_IC_SW_PORT_100GE/4
+ shutdown
+ port link-type trunk
+ port trunk allow-pass vlan 31 34 to 35 180 624 651 to 653 661 to 664 670 to 671 900 991
+ mode lacp-static
+#
+interface Eth-Trunk101
+ description F5_VELOS
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 3 to 4 670 to 672 875 to 876 878 914 919 to 921 925 to 926 929 to 930 937 956 to 958
+ port trunk allow-pass vlan 988 1338 1366 1392 1403 1418 to 1420 1436 1440 1468 to 1471 1494
+ port trunk allow-pass vlan 1499 1502 1512 1515 1548 1557 to 1558 1584 2303 2310 2501
+ port trunk allow-pass vlan 3721 3792 to 3793 3966 3971
+ mode lacp-static
+#
+interface Eth-Trunk102
+ description F5_VELOS_STANDBY
+ port link-type trunk
+ undo port trunk allow-pass vlan 1
+ port trunk allow-pass vlan 3 to 4 670 to 672 875 to 876 878 914 919 to 921 925 to 926 929 to 930 937 956 to 958
+ port trunk allow-pass vlan 988 1338 1366 1392 1403 1418 to 1420 1436 1440 1468 to 1471 1494
+ port trunk allow-pass vlan 1499 1502 1512 1515 1548 1557 to 1558 1584 2303 2310 2501
+ port trunk allow-pass vlan 3721 3792 to 3793 3966 3971
+ mode lacp-static
+#
+interface Stack-Port1/1
+#
+interface Stack-Port2/1
+#
+interface 10GE1/0/1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/2
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/3
+ description F5_Velos1_5/1.2
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/4
+ description F5_Velos1_5/1.3
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/6
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/7
+ description F5_Velos2_5/1.3
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/8
+ description F5_Velos2_5/1.4
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/10
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/11
+ description F5_Velos1_5/2.2
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/12
+ description F5_Velos1_5/2.1
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/13
+ description TEST_BB_Te1/1/3
+ eth-trunk 13
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/14
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/15
+ description F5_Velos2_5/2.1
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/16
+ description F5_Velos2_5/2.2
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/17
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/18
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/19
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/20
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/21
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/22
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/23
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/24
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/25
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/26
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/27
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/28
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/29
+ description F5_Velos1_8/1.2
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/30
+ description F5_Velos1_8/1.3
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/31
+ description F5_Velos1_8/2.1
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/32
+ description F5_Velos1_8/2.3
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/33
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/34
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/35
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/36
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/37
+ description F5_Velos2_8/1.1
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/38
+ description F5_Velos2_8/1.3
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/39
+ description F5_Velos2_8/2.2
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/40
+ description F5_Velos2_8/2.4
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/41
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/42
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/43
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/44
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/45
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/46
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/47
+ description TURKSAT_F5
+ eth-trunk 15
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE1/0/48
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/1
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/2
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/3
+ description F5_Velos1_5/1.1
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/4
+ description F5_Velos1_5/1.4
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/5
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/6
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/7
+ description F5_Velos2_5/1.1
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/8
+ description F5_Velos2_5/1.2
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/9
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/10
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/11
+ description F5_Velos1_5/2.3
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/12
+ description F5_Velos1_5/2.4
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/13
+ description TEST_BB_Te2/1/3
+ eth-trunk 13
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/14
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/15
+ description F5_Velos2_5/2.4
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/16
+ description F5_Velos2_5/2.3
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/17
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/18
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/19
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/20
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/21
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/22
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/23
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/24
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/25
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/26
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/27
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/28
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/29
+ description F5_Velos1_8/1.1
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/30
+ description F5_Velos1_8/1.4
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/31
+ description F5_Velos1_8/2.4
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/32
+ description F5_Velos1_8/2.2
+ eth-trunk 101
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/33
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/34
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/35
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/36
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/37
+ description F5_Velos2_8/1.4
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/38
+ description F5_Velos2_8/1.2
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/39
+ description F5_Velos2_8/2.3
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/40
+ description F5_Velos2_8/2.1
+ eth-trunk 102
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/41
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/42
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/43
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/44
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/45
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/46
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/47
+ description TURKSAT_F5
+ eth-trunk 15
+ device transceiver 10GBASE-FIBER
+#
+interface 10GE2/0/48
+ device transceiver 10GBASE-FIBER
+#
+interface 100GE1/0/1
+ description ETH_71_EDK_DIS
+ shutdown
+ eth-trunk 71
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/2
+ description ETH_72_EDK_IC
+ shutdown
+ eth-trunk 72
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/3
+ eth-trunk 41
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/4
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE1/0/5
+ port mode stack 
+ stack-port 1/1
+ port crc-statistics trigger error-down
+ device transceiver 40GBASE-COPPER
+#
+interface 100GE1/0/6
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/1
+ description ETH_71_EDK_DIS
+ shutdown
+ eth-trunk 71
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/2
+ description ETH_72_EDK_IC
+ shutdown
+ eth-trunk 72
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/3
+ eth-trunk 41
+ device transceiver 40GBASE-FIBER
+#
+interface 100GE2/0/4
+#
+interface 100GE2/0/5
+ port mode stack 
+ stack-port 2/1
+ port crc-statistics trigger error-down
+ device transceiver 40GBASE-COPPER
+#
+interface 100GE2/0/6
+#
+interface NULL0
+#
+ip route-static 10.100.41.160 255.255.255.255 10.101.111.1
+ip route-static 10.101.11.180 255.255.255.255 10.101.111.1
+ip route-static 10.101.30.0 255.255.255.0 10.101.111.1
+ip route-static 10.101.31.0 255.255.255.0 10.101.111.1
+ip route-static 10.110.254.0 255.255.255.0 10.101.111.1
+#
+lldp enable
+#
+stelnet ipv4 server enable
+stelnet ipv6 server enable
+ssh user adeorouser
+ssh user adeorouser authentication-type password
+ssh user adeorouser service-type all
+ssh user bbarisci
+ssh user bbarisci authentication-type password
+ssh user bbarisci service-type all
+ssh user bpolatkan
+ssh user bpolatkan authentication-type password
+ssh user bpolatkan service-type all
+ssh user mduzgun
+ssh user mduzgun authentication-type password
+ssh user mduzgun service-type all
+ssh user moozan
+ssh user moozan authentication-type password
+ssh user moozan service-type all
+ssh user restorepoint
+ssh user restorepoint authentication-type password
+ssh user restorepoint service-type all
+ssh user ssarikaya
+ssh user ssarikaya authentication-type password
+ssh user ssarikaya service-type all
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_ctr aes128_ctr
+ssh server hmac sha2_256_96 sha2_256 sha1_96
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521 sm2_kep
+#
+user-interface con 0
+#
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+#
+vm-manager
+#
+return

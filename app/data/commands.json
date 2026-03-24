@@ -1,0 +1,36 @@
+{
+  "backup": {
+    "cisco_ios": [
+      "show running-config"
+    ],
+    "huawei": [
+      "display current-configuration"
+    ],
+    "h3c": [
+      "display current-configuration"
+    ],
+    "hp_comware": [
+      "display current-configuration"
+    ],
+    "dell_force10": [
+      "show running-config"
+    ],
+    "extreme_exos": [
+      "show configuration"
+    ],
+    "ruijie_os": [
+      "show running-config"
+    ],
+    "h3c_comware": [
+      "display current-configuration"
+    ]
+  },
+  "interface-check": {
+    "cisco": [
+      "show interface status"
+    ],
+    "huawei": [
+      "display interface brief"
+    ]
+  }
+}

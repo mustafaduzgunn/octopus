@@ -1,0 +1,29 @@
+{
+    "successful": [
+        {
+            "device": "RJ_11_124",
+            "ip": "10.101.11.124",
+            "brand": "Ruijie Networks",
+            "model": "S6220-48XS6QXS-H",
+            "software_version": "S6220_RGOS 11.0(5)B9P33",
+            "hardware_version": "1.60",
+            "serial_no": "G1NTAYD101243",
+            "uptime": "59:01:23:21",
+            "boot_version": "1.2.37",
+            "hostname": "MACUNKOY_VM_RJ",
+            "modules": [
+                {
+                    "slot": "1/0",
+                    "model": "RG-S6220-48XS6QXS-H"
+                },
+                {
+                    "slot": "2/0",
+                    "model": "RG-S6220-48XS6QXS-H"
+                }
+            ],
+            "collected_hostname": "MACUNKOY_VM_RJ"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

@@ -1,0 +1,65 @@
+{
+  "N7K1_VDC1": {
+    "vendor": "cisco",
+    "trunk_ports": [
+      "po306",
+      "po312",
+      "po451"
+    ]
+  },
+  "N7K2_VDC1": {
+    "vendor": "cisco",
+    "trunk_ports": [
+      "po306",
+      "po312",
+      "po451"
+    ]
+  },
+  "KAMU_TOR_HW1": {
+    "vendor": "huawei",
+    "trunk_ports": [
+      "Eth-Trunk7",
+      "Eth-Trunk19",
+      "Eth-Trunk20",
+      "Eth-Trunk29",
+      "Eth-Trunk30",
+      "Eth-Trunk31",
+      "Eth-Trunk32",
+      "Eth-Trunk33",
+      "Eth-Trunk34",
+      "Eth-Trunk35",
+      "Eth-Trunk36",
+      "Eth-Trunk37",
+      "Eth-Trunk38",
+      "Eth-Trunk39",
+      "Eth-Trunk40",
+      "Eth-Trunk41",
+      "Eth-Trunk100",
+      "Eth-Trunk101",
+      "Eth-Trunk102",
+      "Eth-Trunk103",
+      "Eth-Trunk104",
+      "Eth-Trunk105",
+      "Eth-Trunk106",
+      "Eth-Trunk107",
+      "Eth-Trunk108",
+      "Eth-Trunk111",
+      "Eth-Trunk112",
+      "Eth-Trunk113",
+      "Eth-Trunk114",
+      "Eth-Trunk115",
+      "Eth-Trunk116",
+      "Eth-Trunk117",
+      "Eth-Trunk118",
+      "Eth-Trunk119",
+      "Eth-Trunk120",
+      "Eth-Trunk121",
+      "Eth-Trunk122",
+      "Eth-Trunk123",
+      "Eth-Trunk124",
+      "Eth-Trunk125",
+      "Eth-Trunk126",
+      "Eth-Trunk127"
+    ]
+  }
+}

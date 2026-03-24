@@ -1,0 +1,1799 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 32288 bytes
+!
+! Last configuration change at 17:16:38 GMT Mon Mar 16 2026 by mozan
+! NVRAM config last updated at 17:16:39 GMT Mon Mar 16 2026 by mozan
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime localtime
+service password-encryption
+service compress-config
+!
+hostname TVYAYINLARI_SW-A
+!
+boot-start-marker
+boot system flash cat4500e-entservicesk9-mz.152-1.E1.bin
+boot-end-marker
+!
+!
+vrf definition mgmtVrf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+logging count
+logging event link-status global
+logging event trunk-status global
+enable secret 5 $1$EzP7$Poy9SlRnD/NRkR59lRBq5/
+!
+username restorepoint privilege 15 secret 5 $1$l3IN$z21HIauziKPudTlGOlYSD.
+username bbarisci privilege 15 secret 5 $1$.cnW$eWstpqhxRpMaWf55x0w1P.
+username mozan privilege 15 secret 5 $1$EF/W$nV5oscVVT12BSIi90Xoll/
+username ssarikaya privilege 15 secret 5 $1$VUdp$UzbtZyymfDDSKhatdRVeC.
+username mduzgunn privilege 15 secret 5 $1$GowG$ZuhhYjtEHpkE2OwbP34Yr0
+username destek privilege 15 secret 5 $1$yVYO$s/Qd4ui8vktBCfVCvfORr0
+no aaa new-model
+clock timezone GMT 3 0
+!
+ip domain-name turksat.local
+ip device tracking
+ip dhcp snooping vlan 800,802,810,812,814-816,840,860,869-870,922,3991-3992
+!
+!
+ip igmp snooping querier
+vtp mode transparent
+!
+!
+!
+power redundancy-mode redundant
+!
+!
+!
+!
+!
+archive
+ log config
+  logging enable
+  logging size 1000
+  notify syslog contenttype plaintext
+  hidekeys
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+vlan configuration 1025
+vlan internal allocation policy ascending
+!
+vlan 2
+ name TV_TEST_SOL
+!
+vlan 50
+ name ESKI_ROUTER_GECIS
+!
+vlan 88
+ name TT-VPN
+!
+vlan 100
+ name DENG_TV
+!
+vlan 104
+ name CNBC-E_TT_NNME_40000547154
+!
+vlan 107
+ name AKDENIZ_TV_INTERNET
+!
+vlan 200
+ name ATA-TV
+!
+vlan 201
+ name EUROSTAR
+!
+vlan 202
+ name ShoppingTV
+!
+vlan 203
+ name ASUTV
+!
+vlan 204
+ name KanalURFA(Kanal55)
+!
+vlan 205
+ name Kanal52(OrduTV)
+!
+vlan 206
+ name Ozkaradeniz
+!
+vlan 207
+ name ZTV
+!
+vlan 209
+ name AKS_TV
+!
+vlan 210
+ name VDFONE_365_TV
+!
+vlan 211
+ name BERAT_TV_VODAFONE
+!
+vlan 212
+ name KANAL_58
+!
+vlan 213
+ name HALK_TV
+!
+vlan 215
+ name KayseriTV_1890385030
+!
+vlan 216
+ name DRIFT_CADDE_09/02/22
+!
+vlan 217
+ name CEM_TV-1890995976
+!
+vlan 250
+ name DIYANET_RADYO
+!
+vlan 317
+ name BEST_FM_TURKNET
+!
+vlan 335
+ name POLIS_RADYOSU
+!
+vlan 340
+ name AS_RADYO
+!
+vlan 356
+ name AFEA_TV
+!
+vlan 359
+ name TIVIBU 
+!
+vlan 420
+ name ULUSAL_KANAL_TT
+!
+vlan 583
+ name SRT
+!
+vlan 586
+ name SOL_NUMBER1FM
+!
+vlan 587
+ name SOL_GENC_TV_YENI
+!
+vlan 593
+ name ESTETIK_TV
+!
+vlan 605
+ name TV-10_GECICI
+!
+vlan 606
+ name RIPE
+!
+vlan 610
+ name ODAK_TV
+!
+vlan 611
+ name TV_5_AnadoluIletisim
+!
+vlan 612
+ name EGE_TV_13012026
+!
+vlan 613
+ name 2023_TV
+!
+vlan 614
+ name BENGU_TURK_TV
+!
+vlan 615
+ name ERBOY_BILGISAYAR_TTVPN
+!
+vlan 616
+ name VATANIN_SESI
+!
+vlan 617
+ name ULUSAL_KANAL
+!
+vlan 618
+ name SEMERKAND
+!
+vlan 619
+ name SARAN_RADYO_GRUP
+!
+vlan 620
+ name ERT_TV_14032017
+!
+vlan 621
+ name AKSU_TV
+!
+vlan 622
+ name BEREKET_TV
+!
+vlan 623
+ name VIZYONTURK
+!
+vlan 624
+ name KONTV
+!
+vlan 625
+ name SOZ_TV(UZAY)
+!
+vlan 626
+ name BEDIR_TV
+!
+vlan 627
+ name SELAM_TV
+!
+vlan 628
+ name DIYAR
+!
+vlan 629
+ name KANAL_43
+!
+vlan 630
+ name KANAL_58_TT_VPN_19.06.2013
+!
+vlan 631
+ name TV63URFA
+!
+vlan 632
+ name TURKIYEM_TV
+!
+vlan 633
+ name MARMARA_TV
+!
+vlan 634
+ name BEATV
+!
+vlan 635
+ name BENGUTURK_YENI
+!
+vlan 636
+ name DIGITURK_TTVPN
+!
+vlan 637
+ name DIZISMART_PLATIN_HD
+!
+vlan 638
+ name AVANTAJ_TV_YENI
+!
+vlan 639
+ name KONYA_TV
+!
+vlan 640
+ name DURU_TV_TTVPN
+!
+vlan 641
+ name YILDIZ_TOPRAK_TV
+!
+vlan 642
+ name DOGU_KARADENIZ_TV_GUCLU_RADYO_TV
+!
+vlan 643
+ name REHBER_TV
+!
+vlan 644
+ name YILDIZ_RIZE_TV
+!
+vlan 645
+ name TARIM_TURK_TV
+!
+vlan 646
+ name DOLUNAY_RADYO
+!
+vlan 647
+ name BAYRAM_TV
+!
+vlan 648
+ name BIRINCI_RTV_BERAT
+!
+vlan 649
+ name BNN_TURK
+!
+vlan 650
+ name ON4_TV
+!
+vlan 651
+ name RF_MUHENDISLIK
+!
+vlan 652
+ name T-LIFE
+!
+vlan 653
+ name DOGU_TV
+!
+vlan 654
+ name PAMUKKALE_TV
+!
+vlan 655
+ name ABANT_TV
+!
+vlan 656
+ name KARDELEN_TV
+!
+vlan 657
+ name FLASH_HABER
+!
+vlan 658
+ name TEKMEN_YAYINCILIK
+!
+vlan 659
+ name DURU_TV
+!
+vlan 660
+ name LINE_TV
+!
+vlan 661
+ name KANAL_5
+!
+vlan 662
+ name KANAL_C
+!
+vlan 663
+ name TV_2000
+!
+vlan 664
+ name TV_EM
+!
+vlan 665
+ name HEDEF_31052018
+!
+vlan 666
+ name VATAN_TV
+!
+vlan 667
+ name **GLOBAL_TV**
+!
+vlan 668 
+!
+vlan 669
+ name FENERBAHCE_TV
+!
+vlan 670
+ name TEST_SIVAS
+!
+vlan 671
+ name 365_TV
+!
+vlan 672
+ name ISTANBUL_FM_YENI
+!
+vlan 673
+ name DOST_TV
+!
+vlan 674
+ name KANAL32
+!
+vlan 675
+ name FB_TV
+!
+vlan 676
+ name KAFA_RADYO_TTVPN
+!
+vlan 677
+ name KANAL_URFA
+!
+vlan 678
+ name DIYANET_TV
+!
+vlan 679
+ name BLT_TURK
+!
+vlan 680
+ name KANAL_33
+!
+vlan 681
+ name TV_10
+!
+vlan 682
+ name MISKET_MEDYA
+!
+vlan 683
+ name ODAK_TV_10122019
+!
+vlan 684
+ name SUN_TV
+!
+vlan 685
+ name GOZDE_TV
+!
+vlan 686
+ name VATAN_TV_25112019
+!
+vlan 687
+ name HALK_TV_21022020
+!
+vlan 688
+ name YAFA_MEDYA_MISK_DORAR_TV
+!
+vlan 689
+ name DENG_TV_YENI
+!
+vlan 690
+ name KUDUS_TV
+!
+vlan 691
+ name KANAL_3
+!
+vlan 692
+ name 67_TV
+!
+vlan 693
+ name HALKTV
+!
+vlan 694
+ name AKRA_FM
+!
+vlan 695
+ name EDASSA
+!
+vlan 696
+ name MANISA_MEDYA
+!
+vlan 697
+ name KANAL_TEK
+!
+vlan 698
+ name BAYRAM_FM_YENII
+!
+vlan 699
+ name MEK_TV
+!
+vlan 700
+ name EDASSA_TV_YENI
+!
+vlan 701
+ name KANAL_3_TTVPN
+!
+vlan 702
+ name RTV
+!
+vlan 703
+ name SUPER_TV
+!
+vlan 704
+ name YABAN_TV
+!
+vlan 705
+ name EKINTURK
+!
+vlan 706
+ name MUJDE_FM
+!
+vlan 707
+ name GAZIANTEP_OLAY_TV
+!
+vlan 708
+ name ONE_SUPER_TV
+!
+vlan 709
+ name ONE_BAL_TV
+!
+vlan 710
+ name ES_TV
+!
+vlan 711
+ name MAKSIMUM_RADYO
+!
+vlan 712
+ name GUNEYDOGU_TV
+!
+vlan 713
+ name NATUREL_TV
+!
+vlan 714
+ name VIZYON_58
+!
+vlan 715
+ name SZC_MEGA_IST_YDK
+!
+vlan 716
+ name DRT_TV
+!
+vlan 717
+ name TVDEN
+!
+vlan 718
+ name GLOBAL_MEDYA
+!
+vlan 719
+ name A9_TV
+!
+vlan 720
+ name HABER_ISTANBUL_06072020
+!
+vlan 721
+ name BERAT_TV_03072014
+!
+vlan 722
+ name TGRT_HD
+!
+vlan 723
+ name URFA_TV
+!
+vlan 724
+ name FLASH_TV
+!
+vlan 725
+ name MEDYAM14
+!
+vlan 726
+ name TV100
+!
+vlan 727
+ name EGE_TV
+!
+vlan 728
+ name MAVIKARADENIZ
+!
+vlan 729
+ name KARADENIZ_TV
+!
+vlan 730
+ name OLAY_TV_YENI
+!
+vlan 731
+ name HRT_TV
+!
+vlan 732
+ name EVIN_TV
+!
+vlan 733
+ name PLANET_TV
+!
+vlan 734
+ name EGE_TURK
+!
+vlan 735
+ name DELTA
+!
+vlan 736
+ name TARIM_WEB
+!
+vlan 737
+ name BEYAZ_TV_ANAHAT
+!
+vlan 738
+ name LALEGUL_TV
+!
+vlan 739
+ name BEYAZ_TV_YEDEK
+!
+vlan 740
+ name HEVI_TV
+!
+vlan 741
+ name DOLUNAY_RADYO_16102020
+!
+vlan 742
+ name BITLIS_TV
+!
+vlan 743
+ name CAY_TV
+!
+vlan 744
+ name TEK_RUMELI_TTVPN
+!
+vlan 745
+ name HAK_MESAJ
+!
+vlan 746
+ name RUMELI_TV-OZUN_SESI
+!
+vlan 747
+ name EDASSA_TV
+!
+vlan 748
+ name KOZA_TV
+!
+vlan 749
+ name TV100_TTVPN
+!
+vlan 750
+ name TV_100_YENI_BINA
+!
+vlan 751
+ name YESILIRMAK_TV
+!
+vlan 752
+ name CNBC-e
+!
+vlan 753
+ name EKOL_TV
+!
+vlan 754
+ name KANAL_URFA_TTVPN
+!
+vlan 755
+ name BIR_TV
+!
+vlan 756
+ name SERAP_TV_SIVAS
+!
+vlan 757
+ name MELTEM_TV_YENI
+!
+vlan 758
+ name MORAL_FM
+!
+vlan 759
+ name UCAN_KUS
+!
+vlan 760
+ name TEKRAR_TV
+!
+vlan 761
+ name KANAL_56
+!
+vlan 762
+ name ISTANBUL_NOW
+!
+vlan 763
+ name EMAX
+!
+vlan 764
+ name AS_TV_TTVPN
+!
+vlan 765
+ name AKIT_TV
+!
+vlan 766
+ name BEST_FM
+!
+vlan 767
+ name RADYO_SERAP
+!
+vlan 768
+ name ISMAIL_AGA
+!
+vlan 769
+ name ERKAM_RADYO
+!
+vlan 770
+ name SRT1
+!
+vlan 771
+ name TV52
+!
+vlan 772
+ name AKILLI_TV
+!
+vlan 773
+ name POWER_GROUP_YENI
+!
+vlan 774
+ name TTM
+!
+vlan 775
+ name CNBC-E
+!
+vlan 776
+ name G28
+!
+vlan 777
+ name ON4
+!
+vlan 778
+ name AKRA_TV
+!
+vlan 779 
+!
+vlan 780
+ name FUL_TV
+!
+vlan 781
+ name KANAL12
+!
+vlan 782
+ name HALK_TV_TTVPN
+!
+vlan 783
+ name 365_TV_son
+!
+vlan 784
+ name DERYA_TV
+!
+vlan 785
+ name FARKLI_TV_son
+!
+vlan 786
+ name SON_HEDEF
+!
+vlan 787
+ name TIVITI
+!
+vlan 788
+ name NEHIR
+!
+vlan 789
+ name TV_A
+!
+vlan 790
+ name NUMBERONE_TTVPN_YEDEK
+!
+vlan 791
+ name YEK_TV
+!
+vlan 792
+ name MEGASUARE
+!
+vlan 793
+ name 1ANTV
+!
+vlan 794
+ name MAKSIM
+!
+vlan 795
+ name AKDENIZ_TV
+!
+vlan 796
+ name DENGE_TV_YENI
+!
+vlan 797
+ name A_SHOPPING
+!
+vlan 798
+ name GONCA_TV
+!
+vlan 799
+ name HTV
+!
+vlan 800
+ name YENI_SINEMA
+!
+vlan 801
+ name CIHAN_RADYO
+!
+vlan 802
+ name ATAKOY_FKM
+!
+vlan 803
+ name ORDU_ALTAS
+!
+vlan 804
+ name CIFTCI
+!
+vlan 805
+ name METRO_TURK
+!
+vlan 806
+ name TV1
+!
+vlan 807
+ name FB_TV_YENI
+!
+vlan 808
+ name KANAL16
+!
+vlan 809
+ name TV_19
+!
+vlan 810
+ name KANAL_B_YENI
+!
+vlan 811
+ name TURKIYEM_TV_27102016
+!
+vlan 812
+ name VATAN_TV_YENI
+!
+vlan 813
+ name MERKEZ_TV
+!
+vlan 814
+ name HEDEF_TV
+!
+vlan 815
+ name KARADENIZ_TURK_MMC
+!
+vlan 816
+ name NEHIR_TV_YENI
+!
+vlan 817
+ name DIYAR_TV
+!
+vlan 818
+ name AKSARAY_TV
+!
+vlan 819
+ name SAHIL_GUVENLIK_RADYOSU
+!
+vlan 820
+ name ANADOLUM_TV_TTVPN
+!
+vlan 821
+ name ILKE_TV
+!
+vlan 889
+ name KANAL7_VODAFONE
+!
+vlan 897
+ name JDSU
+!
+vlan 899
+ name TVUPLINK_MANAGEMENT
+!
+vlan 911
+ name NETWORK_MANAGEMENT
+!
+vlan 924
+ name YAYIN_MISAFIR
+!
+vlan 958
+ name MEGA_AJANS_YEDEK4
+!
+vlan 999
+ name BT-TTVPN_GECIS
+!
+vlan 1024
+ name VODAFONE_BRINCIL
+!
+vlan 1025
+ name TEST
+!
+vlan 1256
+ name MILYON_TV
+!
+vlan 1293
+ name AYDIN_DENGE
+!
+vlan 1301
+ name HALK_HABER_TV
+!
+vlan 1302
+ name GRID_BEYAZ_TV_YEDEK
+!
+vlan 1303
+ name BEYAZ_TV_HD
+!
+vlan 1304
+ name AKILLI_TV_TR
+!
+vlan 1305
+ name SMART_TV
+!
+vlan 1306
+ name SHOPPING_TV
+!
+vlan 1307
+ name CIFTCI_TV
+!
+vlan 1308
+ name TMB_TV
+!
+vlan 1310
+ name MILYON_TV_KBETA
+!
+vlan 1311
+ name KURESEL_BETA
+!
+vlan 1312
+ name KURESEL_BETA_1312
+!
+vlan 1313
+ name KURESEL_BETA_1313
+!
+vlan 1314
+ name KURESEL_BETA_1314
+!
+vlan 1315
+ name KURESEL_BETA_1315
+!
+vlan 1316
+ name KURESEL_BETA_1316
+!
+vlan 1317
+ name KURESEL_BETA_1317
+!
+vlan 1318
+ name KURESEL_BETA_1318
+!
+vlan 1319
+ name KURESEL_BETA_1319
+!
+vlan 1320
+ name HALK_TV_GRID
+!
+vlan 1321
+ name BER_TV_GRID
+!
+vlan 1330
+ name KURESEL_BETA_1330
+!
+vlan 1580
+ name DISNEY_YEDEK
+!
+vlan 1600
+ name KAFA_RADYO
+!
+vlan 1609
+ name CEM_TV_VODAFONE
+!
+vlan 1612
+ name CEM_TV_YEDEK_VFONE
+!
+vlan 1841
+ name 365_TV_MCT_YAYIN
+!
+vlan 1911
+ name VATANIN_SESI_VDFN
+!
+vlan 2000
+ name MEGAFON
+!
+vlan 2001
+ name KANAL_T_04.02.2016
+!
+vlan 2002
+ name AKIT_SOL_10009815
+!
+vlan 2003
+ name EKOL_TV_SOL
+!
+vlan 2004
+ name ERBOY_BILGISAYAR
+!
+vlan 2005
+ name SABAH_YILDIZI
+!
+vlan 2007
+ name RT_MARMARA_O3_MEDYA
+!
+vlan 2009
+ name AS_TV
+!
+vlan 2010
+ name ESTECELL_ID_2010
+!
+vlan 2011
+ name ESTECELL_ID_2011
+!
+vlan 2012
+ name ESTECELL_ID_2012
+!
+vlan 2013
+ name ON_TV_TV_100
+!
+vlan 2014
+ name CNBC-E_SOL
+!
+vlan 2015
+ name DEMIR_TV
+!
+vlan 2016
+ name TYT_TV
+!
+vlan 2017
+ name TV_ELLIIKI
+!
+vlan 2018
+ name KURESEL_BETA_SUPERONLINE
+!
+vlan 2019
+ name SOL_EMAX
+!
+vlan 2020
+ name sol_BESTTV_DMOBIL
+!
+vlan 2021
+ name ESTETIK_SOZCU
+!
+vlan 2022
+ name SARUHAN_MEDYA_SOL
+!
+vlan 2024
+ name ORDU_ALTAS_SOL
+!
+vlan 2025
+ name T-MEDYA
+!
+vlan 2026
+ name MELTEM_TV_SOL_OVER_EURONET
+!
+vlan 2027
+ name TYTTURK
+!
+vlan 2031
+ name ANADOLUM_TV
+!
+vlan 2033
+ name BURSA_TV_SUPERONLINE
+!
+vlan 2034
+ name TGRT_HABER_SOL
+!
+vlan 2035
+ name MAKINA_TV
+!
+vlan 2036
+ name DSMART-SOL-1000_10024814
+!
+vlan 2045
+ name HABER_GLOBAL
+!
+vlan 2050
+ name BEREKET_TV_SUPERONLINE
+!
+vlan 2059
+ name VAN_TV_SOL
+!
+vlan 2060
+ name OZKARADENIZ
+!
+vlan 2074
+ name SOL_2074
+!
+vlan 2085
+ name KANAL_5_SOL
+!
+vlan 2086
+ name ULUSAL_KANAL_SOL
+!
+vlan 2090
+ name EDESSA_TV
+!
+vlan 2093
+ name YAFA_MEDYA
+!
+vlan 2096
+ name BIRINCI_RADYO_TV
+!
+vlan 2098
+ name ONS_TV
+!
+vlan 2111
+ name SOL_v
+!
+vlan 2112
+ name NUMBER_ONE
+!
+vlan 2304
+ name TEMPO_TV
+!
+vlan 2316
+ name VIVA_DISNEY
+!
+vlan 3004
+ name SOL
+!
+vlan 3005
+ name SOL_VLAN
+!
+vlan 3009
+ name TYTTURK_YEDEK
+!
+vlan 3012
+ name KUPE_FM
+!
+vlan 3018
+ name GUNEYDOGU_TV_SOL
+!
+vlan 3029
+ name sol_PALMIYE-3029
+!
+vlan 3030
+ name sol_PALMIYE-3030
+!
+vlan 3031
+ name sol_PALMIYE-3031
+!
+vlan 3036
+ name sol_SEMERKAND_TV
+!
+vlan 3040
+ name BERAT_TV
+!
+vlan 3045
+ name sol_KANAL_YALOVA
+!
+vlan 3046
+ name sol_GUCLUTV_KNLYLVA
+!
+vlan 3051
+ name TV267
+!
+vlan 3052
+ name KANALS
+!
+vlan 3053
+ name DMR_MEDYA_SAM_TV
+!
+vlan 3054
+ name AKIT_TV_SOL
+!
+vlan 3069
+ name DIGITURK
+!
+vlan 3070
+ name VAN_TV
+!
+vlan 3160
+ name DEMIROREN_TT_500
+!
+vlan 3171
+ name HALK_TV_SOL
+!
+vlan 3173
+ name SOL_TEKRAR_TV
+!
+vlan 3209
+ name TR1
+!
+vlan 3259
+ name sol_TMB_RIMAS_TV
+!
+vlan 3339
+ name sol_NTV_SPORT_HD
+!
+vlan 3348
+ name GENC_TV
+!
+vlan 3371
+ name TEKRAR_TV_SOL
+!
+vlan 3373
+ name sol_SPORTS_TV
+!
+vlan 3455
+ name sol_GENCTV_YENI
+!
+vlan 3521
+ name GUC_DIGITAL_POWERGROUP
+!
+vlan 3524
+ name BER_RADYO_TV
+!
+vlan 3543
+ name DOGUS_GROUP
+!
+vlan 3565
+ name GENC_TV_25022015
+!
+vlan 3568
+ name sol_NUMBERONE
+!
+vlan 3599
+ name sol_CAM_MEDYA
+!
+vlan 3608
+ name VODAFONE_LALEGUL
+!
+vlan 3609
+ name VODAFONE_LALEGUL_RD
+!
+vlan 3653
+ name YESILIRMAK_TV_SOL
+!
+vlan 3911
+ name NET_MANAGEMENT
+!
+vlan 4002
+ name TATLISES_RADYO
+!
+vlan 4015
+ name sol_SOKAK_TV
+!
+vlan 4035
+ name sol_VUSLAT_RADYO
+!
+vlan 4044
+ name sol_EXPO_CHANNEL
+!
+vlan 4045
+ name sol_POWER_GRUP
+lldp run
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ description to_R1_Po1_EXTERNAL
+ switchport
+ switchport trunk allowed vlan 50,88,911,999,3911
+ switchport mode trunk
+ mtu 1700
+ load-interval 30
+ shutdown
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface Port-channel2
+ description to_R1_Po2_INT_MUSTERILER
+ switchport
+ switchport trunk allowed vlan 610-666,670-762,764-800,802-819
+ switchport mode trunk
+ load-interval 30
+ shutdown
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface Port-channel3
+ description METRO_SW_PORT_CHANNEL_1
+ switchport
+ switchport trunk allowed vlan 88,201,210,211,215,216,250,335,340,356,359,583
+ switchport trunk allowed vlan add 593,606,889,897,899,911,924,958,999,1024
+ switchport trunk allowed vlan add 1293,1580,1600,1609,1612,1841,2000,2001,2004
+ switchport trunk allowed vlan add 2005,2009-2012,2020,2112,2304,3209,3339,3348
+ switchport trunk allowed vlan add 3455,3521,3524,3542,3565,3568,3599,3608,3609
+ switchport trunk allowed vlan add 3653,4015,4044,4045
+ switchport mode trunk
+ mtu 1700
+ load-interval 30
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface Port-channel4
+ description to_SW-A
+ switchport
+ switchport trunk allowed vlan 50,88,208,210,211,215-217,250,335,359,441,586
+ switchport trunk allowed vlan add 587,605,606,610-800,802-821,897,899,911,924
+ switchport trunk allowed vlan add 999,1321,1330,1580,1600,2000,2001,2003-2005
+ switchport trunk allowed vlan add 2009-2012,2015,2019-2021,2024-2026,2035,2050
+ switchport trunk allowed vlan add 2304,2316,3012,3036,3046,3069,3070,3160,3173
+ switchport trunk allowed vlan add 3209,3259,3339,3348,3373,3455,3521,3524,3542
+ switchport trunk allowed vlan add 3543,3565,3568,3599,3653,3911,4002,4015,4035
+ switchport trunk allowed vlan add 4044,4045
+ switchport mode trunk
+ mtu 1700
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface Port-channel5
+ switchport
+ switchport trunk allowed vlan 611-666,670-716,718-738,740-760,762,764-800
+ switchport trunk allowed vlan add 802-811
+ switchport mode trunk
+ mtu 1700
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface Port-channel6
+ description to_SOL_METRO_SW-ETH1
+ switchport
+ switchport trunk allowed vlan 586,1256,2002,2003,2005,2007,2013-2019,2021,2022
+ switchport trunk allowed vlan add 2024-2027,2031,2033-2036,2045,2050,2059,2060
+ switchport trunk allowed vlan add 2074,2085,2086,2090,2093,2096,2098,2111,2316
+ switchport trunk allowed vlan add 3004,3005,3009,3012,3018,3029-3031,3036,3040
+ switchport trunk allowed vlan add 3045,3046,3051-3054,3069,3070,3171,3173,3259
+ switchport trunk allowed vlan add 3373,3543,4035
+ switchport mode trunk
+ mtu 1700
+ load-interval 30
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+ spanning-tree guard loop
+ spanning-tree port-priority 0
+!
+interface Port-channel7
+ description TT_LAG_30
+ switchport
+ switchport trunk allowed vlan 88,104,201,215,216,250,317,335,340,359,420,583
+ switchport trunk allowed vlan add 593,889,958,1293,1911,2112,3160
+ switchport mode trunk
+ switchport nonegotiate
+ mtu 1700
+ load-interval 30
+ spanning-tree bpdufilter enable
+!
+interface Port-channel11
+ description HW_RTR_1_WAN
+ switchport
+ switchport trunk allowed vlan 88
+ switchport mode trunk
+ mtu 1700
+ ip device tracking maximum 0
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface Port-channel22
+ description HW_RTR_1_LAN
+ switchport
+ switchport trunk allowed vlan 610-666,670-800,802-821
+ switchport mode trunk
+ ip device tracking maximum 0
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface FastEthernet1
+ vrf forwarding mgmtVrf
+ no ip address
+ speed auto
+ duplex auto
+!
+interface GigabitEthernet1/1
+ description TT_VPN_IPRX_1
+ switchport trunk allowed vlan 611,617-620,622,624,625,632-636,639,641,643-645
+ switchport trunk allowed vlan add 648,650,653-656,658-660,662-666,672,674,676
+ switchport trunk allowed vlan add 678,679,681-684,686,689-692,694,695,697,699
+ switchport trunk allowed vlan add 702-705,707-712,714,716,718,719,721,724-728
+ switchport trunk allowed vlan add 731-734,738,740,743,746-750,774,812,3653
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/2
+ description to_MANAGEMENT_GECICI
+ switchport trunk allowed vlan 911
+ switchport mode trunk
+!
+interface GigabitEthernet1/3
+!
+interface GigabitEthernet1/4
+ description TT_VPN_IPRX_2
+ switchport trunk allowed vlan 209,217,610,612-616,621,623,626-631,637,638
+ switchport trunk allowed vlan add 640-642,646,647,649,651,652,657,661,671,673
+ switchport trunk allowed vlan add 675,677,680,682,685,687,688,693,696,698,700
+ switchport trunk allowed vlan add 701,706,713,715,717,720,722,723,729,730
+ switchport trunk allowed vlan add 735-737,739,741,742,744,745,751-811,813-816
+ switchport trunk allowed vlan add 818-821,1321,1330
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/5
+ description IPRX_SUPERONLINE
+ switchport trunk allowed vlan 586,1256,1580,2000-2005,2007,2009-2017,2019-2022
+ switchport trunk allowed vlan add 2024-2027,2031,2033-2036,2045,2050,2059,2060
+ switchport trunk allowed vlan add 2085,2086,2090,2093,2096,2098,2304,2316,2690
+ switchport trunk allowed vlan add 3009,3012,3018,3029-3031,3036,3040,3045,3046
+ switchport trunk allowed vlan add 3051-3054,3070,3171,3173,3209,3259,3348,3373
+ switchport trunk allowed vlan add 3521,3542,3543,3565,3568,3599,4015,4035,4044
+ switchport trunk allowed vlan add 4045
+ switchport mode trunk
+ load-interval 30
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/6
+!
+interface GigabitEthernet1/7
+!
+interface GigabitEthernet1/8
+ description IPRX_GRID_VE_NNME     
+ switchport trunk allowed vlan 104,210,211,215,216,250,317,335,340,356,420,583
+ switchport trunk allowed vlan add 593,889,958,1024,1293,1301-1308,1310,1311
+ switchport trunk allowed vlan add 1320,1600,1609,1612,1911,2112,3069,3160,3608
+ switchport trunk allowed vlan add 3609
+ switchport mode trunk
+ load-interval 30
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/9
+!
+interface GigabitEthernet1/10
+ description HUAWEI_RTR_1
+ switchport access vlan 3911
+ switchport mode access
+ ip device tracking maximum 0
+!
+interface GigabitEthernet1/11
+ description HUAWEI_RTR_2
+ switchport access vlan 3911
+ switchport mode access
+ ip device tracking maximum 0
+!
+interface GigabitEthernet1/12
+ description test
+ switchport access vlan 911
+ switchport mode access
+!
+interface GigabitEthernet1/13
+ description MIRROR_PORT
+!
+interface GigabitEthernet1/14
+ switchport access vlan 2111
+ switchport mode access
+!
+interface GigabitEthernet1/15
+!
+interface GigabitEthernet1/16
+ description MIRROR_PORT
+!
+interface GigabitEthernet1/17
+ description MIRROR_PORT
+!
+interface GigabitEthernet1/18
+ switchport access vlan 3004
+ switchport mode access
+!
+interface GigabitEthernet1/19
+ switchport access vlan 3005
+ switchport mode access
+!
+interface GigabitEthernet1/20
+ description MIRROR_PORT
+!
+interface GigabitEthernet1/21
+ switchport access vlan 3005
+ switchport mode access
+!
+interface GigabitEthernet1/22
+ switchport access vlan 3005
+ switchport mode access
+!
+interface GigabitEthernet1/23
+ switchport access vlan 3005
+ switchport mode access
+!
+interface GigabitEthernet1/24
+ description TIVIBU
+ switchport trunk allowed vlan 201,359
+ switchport mode trunk
+!
+interface GigabitEthernet1/25
+ switchport trunk allowed vlan 50,88,208,210,211,215-217,250,335,359,441,586
+ switchport trunk allowed vlan add 587,605,606,610-800,802-821,897,899,911,924
+ switchport trunk allowed vlan add 999,1321,1330,1580,1600,2000,2001,2003-2005
+ switchport trunk allowed vlan add 2009-2012,2015,2019-2021,2024-2026,2035,2050
+ switchport trunk allowed vlan add 2304,2316,3012,3036,3046,3069,3070,3160,3173
+ switchport trunk allowed vlan add 3209,3259,3339,3348,3373,3455,3521,3524,3542
+ switchport trunk allowed vlan add 3543,3565,3568,3599,3653,3911,4002,4015,4035
+ switchport trunk allowed vlan add 4044,4045
+ switchport mode trunk
+ mtu 1700
+ channel-group 4 mode on
+!
+interface GigabitEthernet1/26
+ switchport trunk allowed vlan 50,88,208,210,211,215-217,250,335,359,441,586
+ switchport trunk allowed vlan add 587,605,606,610-800,802-821,897,899,911,924
+ switchport trunk allowed vlan add 999,1321,1330,1580,1600,2000,2001,2003-2005
+ switchport trunk allowed vlan add 2009-2012,2015,2019-2021,2024-2026,2035,2050
+ switchport trunk allowed vlan add 2304,2316,3012,3036,3046,3069,3070,3160,3173
+ switchport trunk allowed vlan add 3209,3259,3339,3348,3373,3455,3521,3524,3542
+ switchport trunk allowed vlan add 3543,3565,3568,3599,3653,3911,4002,4015,4035
+ switchport trunk allowed vlan add 4044,4045
+ switchport mode trunk
+ mtu 1700
+ channel-group 4 mode on
+!
+interface GigabitEthernet1/27
+ switchport trunk allowed vlan 50,88,208,210,211,215-217,250,335,359,441,586
+ switchport trunk allowed vlan add 587,605,606,610-800,802-821,897,899,911,924
+ switchport trunk allowed vlan add 999,1321,1330,1580,1600,2000,2001,2003-2005
+ switchport trunk allowed vlan add 2009-2012,2015,2019-2021,2024-2026,2035,2050
+ switchport trunk allowed vlan add 2304,2316,3012,3036,3046,3069,3070,3160,3173
+ switchport trunk allowed vlan add 3209,3259,3339,3348,3373,3455,3521,3524,3542
+ switchport trunk allowed vlan add 3543,3565,3568,3599,3653,3911,4002,4015,4035
+ switchport trunk allowed vlan add 4044,4045
+ switchport mode trunk
+ mtu 1700
+ channel-group 4 mode on
+!
+interface GigabitEthernet1/28
+!
+interface GigabitEthernet1/29
+!
+interface GigabitEthernet1/30
+!
+interface GigabitEthernet1/31
+ switchport trunk allowed vlan 611-666,670-716,718-738,740-760,762,764-800
+ switchport trunk allowed vlan add 802-811
+ switchport mode trunk
+ mtu 1700
+ channel-group 5 mode on
+!
+interface GigabitEthernet1/32
+ switchport trunk allowed vlan 611-666,670-716,718-738,740-760,762,764-800
+ switchport trunk allowed vlan add 802-811
+ switchport mode trunk
+ mtu 1700
+ channel-group 5 mode on
+!
+interface GigabitEthernet1/33
+ description TEST_PORT
+ switchport access vlan 693
+ switchport mode access
+!
+interface GigabitEthernet1/34
+!
+interface GigabitEthernet1/35
+ switchport trunk allowed vlan 766
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/36
+ switchport access vlan 924
+ switchport trunk allowed vlan 958
+ switchport mode trunk
+ shutdown
+!
+interface GigabitEthernet1/37
+ switchport trunk allowed vlan 610-666,670-762,764-800,802-819
+ switchport mode trunk
+ load-interval 30
+ shutdown
+ channel-group 2 mode on
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/38
+ switchport trunk allowed vlan 610-666,670-762,764-800,802-819
+ switchport mode trunk
+ load-interval 30
+ shutdown
+ channel-group 2 mode on
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/39
+ switchport trunk allowed vlan 610-666,670-800,802-821
+ switchport mode trunk
+ load-interval 30
+ channel-group 22 mode active
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/40
+ switchport trunk allowed vlan 610-666,670-800,802-821
+ switchport mode trunk
+ load-interval 30
+ channel-group 22 mode active
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/41
+ description to_TT_VPN_ROUTER_EXT
+ switchport trunk allowed vlan 50,88,911,999,3911
+ switchport mode trunk
+ mtu 1700
+ shutdown
+ channel-group 1 mode on
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/42
+ description to_TT_VPN_ROUTER_EXT
+ switchport trunk allowed vlan 50,88,911,999,3911
+ switchport mode trunk
+ mtu 1700
+ shutdown
+ channel-group 1 mode on
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/43
+ description HW_RTR_1_WAN
+ switchport trunk allowed vlan 88
+ switchport mode trunk
+ mtu 1700
+ load-interval 30
+ channel-group 11 mode active
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/44
+ description HW_RTR_1_WAN
+ switchport trunk allowed vlan 88
+ switchport mode trunk
+ mtu 1700
+ load-interval 30
+ channel-group 11 mode active
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/45
+ description -=**JDSU_1_Monitoring**=-
+ load-interval 30
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/46
+ description to_ESKI_4948_1/46
+ switchport trunk allowed vlan 50,104,205,210,215,335,340,352,359,587,593,610
+ switchport trunk allowed vlan add 613,615,616,620,626-629,631,635-638,640-642
+ switchport trunk allowed vlan add 644,648-651,653,657,658,665,671,672,674,676
+ switchport trunk allowed vlan add 678,679,682,683,685-688,690,691,693,694,699
+ switchport trunk allowed vlan add 702,712,713,715,717,720,722,723,730,735-737
+ switchport trunk allowed vlan add 739,741,742,744,747,749-755,757,761,774,781
+ switchport trunk allowed vlan add 812-818,897,911,924,937,958,1024,1256,1293
+ switchport trunk allowed vlan add 1301-1308,1310-1321,1330,1580,1600,2002,2003
+ switchport trunk allowed vlan add 2005,2007,2009,2013-2015,2017,2018,2020-2022
+ switchport trunk allowed vlan add 2024,2025,2035,2050,2060,2093,2112,2316,3012
+ switchport trunk allowed vlan add 3018,3029-3031,3036,3046,3051-3054,3069,3171
+ switchport trunk allowed vlan add 3608,3609,3911
+ switchport mode trunk
+ mtu 1700
+ load-interval 30
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/47
+ description HUAWEI_4
+ switchport trunk allowed vlan 285,652,662,666,683,686,695,700,702,758,911
+ switchport mode trunk
+ load-interval 30
+ spanning-tree portfast
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard disable
+!
+interface GigabitEthernet1/48
+!
+interface TenGigabitEthernet1/49
+ description to_SOL_METRO_SW
+ switchport trunk allowed vlan 586,1256,2002,2003,2005,2007,2013-2019,2021,2022
+ switchport trunk allowed vlan add 2024-2027,2031,2033-2036,2045,2050,2059,2060
+ switchport trunk allowed vlan add 2074,2085,2086,2090,2093,2096,2098,2111,2316
+ switchport trunk allowed vlan add 3004,3005,3009,3012,3018,3029-3031,3036,3040
+ switchport trunk allowed vlan add 3045,3046,3051-3054,3069,3070,3171,3173,3259
+ switchport trunk allowed vlan add 3373,3543,4035
+ switchport mode trunk
+ mtu 1700
+ channel-group 6 mode active
+!
+interface TenGigabitEthernet1/50
+ description to_SOL_METRO_SW
+ switchport trunk allowed vlan 586,1256,2002,2003,2005,2007,2013-2019,2021,2022
+ switchport trunk allowed vlan add 2024-2027,2031,2033-2036,2045,2050,2059,2060
+ switchport trunk allowed vlan add 2074,2085,2086,2090,2093,2096,2098,2111,2316
+ switchport trunk allowed vlan add 3004,3005,3009,3012,3018,3029-3031,3036,3040
+ switchport trunk allowed vlan add 3045,3046,3051-3054,3069,3070,3171,3173,3259
+ switchport trunk allowed vlan add 3373,3543,4035
+ switchport mode trunk
+ mtu 1700
+ channel-group 6 mode active
+!
+interface TenGigabitEthernet1/51
+ switchport trunk allowed vlan 88,104,201,215,216,250,317,335,340,359,420,583
+ switchport trunk allowed vlan add 593,889,958,1293,1911,2112,3160
+ switchport mode trunk
+ switchport nonegotiate
+ mtu 1700
+ load-interval 30
+ channel-group 7 mode active
+ spanning-tree bpdufilter enable
+!
+interface TenGigabitEthernet1/52
+ switchport trunk allowed vlan 88,104,201,215,216,250,317,335,340,359,420,583
+ switchport trunk allowed vlan add 593,889,958,1293,1911,2112,3160
+ switchport mode trunk
+ switchport nonegotiate
+ mtu 1700
+ load-interval 30
+ channel-group 7 mode active
+ spanning-tree bpdufilter enable
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan911
+ description MANAGEMENT
+ ip address 10.101.11.86 255.255.255.0
+ shutdown
+!
+interface Vlan1293
+ ip address 10.115.2.3 255.255.255.248
+ shutdown
+!
+interface Vlan2022
+ ip address 172.16.16.1 255.255.255.252
+ shutdown
+!
+interface Vlan3911
+ ip address 10.101.111.81 255.255.255.0
+!
+no ip http server
+no ip http secure-server
+ip forward-protocol nd
+!
+ip route 10.100.41.0 255.255.255.0 10.101.111.1
+ip route 10.101.11.180 255.255.255.255 10.101.111.1
+ip route 10.101.23.241 255.255.255.255 10.101.11.1
+ip route 10.101.31.0 255.255.255.0 10.101.111.1
+ip route 10.110.254.0 255.255.255.0 10.101.111.1
+!
+!
+logging host 10.101.18.80
+access-list 1 permit 10.101.31.0 0.0.0.255
+access-list 1 permit 10.110.254.0 0.0.0.255
+access-list 1 permit 10.100.41.0 0.0.0.255
+access-list 1 permit 10.101.23.0 0.0.0.255
+access-list 1 permit 10.101.11.0 0.0.0.255
+access-list 2 permit 10.101.31.0 0.0.0.255
+!
+!
+snmp-server community karakr1pt0 RO 2
+snmp-server community yakar RO 2
+snmp-server community prtg RO
+snmp-server community opmngr RW
+snmp-server community trsatx RO
+snmp-server host 10.101.31.245 version 2c karakr1pt0 
+snmp-server host 10.101.31.251 version 2c karakr1pt0 
+snmp-server host 10.101.11.107 version 2c prtg 
+!
+!
+line con 0
+ login local
+ stopbits 1
+line vty 0 4
+ session-timeout 35791 
+ access-class 1 in
+ login local
+ transport input ssh
+line vty 5 15
+ session-timeout 35791 
+ access-class 1 in
+ login local
+ transport input ssh
+!
+!
+monitor session 1 source vlan 100 - 101 , 104 , 200 - 206 , 208 - 213 , 215 - 217 rx
+monitor session 1 source vlan 244 , 250 , 257 , 262 , 285 rx
+monitor session 1 source vlan 304 , 306 , 311 , 317 , 330 rx
+monitor session 1 source vlan 335 , 338 , 340 , 350 , 352 - 353 rx
+monitor session 1 source vlan 356 , 358 - 360 , 365 , 423 , 450 rx
+monitor session 1 source vlan 510 - 511 , 566 , 583 , 586 - 587 , 593 rx
+monitor session 1 source vlan 600 , 603 , 610 - 646 , 648 - 666 , 670 - 803 rx
+monitor session 1 source vlan 806 - 821 , 889 , 958 , 1301 - 1306 , 1308 rx
+monitor session 1 source vlan 1310 - 1311 , 1600 , 1609 , 1612 , 1911 rx
+monitor session 1 source vlan 2000 - 2001 , 2005 , 2009 - 2012 , 2020 , 2022 rx
+monitor session 1 source vlan 2034 , 2085 , 2090 , 2112 , 2304 rx
+monitor session 1 source vlan 3018 , 3029 - 3031 , 3045 - 3046 , 3053 - 3054 , 3069 rx
+monitor session 1 source vlan 3071 , 3160 , 3310 , 3339 , 3348 rx
+monitor session 1 source vlan 3371 , 3373 , 3379 , 3426 , 3521 rx
+monitor session 1 source vlan 3565 , 3568 , 3599 , 3653 , 3872 rx
+monitor session 1 source vlan 4015 , 4035 , 4044 - 4045 rx
+monitor session 1 source vlan 1293
+monitor session 1 destination interface Gi1/45
+monitor session 1 filter packet-type good rx
+monitor session 2 source interface Gi1/1
+monitor session 2 destination interface Gi1/13
+monitor session 2 filter packet-type good rx
+monitor session 3 source interface Gi1/4
+monitor session 3 destination interface Gi1/16
+monitor session 3 filter packet-type good rx
+monitor session 4 source interface Gi1/5
+monitor session 4 destination interface Gi1/17
+monitor session 4 filter packet-type good rx
+monitor session 5 source interface Gi1/8
+monitor session 5 destination interface Gi1/20
+monitor session 5 filter packet-type good rx
+ntp logging
+ntp update-calendar
+ntp server 10.101.30.249
+ntp server 10.101.11.254
+mac address-table notification change history-size 20
+mac address-table notification change
+mac address-table notification threshold
+end
+

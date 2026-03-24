@@ -1,0 +1,24 @@
+{
+    "successful": [
+        {
+            "device": "GBKZS_UYDU_AR-GE_SW",
+            "ip": "10.101.111.48",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-24P-4X",
+                    "serial_number": "FVH290414L5"
+                }
+            ],
+            "serial_no": "FVH290414L5",
+            "model": "C9200L-24P-4X",
+            "uptime": "10 weeks, 6 days, 49 minutes",
+            "hostname": "GBKZS_UYDU_AR-GE_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "GBKZS_UYDU_AR-GE_SW"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

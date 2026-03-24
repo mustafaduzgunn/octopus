@@ -1,0 +1,24 @@
+{
+    "successful": [
+        {
+            "device": "KT_DC3_B07U03_F5MGMT",
+            "ip": "10.101.111.161",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106G0"
+                }
+            ],
+            "serial_no": "JAE255106G0",
+            "model": "C9200L-48P-4X",
+            "uptime": "29 weeks, 4 days, 2 hours, 6 minutes",
+            "hostname": "KT_DC3_B07U03_F5MGMT",
+            "software_version": "17.9.5",
+            "collected_hostname": "KT_DC3_B07U03_F5MGMT"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

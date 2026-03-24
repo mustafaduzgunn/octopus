@@ -1,0 +1,1626 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+
+!Command: show running-config
+!Time: Mon Mar 23 17:28:09 2026
+
+version 8.0(1)
+switchname VDC1
+
+cfs eth distribute
+feature interface-vlan
+feature lacp
+feature vpc
+feature lldp
+feature nxapi
+
+username admin password 5 $5$iu316hVo$HnceuykXSdhvWcSm25vlsM8HbZgri6bkugsUUcSMxg9  role vdc-admin
+username mduzgun password 5 $5$IYfkwDlM$j4Ia2cIu41jd2E2EAndtkEu6i5f.qtB7AsK2hN.z44A  role vdc-admin
+username mduzgun passphrase  lifetime 99999 warntime 14 gracetime 3
+ssh key rsa 2048 
+ip domain-lookup
+system default switchport
+service unsupported-transceiver
+snmp-server user admin vdc-admin auth md5 0xc8222a336c4347286268eb0607f7c3d3 priv 0xc8222a336c4347286268eb0607f7c3d3 localizedkey
+snmp-server user mduzgun vdc-admin auth md5 0xb735cd37d4a7086c44ca12c5076f68a7 priv 0xb735cd37d4a7086c44ca12c5076f68a7 localizedkey
+snmp-server host 10.101.11.108 traps version 2c opmngr
+rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+snmp-server community karakr1pt0 group vdc-operator
+snmp-server community fast group vdc-operator
+ntp server 10.101.11.254 prefer
+
+vlan 1-2,4,9,14,31,33-35,50,52,60,66,70-74,80,84,91,130,132,154,160,162,180,182,200-203,214,402-403,441,451,507,516,550,711,777,911,945,1010-1011,1013,1015,1071,1101-1108,1113-1114,1120,1130,1132,1139,1214,1227,1232,1270,1276,1278-1279,1282-1285,1296,1298,1303-1405,1407,1410-1453,1468-1471,1480-1489,1491-1494,1498-1507,1512,1521-1559,1563-1569,1584,1902-1903
+vlan 2303-2304,2310,2320-2321,2401-2501,3001,3134,3198-3199,3701-3706,3719-3721,3740,3792-3793,3961,3965-3966,3971-3978,3981,3990
+vlan 1
+vlan 2
+  name F5_HA
+vlan 4
+  name KAMU_F5_SANAL
+vlan 9
+  name FORTI_INT_TEST
+vlan 14
+  name MANAGEMENT
+vlan 31
+  name EDK_MONITORING
+vlan 33
+  name CB
+vlan 34
+  name REPLICA
+vlan 35
+  name EDK_K8S_PROD
+vlan 50
+  name PHP
+vlan 52
+  name GIRIS
+vlan 60
+  name DIS_DNS
+vlan 66
+  name MAIL
+vlan 70
+  name NOTIFICATION
+vlan 71
+  name ANALITIK
+vlan 72
+  name EDK_PAM
+vlan 73
+  name ANKET
+vlan 74
+  name MIDDLEWARE
+vlan 80
+  name CYBER_EDK
+vlan 84
+  name EKAPI
+vlan 91
+  name TEST_VLAN_LAN
+vlan 130
+  name KAYIT
+vlan 132
+  name JSON
+vlan 154
+  name OTURUM
+vlan 160
+  name IC_DNS
+vlan 162
+  name IC_DNS2
+vlan 180
+  name DB
+vlan 182
+  name DB2
+vlan 200
+  name KOSGEB_SIP
+vlan 201
+  name KTB_SIP
+vlan 202
+  name MEB_SIP
+vlan 203
+  name GODIGITAL
+vlan 214
+  name LOG
+vlan 402
+  name DMO_CLIENT
+vlan 403
+  name DMO_APP
+vlan 441
+  name KAMU_SERVER_MGMT
+vlan 451
+  name VSAT_VMYD_DGM
+vlan 507
+  name TCDD_TTVPN
+vlan 516
+  name KIYI_EMNIYETI
+vlan 550
+  name NETWORK_IPS
+vlan 711
+  name CFCU_WAN
+vlan 777
+vlan 911
+  name MNGMT
+vlan 945
+  name KAMU_VM
+vlan 1010
+  name ESB_LAN_1
+vlan 1011
+  name ESB_LAN_2
+vlan 1013
+  name ESB_LAN_3
+vlan 1015
+  name ESB_LAN_4
+vlan 1071
+  name KIK_COMMINUCATION
+vlan 1101
+  name PA_TRUST_VLAN
+vlan 1102
+  name KBSGD_MAILGW
+vlan 1103
+  name VEEAM_CLOUD
+vlan 1104
+  name WILDFIRE
+vlan 1105
+  name WILDFIRE_INTERNET
+vlan 1106
+  name ORACLE_POSTGRE_TEST
+vlan 1107
+  name KAMU_KARANTINA
+vlan 1108
+  name KAMU_SHGM_K8S
+vlan 1113
+  name SAFIRBULUT_DBTEST
+vlan 1114
+  name SAFIRBULUT_DBPROD
+vlan 1120
+  name SAFIRBULUT_DISAPPPROD
+vlan 1130
+  name SAFIRBULUT_ICAPPPROD
+vlan 1132
+  name SAFIRBULUT_LOGAPP
+vlan 1139
+  name SAFIRBULUT_APPTEST
+vlan 1214
+  name SHGM_KDMDEV
+vlan 1227
+  name KGK_WAN
+vlan 1232
+  name DT-Cloud_wan_public
+vlan 1270
+  name TELIF_HAKLARI_LAN
+vlan 1276
+  name KAMU_SHGM_JUMP_BYM-111999
+vlan 1278
+  name KAMU_CSOC_LAN_5
+vlan 1279
+  name KAMU_CSOC_LAN_6
+vlan 1282
+  name KAMU_CSOC_LAN_1
+vlan 1283
+  name KAMU_CSOC_LAN_2
+vlan 1284
+  name KAMU_CSOC_LAN_3
+vlan 1285
+  name KAMU_CSOC_LAN_4
+vlan 1296
+  name TPME_WAN
+vlan 1298
+  name VSDWAN
+vlan 1303
+  name SSB_SUPERMICRO_SW
+vlan 1304
+  name SHGM_AD_SIBER
+vlan 1305
+  name SHGM_PENTEST_ZAFIYET
+vlan 1306
+  name SHGM_PAM
+vlan 1307
+  name SHGM_TABLEAU
+vlan 1308
+  name SHGM_PUBLIC_SIBER_SERVICE
+vlan 1309
+  name KAMU_SHGM_KAMERA
+vlan 1310
+  name ULASTIRMA-LAN
+vlan 1311
+  name KAREL_LAN
+vlan 1312
+  name DENIZCILIK_UBAK
+vlan 1313
+  name GOC_IDARESI_8/03/2023
+vlan 1314
+  name GOC_IDARESI_YENI_8/03/2023
+vlan 1315
+  name KAMU_SHGM_BIGBLUEBUTTON
+vlan 1316
+  name AFAD
+vlan 1317
+  name KAMU_IPS_MCAFEE
+vlan 1318
+  name ASELSAN_TRUST_1318
+vlan 1319
+  name PENDIK_TRUST
+vlan 1320
+  name MGK
+vlan 1321
+  name KKTC_EDEVLET
+vlan 1322
+  name SHGM
+vlan 1323
+  name AVRUPA_BIRLIGI_LAN
+vlan 1324
+  name GOC_IDARESI
+vlan 1325
+  name DMO
+vlan 1326
+  name DMO-MNGT
+vlan 1327
+  name DMO_ORAC
+vlan 1328
+  name SAYISTAY_LAN
+vlan 1329
+  name TCDD_LAN
+vlan 1330
+  name KGDM
+vlan 1331
+  name DMO-CLIENT
+vlan 1332
+  name EPDK_PFSENSE
+vlan 1333
+  name SBB_DB
+vlan 1334
+  name ERBAKAN_UNI
+vlan 1335
+  name ULUSAL_AJANS
+vlan 1336
+  name HGM
+vlan 1337
+  name KALKINMA_LAN
+vlan 1338
+  name CEVRE_SEHIRCILIK
+vlan 1339
+  name DHMI_ERP
+vlan 1340
+  name TAPU
+vlan 1341
+  name SAYISTAY_1
+vlan 1342
+  name SAYISTAY_2
+vlan 1343
+  name SAYISTAY_3
+vlan 1344
+  name SAYISTAY_4
+vlan 1345
+  name SAYISTAY_5
+vlan 1346
+  name EKDS_KALE
+vlan 1347
+  name EKDS_EGA
+vlan 1348
+  name EKDS_EB
+vlan 1349
+  name KAMU_SHGM_LAN_OLDAPPDMZ
+vlan 1350
+  name KAMU_SHGM_LAN_MANIA
+vlan 1351
+  name YSK
+vlan 1352
+  name SHGM_ROHAN
+vlan 1353
+  name SHGM_ERABOR
+vlan 1354
+  name RIVENDELL
+vlan 1355
+  name KAMU_SHGM_LAN_1
+vlan 1356
+  name MESLEKI_YETERLILIK
+vlan 1357
+  name AVRUPA_BIRLIGI
+vlan 1358
+  name AVRUPA_BIRLIGI_1
+vlan 1359
+  name AVRUPA_BIRLIGI_2
+vlan 1360
+  name LRIT
+vlan 1361
+  name AVRUPA_BIRLIGI_DMZ
+vlan 1362
+  name UUP_TEST
+vlan 1363
+  name YOK_DMZ
+vlan 1364
+  name YOK_SUNUCU
+vlan 1365
+  name YOK_VERI_TABANI
+vlan 1366
+  name SHGM_F5
+vlan 1367
+  name SHGM_PERSONEL_NETWORK
+vlan 1368
+  name SHGM_SUNUCU_NETWORK
+vlan 1369
+  name SHGM_PALANTIR
+vlan 1370
+  name NDK_LOKAL
+vlan 1371
+  name Cloud_Domain
+vlan 1372
+  name KUTUPHANELER
+vlan 1373
+  name CSGB
+vlan 1374
+  name YTB
+vlan 1375
+  name EKONOMI_PFSENSE
+vlan 1376
+  name CSGB_SUNUCU_1
+vlan 1377
+  name CSGB_SUNUCU_2
+vlan 1378
+  name CSGB_HA
+vlan 1379
+  name TITCK
+vlan 1380
+  name LRIT_TEST
+vlan 1381
+  name ASBU
+vlan 1382
+  name ADEO_1
+vlan 1383
+  name ADEO
+vlan 1384
+  name ADEO_2
+vlan 1385
+  name ULASTIRMA_CLOUD_PF
+vlan 1386
+  name RTUK
+vlan 1387
+  name ILKSAN
+vlan 1388
+  name DHMI_AZUR
+vlan 1389
+  name KAMU_ORTAK
+vlan 1390
+  name SATCLOUD_L2
+vlan 1391
+  name ETVESUT_APP
+vlan 1392
+  name YUZUNCUYIL
+vlan 1393
+  name ICERIK_NET
+vlan 1394
+  name ETU_DATABASE
+vlan 1395
+  name IBANK_APP
+vlan 1396
+  name IBANK_DATABASE
+vlan 1397
+  name ESK_APP
+vlan 1398
+  name ESK_DATABASE
+vlan 1399
+  name KAMU_TEST_NETWORK
+vlan 1400
+  name CIMER_1400
+vlan 1401
+  name CIMER_VERITABANI
+vlan 1402
+  name CIMER_UYGULAMA
+vlan 1403
+  name CIMER_LB
+vlan 1404
+  name CIMER_YAZILIM_GELISTIRME
+vlan 1405
+  name CIMER_TEST
+vlan 1407
+  name SHGM_SANGFOR_VDI_POC
+vlan 1410
+  name CUMBAS_APP
+vlan 1411
+  name CUMBAS_DATABASE
+vlan 1412
+  name SANCAKTEPE_LAN
+vlan 1413
+  name DDO_LRE
+vlan 1414
+  name DDO_LRE2
+vlan 1415
+  name BOS-1
+vlan 1416
+  name BOS-2
+vlan 1417
+  name CUMBAS_APP2
+vlan 1418
+  name KIK_TRUST
+vlan 1419
+  name TAK_DB
+vlan 1420
+  name TAK_DMZ
+vlan 1421
+  name KIK_TRUST_3
+vlan 1422
+  name KIK_MNGT
+vlan 1423
+  name KIK_ODAK_DATA_NETWORK
+vlan 1424
+  name KIK_ODAK_STORAGE_NETWORK
+vlan 1425
+  name STRATEJI_DMZ
+vlan 1426
+  name STRATEJI_VT
+vlan 1427
+  name STRATEJI_YAS
+vlan 1428
+  name KAMU_SHGM_WZ
+vlan 1429
+  name KAMU_SHGM_RABBIT
+vlan 1430
+  name KAMU_SHGM_OLDSOFTWARE
+vlan 1431
+  name KAMU_ORTAK_HIZMET
+vlan 1432
+  name SHGM_SANDBOX
+vlan 1433
+  name SHGM_SPARKER
+vlan 1434
+  name SHGM_NETWORK_20/12/23
+vlan 1435
+  name SHGM_OTOMASYON
+vlan 1436
+  name KAMU_CSB_TUCBS
+vlan 1437
+  name KAMU_CSB_TUCBS_2
+vlan 1438
+  name KAMU_CSB_TUCBS_3
+vlan 1439
+  name KAMU_CSB_TUCBS_4
+vlan 1440
+  name KAMU_CSB_TUCBS_5
+vlan 1441
+  name KAMU_CSB_TUCBS_6
+vlan 1442
+  name KAMU_CBIKO_PROD_DATA
+vlan 1443
+  name KAMU_CBIKO_TEST_UYG
+vlan 1444
+  name KAMU_CBIKO_TEST_DB
+vlan 1445
+  name KAMU_CBIKO_TEST_DATA
+vlan 1446
+  name KAMU_SHGM_LAN_NETMONITOR
+vlan 1447
+  name KAMU_SHGM_VLAN1447
+vlan 1448
+  name KAMU_SHGM_VLAN1448
+vlan 1449
+  name KAMU_SHGM_VLAN1449
+vlan 1450
+  name KAMU_SHGM_VLAN1450
+vlan 1451
+  name KAMU_SHGM_VLAN1451
+vlan 1452
+  name KAMU_SAYISTAY_6
+vlan 1453
+  name FW_ARASI_GECIS
+vlan 1468
+  name KAMU_KIK_LAN_1468
+vlan 1469
+  name KIK_dEVOPS
+vlan 1470
+  name EKAP_PREPROD
+vlan 1471
+  name EKAP_PROD
+vlan 1480
+  name Safir_Mgmt
+vlan 1481
+  name Safir_External
+vlan 1482
+  name Safir_DB
+vlan 1483
+  name Safir_Tenant
+vlan 1484
+  name Safir_Public
+vlan 1485
+  name Safir_LB
+vlan 1486
+  name SAFIRBULUT_PROD_EXT_API
+vlan 1487
+  name SAFIRBULUT_PROD_PUBLIC
+vlan 1488
+  name SAFIR_BULUT
+vlan 1489
+  name AUS_TEST
+vlan 1491
+  name EGO_APP
+vlan 1492
+  name EGO_DB
+vlan 1493
+  name EGO_DMZ
+vlan 1494
+  name EGO_LB
+vlan 1498
+  name ASELSAN_KONYA
+vlan 1499
+  name JITSI
+vlan 1500
+  name SUREKLIACIKILIKTARAMA
+vlan 1501
+  name TUA
+vlan 1502
+  name TUA_LB
+vlan 1503
+  name TUA_LAN_2
+vlan 1504
+  name BTIGD_ILO
+vlan 1505
+  name BTIGD_LAN
+vlan 1506
+  name KAMU_ESENYURT_LAN
+vlan 1507
+  name mustafa_test
+vlan 1512
+  name DENIZCILIK_LB
+vlan 1521
+  name CIMER_API
+vlan 1522
+  name CIMER_APISRV
+vlan 1523
+  name CIMER_MOB
+vlan 1524
+  name CIMER_AD
+vlan 1525
+  name CIMER_UPD
+vlan 1526
+  name CIMER_ENT
+vlan 1527
+  name CIMER_FILE
+vlan 1528
+  name CIMER_MGW
+vlan 1529
+  name CIMER_DB1
+vlan 1530
+  name CIMER_DB2
+vlan 1531
+  name CIMER_PORT
+vlan 1532
+  name CIMER_PUB
+vlan 1533
+  name CIMER_CENT
+vlan 1534
+  name CIMER_TESTAPP
+vlan 1535
+  name CIMER_TESTDB
+vlan 1536
+  name CIMER_TFS
+vlan 1537
+  name CIMER_YETKI
+vlan 1538
+  name CIMER_YG
+vlan 1539
+  name CIMER_MON
+vlan 1540
+  name CIMER_DBMON
+vlan 1541
+  name CIMER_ADPASS
+vlan 1542
+  name CIMER_QRAP
+vlan 1543
+  name CIMER_DCK
+vlan 1544
+  name CIMER_YY
+vlan 1545
+  name KAMU_AILE_LAN_DB
+vlan 1546
+  name KAMU_AILE_LAN_DOCKER
+vlan 1547
+  name KAMU_AILE_LAN_COMPUTE
+vlan 1548
+  name KAMU_AILE_LAN_LB
+vlan 1549
+  name KAMU_KIK_SQL
+vlan 1550
+  name KAMU_MGK_SEKAPS_APP
+vlan 1551
+  name KAMU_MGK_KDS_APP
+vlan 1552
+  name KAMU_MGK_SEKAPS_KDS_DB
+vlan 1553
+  name KAMU_BOS_LAN_VLAN
+vlan 1554
+  name DT-Cloud_public2
+vlan 1555
+  name kurumX_lan
+vlan 1556
+  name KAMU_TVGFBF_LAN_2
+vlan 1557
+  name KAMU_K8S_PROD
+vlan 1558
+  name KAMU_K8S_TEST
+vlan 1559
+  name MGK_SEKAPS_KDS_TEST
+vlan 1563
+  name DT-Cloud_public
+vlan 1564
+  name KAMU_MGM_LAN
+vlan 1565
+  name KAMU_MGM_MGMT
+vlan 1566
+  name KAMU_MGK_SEKAPS_EGITIM_DB
+vlan 1567
+  name KAMU_SEKAPS_APP_EGITIM
+vlan 1568
+  name KAMU_SEKAPS_APP_TEST
+vlan 1569
+  name KAMU_CIMER_BEYKOZ
+vlan 1584
+  name SAFIR_BULUT_LB_GECIS
+vlan 1902
+  name TCCB_SHGM
+vlan 1903
+  name KAMU_SHGM_MONITORING
+vlan 2303
+  name CLOUD_PF_LB
+vlan 2304
+  name EBA_LMS_F5_GECIS
+vlan 2310
+  name CLOUD_PF_LB_ULASTIRMA
+vlan 2320
+  name TRS_UUP
+vlan 2321
+  name TRS_KUTUPHANE
+vlan 2401-2500
+vlan 2501
+  name DKMP_LB
+vlan 3001
+  name VMotion
+vlan 3134
+  name VSAT_DENIZCILIK
+vlan 3198
+  name VSAT_USOM_OUT
+vlan 3199
+  name VSAT_USOM_IN
+vlan 3701
+  name DMO_DMZ
+vlan 3702
+  name DMO_Local
+vlan 3703
+  name DMO_EBYS_DB
+vlan 3704
+  name DMO_Exchange
+vlan 3705
+  name DMO_EXCHANGE_DAG
+vlan 3706
+  name DMO_EXCHANGE2016_DAG
+vlan 3719
+  name DMO_ESX-Host
+vlan 3720
+  name DMO_ILO
+vlan 3721
+  name DMO_F5
+vlan 3740
+  name METEOROLOJI_LAN
+vlan 3792
+  name YUZUNCUYIL_LTM
+vlan 3793
+  name ICERIK_LB_GECIS
+vlan 3961
+  name SRX_TRSCALER_WAN_GECIS
+vlan 3965
+  name LB_WAN
+vlan 3966
+  name LB_LAN
+vlan 3971
+  name HGM_F5_WAN
+vlan 3972
+  name CUMBAS_LB
+vlan 3973
+  name ULASTIRMA_F5_DNS
+vlan 3974
+  name FORTI_PA_GECIS_TMP
+vlan 3975
+  name NEW_KAMU_TURKSAT_GECIS
+vlan 3976
+  name CUMBAS_FORTI_PA_GE
+vlan 3977
+  name PALOALTO_INTFW_GECIS
+vlan 3978
+  name PALOALTO_CPFW_GECIS
+vlan 3981
+vlan 3990
+  name UUP_GECIS
+
+spanning-tree mode mst
+spanning-tree mst 0-1 priority 0
+spanning-tree mst 4 priority 8192
+spanning-tree mst configuration
+  name edevlet
+  revision 1
+  instance 1 vlan 1-13,15-32,35-49,51,53-59,61-65,67-69,72-83,85-129,131,133-153,155-159,161,163-179,181,183-213,215-450,452-549,551-1295,1297,1299-3197,3200-3740,3742-4094
+  instance 2 vlan 14,33-34,50,52,60,66,70-71,84,130,132,154,160,162,180,182,214,550
+  instance 3 vlan 1296,1298
+  instance 4 vlan 3198
+vrf context PEERKEEPALIVELINK
+vrf context management
+  ip route 0.0.0.0/0 10.101.11.1
+vpc domain 1
+  peer-switch
+  role priority 2000
+  peer-keepalive destination 192.168.254.1 source 192.168.254.2 vrf PEERKEEPALIVELINK
+  peer-gateway
+
+
+interface mgmt0
+  vrf member management
+  ip address 10.101.11.78/24
+
+interface Vlan1
+  no ip redirects
+
+interface Vlan9
+  no shutdown
+  no ip redirects
+  ip address 9.9.9.3/24
+
+interface Vlan945
+  no shutdown
+  no ip redirects
+  ip address 10.101.45.251/24
+
+interface Vlan1324
+  no shutdown
+  no ip redirects
+  ip address 10.160.24.231/24
+
+interface Vlan1328
+  no shutdown
+  no ip redirects
+  ip address 10.160.28.241/24
+
+interface Vlan1339
+  no shutdown
+  no ip redirects
+  ip address 10.98.101.57/24
+
+interface Vlan1361
+  no ip redirects
+
+interface Vlan3974
+  no shutdown
+  no ip redirects
+  ip address 10.100.248.82/29
+  ip directed-broadcast
+
+interface port-channel5
+  description to_EDK_TOR_TOPLAMA_Eth-Trunk5
+  shutdown
+  switchport mode trunk
+  switchport trunk allowed vlan 14,31,33-35,50,52,60,66,70-74,80
+  switchport trunk allowed vlan add 84,130,132,154,160,162,180,182,214
+  switchport trunk allowed vlan add 550
+  vpc 5
+
+interface port-channel48
+  description KAMU_DC
+  switchport access vlan 945
+  vpc 48
+
+interface port-channel135
+  description to_H3C_TOR_SW
+  switchport mode trunk
+  switchport trunk allowed vlan 4,39,402-403,451,507,945,1101,1103
+  switchport trunk allowed vlan add 1106-1107,1113-1118,1120,1130,1132
+  switchport trunk allowed vlan add 1139,1214,1232,1270,1276,1298,1304-1312
+  switchport trunk allowed vlan add 1315-1338,1340-1362,1367-1379,1381-1402
+  switchport trunk allowed vlan add 1404-1405,1410-1422,1425-1452,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1498-1501,1503,1507,1521-1554
+  switchport trunk allowed vlan add 1556-1559,1563-1569,1903,2303,2310
+  switchport trunk allowed vlan add 2320-2321,3001,3701-3706,3719-3720
+  switchport trunk allowed vlan add 3730-3734,3740,3961,3966,3977-3978
+  switchport trunk allowed vlan add 3990
+  vpc 135
+
+interface port-channel200
+  description to_TURKSAT_NEXUS_NGX
+  switchport mode trunk
+  switchport trunk allowed vlan 451,911,1379,1410,1431,1470,1546-1547
+  switchport trunk allowed vlan add 1557-1558,3975,3978
+  vpc 200
+
+interface port-channel211
+  description VELOS
+  switchport mode trunk
+  switchport trunk allowed vlan 1312,1338,1366,1392,1403,1418-1420
+  switchport trunk allowed vlan add 1436,1440,1468-1471,1494,1499,1502
+  switchport trunk allowed vlan add 1512,1515,1548,1557-1558,1584,2501
+  switchport trunk allowed vlan add 3721,3792-3793,3966,3971
+  vpc 211
+
+interface port-channel306
+  description to_FORTI-1_AE1(25-26)
+  switchport mode trunk
+  switchport trunk allowed vlan 9,91,402-403,441,945,1010-1015,1101-1110
+  switchport trunk allowed vlan add 1113-1118,1120,1130,1132,1139,1214
+  switchport trunk allowed vlan add 1232,1270,1276,1278-1279,1282-1285
+  switchport trunk allowed vlan add 1303-1340,1344,1346-1362,1365-1387
+  switchport trunk allowed vlan add 1389-1405,1407,1410-1451,1453,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1491-1494,1498-1507,1512
+  switchport trunk allowed vlan add 1515,1521-1559,1563-1569,1584,1902-1903
+  switchport trunk allowed vlan add 2303-2304,2310,2320-2321,2401-2501
+  switchport trunk allowed vlan add 3001,3198-3199,3701-3706,3719-3721
+  switchport trunk allowed vlan add 3730-3734,3740,3792-3793,3961,3966
+  switchport trunk allowed vlan add 3971-3978,3981,3990
+  vpc 306
+
+interface port-channel312
+  description to_FORTI-2_AE1(25-26)
+  switchport mode trunk
+  switchport trunk allowed vlan 9,91,402-403,441,945,1010-1015,1101-1110
+  switchport trunk allowed vlan add 1113-1118,1120,1130,1132,1139,1214
+  switchport trunk allowed vlan add 1232,1270,1276,1278-1279,1282-1285
+  switchport trunk allowed vlan add 1303-1340,1344,1346-1362,1365-1387
+  switchport trunk allowed vlan add 1389-1405,1407,1410-1451,1453,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1491-1494,1498-1507,1512
+  switchport trunk allowed vlan add 1515,1521-1559,1563-1569,1584,1902-1903
+  switchport trunk allowed vlan add 2303-2304,2310,2320-2321,2401-2501
+  switchport trunk allowed vlan add 3001,3198-3199,3701-3706,3719-3721
+  switchport trunk allowed vlan add 3730-3734,3740,3792-3793,3961,3966
+  switchport trunk allowed vlan add 3971-3978,3981,3990
+  vpc 312
+
+interface port-channel410
+  description KAMU_METRO_H3C
+  switchport mode trunk
+  switchport trunk allowed vlan 200-203,516
+  vpc 410
+
+interface port-channel414
+  description KAMU_SERVER_MGMT_UPLINK
+  switchport mode trunk
+  switchport trunk allowed vlan 441
+  vpc 414
+
+interface port-channel415
+  description KAMU_TURKSAT_MGMTBB
+  switchport mode trunk
+  switchport trunk allowed vlan 441,1317,1422
+  vpc 415
+
+interface port-channel418
+  description BTIGD
+  switchport access vlan 1505
+  vpc 418
+
+interface port-channel435
+  switchport mode trunk
+  switchport trunk allowed vlan 1103
+  vpc 435
+
+interface port-channel436
+  description to_KAMU_METRO_ETH_36
+  shutdown
+  switchport mode trunk
+  switchport trunk allowed vlan 1296,1298
+  vpc 436
+
+interface port-channel437
+  description KAMU_METRO_HUAW_ETH37
+  switchport mode trunk
+  switchport trunk allowed vlan 507
+  vpc 437
+
+interface port-channel438
+  description DATA_DOMAIN
+  switchport mode trunk
+  switchport trunk allowed vlan 3740
+  vpc 438
+
+interface port-channel439
+  description KAMU_BACKUP_SRV
+  switchport mode trunk
+  switchport trunk allowed vlan 945,1103,1314,1323,1328,1368,1389
+  switchport trunk allowed vlan add 1401-1402,1410-1411,3740
+  vpc 439
+
+interface port-channel441
+  description DMO_HUAWEI_SW
+  switchport mode trunk
+  switchport trunk allowed vlan 402-403,507,945,1102,1235,1270,1319
+  switchport trunk allowed vlan add 1324,1327-1328,1332,1334-1338,1368
+  switchport trunk allowed vlan add 1371,1373,1383,1394,2303,2310,3701-3706
+  switchport trunk allowed vlan add 3719-3720,3961,3966-3967,3990
+  vpc 441
+
+interface port-channel442
+  description ESO_CISCO_9200
+  switchport mode trunk
+  switchport trunk allowed vlan 1111,1327,1335,3719-3720
+  vpc 442
+
+interface port-channel445
+  description KAMU_NGX
+  switchport mode trunk
+  switchport trunk allowed vlan 945,1103,1312-1318,1323,1328,1389
+  switchport trunk allowed vlan add 1401-1402,1410-1411,1418-1422,1469-1471
+  switchport trunk allowed vlan add 3740
+  vpc 445
+
+interface port-channel446
+  description KAMU_NGX
+  switchport mode trunk
+  switchport trunk allowed vlan 945,1103,1312-1318,1323,1328,1389
+  switchport trunk allowed vlan add 1401-1402,1410-1411,1418-1422,1469-1471
+  switchport trunk allowed vlan add 3740
+  vpc 446
+
+interface port-channel447
+  description to_PA1_AE1
+  switchport mode trunk
+  switchport trunk allowed vlan 3974
+  vpc 447
+
+interface port-channel448
+  description to_PA2_AE1
+  switchport mode trunk
+  switchport trunk allowed vlan 3974
+  vpc 448
+
+interface port-channel449
+  description to_DELL_TOR_SW_PO7
+  switchport mode trunk
+  switchport trunk allowed vlan 4,39,402-403,507,945,1101,1103,1106-1107
+  switchport trunk allowed vlan add 1214,1270,1298,1310-1311,1319-1332
+  switchport trunk allowed vlan add 1334-1338,1340-1345,1360,1362,1367-1379
+  switchport trunk allowed vlan add 1381-1383,1385-1398,1400,1410-1417
+  switchport trunk allowed vlan add 1480-1488,2303,2310,2320-2321,3001
+  switchport trunk allowed vlan add 3701-3706,3719-3720,3730-3734,3740
+  switchport trunk allowed vlan add 3961,3966,3977-3978,3990
+  vpc 449
+
+interface port-channel450
+  description to_TPME
+  switchport mode trunk
+  switchport trunk allowed vlan 1296,1412-1415
+  vpc 450
+
+interface port-channel451
+  description to_HW_TOR_SW_ETH7
+  switchport mode trunk
+  switchport trunk allowed vlan 4,31,39,200-203,402-403,451,507
+  switchport trunk allowed vlan add 516,945,1101,1103,1106-1110,1113-1118
+  switchport trunk allowed vlan add 1120,1130,1132,1139,1214,1270,1276
+  switchport trunk allowed vlan add 1278-1279,1282-1285,1298,1304-1312
+  switchport trunk allowed vlan add 1315-1332,1334-1338,1340-1362,1365
+  switchport trunk allowed vlan add 1367-1402,1404-1405,1407,1410-1422
+  switchport trunk allowed vlan add 1425-1452,1468-1471,1480-1489,1491-1494
+  switchport trunk allowed vlan add 1498-1501,1503,1506-1507,1521-1553
+  switchport trunk allowed vlan add 1556-1559,1563-1569,1903,2303,2310
+  switchport trunk allowed vlan add 2320-2321,2401-2500,3001,3701-3706
+  switchport trunk allowed vlan add 3719-3720,3730-3734,3740,3961,3966
+  switchport trunk allowed vlan add 3977-3978,3990
+  vpc 451
+
+interface port-channel452
+  description to_CISCO_TOR
+  switchport mode trunk
+  switchport trunk allowed vlan 4,402-403,507,945,1071,1101,1103
+  switchport trunk allowed vlan add 1106-1107,1113-1118,1120,1130,1132
+  switchport trunk allowed vlan add 1139,1214,1270,1276,1298,1304-1332
+  switchport trunk allowed vlan add 1334-1338,1340-1362,1367-1379,1381-1383
+  switchport trunk allowed vlan add 1385-1402,1404-1405,1410-1452,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1499-1500,1503,1506-1507
+  switchport trunk allowed vlan add 1521-1553,1556-1559,1564-1569,1903
+  switchport trunk allowed vlan add 2303,2310,2320-2321,3001,3701-3706
+  switchport trunk allowed vlan add 3719-3720,3730-3734,3740,3961,3966
+  switchport trunk allowed vlan add 3977-3978,3990
+  vpc 452
+
+interface port-channel453
+  description YSK_EMC
+  switchport access vlan 1351
+  vpc 453
+
+interface port-channel454
+  description KAMU_FW_3401E
+  switchport mode trunk
+  switchport trunk allowed vlan 1282-1285,1393,1400-1405,1410-1411
+  switchport trunk allowed vlan add 1417-1424,1436-1441,1453,1469-1471
+  switchport trunk allowed vlan add 3793,3971,3975
+  vpc 454
+
+interface port-channel455
+  description KAMU_FW_3401E
+  switchport mode trunk
+  switchport trunk allowed vlan 1282-1285,1393,1400-1405,1410-1411
+  switchport trunk allowed vlan add 1417-1424,1436-1441,1453,1469-1471
+  switchport trunk allowed vlan add 3793,3971,3975
+  vpc 455
+
+interface port-channel456
+  description DHMI_FORTIGATE
+  switchport mode trunk
+  switchport trunk allowed vlan 504,1283
+  vpc 456
+
+interface port-channel457
+  description DHMI_FORTIGATE
+  switchport mode trunk
+  switchport trunk allowed vlan 504,1283
+  vpc 457
+
+interface port-channel458
+  description VSAT_VMYD_DGM
+  switchport mode trunk
+  switchport trunk allowed vlan 451,3198-3199
+  vpc 458
+
+interface port-channel511
+  switchport mode trunk
+  switchport trunk allowed vlan 1328,1341-1345,1452
+  vpc 511
+
+interface port-channel512
+  switchport mode trunk
+  switchport trunk allowed vlan 1328,1341-1345,1452
+  vpc 512
+
+interface port-channel515
+  description to_KAMU_F5-B_Kamu_Trunk
+  shutdown
+  switchport mode trunk
+  switchport trunk allowed vlan 2,1315
+  vpc 515
+
+interface port-channel516
+  description Z_ANAHTAR_F5_VIPRION
+  shutdown
+  switchport mode trunk
+  switchport trunk allowed vlan 2,1315
+  vpc 516
+
+interface port-channel556
+  switchport access vlan 1103
+  vpc 556
+
+interface port-channel3066
+
+interface port-channel4095
+  description ---VPC_KEEPALIVE_LINK---
+  no switchport
+  vrf member PEERKEEPALIVELINK
+  ip address 192.168.254.2/24
+
+interface port-channel4096
+  description to-N7K1-PEER LINK-BUNDLE
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface Ethernet3/1
+  description to_HW_TOR_SW
+  switchport mode trunk
+  switchport trunk allowed vlan 4,31,39,200-203,402-403,451,507
+  switchport trunk allowed vlan add 516,945,1101,1103,1106-1110,1113-1118
+  switchport trunk allowed vlan add 1120,1130,1132,1139,1214,1270,1276
+  switchport trunk allowed vlan add 1278-1279,1282-1285,1298,1304-1312
+  switchport trunk allowed vlan add 1315-1332,1334-1338,1340-1362,1365
+  switchport trunk allowed vlan add 1367-1402,1404-1405,1407,1410-1422
+  switchport trunk allowed vlan add 1425-1452,1468-1471,1480-1489,1491-1494
+  switchport trunk allowed vlan add 1498-1501,1503,1506-1507,1521-1553
+  switchport trunk allowed vlan add 1556-1559,1563-1569,1903,2303,2310
+  switchport trunk allowed vlan add 2320-2321,2401-2500,3001,3701-3706
+  switchport trunk allowed vlan add 3719-3720,3730-3734,3740,3961,3966
+  switchport trunk allowed vlan add 3977-3978,3990
+  channel-group 451 mode active
+  no shutdown
+
+interface Ethernet3/2
+  description to_HW_TOR_SW
+  switchport mode trunk
+  switchport trunk allowed vlan 4,31,39,200-203,402-403,451,507
+  switchport trunk allowed vlan add 516,945,1101,1103,1106-1110,1113-1118
+  switchport trunk allowed vlan add 1120,1130,1132,1139,1214,1270,1276
+  switchport trunk allowed vlan add 1278-1279,1282-1285,1298,1304-1312
+  switchport trunk allowed vlan add 1315-1332,1334-1338,1340-1362,1365
+  switchport trunk allowed vlan add 1367-1402,1404-1405,1407,1410-1422
+  switchport trunk allowed vlan add 1425-1452,1468-1471,1480-1489,1491-1494
+  switchport trunk allowed vlan add 1498-1501,1503,1506-1507,1521-1553
+  switchport trunk allowed vlan add 1556-1559,1563-1569,1903,2303,2310
+  switchport trunk allowed vlan add 2320-2321,2401-2500,3001,3701-3706
+  switchport trunk allowed vlan add 3719-3720,3730-3734,3740,3961,3966
+  switchport trunk allowed vlan add 3977-3978,3990
+  channel-group 451 mode active
+  no shutdown
+
+interface Ethernet3/5
+  description H3C_TOR_SW
+  switchport mode trunk
+  switchport trunk allowed vlan 4,39,402-403,451,507,945,1101,1103
+  switchport trunk allowed vlan add 1106-1107,1113-1118,1120,1130,1132
+  switchport trunk allowed vlan add 1139,1214,1232,1270,1276,1298,1304-1312
+  switchport trunk allowed vlan add 1315-1338,1340-1362,1367-1379,1381-1402
+  switchport trunk allowed vlan add 1404-1405,1410-1422,1425-1452,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1498-1501,1503,1507,1521-1554
+  switchport trunk allowed vlan add 1556-1559,1563-1569,1903,2303,2310
+  switchport trunk allowed vlan add 2320-2321,3001,3701-3706,3719-3720
+  switchport trunk allowed vlan add 3730-3734,3740,3961,3966,3977-3978
+  switchport trunk allowed vlan add 3990
+  channel-group 135 mode active
+  no shutdown
+
+interface Ethernet3/6
+  description to_FORTI-1-26
+  switchport mode trunk
+  switchport trunk allowed vlan 9,91,402-403,441,945,1010-1015,1101-1110
+  switchport trunk allowed vlan add 1113-1118,1120,1130,1132,1139,1214
+  switchport trunk allowed vlan add 1232,1270,1276,1278-1279,1282-1285
+  switchport trunk allowed vlan add 1303-1340,1344,1346-1362,1365-1387
+  switchport trunk allowed vlan add 1389-1405,1407,1410-1451,1453,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1491-1494,1498-1507,1512
+  switchport trunk allowed vlan add 1515,1521-1559,1563-1569,1584,1902-1903
+  switchport trunk allowed vlan add 2303-2304,2310,2320-2321,2401-2501
+  switchport trunk allowed vlan add 3001,3198-3199,3701-3706,3719-3721
+  switchport trunk allowed vlan add 3730-3734,3740,3792-3793,3961,3966
+  switchport trunk allowed vlan add 3971-3978,3981,3990
+  channel-group 306 mode active
+  no shutdown
+
+interface Ethernet3/9
+  description CISCO_TOR_SW2_49
+  switchport mode trunk
+  switchport trunk allowed vlan 4,402-403,507,945,1071,1101,1103
+  switchport trunk allowed vlan add 1106-1107,1113-1118,1120,1130,1132
+  switchport trunk allowed vlan add 1139,1214,1270,1276,1298,1304-1332
+  switchport trunk allowed vlan add 1334-1338,1340-1362,1367-1379,1381-1383
+  switchport trunk allowed vlan add 1385-1402,1404-1405,1410-1452,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1499-1500,1503,1506-1507
+  switchport trunk allowed vlan add 1521-1553,1556-1559,1564-1569,1903
+  switchport trunk allowed vlan add 2303,2310,2320-2321,3001,3701-3706
+  switchport trunk allowed vlan add 3719-3720,3730-3734,3740,3961,3966
+  switchport trunk allowed vlan add 3977-3978,3990
+  channel-group 452 mode active
+  no shutdown
+
+interface Ethernet3/10
+  description CISCO_TOR_SW1_50
+  switchport mode trunk
+  switchport trunk allowed vlan 4,402-403,507,945,1071,1101,1103
+  switchport trunk allowed vlan add 1106-1107,1113-1118,1120,1130,1132
+  switchport trunk allowed vlan add 1139,1214,1270,1276,1298,1304-1332
+  switchport trunk allowed vlan add 1334-1338,1340-1362,1367-1379,1381-1383
+  switchport trunk allowed vlan add 1385-1402,1404-1405,1410-1452,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1499-1500,1503,1506-1507
+  switchport trunk allowed vlan add 1521-1553,1556-1559,1564-1569,1903
+  switchport trunk allowed vlan add 2303,2310,2320-2321,3001,3701-3706
+  switchport trunk allowed vlan add 3719-3720,3730-3734,3740,3961,3966
+  switchport trunk allowed vlan add 3977-3978,3990
+  channel-group 452 mode active
+  no shutdown
+
+interface Ethernet3/11
+  description F5_VELOS
+  switchport mode trunk
+  switchport trunk allowed vlan 1312,1338,1366,1392,1403,1418-1420
+  switchport trunk allowed vlan add 1436,1440,1468-1471,1494,1499,1502
+  switchport trunk allowed vlan add 1512,1515,1548,1557-1558,1584,2501
+  switchport trunk allowed vlan add 3721,3792-3793,3966,3971
+  channel-group 211 mode active
+  no shutdown
+
+interface Ethernet3/12
+  description to_FORTI-2-26
+  switchport mode trunk
+  switchport trunk allowed vlan 9,91,402-403,441,945,1010-1015,1101-1110
+  switchport trunk allowed vlan add 1113-1118,1120,1130,1132,1139,1214
+  switchport trunk allowed vlan add 1232,1270,1276,1278-1279,1282-1285
+  switchport trunk allowed vlan add 1303-1340,1344,1346-1362,1365-1387
+  switchport trunk allowed vlan add 1389-1405,1407,1410-1451,1453,1468-1471
+  switchport trunk allowed vlan add 1480-1489,1491-1494,1498-1507,1512
+  switchport trunk allowed vlan add 1515,1521-1559,1563-1569,1584,1902-1903
+  switchport trunk allowed vlan add 2303-2304,2310,2320-2321,2401-2501
+  switchport trunk allowed vlan add 3001,3198-3199,3701-3706,3719-3721
+  switchport trunk allowed vlan add 3730-3734,3740,3792-3793,3961,3966
+  switchport trunk allowed vlan add 3971-3978,3981,3990
+  channel-group 312 mode active
+  no shutdown
+
+interface Ethernet4/1
+  description to-N7K1-PEER LINK-BUNDLE PO4096
+  switchport mode trunk
+  channel-group 4096 mode active
+  no shutdown
+
+interface Ethernet4/2
+  description ---VPC_KEEPALIVE_LINK---
+  no switchport
+  channel-group 4095 mode active
+  no shutdown
+
+interface Ethernet4/3
+  description DMO_UA_PORTS
+  switchport mode trunk
+  switchport trunk allowed vlan 402-403,507,911,945,1102,1111,1235
+  switchport trunk allowed vlan add 1270,1319,1324,1327-1328,1332,1334-1338
+  switchport trunk allowed vlan add 1368,1371,1373,1383,1394,2303,2310
+  switchport trunk allowed vlan add 3701-3706,3719-3720,3961,3966-3967
+  switchport trunk allowed vlan add 3990
+  no shutdown
+
+interface Ethernet4/4
+
+interface Ethernet4/5
+  switchport mode trunk
+  switchport trunk allowed vlan 14,31,33-35,50,52,60,66,70-74,80
+  switchport trunk allowed vlan add 84,130,132,154,160,162,180,182,214
+  switchport trunk allowed vlan add 550
+  channel-group 5 mode active
+  no shutdown
+
+interface Ethernet4/6
+  switchport mode trunk
+  switchport trunk allowed vlan 14,31,33-35,50,52,60,66,70-74,80
+  switchport trunk allowed vlan add 84,130,132,154,160,162,180,182,214
+  switchport trunk allowed vlan add 550
+  channel-group 5 mode active
+  no shutdown
+
+interface Ethernet4/7
+  no switchport
+
+interface Ethernet4/8
+  description KAMU_DC
+  switchport access vlan 945
+  channel-group 48 mode active
+  no shutdown
+
+interface Ethernet4/9
+  no switchport
+  no shutdown
+
+interface Ethernet4/10
+  switchport mode trunk
+  switchport trunk allowed vlan 200-203,516
+  channel-group 410
+  no shutdown
+
+interface Ethernet4/11
+  switchport mode trunk
+  switchport trunk allowed vlan 451,911,1379,1410,1431,1470,1546-1547
+  switchport trunk allowed vlan add 1557-1558,3975,3978
+  channel-group 200 mode active
+  no shutdown
+
+interface Ethernet4/12
+  switchport mode trunk
+  switchport trunk allowed vlan 451,911,1379,1410,1431,1470,1546-1547
+  switchport trunk allowed vlan add 1557-1558,3975,3978
+  channel-group 200 mode active
+  no shutdown
+
+interface Ethernet4/13
+  no shutdown
+
+interface Ethernet4/14
+  switchport mode trunk
+  switchport trunk allowed vlan 441
+  channel-group 414 mode active
+
+interface Ethernet4/15
+  description KAMU_TURKSAT_MGMTBB
+  switchport mode trunk
+  switchport trunk allowed vlan 441,1317,1422
+  channel-group 415 mode active
+  no shutdown
+
+interface Ethernet4/16
+  description VSAT_VMYD_DGM
+  switchport mode trunk
+  switchport trunk allowed vlan 451,3198-3199
+  channel-group 458 mode active
+  no shutdown
+
+interface Ethernet4/17
+
+interface Ethernet4/18
+  switchport access vlan 1505
+  no shutdown
+
+interface Ethernet4/19
+
+interface Ethernet4/20
+
+interface Ethernet4/21
+
+interface Ethernet4/22
+  switchport access vlan 1393
+  no shutdown
+
+interface Ethernet4/23
+
+interface Ethernet4/24
+
+interface Ethernet4/25
+  description GOC_NETWORK_YENI_SW_KABIN_A
+  switchport mode trunk
+  switchport trunk allowed vlan 1313-1314,1324
+  no shutdown
+
+interface Ethernet4/26
+  description GOC_NETWORK_YENI_SW_KABIN_B
+  switchport mode trunk
+  switchport trunk allowed vlan 1313-1314,1324
+  no shutdown
+
+interface Ethernet4/27
+  switchport mode trunk
+  switchport trunk allowed vlan 1282-1285,1393,1400-1405,1410-1411
+  switchport trunk allowed vlan add 1417-1424,1436-1441,1453,1469-1471
+  switchport trunk allowed vlan add 3793,3971,3975
+  channel-group 454 mode active
+  no shutdown
+
+interface Ethernet4/28
+  switchport mode trunk
+  switchport trunk allowed vlan 1282-1285,1393,1400-1405,1410-1411
+  switchport trunk allowed vlan add 1417-1424,1436-1441,1453,1469-1471
+  switchport trunk allowed vlan add 3793,3971,3975
+  channel-group 454 mode active
+  no shutdown
+
+interface Ethernet4/29
+  description KIK_FORTI_LOCAL_PORT_1-2
+  switchport mode trunk
+  switchport trunk allowed vlan 1282-1285,1393,1400-1405,1410-1411
+  switchport trunk allowed vlan add 1417-1424,1436-1441,1453,1469-1471
+  switchport trunk allowed vlan add 3793,3971,3975
+  channel-group 455 mode active
+  no shutdown
+
+interface Ethernet4/30
+  switchport mode trunk
+  switchport trunk allowed vlan 1282-1285,1393,1400-1405,1410-1411
+  switchport trunk allowed vlan add 1417-1424,1436-1441,1453,1469-1471
+  switchport trunk allowed vlan add 3793,3971,3975
+  channel-group 455 mode active
+  no shutdown
+
+interface Ethernet4/31
+
+interface Ethernet4/32
+  description to_HP_SASE
+  switchport mode trunk
+  switchport trunk allowed vlan 945,1113-1114,1120,1130,1132,1139
+  switchport trunk allowed vlan add 1336,1356,1369-1370,1410,1418-1422
+  switchport trunk allowed vlan add 1469-1471,1480,1482-1483,1485-1488
+  no shutdown
+
+interface Ethernet4/33
+  description PALOALTO_GECIS_DHMI
+  switchport access vlan 1365
+  no shutdown
+
+interface Ethernet4/34
+
+interface Ethernet4/35
+  switchport mode trunk
+  switchport trunk allowed vlan 1103
+  channel-group 435 mode active
+  no shutdown
+
+interface Ethernet4/36
+  description to_TPME_WAN
+  switchport mode trunk
+  switchport trunk allowed vlan 1296,1298
+  channel-group 436 mode active
+  no shutdown
+
+interface Ethernet4/37
+  switchport mode trunk
+  switchport trunk allowed vlan 507
+  channel-group 437 mode active
+  no shutdown
+
+interface Ethernet4/38
+  switchport mode trunk
+  switchport trunk allowed vlan 3740
+  channel-group 438 mode active
+  no shutdown
+
+interface Ethernet4/39
+  description KAMU_BACKUP_SRV
+  switchport mode trunk
+  switchport trunk allowed vlan 945,1103,1314,1323,1328,1368,1389
+  switchport trunk allowed vlan add 1401-1402,1410-1411,3740
+  channel-group 439 mode active
+  no shutdown
+
+interface Ethernet4/40
+  description GOC_LAN
+  switchport access vlan 1324
+  no shutdown
+
+interface Ethernet4/41
+  switchport mode trunk
+  switchport trunk allowed vlan 402-403,507,945,1102,1235,1270,1319
+  switchport trunk allowed vlan add 1324,1327-1328,1332,1334-1338,1368
+  switchport trunk allowed vlan add 1371,1373,1383,1394,2303,2310,3701-3706
+  switchport trunk allowed vlan add 3719-3720,3961,3966-3967,3990
+  channel-group 441 mode active
+  no shutdown
+
+interface Ethernet4/42
+  switchport mode trunk
+  switchport trunk allowed vlan 1111,1327,1335,3719-3720
+  channel-group 442
+
+interface Ethernet4/43
+  switchport mode trunk
+  switchport trunk allowed vlan 4,39,402-403,507,945,1101,1103,1106-1107
+  switchport trunk allowed vlan add 1214,1270,1298,1310-1311,1319-1332
+  switchport trunk allowed vlan add 1334-1338,1340-1345,1360,1362,1367-1379
+  switchport trunk allowed vlan add 1381-1383,1385-1398,1400,1410-1417
+  switchport trunk allowed vlan add 1480-1488,2303,2310,2320-2321,3001
+  switchport trunk allowed vlan add 3701-3706,3719-3720,3730-3734,3740
+  switchport trunk allowed vlan add 3961,3966,3977-3978,3990
+  channel-group 449 mode active
+  no shutdown
+
+interface Ethernet4/44
+  switchport mode trunk
+  switchport trunk allowed vlan 4,39,402-403,507,945,1101,1103,1106-1107
+  switchport trunk allowed vlan add 1214,1270,1298,1310-1311,1319-1332
+  switchport trunk allowed vlan add 1334-1338,1340-1345,1360,1362,1367-1379
+  switchport trunk allowed vlan add 1381-1383,1385-1398,1400,1410-1417
+  switchport trunk allowed vlan add 1480-1488,2303,2310,2320-2321,3001
+  switchport trunk allowed vlan add 3701-3706,3719-3720,3730-3734,3740
+  switchport trunk allowed vlan add 3961,3966,3977-3978,3990
+  channel-group 449 mode active
+  no shutdown
+
+interface Ethernet4/45
+  switchport mode trunk
+  switchport trunk allowed vlan 945,1103,1312-1318,1323,1328,1389
+  switchport trunk allowed vlan add 1401-1402,1410-1411,1418-1422,1469-1471
+  switchport trunk allowed vlan add 3740
+  channel-group 445 mode active
+  no shutdown
+
+interface Ethernet4/46
+  switchport mode trunk
+  switchport trunk allowed vlan 945,1103,1312-1318,1323,1328,1389
+  switchport trunk allowed vlan add 1401-1402,1410-1411,1418-1422,1469-1471
+  switchport trunk allowed vlan add 3740
+  channel-group 446 mode active
+  no shutdown
+
+interface Ethernet4/47
+  switchport mode trunk
+  switchport trunk allowed vlan 3974
+  channel-group 447 mode active
+  no shutdown
+
+interface Ethernet4/48
+  description To_HUAWEI_SW
+  switchport mode trunk
+  switchport trunk allowed vlan 3974
+  channel-group 448 mode active
+  no shutdown
+
+interface Ethernet5/1
+  description to-N7K1-PEER LINK-BUNDLE PO4096
+  switchport mode trunk
+  channel-group 4096 mode active
+  no shutdown
+
+interface Ethernet5/2
+  description ---VPC_KEEPALIVE_LINK---
+  no switchport
+  channel-group 4095 mode active
+  no shutdown
+
+interface Ethernet5/3
+  switchport access vlan 1104
+  no shutdown
+
+interface Ethernet5/4
+  description ILKSAN_LAN
+  switchport access vlan 1387
+  no shutdown
+
+interface Ethernet5/5
+  description ILKSAN_LAN
+  switchport access vlan 1387
+  no shutdown
+
+interface Ethernet5/6
+  description ILKSAN_LAN
+  switchport access vlan 1387
+  no shutdown
+
+interface Ethernet5/7
+  description ILKSAN_LAN
+  switchport access vlan 1387
+  no shutdown
+
+interface Ethernet5/8
+  description ILKSAN_LAN
+  switchport access vlan 1387
+  no shutdown
+
+interface Ethernet5/9
+  description ILKSAN_LAN
+  switchport access vlan 1387
+  no shutdown
+
+interface Ethernet5/10
+  description KAMU_IPS_HUAWEI_SWITCH
+  switchport access vlan 1317
+  no shutdown
+
+interface Ethernet5/11
+  switchport mode trunk
+  switchport trunk allowed vlan 1328,1341-1345,1452
+  channel-group 511 mode active
+  no shutdown
+
+interface Ethernet5/12
+  switchport mode trunk
+  switchport trunk allowed vlan 1328,1341-1345,1452
+  channel-group 512 mode active
+  no shutdown
+
+interface Ethernet5/13
+  description to_F5-B_1.5
+  switchport mode trunk
+  switchport trunk allowed vlan 2,1315
+  channel-group 515 mode active
+  no shutdown
+
+interface Ethernet5/14
+  description to_F5-B_1.6
+  switchport mode trunk
+  switchport trunk allowed vlan 2,1315
+  channel-group 515 mode active
+  no shutdown
+
+interface Ethernet5/15
+  description to_F5-A_1.1
+  switchport mode trunk
+  switchport trunk allowed vlan 2,1315
+  channel-group 516 mode active
+  no shutdown
+
+interface Ethernet5/16
+  description to_F5-A_1.2
+  switchport mode trunk
+  switchport trunk allowed vlan 2,1315
+  channel-group 516 mode active
+  no shutdown
+
+interface Ethernet5/33
+  description SAYISTAY_MNGT
+  switchport access vlan 1328
+  no shutdown
+
+interface Ethernet5/34
+  description SAYISTAY_MNGT
+  switchport access vlan 1328
+  no shutdown
+
+interface Ethernet5/35
+  description DHMI_ERP
+  switchport access vlan 1328
+  no shutdown
+
+interface Ethernet5/36
+  description SHGM_HSM
+  switchport access vlan 1368
+  no shutdown
+
+interface Ethernet5/37
+  description SAYISTAY_DATADOMAIN
+  switchport access vlan 1328
+  no shutdown
+
+interface Ethernet5/38
+  switchport mode trunk
+  switchport trunk allowed vlan 504,1283
+  channel-group 456 mode active
+  no shutdown
+
+interface Ethernet5/39
+  switchport access vlan 1351
+  channel-group 453 mode active
+  no shutdown
+
+interface Ethernet5/40
+  switchport mode trunk
+  switchport trunk allowed vlan 504,1283
+  channel-group 457 mode active
+  no shutdown
+logging server 10.101.11.108 5 use-vrf management
+no terminal log-all
+line vty
+
+
+

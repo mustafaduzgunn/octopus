@@ -1,0 +1,19 @@
+{
+    "successful": [
+        {
+            "device": "KAMU_ROUTER_1",
+            "ip": "10.111.11.13",
+            "brand": "Huawei",
+            "model": null,
+            "software_version": "8.230",
+            "version": "R",
+            "patch": null,
+            "uptime": "660 days, 23 hours, 23 minutes",
+            "serial_slot_1": null,
+            "serial_slot_2": null,
+            "serial_no": null
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

@@ -1,0 +1,697 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 17330 bytes
+!
+! Last configuration change at 14:38:57 GMT Mon Mar 16 2026 by mduzgun
+! NVRAM config last updated at 14:38:59 GMT Mon Mar 16 2026 by mduzgun
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname TG_DC1_B02U34_BOLGELERSW
+!
+boot-start-marker
+boot-end-marker
+!
+!
+username mozan privilege 15 secret 5 $1$8tL4$nQUcMUNWC1DB53TsORQwU1
+username ssarikaya privilege 15 secret 5 $1$yKJc$KiqoCbSDNjnLlrc7j1Y1I0
+username bbarisci privilege 15 secret 5 $1$d7ID$xWrbAzyXHUK430IH2y5wP/
+username restorepoint privilege 15 secret 5 $1$1r4l$jPpaBnvycLVqgaBZFP7dQ1
+username ozan privilege 15 secret 5 $1$luSf$VJrN7djnYkS2cQ8IXL0E6.
+username mduzgunn privilege 15 secret 5 $1$bVJB$4U5BgafiaEQoS/bjR9Pjs0
+username adeorouser privilege 15 secret 5 $1$pZX.$OUo/C4hIlWJESZqQNMKBe.
+username nocsw privilege 15 secret 5 $1$0cx4$geHa/2qXdF7V0i1wylEig1
+username mduzgun privilege 15 secret 5 $1$mZZv$zjdlkhDOdEYiMgb.2YZfr.
+!
+!
+no aaa new-model
+clock timezone GMT 3
+ip subnet-zero
+ip domain-name turksat.local
+ip vrf mgmtVrf
+!
+!
+!
+vtp mode transparent
+!
+!
+!
+power redundancy-mode redundant
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree loopguard default
+no spanning-tree optimize bpdu transmission
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+vlan 101
+ name ERZINCAN
+!
+vlan 102
+ name GOLBASI_GAYRETTEPE
+!
+vlan 110
+ name GOLBASI_KARAMAN
+!
+vlan 200
+ name BANDIRMA
+!
+vlan 220
+ name GOLBASI_TEKIRDAG_SUBHE
+!
+vlan 230
+ name GOLBASI_GEBZE_1890417063
+!
+vlan 305
+ name GOLBASI_ACIBADEM
+!
+vlan 307
+ name GOLBASI_KOCAELI
+!
+vlan 308
+ name GOLBASI_KAYSERI
+!
+vlan 310
+ name GOLBASI_ERZURUM
+!
+vlan 312
+ name GOLBASI_ANTALYA
+!
+vlan 313
+ name GOLBASI_BALIKESIR_MERKEZ
+!
+vlan 314
+ name GOLBASI_MANISA
+!
+vlan 315
+ name GOLBASI_DENIZLI
+!
+vlan 316
+ name GOLBASI_ADANA
+!
+vlan 317
+ name GOLBASI_GAZIANTEP
+!
+vlan 318
+ name GOLBASI_KONYA
+!
+vlan 319
+ name GOLBASI_SAMSUN
+!
+vlan 320
+ name GOLBASI_EDIRNE
+!
+vlan 321
+ name GOLBASI_ESKISEHIR
+!
+vlan 322
+ name GOLBASI_ZONGULDAK_MERKEZ
+!
+vlan 323
+ name GOLBASI_ZONGULDAK_EREGLI
+!
+vlan 324
+ name GOLBASI_YALOVA
+!
+vlan 325
+ name GOLBASI_IZMIR
+!
+vlan 326
+ name GOLBASI_TEKIRDAG_CORLU
+!
+vlan 327
+ name GOLBASI_MERSIN
+!
+vlan 329
+ name GOLBASI_BURSA
+!
+vlan 501
+ name GOLBASI_ULUS
+!
+vlan 502
+ name MACUNKOY_HE
+!
+vlan 503
+ name BOLU_IL_MUDURLUGU
+!
+vlan 872
+ name HE_ANKARA_TEST
+!
+vlan 3911
+ name MNGMNT
+!
+vlan 3980
+ name SW2FW_GECIS
+lldp run
+!
+ip ssh version 2
+!
+!
+interface Port-channel1
+ description PORTCHANNEL
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 102
+ switchport mode trunk
+!
+interface Port-channel2
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3911
+ switchport mode trunk
+!
+interface Port-channel3
+ description T_BB_PO345
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 101,220,313,501-503,872,3980
+ switchport mode trunk
+!
+interface Port-channel4
+ description T_METRO_SW_PO112
+ switchport
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 102,110,200,230,305,307,308,310,312,314-327,329
+ switchport mode trunk
+!
+interface FastEthernet1
+ ip vrf forwarding mgmtVrf
+ no ip address
+ speed auto
+ duplex auto
+!
+interface GigabitEthernet1/1
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 101,220,313,501-503,872,3980
+ switchport mode trunk
+ channel-group 3 mode active
+!
+interface GigabitEthernet1/2
+ description T_METRO_SW_T1/1/2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 102,110,200,230,305,307,308,310,312,314-327,329
+ switchport mode trunk
+ channel-group 4 mode active
+!
+interface GigabitEthernet1/3
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 101,220,313,501-503,872,3980
+ switchport mode trunk
+ channel-group 3 mode active
+!
+interface GigabitEthernet1/4
+ description T_METRO_T2/1/2
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 102,110,200,230,305,307,308,310,312,314-327,329
+ switchport mode trunk
+ channel-group 4 mode active
+!
+interface GigabitEthernet1/5
+!
+interface GigabitEthernet1/6
+!
+interface GigabitEthernet1/7
+!
+interface GigabitEthernet1/8
+!
+interface GigabitEthernet1/9
+!
+interface GigabitEthernet1/10
+!
+interface GigabitEthernet1/11
+!
+interface GigabitEthernet1/12
+!
+interface GigabitEthernet1/13
+!
+interface GigabitEthernet1/14
+!
+interface GigabitEthernet1/15
+!
+interface GigabitEthernet1/16
+!
+interface GigabitEthernet1/17
+!
+interface GigabitEthernet1/18
+!
+interface GigabitEthernet1/19
+!
+interface GigabitEthernet1/20
+!
+interface GigabitEthernet1/21
+!
+interface GigabitEthernet1/22
+!
+interface GigabitEthernet1/23
+!
+interface GigabitEthernet1/24
+!
+interface GigabitEthernet1/25
+!
+interface GigabitEthernet1/26
+!
+interface GigabitEthernet1/27
+!
+interface GigabitEthernet1/28
+!
+interface GigabitEthernet1/29
+!
+interface GigabitEthernet1/30
+!
+interface GigabitEthernet1/31
+!
+interface GigabitEthernet1/32
+!
+interface GigabitEthernet1/33
+!
+interface GigabitEthernet1/34
+!
+interface GigabitEthernet1/35
+!
+interface GigabitEthernet1/36
+!
+interface GigabitEthernet1/37
+!
+interface GigabitEthernet1/38
+!
+interface GigabitEthernet1/39
+!
+interface GigabitEthernet1/40
+!
+interface GigabitEthernet1/41
+!
+interface GigabitEthernet1/42
+!
+interface GigabitEthernet1/43
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3911
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface GigabitEthernet1/44
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3911
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface GigabitEthernet1/45
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3911
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface GigabitEthernet1/46
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 3911
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface GigabitEthernet1/47
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 102
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/48
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 102
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan101
+ description GOLBASI_ERZINCAN
+ ip address 10.45.0.1 255.255.0.0 secondary
+ ip address 10.107.3.36 255.255.255.224 secondary
+ ip address 10.104.24.1 255.255.255.0 secondary
+ ip address 10.250.24.1 255.255.255.0 secondary
+ ip address 10.10.124.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan102
+ description GOLBASI_GAYRETTEPE
+ ip address 10.22.0.1 255.255.0.0 secondary
+ ip address 10.104.134.1 255.255.255.0 secondary
+ ip address 10.250.134.1 255.255.255.0 secondary
+ ip address 10.10.44.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan110
+ description GOLBASI_KARAMAN
+ ip address 10.10.70.1 255.255.255.0 secondary
+ ip address 10.104.70.1 255.255.255.0 secondary
+ ip address 10.250.70.1 255.255.255.0 secondary
+ ip address 10.46.0.1 255.255.0.0
+ no ip redirects
+!
+interface Vlan200
+ description BANDIRMA_1890105141
+ ip address 10.27.0.1 255.255.0.0 secondary
+ ip address 10.104.110.1 255.255.255.0 secondary
+ ip address 10.250.110.1 255.255.255.0 secondary
+ ip address 10.10.32.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan220
+ description GOLBASI_TEKIRDAG_SUBHE
+ ip address 10.40.0.1 255.255.0.0 secondary
+ ip address 10.104.59.1 255.255.255.0 secondary
+ ip address 10.10.59.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan226
+ no ip address
+ shutdown
+!
+interface Vlan230
+ description GOLBASI_GEBZE
+ ip address 10.36.0.1 255.255.0.0 secondary
+ ip address 10.104.141.1 255.255.255.0 secondary
+ ip address 10.250.141.1 255.255.255.0 secondary
+ ip address 10.10.141.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan305
+ description GOLBASI_ACIBADEM
+ ip address 10.21.0.1 255.255.0.0 secondary
+ ip address 10.104.34.1 255.255.255.0 secondary
+ ip address 10.10.34.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan307
+ description GOLBASI_KOCAELI
+ ip address 10.35.0.1 255.255.0.0 secondary
+ ip address 10.104.41.1 255.255.255.0 secondary
+ ip address 10.10.41.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan308
+ description GOLBASI_KAYSERI
+ ip address 10.34.0.1 255.255.0.0 secondary
+ ip address 10.104.38.1 255.255.255.0 secondary
+ ip address 10.10.38.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan310
+ description GOLBASI_ERZURUM
+ ip address 10.31.0.1 255.255.0.0 secondary
+ ip address 10.104.25.1 255.255.255.0 secondary
+ ip address 10.10.25.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan312
+ description GOLBASI_ANTALYA
+ ip address 10.25.0.1 255.255.0.0 secondary
+ ip address 10.104.7.1 255.255.255.0 secondary
+ ip address 10.250.7.1 255.255.255.0 secondary
+ ip address 10.10.7.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan313
+ description GOLBASI_BALIKESIR_MERKEZ
+ ip address 10.26.0.1 255.255.0.0 secondary
+ ip address 10.107.3.4 255.255.255.224 secondary
+ ip address 10.104.10.1 255.255.255.0 secondary
+ ip address 10.250.10.1 255.255.255.0 secondary
+ ip address 10.10.29.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan314
+ description GOLBASI_MANISA
+ ip address 10.104.45.1 255.255.255.0 secondary
+ ip address 10.10.45.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan315
+ description GOLBASI_DENIZLI
+ ip address 10.29.0.1 255.255.0.0 secondary
+ ip address 10.104.20.1 255.255.255.0 secondary
+ ip address 10.250.20.1 255.255.255.0 secondary
+ ip address 10.10.21.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan316
+ description GOLBASI_ADANA
+ ip address 10.24.0.1 255.255.0.0 secondary
+ ip address 10.104.1.1 255.255.255.0 secondary
+ ip address 10.250.1.1 255.255.255.0 secondary
+ ip address 10.10.1.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan317
+ description GOLBASI_GAZIANTEP
+ ip address 10.33.0.1 255.255.0.0 secondary
+ ip address 10.104.27.1 255.255.255.0 secondary
+ ip address 10.10.27.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan318
+ description GOLBASI_KONYA
+ ip address 10.37.0.1 255.255.0.0 secondary
+ ip address 10.104.42.1 255.255.255.0 secondary
+ ip address 10.10.42.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan319
+ description GOLBASI_SAMSUN
+ ip address 10.39.0.1 255.255.0.0 secondary
+ ip address 10.104.55.1 255.255.255.0 secondary
+ ip address 10.10.55.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan320
+ description GOLBASI_EDIRNE
+ ip address 10.30.0.1 255.255.0.0 secondary
+ ip address 10.104.22.1 255.255.255.0 secondary
+ ip address 10.250.22.1 255.255.255.0 secondary
+ ip address 10.10.22.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan321
+ description GOLBASI_ESKISEHIR
+ ip address 10.32.0.1 255.255.0.0 secondary
+ ip address 10.104.26.1 255.255.255.0 secondary
+ ip address 10.250.126.1 255.255.255.0 secondary
+ ip address 10.10.26.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan322
+ description GOLBASI_ZONGULDAK_MERKEZ
+ ip address 10.43.0.1 255.255.0.0 secondary
+ ip address 10.104.67.1 255.255.255.0 secondary
+ ip address 10.250.67.1 255.255.255.0 secondary
+ ip address 10.10.67.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan323
+ description GOLBASI_ZONGULDAK_EREGLI
+ ip address 10.44.0.1 255.255.0.0 secondary
+ ip address 10.104.167.1 255.255.255.0 secondary
+ ip address 10.250.167.1 255.255.255.0 secondary
+ ip address 10.10.68.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan324
+ description GOLBASI_YALOVA
+ ip address 10.42.0.1 255.255.0.0 secondary
+ ip address 10.104.77.1 255.255.255.0 secondary
+ ip address 10.250.177.1 255.255.255.0 secondary
+ ip address 10.10.77.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan325
+ description GOLBASI_IZMIR
+ ip address 10.23.0.1 255.255.0.0 secondary
+ ip address 10.104.35.1 255.255.255.0 secondary
+ ip address 10.10.35.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan326
+ description GOLBASI_TEKIRDAG_CORLU
+ ip address 10.41.0.1 255.255.0.0 secondary
+ ip address 10.104.159.1 255.255.255.0 secondary
+ ip address 10.250.159.1 255.255.255.0 secondary
+ ip address 10.10.61.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan327
+ description GOLBASI_MERSIN
+ ip address 10.38.0.1 255.255.0.0 secondary
+ ip address 10.104.33.1 255.255.255.0 secondary
+ ip address 10.250.33.1 255.255.255.0 secondary
+ ip address 10.10.33.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan329
+ description GOLBASI_BURSA
+ ip address 10.28.0.1 255.255.0.0 secondary
+ ip address 10.104.16.1 255.255.255.0 secondary
+ ip address 10.10.16.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan501
+ description GOLBASI_ULUS
+ ip address 10.20.0.1 255.255.0.0 secondary
+ ip address 10.104.6.1 255.255.255.0 secondary
+ ip address 10.250.6.1 255.255.255.0 secondary
+ ip address 10.10.24.1 255.255.255.0
+ no ip redirects
+ load-interval 30
+!
+interface Vlan502
+ description MACUNKOY_HE
+ ip address 10.250.60.1 255.255.255.0 secondary
+ ip address 10.19.0.1 255.255.0.0
+ no ip redirects
+!
+interface Vlan503
+ description BOLU_IL_MUDURLUGU
+ ip address 10.250.14.1 255.255.255.0 secondary
+ ip address 10.47.0.1 255.255.0.0
+ no ip redirects
+!
+interface Vlan872
+ description KABLO_ALTYAPI
+ ip address 10.10.20.1 255.255.255.0
+ load-interval 30
+!
+interface Vlan3911
+ ip address 10.101.111.41 255.255.255.0
+!
+interface Vlan3980
+ description to_FW
+ ip address 10.100.255.242 255.255.255.252
+!
+ip route 0.0.0.0 0.0.0.0 10.100.255.241 name to_Fw
+ip route 10.101.11.180 255.255.255.255 10.101.111.1
+ip route 10.110.254.0 255.255.255.0 10.101.111.1
+no ip http server
+no ip http secure-server
+!
+!
+!
+access-list 1 permit 10.110.254.0 0.0.0.255
+!
+!
+snmp-server community karakr1pt0 RO
+snmp-server community trsatx RO
+snmp-server community nedix RO
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps call-home message-send-fail server-fail
+snmp-server enable traps tty
+snmp-server enable traps eigrp
+snmp-server enable traps ospf state-change
+snmp-server enable traps ospf errors
+snmp-server enable traps ospf retransmit
+snmp-server enable traps ospf lsa
+snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+snmp-server enable traps ospf cisco-specific state-change shamlink interface-old
+snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+snmp-server enable traps ospf cisco-specific errors
+snmp-server enable traps ospf cisco-specific retransmit
+snmp-server enable traps ospf cisco-specific lsa
+snmp-server enable traps flex-links status
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps ethernet cfm cc mep-up mep-down cross-connect loop config
+snmp-server enable traps ethernet cfm crosscheck mep-missing mep-unknown service-up
+snmp-server enable traps ether-oam
+snmp-server enable traps flash insertion removal
+snmp-server enable traps l2tc threshold sys-threshold
+snmp-server enable traps power-ethernet police
+snmp-server enable traps cpu threshold
+snmp-server enable traps rep
+snmp-server enable traps udld link-fail-rpt
+snmp-server enable traps udld status-change
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps entity-diag boot-up-fail hm-test-recover hm-thresh-reached scheduled-test-fail
+snmp-server enable traps port-security
+snmp-server enable traps ethernet evc status create delete
+snmp-server enable traps energywise
+snmp-server enable traps rtr
+snmp-server enable traps bgp
+snmp-server enable traps bulkstat collection transfer
+snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps event-manager
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps isis
+snmp-server enable traps msdp
+snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps rf
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps errdisable
+snmp-server enable traps ethernet cfm alarm
+snmp-server enable traps vlan-membership
+snmp-server enable traps mac-notification change move threshold
+snmp-server host 10.101.31.245 version 2c karak1pt0 
+snmp-server host 10.101.34.61 version 2c nedix 
+snmp-server host 10.101.34.242 version 2c trsatx 
+!
+control-plane
+!
+!
+line con 0
+ login local
+ stopbits 1
+line vty 0 5
+ access-class 1 in
+ login local
+ transport input ssh
+!
+ntp clock-period 17179492
+ntp server 10.101.30.249 prefer
+end
+

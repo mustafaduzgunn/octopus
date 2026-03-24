@@ -1,0 +1,16 @@
+{
+    "successful": [
+        {
+            "device": "EDK_MACUNKOY_MNGT_SW",
+            "ip": "10.255.11.24",
+            "brand": "Huawei",
+            "model": "S5352C-EI",
+            "software_version": "5.130",
+            "patch": null,
+            "uptime": "8 weeks, 3 days, 3 hours, 4 minutes",
+            "serial_no": null
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

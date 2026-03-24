@@ -1,0 +1,24 @@
+{
+    "successful": [
+        {
+            "device": "OVC_ZEMIN_SW",
+            "ip": "10.101.111.156",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106HT"
+                }
+            ],
+            "serial_no": "JAE255106HT",
+            "model": "C9200L-48P-4X",
+            "uptime": "2 weeks, 2 days, 17 hours, 31 minutes",
+            "hostname": "OVC_ZEMIN_SW",
+            "software_version": "17.12.6",
+            "collected_hostname": "OVC_ZEMIN_SW"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

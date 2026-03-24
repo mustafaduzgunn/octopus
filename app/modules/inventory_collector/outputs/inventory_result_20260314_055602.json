@@ -1,0 +1,29 @@
+{
+    "successful": [
+        {
+            "device": "BT_SWITCH_ST",
+            "ip": "10.101.111.20",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106GP"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106YL"
+                }
+            ],
+            "serial_no": "JAE255106GP",
+            "model": "C9200L-48P-4X",
+            "uptime": "41 weeks, 4 days, 1 hour, 24 minutes",
+            "hostname": "GLB_BT_SW",
+            "software_version": "17.9.5",
+            "collected_hostname": "GLB_BT_SW"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

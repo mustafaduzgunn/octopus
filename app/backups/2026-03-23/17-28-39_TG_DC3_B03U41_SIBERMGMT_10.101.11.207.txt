@@ -1,0 +1,290 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 5545 bytes
+!
+! Last configuration change at 11:45:07 UTC Mon Mar 16 2026
+! NVRAM config last updated at 11:45:10 UTC Mon Mar 16 2026
+!
+version 12.2
+no service pad
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+service compress-config
+!
+hostname TG_DC3_B03U41_SIBERMGMT
+!
+boot-start-marker
+boot-end-marker
+!
+!
+username noc privilege 15 secret 5 $1$0C/q$Yr0v954OCn5ORIxWXYbPw1
+username trsataim privilege 15 secret 5 $1$ds4f$o2xzjR3kVBO1s0M2.cHZy/
+username adeorouser secret 5 $1$LJ9L$a0kDmvxbeiSUcNQHmIUG9/
+no aaa new-model
+ip subnet-zero
+ip domain-name turksat.local
+!
+ip dhcp snooping
+ip ssh version 2
+vtp mode transparent
+!
+!
+!
+!
+!
+power redundancy-mode redundant
+no file verify auto
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+vlan 10 
+!
+vlan 911
+ name MNGT
+!
+vlan 918
+ name SIEM_LOG
+!
+vlan 923
+ name SIEM
+!
+vlan 3991 
+!
+interface GigabitEthernet1/1
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/2
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/3
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/4
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/5
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/6
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/7
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/8
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/9
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/10
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/11
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/12
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/13
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/14
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/15
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/16
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/17
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/18
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/19
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/20
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/21
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/22
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/23
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/24
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/25
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/26
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/27
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/28
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/29
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/30
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/31
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/32
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/33
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/34
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/35
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/36
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/37
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/38
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/39
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/40
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/41
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/42
+ switchport access vlan 923
+ switchport mode access
+!
+interface GigabitEthernet1/43
+ switchport access vlan 918
+!
+interface GigabitEthernet1/44
+ switchport access vlan 918
+!
+interface GigabitEthernet1/45
+ description HUAWEI_TOR_MNGT_11.205
+ switchport access vlan 911
+ media-type rj45
+!
+interface GigabitEthernet1/46
+ switchport access vlan 911
+ media-type rj45
+!
+interface GigabitEthernet1/47
+!
+interface GigabitEthernet1/48
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 911,918,923
+ switchport mode trunk
+ ip arp inspection trust
+ media-type rj45
+ ip dhcp snooping trust
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan911
+ ip address 10.101.11.207 255.255.255.0
+!
+interface Vlan923
+ ip address 10.101.23.235 255.255.255.0
+!
+ip route 0.0.0.0 0.0.0.0 10.101.11.1
+no ip http server
+no ip http secure-server
+!
+!
+logging 10.101.18.80
+!
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ access-class 1 in
+ privilege level 15
+ login local
+ transport input all
+line vty 5 15
+ access-class 1 in
+ privilege level 15
+ login
+ transport input ssh
+!
+!
+monitor session 1 source vlan 918 , 923
+monitor session 1 destination interface Gi1/47
+end
+

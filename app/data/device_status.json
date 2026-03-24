@@ -1,0 +1,2170 @@
+{
+  "10.255.11.12": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.11": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.111.11.10": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.255.11.30": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.111.11.11": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.101.11.208": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.2": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.111.11.12": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.101.45.252": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.101.45.251": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.14": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.24": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.111.11.19": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.111.11.18": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.255.11.17": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.15": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.16": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.111.11.13": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.111.11.17": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.111.11.16": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.111.11.24": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.111.11.21": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:43",
+    "attempts": 3
+  },
+  "10.111.11.22": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:43",
+    "attempts": 3
+  },
+  "10.111.11.14": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.255.11.23": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.13": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.19": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.111.11.20": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.255.11.10": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.101.11.207": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.111.11.23": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.101.111.3": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.101.111.4": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.111.11.15": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.255.11.18": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:00",
+    "attempts": 1
+  },
+  "10.101.11.50": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.101.111.239": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.111.11.31": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.111.11.32": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.101.111.81": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.111.11.28": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.101.111.97": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.101.111.231": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.101.111.98": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.111.11.29": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.101.111.80": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.101.111.82": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.101.111.51": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.101.111.5": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.1.100.13": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:05",
+    "attempts": 1
+  },
+  "10.101.11.124": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.111.96": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:43",
+    "attempts": 3
+  },
+  "10.101.111.59": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:01",
+    "attempts": 1
+  },
+  "10.1.100.11": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.1.100.12": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:05",
+    "attempts": 1
+  },
+  "10.111.11.254": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:42",
+    "attempts": 3
+  },
+  "10.1.100.14": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:05",
+    "attempts": 1
+  },
+  "10.1.100.10": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:05",
+    "attempts": 1
+  },
+  "10.101.111.45": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:08",
+    "attempts": 1
+  },
+  "10.101.111.36": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:08",
+    "attempts": 1
+  },
+  "10.1.100.20": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.101.111.223": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:02",
+    "attempts": 1
+  },
+  "10.101.111.181": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:32",
+    "attempts": 3
+  },
+  "10.101.111.211": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:48",
+    "attempts": 3
+  },
+  "10.101.111.32": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:08",
+    "attempts": 1
+  },
+  "10.101.111.183": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:48",
+    "attempts": 3
+  },
+  "10.101.111.16": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:48",
+    "attempts": 3
+  },
+  "10.101.111.20": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:48",
+    "attempts": 3
+  },
+  "10.101.111.49": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:25",
+    "attempts": 1
+  },
+  "10.101.111.38": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:14",
+    "attempts": 1
+  },
+  "10.101.111.52": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:43",
+    "attempts": 3
+  },
+  "10.101.111.201": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:06",
+    "attempts": 3
+  },
+  "10.101.111.182": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:20",
+    "attempts": 3
+  },
+  "10.101.111.180": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:46",
+    "attempts": 1
+  },
+  "10.101.111.185": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:25",
+    "attempts": 3
+  },
+  "10.101.111.17": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:48",
+    "attempts": 3
+  },
+  "10.101.111.13": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:20",
+    "attempts": 1
+  },
+  "10.101.111.23": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:59",
+    "attempts": 3
+  },
+  "10.101.111.166": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:43",
+    "attempts": 3
+  },
+  "10.101.111.27": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:48",
+    "attempts": 3
+  },
+  "10.101.111.167": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:43",
+    "attempts": 3
+  },
+  "10.101.111.12": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:07",
+    "attempts": 3
+  },
+  "10.101.111.47": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:50",
+    "attempts": 1
+  },
+  "10.101.111.55": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:43",
+    "attempts": 3
+  },
+  "10.101.111.165": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:48",
+    "attempts": 3
+  },
+  "10.101.111.11": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:24",
+    "attempts": 2
+  },
+  "10.101.111.150": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:13",
+    "attempts": 2
+  },
+  "10.101.111.153": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:32",
+    "attempts": 3
+  },
+  "10.101.111.19": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:58",
+    "attempts": 1
+  },
+  "10.101.111.31": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:59",
+    "attempts": 1
+  },
+  "10.101.111.67": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:15",
+    "attempts": 2
+  },
+  "10.101.111.14": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:57",
+    "attempts": 1
+  },
+  "10.101.111.35": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:22",
+    "attempts": 2
+  },
+  "10.101.11.205": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:00:38",
+    "attempts": 3
+  },
+  "10.101.111.24": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:34",
+    "attempts": 2
+  },
+  "10.101.111.29": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:28",
+    "attempts": 3
+  },
+  "10.101.45.207": {
+    "ping": false,
+    "remote": false,
+    "status": "red",
+    "error": "",
+    "checked_at": "2026-03-22 10:20:45",
+    "attempts": 3
+  },
+  "10.101.45.208": {
+    "ping": false,
+    "remote": false,
+    "status": "red",
+    "error": "",
+    "checked_at": "2026-03-22 10:20:44",
+    "attempts": 3
+  },
+  "10.101.11.243": {
+    "ping": false,
+    "remote": false,
+    "status": "red",
+    "error": "",
+    "checked_at": "2026-03-22 10:20:46",
+    "attempts": 3
+  },
+  "10.1.100.102": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:17",
+    "attempts": 1
+  },
+  "10.1.100.101": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:16",
+    "attempts": 1
+  },
+  "10.255.11.104": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:18",
+    "attempts": 1
+  },
+  "10.255.11.105": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:18",
+    "attempts": 1
+  },
+  "10.255.11.102": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:19",
+    "attempts": 1
+  },
+  "10.101.111.21": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:23",
+    "attempts": 2
+  },
+  "10.101.111.186": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:34",
+    "attempts": 3
+  },
+  "10.101.111.37": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:27",
+    "attempts": 3
+  },
+  "10.101.111.34": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:08",
+    "attempts": 1
+  },
+  "10.101.111.44": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:08",
+    "attempts": 1
+  },
+  "10.101.111.39": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:08",
+    "attempts": 1
+  },
+  "ktanalyzer.turksat.com.tr": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:28",
+    "attempts": 1
+  },
+  "isanalyzer.turksat.com.tr": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:28",
+    "attempts": 1
+  },
+  "edkanalyzer.turksat.com.tr": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:28",
+    "attempts": 1
+  },
+  "fsandbox.turksat.com.tr": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:28",
+    "attempts": 1
+  },
+  "fmanager.turksat.com.tr": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:28",
+    "attempts": 1
+  },
+  "10.1.116.51": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:29",
+    "attempts": 1
+  },
+  "10.101.111.43": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:16",
+    "attempts": 1
+  },
+  "10.101.111.41": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:32",
+    "attempts": 1
+  },
+  "10.101.111.130": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.111.184": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.111.15": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:24",
+    "attempts": 2
+  },
+  "10.101.111.187": {
+    "ping": false,
+    "remote": false,
+    "status": "red",
+    "error": "",
+    "checked_at": "2026-03-22 10:21:04",
+    "attempts": 3
+  },
+  "10.101.111.69": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:36",
+    "attempts": 1
+  },
+  "10.101.111.22": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:14",
+    "attempts": 1
+  },
+  "trsatfw.turksat.com.tr": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "HTTPSConnectionPool(host='trsatfw.turksat.com.tr', port=22): Max retries exceeded with url: /api/v2/monitor/system/statu",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 3
+  },
+  "kamufw.turksat.com.tr": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "HTTPSConnectionPool(host='kamufw.turksat.com.tr', port=22): Max retries exceeded with url: /api/v2/monitor/system/status",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 3
+  },
+  "edkfw.turksat.com.tr": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "HTTPSConnectionPool(host='edkfw.turksat.com.tr', port=22): Max retries exceeded with url: /api/v2/monitor/system/status?",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 3
+  },
+  "testfw.turksat.com.tr": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "HTTPSConnectionPool(host='testfw.turksat.com.tr', port=22): Max retries exceeded with url: /api/v2/monitor/system/status",
+    "checked_at": "2026-03-24 03:01:44",
+    "attempts": 3
+  },
+  "fortiauth.turksat.com.tr": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Bad authentication type; allowed types: ['keyboard-interactive']",
+    "checked_at": "2026-03-24 03:01:48",
+    "attempts": 3
+  },
+  "10.1.116.20": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:51",
+    "attempts": 3
+  },
+  "10.101.111.151": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:35",
+    "attempts": 3
+  },
+  "10.101.111.152": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:35",
+    "attempts": 3
+  },
+  "10.1.116.11": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:51",
+    "attempts": 3
+  },
+  "10.100.254.158": {
+    "ping": false,
+    "remote": false,
+    "status": "red",
+    "error": "",
+    "checked_at": "2026-03-22 10:27:54",
+    "attempts": 3
+  },
+  "fems.turksat.com.tr": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "Authentication failed.",
+    "checked_at": "2026-03-24 03:01:54",
+    "attempts": 3
+  },
+  "10.101.111.10": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:15",
+    "attempts": 2
+  },
+  "10.101.111.154": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:33",
+    "attempts": 3
+  },
+  "10.101.111.18": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:00:50",
+    "attempts": 1
+  },
+  "10.101.111.30": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:16",
+    "attempts": 1
+  },
+  "10.101.111.161": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:33",
+    "attempts": 1
+  },
+  "10.101.111.189": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:59",
+    "attempts": 2
+  },
+  "macunkoyfw.turksat.com.tr": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "HTTPSConnectionPool(host='macunkoyfw.turksat.com.tr', port=22): Max retries exceeded with url: /api/v2/monitor/system/st",
+    "checked_at": "2026-03-24 03:02:06",
+    "attempts": 3
+  },
+  "10.101.111.48": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:37",
+    "attempts": 1
+  },
+  "10.101.111.156": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:32",
+    "attempts": 1
+  },
+  "10.101.111.202": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:36",
+    "attempts": 1
+  },
+  "10.101.111.60": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:36",
+    "attempts": 1
+  },
+  "10.101.113.13": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.18": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.19": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.17": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.16": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.12": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.14": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.15": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.11": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.20": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.22": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.21": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.23": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.26": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.27": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.28": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:40",
+    "attempts": 1
+  },
+  "10.101.113.25": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.24": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.29": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.30": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.32": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.37": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.38": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.34": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.36": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.35": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.33": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.39": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.40": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.41": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.44": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.46": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.45": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.42": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.43": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.47": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.48": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.51": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.50": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.49": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.52": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.54": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.53": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.56": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.55": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.58": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.61": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.59": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.62": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.57": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.60": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.63": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.64": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.65": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.67": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.66": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.68": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.69": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.70": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:41",
+    "attempts": 1
+  },
+  "10.101.113.72": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.71": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.74": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.73": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.76": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.75": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.77": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.78": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.80": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.79": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.81": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.82": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.83": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.84": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.85": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.86": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.88": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.87": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.92": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.91": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.94": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.97": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.100": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.102": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.101": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.103": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.104": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.106": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.105": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.107": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.109": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.108": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.110": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.112": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.113": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.116": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.117": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.119": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.118": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.123": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.121": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.120": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.124": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.122": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.126": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.127": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.128": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.129": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.132": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.133": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.130": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.134": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.135": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.136": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:42",
+    "attempts": 1
+  },
+  "10.101.113.139": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.137": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.138": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.140": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.141": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.142": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.143": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.144": {
+    "ping": false,
+    "remote": false,
+    "status": "red",
+    "error": "",
+    "checked_at": "2026-03-22 10:21:59",
+    "attempts": 3
+  },
+  "10.101.113.149": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.164": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.113.177": {
+    "ping": true,
+    "remote": true,
+    "status": "green",
+    "error": "",
+    "checked_at": "2026-03-24 03:01:43",
+    "attempts": 1
+  },
+  "10.101.111.111": {
+    "ping": true,
+    "remote": false,
+    "status": "orange",
+    "error": "HTTPSConnectionPool(host='10.101.111.111', port=22): Max retries exceeded with url: /api/v2/monitor/system/status?access",
+    "checked_at": "2026-03-22 10:35:54",
+    "attempts": 3
+  }
+}

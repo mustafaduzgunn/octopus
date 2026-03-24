@@ -1,0 +1,627 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V800R023C10SPC500
+!Last configuration was updated at 2025-11-07 08:17:19+00:00 by mozan@turksat
+!Last configuration was saved at 2025-11-07 08:17:22+00:00 by mozan@turksat
+!kms_feature --
+#
+sysname MCN_hw_RTR_02
+#
+set neid 84d2cc
+dcn neip-prefix 128
+#
+undo FTP server-source all-interface
+undo FTP ipv6 server-source all-interface
+#
+ssl policy router_default
+ ssl minimum version tls1.2
+ cipher-suite exclude key-exchange rsa
+ cipher-suite exclude cipher mode cbc
+ cipher-suite exclude hmac sha1
+ diffie-hellman modulus 3072
+ binding cipher-suite-customization default_cipher_suite
+ ecdh group nist
+ signature algorithm-list rsa-pss-rsae-sha256 rsa-pss-rsae-sha384 rsa-pss-rsae-sha512
+#
+ssl cipher-suite-list default_cipher_suite
+ set cipher-suite tls12_ck_ecdhe_rsa_with_aes_128_gcm_sha256
+ set cipher-suite tls12_ck_ecdhe_rsa_with_aes_256_gcm_sha384
+ set cipher-suite tls13_aes_128_gcm_sha256
+ set cipher-suite tls13_aes_256_gcm_sha384
+ set cipher-suite tls13_aes_128_ccm_sha256
+#
+service-template template-default0
+#
+service-template template-default1
+#
+service-template template-default2
+#
+service-template template-default3
+#
+service-template template-default4
+#
+ntp-service server source-interface all disable
+ntp-service ipv6 server source-interface all disable
+#
+ecc peer-public-key 10.1.100.2
+ public-key-code begin
+  043176A9 D6FECD5F DD9A06CA F19F6B3B 214F5A6B C374243B 8032A22E C863DD66
+  EA91831A F99348BB 4B7370F5 6D517EEB C9AE23F3 E84DEDDD D6C72212 A77F8083
+  51
+ public-key-code end
+ peer-public-key end
+#
+undo icmp name timestamp-reply send
+#
+undo telnet server enable
+undo telnet ipv6 server enable
+undo telnet server-source all-interface
+undo telnet ipv6 server-source all-interface
+#
+diffserv domain default
+#
+diffserv domain 5p3d
+#
+soc
+#
+ip vpn-instance TURKSAT
+ ipv4-family
+  route-distinguisher 65535:65530
+  apply-label per-instance
+ ipv6-family
+  route-distinguisher 65535:65530
+  apply-label per-instance
+#
+ip vpn-instance __LOCAL_OAM_VPN__
+ ipv4-family
+ ipv6-family
+#
+ip dcn vpn-instance __dcn_vpn__
+ ipv4-family
+#
+undo radius local-ip all
+#
+bfd
+#
+dhcp server request-packet all-interface disable
+#
+dot1x-template 1
+#
+dhcp relay unnumbered database authentication-mode force-check
+#
+acl number 2001
+ rule 5 permit vpn-instance-any source 10.110.254.0 0.0.0.255
+ rule 10 deny
+#
+security password
+ #
+ rule admin
+  forbidden word changeme_123
+#
+aaa
+ user-password password-force-change disable
+ local-user mozan@turksat password irreversible-cipher $1c$7uU1YFJW$A$Y()0.Z2:/>,E6pURRh88)x7U>d7RYO6Ir,"4'f^9$
+ local-user mozan@turksat service-type ftp ssh http
+ local-user mozan@turksat level 3
+ local-user mozan@turksat state block fail-times 3 interval 5
+ local-user mduzgunn password irreversible-cipher $1c$`Q+n=WYVPU$q^v`I~;^NC/@A8#&`oLFEklxCI"K7(V7(s4x)aCE$
+ local-user mduzgunn service-type ssh
+ local-user mduzgunn level 3
+ local-user mduzgunn state block fail-times 3 interval 5
+ local-user bbarisci password irreversible-cipher $1c$G\kv#~{*f>$cHR@@Z92eST2z,/ReFCLJ%<&B*ui5,_8q=&et5BV$
+ local-user bbarisci service-type ssh
+ local-user bbarisci level 3
+ local-user bbarisci state block fail-times 3 interval 5
+ local-user bbarisci user-group manage-ug
+ local-user mduzgun password irreversible-cipher $1c$1llZX~`G(($-<4}#N`9ZY!7UkV\n'_-]GDiSVuV*X~j@N0c59R>$
+ local-user mduzgun service-type ftp ssh http
+ local-user mduzgun level 3
+ local-user mduzgun state block fail-times 3 interval 5
+ local-user mduzgun user-group manage-ug
+ local-user ssarikaya password irreversible-cipher $1c$!|cYEpHuE4$()}8)4AX(I5nzDZS,5m85Vj['TyX^S2'gV6W]6xH$
+ local-user ssarikaya service-type ftp ssh http
+ local-user ssarikaya level 3
+ local-user ssarikaya state block fail-times 3 interval 5
+ #
+ authentication-scheme default0
+ #
+ authentication-scheme default1
+ #
+ authentication-scheme default
+  authentication-mode local radius
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default0
+ #
+ accounting-scheme default1
+ #
+ domain default0
+ #
+ domain default1
+ #
+ domain default_admin
+#
+license
+ active port-basic slot 1 card 1 port 0-51
+#
+warranty
+#
+interface Eth-Trunk13
+ description MCN_hw_METRO_SW_ETH_46_OVER_PB
+ ip binding vpn-instance TURKSAT
+ mode lacp-static
+#
+interface Eth-Trunk13.104
+ description TT_INTERNET_070000024997
+ ip binding vpn-instance TURKSAT
+ ipv6 enable
+ ip address 95.0.181.182 255.255.255.248
+ ipv6 address 2A01:358:4000:69::7/64
+ encapsulation dot1q-termination
+ dot1q termination vid 104
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 95.0.181.181
+ vrrp vrid 1 preempt-mode timer delay 60
+ vrrp6 vrid 1 virtual-ip FE80::2 link-local
+ vrrp6 vrid 1 virtual-ip 2A01:358:4000:69::5
+#
+interface Eth-Trunk13.2104
+ description R2_TO_FW
+ ip binding vpn-instance TURKSAT
+ ipv6 enable
+ ip address 185.26.68.4 255.255.255.248
+ ipv6 address 2A00:1D5F:1000:2104::4/64
+ encapsulation dot1q-termination
+ dot1q termination vid 2104
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 185.26.68.1
+ vrrp vrid 1 preempt-mode timer delay 60
+ vrrp6 vrid 1 virtual-ip FE80::3 link-local
+ vrrp6 vrid 1 virtual-ip 2A00:1D5F:1000:2104::1
+ ipv6 neighbor 2A00:1D5F:1000:2104::2 0009-0f09-0020 vid 2104
+#
+interface Eth-Trunk13.3619
+ description SOL_INTERNET_BACKUP_0606_10001691
+ ip binding vpn-instance TURKSAT
+ ip address 213.153.182.124 255.255.255.248
+ encapsulation dot1q-termination
+ dot1q termination vid 3619
+ arp broadcast enable
+ vrrp vrid 1 virtual-ip 213.153.182.122
+ vrrp vrid 1 preempt-mode timer delay 60
+#
+interface Virtual-Template0
+ ppp authentication-mode auto
+#
+interface GigabitEthernet0/0/0
+ speed auto
+ duplex auto
+ undo shutdown
+ ip binding vpn-instance __LOCAL_OAM_VPN__
+ ip address 10.1.100.13 255.255.255.0
+#
+interface GigabitEthernet0/1/0
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/1
+ undo shutdown
+ eth-trunk 13
+ dcn
+#
+interface GigabitEthernet0/1/2
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/3
+ undo shutdown
+ eth-trunk 13
+ dcn
+#
+interface GigabitEthernet0/1/4
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/5
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/6
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/7
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/8
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/9
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/10
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/11
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/12
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/13
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/14
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/15
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/16
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/17
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/18
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/19
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/20
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/21
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/22
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/23
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/24
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/25
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/26
+ undo shutdown
+ dcn
+#
+interface GigabitEthernet0/1/27
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/28
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/29
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/30
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/31
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/32
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/33
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/34
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/35
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/36
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/37
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/38
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/39
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/40
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/41
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/42
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/43
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/44
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/45
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/46
+ undo shutdown
+ dcn
+#
+interface 25GE0/1/47
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/48
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/49
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/50
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/51
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/52
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/53
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/54
+ undo shutdown
+ dcn
+#
+interface 100GE0/1/55
+ undo shutdown
+ dcn
+#
+interface LoopBack1023
+ description DCN loopback interface
+ ip binding vpn-instance __dcn_vpn__
+ ip address 128.132.210.204 255.255.0.0
+#
+interface NULL0
+#
+bgp 47524
+ router-id 95.0.181.181
+ graceful-restart
+ private-4-byte-as disable
+ #
+ ipv4-family unicast
+  undo synchronization
+ #
+ vpn-instance TURKSAT
+ #
+ ipv4-family vpn-instance TURKSAT
+  network 185.26.68.0 255.255.255.0
+  peer 95.0.181.177 as-number 9121
+  peer 95.0.181.177 connect-interface Eth-Trunk13.104
+  peer 95.0.181.177 password cipher %^%#)1\\C!Z&|YmG.Z7MeD!HrNQ=8*SN_<MwTA,J7>9&%^%#
+  peer 95.0.181.177 bfd min-tx-interval 300 min-rx-interval 300
+  peer 95.0.181.177 bfd enable
+  peer 95.0.181.177 route-policy TT-IN import
+  peer 95.0.181.177 route-policy MCN-TT-OUT export
+  peer 213.153.182.121 as-number 34984
+  peer 213.153.182.121 connect-interface Eth-Trunk13.3619
+  peer 213.153.182.121 bfd min-tx-interval 300 min-rx-interval 300
+  peer 213.153.182.121 bfd enable
+  peer 213.153.182.121 route-policy SOL-IN import
+  peer 213.153.182.121 route-policy MCN-SOL-OUT export
+ #
+ ipv6-family vpn-instance TURKSAT
+  network 2A00:1D5F:1000:: 64
+  peer 2A01:358:4000:69::1 as-number 9121
+  peer 2A01:358:4000:69::1 connect-interface Eth-Trunk13.104
+  peer 2A01:358:4000:69::1 password cipher %^%#)1\\C!Z&|YmG.Z7MeD!HrNQ=8*SN_<MwTA,J7>9&%^%#
+  peer 2A01:358:4000:69::1 bfd min-tx-interval 300 min-rx-interval 300
+  peer 2A01:358:4000:69::1 bfd enable
+  peer 2A01:358:4000:69::1 route-policy TT-IN_IPv6 import
+  peer 2A01:358:4000:69::1 route-policy MCN_TT_IPv6_OUT export
+#
+ospf 65534 vpn-instance __dcn_vpn__
+ description DCN ospf create by default
+ opaque-capability enable
+ hostname
+ vpn-instance-capability simple
+ area 0.0.0.0
+  network 0.0.0.0 255.255.255.255
+#
+!The DCN function implements the capability of plug-and-play for this device.
+!A NE IP address based on the unique NE ID is automatically generated in VPN
+!of DCN. It is recommended that the NE IP address be changed to the planned
+!one by running the ne-ip X.X.X.X <MASK> command after the device being online.
+dcn
+#
+ip ip-prefix DEFAULT-ROUTE index 10 permit 0.0.0.0 0
+ip ip-prefix MCN_v4 index 10 permit 185.26.68.0 24
+#
+ip ipv6-prefix DEFAULT_ROUTE_IPv6 index 10 permit :: 0
+ip ipv6-prefix MCN_v6 index 10 permit 2A00:1D5F:1000:: 64
+#
+route-policy MCN-SOL-OUT permit node 10
+ if-match ip-prefix MCN_v4
+ apply as-path 47524 47524 47524 additive
+ apply local-preference 100
+#
+route-policy MCN-SOL-OUT deny node 20
+#
+route-policy MCN-TT-OUT permit node 10
+ if-match ip-prefix MCN_v4
+ apply local-preference 200
+#
+route-policy MCN-TT-OUT deny node 20
+#
+route-policy MCN_SOL_IPv6_OUT permit node 10
+ if-match ipv6 address prefix-list MCN_v6
+ apply as-path 47524 47524 47524 additive
+ apply local-preference 100
+#
+route-policy MCN_SOL_IPv6_OUT deny node 20
+#
+route-policy MCN_TT_IPv6_OUT permit node 10
+ if-match ipv6 address prefix-list MCN_v6
+ apply local-preference 200
+#
+route-policy MCN_TT_IPv6_OUT deny node 20
+#
+route-policy SOL-IN permit node 10
+ if-match ip-prefix DEFAULT-ROUTE
+ apply local-preference 100
+#
+route-policy SOL-IN deny node 20
+#
+route-policy SOL-IN_IPv6 permit node 10
+ if-match ipv6 address prefix-list DEFAULT_ROUTE_IPv6
+ apply local-preference 100
+#
+route-policy SOL-IN_IPv6 deny node 20
+#
+route-policy TT-IN permit node 10
+ if-match ip-prefix DEFAULT-ROUTE
+ apply local-preference 200
+#
+route-policy TT-IN deny node 20
+#
+route-policy TT-IN_IPv6 permit node 10
+ if-match ipv6 address prefix-list DEFAULT_ROUTE_IPv6
+ apply local-preference 200
+#
+route-policy TT-IN_IPv6 deny node 20
+#
+ip route-static vpn-instance __LOCAL_OAM_VPN__ 0.0.0.0 0.0.0.0 10.1.100.1
+ip route-static vpn-instance TURKSAT 10.0.99.253 255.255.255.255 10.2.104.4
+ip route-static vpn-instance TURKSAT 185.26.68.0 255.255.255.0 NULL0 preference 240
+ip route-static vpn-instance TURKSAT 185.26.68.0 255.255.255.0 185.26.68.2
+#
+ipv6 route-static vpn-instance TURKSAT :: 0 2A01:358:4000:69::1
+ipv6 route-static vpn-instance TURKSAT 2A00:1D5F:1000:: 64 NULL0 preference 240
+#
+snmp-agent local-engineid 800007DB030C8408051FD4
+#
+snmp-agent sys-info version v3
+#
+snmp-agent protocol source-status all-interface
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+undo snmp-agent proxy protocol source-status all-interface
+undo snmp-agent proxy protocol source-status ipv6 all-interface
+#
+lldp enable
+#
+undo web-auth-server source-ip all
+#
+undo web-auth-server source-ipv6 all
+#
+stelnet server enable
+snetconf server enable
+ssh server rsa-key min-length 3072
+ssh user root
+ssh user root authentication-type password
+ssh user root service-type snetconf stelnet
+ssh server-source -i GigabitEthernet0/0/0
+ssh server-source -i LoopBack1023
+ssh server-source all-interface
+ssh ipv6 server-source all-interface
+ssh server acl 2001
+ssh authorization-type default aaa
+#
+ssh server cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh server hmac sha2_512 sha2_256
+ssh server key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+ssh server publickey ecc rsa rsa_sha2_256 rsa_sha2_512
+#
+ssh server dh-exchange min-len 3072
+#
+ssh client first-time enable
+ssh client peer 10.1.100.2 assign ecc-key 10.1.100.2
+#
+ssh client publickey ecc rsa rsa_sha2_256 rsa_sha2_512
+#
+ssh client cipher aes256_gcm aes128_gcm aes256_ctr aes192_ctr aes128_ctr
+ssh client hmac sha2_512 sha2_256
+ssh client key-exchange dh_group_exchange_sha256 dh_group_exchange_sha1 dh_group14_sha1 ecdh_sha2_nistp256 ecdh_sha2_nistp384 ecdh_sha2_nistp521
+#
+dhcp server database multi-sessions per-mac authentication-mode force-check
+#
+bfd-track-manager
+#
+user-interface maximum-vty 21
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1c$r!Ws:*3[h8$GmmXGg!{+=(2~#JpwrpA>pGbA\hls+j_Aj)]HVv*$
+#
+user-interface vty 0 4
+ acl 2001 inbound
+ authentication-mode aaa
+ protocol inbound ssh
+#
+netconf
+ activate module huawei-ip
+#
+local-aaa-server
+#
+pki domain default
+#
+l2tp-group default-lac
+ tunnel name HUAWEI
+#
+l2tp-group default-lns
+ tunnel name HUAWEI
+#
+return

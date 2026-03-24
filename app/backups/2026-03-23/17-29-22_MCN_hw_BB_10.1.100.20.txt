@@ -1,0 +1,905 @@
+
+============================================================
+COMMAND: display current-configuration
+============================================================
+!Software Version V200R023C10SPC500
+#
+sysname MCN_hw_BB
+#
+info-center loghost source Ethernet0/0/0/0
+info-center loghost 10.101.18.80 local-time
+#
+vlan batch 9 1024 1056 to 1057 1098 to 1100 1105 1110 1113 1115 to 1116 1120 1123
+vlan batch 1125 1130 1135 1140 1145 1150 1160 1165 1170 1175
+vlan batch 1180 to 1190 1195 1200 1205 1210
+#
+authentication-profile name default_authen_profile
+authentication-profile name dot1x_authen_profile
+authentication-profile name dot1xmac_authen_profile
+authentication-profile name mac_authen_profile
+authentication-profile name multi_authen_profile
+authentication-profile name portal_authen_profile
+#
+clock timezone IST add 03:00:00
+#
+diffserv domain default
+#
+radius-server template default
+#
+pki realm default
+ certificate-check none
+#
+acl number 2001
+ rule 5 permit source 10.1.120.220 0
+ rule 10 deny
+#
+free-rule-template name default_free_rule
+#
+portal-access-profile name portal_access_profile
+#
+drop-profile default
+#
+vlan 9
+ name F5_HA
+vlan 1024
+ name TURKSAT_TARAMA
+vlan 1056
+ name K8S_TEST_NODE
+vlan 1057
+ name K8S_PROD_NODE
+vlan 1098
+ name GOLBASI-MACUNKOY_yedek
+vlan 1099
+ name MCNKY_GECIS
+vlan 1100
+ name NETWORK_MANAGEMENT
+vlan 1105
+ name VIRTUALIZATION
+vlan 1110
+ name ILO
+vlan 1113
+ name DATABASE_TEST
+vlan 1115
+ name DATABASE
+vlan 1116
+ name MNC_SYSTEM_MNGT
+vlan 1120
+ name DMZ_VLAN
+vlan 1123
+ name CYBER_MGMT
+vlan 1125
+ name DMZ-INT
+vlan 1130
+ name LB-INT
+vlan 1135
+ name LB-EXT
+vlan 1140
+ name INT_DNS-1
+vlan 1145
+ name INT_DNS-2
+vlan 1150
+ name EXT-DNS-1
+vlan 1160
+ name MONITORING
+vlan 1165
+ name KODSIS-DMZ
+vlan 1170
+ name KODSIS-INT
+vlan 1175
+ name KODSIS-DB
+vlan 1180
+ name KODSIS-WEB-LB
+vlan 1181
+ name SAFIRBULUT_DBAAS
+vlan 1182
+ name SAFIRBULUT_VXLAN
+vlan 1183
+ name SAFIR_MGMT
+vlan 1184
+ name SAFIR_BULUT_LB_GECIS
+vlan 1185
+ name TSUNAMI-DMZ
+vlan 1186
+ name SAFIRBULUT_PROD_EXT_API
+vlan 1187
+ name SAFIRBULUT_PROD_PUBLIC
+vlan 1188
+ name SAFIRBULUT_STORAGE
+vlan 1189
+ name SAFIR_BULUT_DATABASE
+vlan 1190
+ name TSUNAMI-INT
+vlan 1195
+ name TSUNAMI-DB
+vlan 1200
+ name TSUNAMI-WEB
+vlan 1205
+ name BELGENET-WEB
+vlan 1210
+ name BELGENET-DB
+#
+aaa
+ authentication-scheme default
+  authentication-mode local
+ authentication-scheme radius
+  authentication-mode radius
+ authorization-scheme default
+  authorization-mode local
+ accounting-scheme default
+  accounting-mode none
+ local-aaa-user password policy administrator
+  password history record number 0
+  password expire 0
+ domain default
+  authentication-scheme radius
+  accounting-scheme default
+  radius-server default
+ domain default_admin
+  authentication-scheme default
+  accounting-scheme default
+ undo local-user admin
+ local-user moozan password irreversible-cipher $1c$`F4]EGoC5=$<M/=0<)2{8H/g3KA\K{@j'YPHk!jt;iUxt*#v}13$
+ local-user moozan privilege level 3
+ local-user moozan service-type ssh ftp http
+ local-user mduzgun password irreversible-cipher $1c$7tw`Sb)1-8$5&Z1XpW/~Fy@+G@=W(1Kt|/x7{'u+)lkM`6qi]DG$
+ local-user mduzgun privilege level 3
+ local-user mduzgun service-type ssh
+ local-user bbarisci password irreversible-cipher $1c$nzb|JX]1:#$rC{]NuaVh=ItcKRJuv[=l|'{*4S2i.,!(3*@G,/7$
+ local-user bbarisci privilege level 3
+ local-user bbarisci service-type ssh
+ local-user mduzgunn password irreversible-cipher $1c$jPiKIc=E^6$BKshIcJ@(&mtTO63'z>B;P71Fbt!E3kK&NH@WCaM$
+ local-user mduzgunn privilege level 3
+ local-user mduzgunn service-type ssh
+ local-user ssarikaya password irreversible-cipher $1c$>|%JBS.Hl$$l8'd1G9}j+zP'6/-H|S/QmD~,ci7AQ&R/S*:`8NP$
+ local-user ssarikaya privilege level 3
+ local-user ssarikaya service-type ssh
+#
+ntp-service server disable
+ntp-service ipv6 server disable
+ntp-service unicast-peer 10.1.125.249 source-interface Ethernet0/0/0/0
+ntp-service unicast-peer 10.1.125.250 source-interface Ethernet0/0/0/0 preference
+#
+interface Vlanif1
+ shutdown
+#
+interface Eth-Trunk41
+ description FW_1_LAN
+ port link-type trunk
+ port trunk allow-pass vlan 1024 1056 to 1057 1098 to 1100 1105 1110 1113 1115 to 1116 1120 1123 1125
+ port trunk allow-pass vlan 1130 1135 1140 1145 1150 1155 1160 1165 1170 1175
+ port trunk allow-pass vlan 1180 1183 to 1187 1189 to 1190 1195 1200 1205 1210
+ mode lacp
+#
+interface Eth-Trunk42
+ description FW_2_LAN
+ port link-type trunk
+ port trunk allow-pass vlan 1024 1056 to 1057 1098 to 1100 1105 1110 1113 1115 to 1116 1120 1123 1125
+ port trunk allow-pass vlan 1130 1135 1140 1145 1150 1155 1160 1165 1170 1175
+ port trunk allow-pass vlan 1180 1183 to 1187 1189 to 1190 1195 1200 1205 1210
+ mode lacp
+#
+interface Eth-Trunk44
+ description F5
+ port link-type trunk
+ port trunk allow-pass vlan 9 1057 1115 1120 1123 1130 1135
+ mode lacp
+#
+interface Eth-Trunk45
+ description CISCO_ILO_SW_10.1.100.21
+ port link-type trunk
+ port trunk allow-pass vlan 1100 1105 1110
+ mode lacp
+#
+interface Eth-Trunk47
+ description MCN_MNGT
+ port link-type trunk
+ port trunk allow-pass vlan 1100 1110 1116 1123
+ mode lacp
+#
+interface Eth-Trunk102
+ description MCN_TOR_G4_ETH_105
+ port link-type trunk
+ port trunk allow-pass vlan 1024 1056 to 1057 1100 1105 1110 1113 1115 to 1116 1120 1123 1125
+ port trunk allow-pass vlan 1130 1135 1140 1145 1150 1160 1170 1175 1180 to 1190 1195
+ port trunk allow-pass vlan 1200 1205 1210
+ mode lacp
+#
+interface Ethernet0/0/0/0
+ ip address 10.1.100.20 255.255.255.0
+#
+interface XGigabitEthernet1/1/0/0
+#
+interface XGigabitEthernet1/1/0/1
+#
+interface XGigabitEthernet1/1/0/2
+#
+interface XGigabitEthernet1/1/0/3
+#
+interface XGigabitEthernet1/1/0/4
+#
+interface XGigabitEthernet1/1/0/5
+#
+interface XGigabitEthernet1/1/0/6
+#
+interface XGigabitEthernet1/1/0/7
+#
+interface XGigabitEthernet1/1/0/8
+#
+interface XGigabitEthernet1/1/0/9
+#
+interface XGigabitEthernet1/1/0/10
+#
+interface XGigabitEthernet1/1/0/11
+#
+interface XGigabitEthernet1/1/0/12
+#
+interface XGigabitEthernet1/1/0/13
+#
+interface XGigabitEthernet1/1/0/14
+#
+interface XGigabitEthernet1/1/0/15
+#
+interface XGigabitEthernet1/1/0/16
+#
+interface XGigabitEthernet1/1/0/17
+#
+interface XGigabitEthernet1/1/0/18
+#
+interface XGigabitEthernet1/1/0/19
+#
+interface XGigabitEthernet1/1/0/20
+#
+interface XGigabitEthernet1/1/0/21
+#
+interface XGigabitEthernet1/1/0/22
+#
+interface XGigabitEthernet1/1/0/23
+#
+interface XGigabitEthernet1/1/0/24
+#
+interface XGigabitEthernet1/1/0/25
+#
+interface XGigabitEthernet1/1/0/26
+#
+interface XGigabitEthernet1/1/0/27
+#
+interface XGigabitEthernet1/1/0/28
+#
+interface XGigabitEthernet1/1/0/29
+#
+interface XGigabitEthernet1/1/0/30
+#
+interface XGigabitEthernet1/1/0/31
+#
+interface XGigabitEthernet1/1/0/32
+#
+interface XGigabitEthernet1/1/0/33
+#
+interface XGigabitEthernet1/1/0/34
+#
+interface XGigabitEthernet1/1/0/35
+#
+interface XGigabitEthernet1/1/0/36
+#
+interface XGigabitEthernet1/1/0/37
+#
+interface XGigabitEthernet1/1/0/38
+#
+interface XGigabitEthernet1/1/0/39
+#
+interface XGigabitEthernet1/1/0/40
+#
+interface XGigabitEthernet1/1/0/41
+ description FW_1_31
+ eth-trunk 41
+#
+interface XGigabitEthernet1/1/0/42
+ description FW_2_31
+ eth-trunk 42
+#
+interface XGigabitEthernet1/1/0/43
+#
+interface XGigabitEthernet1/1/0/44
+#
+interface XGigabitEthernet1/1/0/45
+ eth-trunk 45
+#
+interface XGigabitEthernet1/1/0/46
+ eth-trunk 47
+#
+interface XGigabitEthernet1/1/0/47
+ description MCN_MNGT_SW_10G_1/0/3
+ eth-trunk 47
+#
+interface XGigabitEthernet1/2/0/0
+#
+interface XGigabitEthernet1/2/0/1
+#
+interface XGigabitEthernet1/2/0/2
+#
+interface XGigabitEthernet1/2/0/3
+#
+interface XGigabitEthernet1/2/0/4
+#
+interface XGigabitEthernet1/2/0/5
+#
+interface XGigabitEthernet1/2/0/6
+#
+interface XGigabitEthernet1/2/0/7
+#
+interface XGigabitEthernet1/2/0/8
+#
+interface XGigabitEthernet1/2/0/9
+#
+interface XGigabitEthernet1/2/0/10
+#
+interface XGigabitEthernet1/2/0/11
+#
+interface XGigabitEthernet1/2/0/12
+#
+interface XGigabitEthernet1/2/0/13
+#
+interface XGigabitEthernet1/2/0/14
+#
+interface XGigabitEthernet1/2/0/15
+#
+interface XGigabitEthernet1/2/0/16
+#
+interface XGigabitEthernet1/2/0/17
+#
+interface XGigabitEthernet1/2/0/18
+#
+interface XGigabitEthernet1/2/0/19
+#
+interface XGigabitEthernet1/2/0/20
+#
+interface XGigabitEthernet1/2/0/21
+#
+interface XGigabitEthernet1/2/0/22
+#
+interface XGigabitEthernet1/2/0/23
+#
+interface XGigabitEthernet1/2/0/24
+#
+interface XGigabitEthernet1/2/0/25
+#
+interface XGigabitEthernet1/2/0/26
+#
+interface XGigabitEthernet1/2/0/27
+#
+interface XGigabitEthernet1/2/0/28
+#
+interface XGigabitEthernet1/2/0/29
+#
+interface XGigabitEthernet1/2/0/30
+#
+interface XGigabitEthernet1/2/0/31
+#
+interface XGigabitEthernet1/2/0/32
+#
+interface XGigabitEthernet1/2/0/33
+#
+interface XGigabitEthernet1/2/0/34
+#
+interface XGigabitEthernet1/2/0/35
+#
+interface XGigabitEthernet1/2/0/36
+#
+interface XGigabitEthernet1/2/0/37
+#
+interface XGigabitEthernet1/2/0/38
+#
+interface XGigabitEthernet1/2/0/39
+#
+interface XGigabitEthernet1/2/0/40
+#
+interface XGigabitEthernet1/2/0/41
+#
+interface XGigabitEthernet1/2/0/42
+#
+interface XGigabitEthernet1/2/0/43
+#
+interface XGigabitEthernet1/2/0/44
+#
+interface XGigabitEthernet1/2/0/45
+#
+interface XGigabitEthernet1/2/0/46
+#
+interface XGigabitEthernet1/2/0/47
+#
+interface XGigabitEthernet2/1/0/0
+#
+interface XGigabitEthernet2/1/0/1
+#
+interface XGigabitEthernet2/1/0/2
+#
+interface XGigabitEthernet2/1/0/3
+#
+interface XGigabitEthernet2/1/0/4
+#
+interface XGigabitEthernet2/1/0/5
+#
+interface XGigabitEthernet2/1/0/6
+#
+interface XGigabitEthernet2/1/0/7
+#
+interface XGigabitEthernet2/1/0/8
+#
+interface XGigabitEthernet2/1/0/9
+#
+interface XGigabitEthernet2/1/0/10
+#
+interface XGigabitEthernet2/1/0/11
+#
+interface XGigabitEthernet2/1/0/12
+#
+interface XGigabitEthernet2/1/0/13
+#
+interface XGigabitEthernet2/1/0/14
+#
+interface XGigabitEthernet2/1/0/15
+#
+interface XGigabitEthernet2/1/0/16
+#
+interface XGigabitEthernet2/1/0/17
+#
+interface XGigabitEthernet2/1/0/18
+#
+interface XGigabitEthernet2/1/0/19
+#
+interface XGigabitEthernet2/1/0/20
+#
+interface XGigabitEthernet2/1/0/21
+#
+interface XGigabitEthernet2/1/0/22
+#
+interface XGigabitEthernet2/1/0/23
+#
+interface XGigabitEthernet2/1/0/24
+#
+interface XGigabitEthernet2/1/0/25
+#
+interface XGigabitEthernet2/1/0/26
+#
+interface XGigabitEthernet2/1/0/27
+#
+interface XGigabitEthernet2/1/0/28
+#
+interface XGigabitEthernet2/1/0/29
+#
+interface XGigabitEthernet2/1/0/30
+#
+interface XGigabitEthernet2/1/0/31
+#
+interface XGigabitEthernet2/1/0/32
+#
+interface XGigabitEthernet2/1/0/33
+#
+interface XGigabitEthernet2/1/0/34
+#
+interface XGigabitEthernet2/1/0/35
+#
+interface XGigabitEthernet2/1/0/36
+#
+interface XGigabitEthernet2/1/0/37
+#
+interface XGigabitEthernet2/1/0/38
+#
+interface XGigabitEthernet2/1/0/39
+#
+interface XGigabitEthernet2/1/0/40
+#
+interface XGigabitEthernet2/1/0/41
+ description FW_1_32
+ eth-trunk 41
+#
+interface XGigabitEthernet2/1/0/42
+ description FW_2_32
+ eth-trunk 42
+#
+interface XGigabitEthernet2/1/0/43
+#
+interface XGigabitEthernet2/1/0/44
+#
+interface XGigabitEthernet2/1/0/45
+ eth-trunk 45
+#
+interface XGigabitEthernet2/1/0/46
+ description MCN_MNGT_2_10G_4
+ eth-trunk 47
+#
+interface XGigabitEthernet2/1/0/47
+ eth-trunk 47
+#
+interface XGigabitEthernet2/2/0/0
+ description RUJIE_2_0_17
+ port link-type trunk
+ port trunk allow-pass vlan 1099
+#
+interface XGigabitEthernet2/2/0/1
+#
+interface XGigabitEthernet2/2/0/2
+#
+interface XGigabitEthernet2/2/0/3
+#
+interface XGigabitEthernet2/2/0/4
+#
+interface XGigabitEthernet2/2/0/5
+#
+interface XGigabitEthernet2/2/0/6
+#
+interface XGigabitEthernet2/2/0/7
+#
+interface XGigabitEthernet2/2/0/8
+#
+interface XGigabitEthernet2/2/0/9
+#
+interface XGigabitEthernet2/2/0/10
+#
+interface XGigabitEthernet2/2/0/11
+#
+interface XGigabitEthernet2/2/0/12
+#
+interface XGigabitEthernet2/2/0/13
+#
+interface XGigabitEthernet2/2/0/14
+#
+interface XGigabitEthernet2/2/0/15
+#
+interface XGigabitEthernet2/2/0/16
+#
+interface XGigabitEthernet2/2/0/17
+#
+interface XGigabitEthernet2/2/0/18
+#
+interface XGigabitEthernet2/2/0/19
+#
+interface XGigabitEthernet2/2/0/20
+#
+interface XGigabitEthernet2/2/0/21
+#
+interface XGigabitEthernet2/2/0/22
+#
+interface XGigabitEthernet2/2/0/23
+#
+interface XGigabitEthernet2/2/0/24
+#
+interface XGigabitEthernet2/2/0/25
+#
+interface XGigabitEthernet2/2/0/26
+#
+interface XGigabitEthernet2/2/0/27
+#
+interface XGigabitEthernet2/2/0/28
+#
+interface XGigabitEthernet2/2/0/29
+#
+interface XGigabitEthernet2/2/0/30
+#
+interface XGigabitEthernet2/2/0/31
+#
+interface XGigabitEthernet2/2/0/32
+#
+interface XGigabitEthernet2/2/0/33
+#
+interface XGigabitEthernet2/2/0/34
+#
+interface XGigabitEthernet2/2/0/35
+#
+interface XGigabitEthernet2/2/0/36
+#
+interface XGigabitEthernet2/2/0/37
+#
+interface XGigabitEthernet2/2/0/38
+#
+interface XGigabitEthernet2/2/0/39
+#
+interface XGigabitEthernet2/2/0/40
+#
+interface XGigabitEthernet2/2/0/41
+#
+interface XGigabitEthernet2/2/0/42
+#
+interface XGigabitEthernet2/2/0/43
+#
+interface XGigabitEthernet2/2/0/44
+ description F5
+ eth-trunk 44
+#
+interface XGigabitEthernet2/2/0/45
+ description F5
+ eth-trunk 44
+#
+interface XGigabitEthernet2/2/0/46
+ description F5
+ eth-trunk 44
+#
+interface XGigabitEthernet2/2/0/47
+ description F5
+ eth-trunk 44
+#
+interface 100GE1/3/0/0
+#
+interface 100GE1/3/0/1
+#
+interface 100GE1/3/0/2
+ eth-trunk 102
+#
+interface 100GE1/3/0/3
+#
+interface 100GE1/3/0/4
+#
+interface 100GE1/3/0/5
+#
+interface 100GE1/3/0/6
+#
+interface 100GE1/3/0/7
+#
+interface 100GE1/3/0/8
+#
+interface 100GE1/3/0/9
+#
+interface 100GE1/3/0/10
+#
+interface 100GE1/3/0/11
+#
+interface 100GE1/3/0/12
+#
+interface 100GE1/3/0/13
+#
+interface 100GE1/3/0/14
+#
+interface 100GE1/3/0/15
+#
+interface 100GE1/3/0/16
+#
+interface 100GE1/3/0/17
+#
+interface 100GE1/3/0/18
+#
+interface 100GE1/3/0/19
+#
+interface 100GE1/3/0/20
+#
+interface 100GE1/3/0/21
+#
+interface 100GE1/3/0/22
+ description *****CSS_PORT*****
+#
+interface 100GE1/3/0/23
+ description *****CSS_PORT*****
+#
+interface 100GE1/4/0/0
+#
+interface 100GE1/4/0/1
+#
+interface 100GE1/4/0/2
+ eth-trunk 102
+#
+interface 100GE1/4/0/3
+#
+interface 100GE1/4/0/4
+#
+interface 100GE1/4/0/5
+#
+interface 100GE1/4/0/6
+#
+interface 100GE1/4/0/7
+#
+interface 100GE1/4/0/8
+#
+interface 100GE1/4/0/9
+#
+interface 100GE1/4/0/10
+#
+interface 100GE1/4/0/11
+#
+interface 100GE1/4/0/12
+#
+interface 100GE1/4/0/13
+#
+interface 100GE1/4/0/14
+#
+interface 100GE1/4/0/15
+#
+interface 100GE1/4/0/16
+#
+interface 100GE1/4/0/17
+#
+interface 100GE1/4/0/18
+#
+interface 100GE1/4/0/19
+#
+interface 100GE1/4/0/20
+#
+interface 100GE1/4/0/21
+#
+interface 100GE1/4/0/22
+ description *****CSS_PORT*****
+#
+interface 100GE1/4/0/23
+ description *****CSS_PORT*****
+#
+interface 100GE2/3/0/0
+ description *****CSS_PORT*****
+#
+interface 100GE2/3/0/1
+ description *****CSS_PORT*****
+#
+interface 100GE2/3/0/2
+ eth-trunk 102
+#
+interface 100GE2/3/0/3
+#
+interface 100GE2/3/0/4
+#
+interface 100GE2/3/0/5
+#
+interface 100GE2/3/0/6
+#
+interface 100GE2/3/0/7
+#
+interface 100GE2/3/0/8
+#
+interface 100GE2/3/0/9
+#
+interface 100GE2/3/0/10
+#
+interface 100GE2/3/0/11
+#
+interface 100GE2/3/0/12
+#
+interface 100GE2/3/0/13
+#
+interface 100GE2/3/0/14
+#
+interface 100GE2/3/0/15
+#
+interface 100GE2/3/0/16
+#
+interface 100GE2/3/0/17
+#
+interface 100GE2/3/0/18
+#
+interface 100GE2/3/0/19
+#
+interface 100GE2/3/0/20
+#
+interface 100GE2/3/0/21
+#
+interface 100GE2/3/0/22
+#
+interface 100GE2/3/0/23
+#
+interface 100GE2/4/0/0
+ description *****CSS_PORT*****
+#
+interface 100GE2/4/0/1
+ description *****CSS_PORT*****
+#
+interface 100GE2/4/0/2
+ eth-trunk 102
+#
+interface 100GE2/4/0/3
+#
+interface 100GE2/4/0/4
+#
+interface 100GE2/4/0/5
+#
+interface 100GE2/4/0/6
+#
+interface 100GE2/4/0/7
+#
+interface 100GE2/4/0/8
+#
+interface 100GE2/4/0/9
+#
+interface 100GE2/4/0/10
+#
+interface 100GE2/4/0/11
+#
+interface 100GE2/4/0/12
+#
+interface 100GE2/4/0/13
+#
+interface 100GE2/4/0/14
+#
+interface 100GE2/4/0/15
+#
+interface 100GE2/4/0/16
+#
+interface 100GE2/4/0/17
+#
+interface 100GE2/4/0/18
+#
+interface 100GE2/4/0/19
+#
+interface 100GE2/4/0/20
+#
+interface 100GE2/4/0/21
+#
+interface 100GE2/4/0/22
+#
+interface 100GE2/4/0/23
+#
+interface NULL0
+#
+undo icmp name timestamp-request receive
+#
+ip route-static 0.0.0.0 0.0.0.0 10.1.100.1
+#
+snmp-agent
+snmp-agent local-engineid 800007DB0348BD4A4C5600
+snmp-agent community read cipher %^%#%p%6LP_2-%{mt]PP0b$,#'>y4GwQs652=JW19*"G$]pFAi"Ok2Gm}n)Pmz+/r+DoB)XhE0(A$QHk*%^8%^%#
+snmp-agent sys-info version v2c v3
+snmp-agent group v3 mcn privacy read-view isoview notify-view isoview acl 2001
+snmp-agent target-host trap address udp-domain 10.1.120.220 params securityname cipher %^%#.x'+Zci`.5_u.i%oM'oH,{a+:D/v#3tG$*%KvOZ=%^%# v2c
+snmp-agent target-host trap address udp-domain 10.1.120.220 params securityname mcnread v3 privacy
+snmp-agent mib-view included isoview iso
+snmp-agent usm-user v3 mcnread
+snmp-agent usm-user v3 mcnread group mcn
+snmp-agent usm-user v3 mcnread authentication-mode sha cipher %^%#AMn^==D~w-}[6+V<wN.I'>c5,$b0,X0Zvk!aR)9:%^%#
+snmp-agent usm-user v3 mcnread privacy-mode aes128 cipher %^%#s/`kH,HD=Wq6SO)'3N]FL~FWAqK%Z3tl@-5,FewE%^%#
+snmp-agent usm-user v3 mcnread acl 2001
+snmp-agent trap enable
+snmp-agent protocol source-status all-interface
+snmp-agent protocol source-interface Ethernet0/0/0/0
+undo snmp-agent protocol source-status ipv6 all-interface
+#
+stelnet server enable
+ssh user moozan
+ssh user moozan authentication-type password
+ssh user moozan service-type all
+ssh server-source -i Ethernet0/0/0/0
+ssh server cipher aes256_ctr aes128_ctr
+ssh server hmac sha2_256
+ssh server key-exchange dh_group16_sha512 dh_group15_sha512 dh_group14_sha256 dh_group_exchange_sha256
+ssh client cipher aes256_ctr aes128_ctr
+ssh client hmac sha2_256
+ssh client key-exchange dh_group16_sha512 dh_group15_sha512 dh_group14_sha256 dh_group_exchange_sha256
+ssh server dh-exchange min-len 2048
+ssh server publickey rsa_sha2_512 rsa_sha2_256
+#
+user-interface con 0
+ authentication-mode password
+ set authentication password cipher $1c$Y)1mSGq%e*$~MSU12l,o+'y:XLz$tIJbK}o2KQQdD9u_J@W)UaW$
+user-interface vty 0 4
+ authentication-mode aaa
+ protocol inbound all
+user-interface vty 16 20
+ authentication-mode aaa
+ protocol inbound all
+#
+wlan
+ traffic-profile name default
+ security-profile name default
+ security-profile name default-wds
+ security-profile name default-mesh
+ ssid-profile name default
+ vap-profile name default
+ wds-profile name default
+ mesh-handover-profile name default
+ mesh-profile name default
+ regulatory-domain-profile name default
+ air-scan-profile name default
+ rrm-profile name default
+ radio-2g-profile name default
+ radio-5g-profile name default
+ wids-spoof-profile name default
+ wids-whitelist-profile name default
+ wids-profile name default
+ ap-system-profile name default
+ port-link-profile name default
+ wired-port-profile name default
+ ap-group name default
+ provision-ap
+#
+dot1x-access-profile name dot1x_access_profile
+#
+mac-access-profile name mac_access_profile
+#
+ops
+#
+remote-unit
+#
+return

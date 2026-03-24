@@ -1,0 +1,512 @@
+
+============================================================
+COMMAND: show running-config
+============================================================
+Building configuration...
+
+Current configuration : 10987 bytes
+!
+! Last configuration change at 15:37:35 GMT Thu Feb 26 2026 by hamit.hasancebi
+! NVRAM config last updated at 15:35:32 GMT Thu Feb 26 2026 by hamit.hasancebi
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec localtime show-timezone year
+service password-encryption
+service udp-small-servers
+service sequence-numbers
+!
+hostname AKA_TKS_34
+!
+boot-start-marker
+boot-end-marker
+!
+!
+username restorepoint privilege 15 secret 9 $9$5mBd.JsS/kwBH/$hF.kXpGnaZOtxJfMI/BxT/GTaP2Uvr3JXjV48U53jeI
+username cprime privilege 15 secret 9 $9$xxGq33GOm9zA0l$boxButf2fekaiOpVQ5lSNpsthWMy1.1HXwuNVUP1PQo
+username bbarisci privilege 15 secret 9 $9$RxOa9gl6Bq2Fum$BYlfWExwfszE04r054RO4uRvYncsc..w3e5puqIcXCc
+username mozan privilege 15 secret 9 $9$JkQAdrWUsltbZG$RhW/Ci36RjUsAVUglooTNz2Tp5jnaFbH2dan5jqc9p.
+username mduzgun privilege 15 secret 9 $9$7k.zq/npirZreW$PmhJRAmhRzO9Do9f0vyDmJD.ABPuc.mSIuSwcJfs7Os
+username ssarikaya privilege 15 secret 9 $9$UN/1h5oSUWFaeW$ubwcquR51/c18uaqlLXXxjdgYp6GsQsFDD6u9H6BNQ.
+aaa new-model
+!
+!
+aaa authentication login default group tacacs+ local
+aaa authentication login console group tacacs+ local
+aaa authentication login vty group tacacs+ local
+aaa authorization console
+aaa authorization exec default group tacacs+ local if-authenticated 
+aaa authorization commands 0 default group tacacs+ local if-authenticated 
+aaa authorization commands 15 default group tacacs+ local if-authenticated 
+aaa accounting update periodic 5
+aaa accounting exec default start-stop group tacacs+
+aaa accounting commands 0 default start-stop group tacacs+
+aaa accounting commands 15 default start-stop group tacacs+
+!
+!
+!
+!
+!
+!
+aaa session-id common
+clock timezone GMT 3 0
+switch 1 provision ws-c3560cx-12pd-s
+system mtu routing 1500
+!
+!
+!
+!
+device-sensor accounting
+device-sensor notify all-changes
+!
+!
+ip dhcp snooping vlan 810
+no ip domain-lookup
+ip domain-name turksat.local
+ip name-server 10.101.30.249
+ip name-server 10.101.30.250
+vtp mode transparent
+!
+!
+!
+!
+!
+!
+!
+!
+object-group network MONITORING 
+ 10.101.31.0 255.255.255.0
+!
+object-group network NOC 
+ 10.110.254.0 255.255.255.0
+ 10.100.41.0 255.255.255.0
+ 10.101.23.0 255.255.255.0
+ host 10.101.34.242
+ host 10.101.34.234
+ host 10.101.34.134
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+no errdisable detect cause gbic-invalid
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+vlan 800
+ name KARANTINA
+!
+vlan 802
+ name Guest
+!
+vlan 805
+ name VIP
+!
+vlan 809
+ name ULUS_PERSONEL
+!
+vlan 810
+ name KAMPUS_PERSONEL
+!
+vlan 811
+ name ANKU_TEKNO
+!
+vlan 812
+ name KURUMSAL_ILETISIM
+!
+vlan 813
+ name UYDU_KONTROL_PERS
+!
+vlan 814
+ name EURASIASAT_PERS
+!
+vlan 815
+ name GARAJ_PERSONEL
+!
+vlan 816
+ name BILGI_GUVENLIGI
+!
+vlan 817
+ name VSAT_PERSONEL
+!
+vlan 820 
+!
+vlan 822
+ name ODTU_PERSONEL
+!
+vlan 840
+ name BT-TEKNIK-WIRELESS
+!
+vlan 841
+ name BT-NETWORK-WIRELESS
+!
+vlan 860
+ name CBT_PERSONEL
+!
+vlan 869
+ name MACUNKOY_PERSONEL
+!
+vlan 870
+ name OVECLER_PERSONEL
+!
+vlan 873
+ name KAMERA_GUVENLIK
+!
+vlan 900
+ name VoIP
+!
+vlan 902
+ name IPPHONE
+!
+vlan 905
+ name PRINTER
+!
+vlan 917
+ name UPS
+!
+vlan 1600
+ name UST-YONETIM
+!
+vlan 1601
+ name KALITE_RYD
+!
+vlan 1602
+ name IK
+!
+vlan 1603
+ name ISLETME_TD
+!
+vlan 1604
+ name UYDUIS_GSD
+!
+vlan 1605
+ name PAZARLAMAD
+!
+vlan 1606
+ name TEDARIKD
+!
+vlan 1607
+ name EVRENSEL_HD
+!
+vlan 1608
+ name MALI_ID
+!
+vlan 1609
+ name UYDU_OPD
+!
+vlan 1610
+ name UYDU_SD
+!
+vlan 1611
+ name UYDU_TD
+!
+vlan 1612
+ name KABLO_ALTYD
+!
+vlan 1613
+ name KABLO_ISGSD
+!
+vlan 1614
+ name KABLO_OPD
+!
+vlan 1615
+ name KABLO_TD
+!
+vlan 1616
+ name ARGE_UD
+!
+vlan 1617
+ name ANALIZ_CTD
+!
+vlan 1618
+ name BILISIM_IGPYD
+!
+vlan 1619
+ name YAPAY_ZEKAASD
+!
+vlan 1620
+ name COZUM_GD
+!
+vlan 1621
+ name EDEVLET_IGPYD
+!
+vlan 1622
+ name SIBER_GD
+!
+vlan 1623
+ name VERI_MD
+!
+vlan 1624
+ name VERI_M_SISTEM
+!
+vlan 1625
+ name VERI_M_VERITABANI
+!
+vlan 1626
+ name YAZILIM_GD
+!
+vlan 1628
+ name UYDU_HAVACILIK_MUD
+!
+vlan 1629
+ name VMD-KURUMSAL
+!
+vlan 3911
+ name NETWORK_MANAGEMENT
+!
+vlan 3913
+ name WIRELESS_MANAGEMENT
+!
+lldp run
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport trunk allowed vlan 917,1600-1626,1628,1629,3911,3913
+ switchport mode trunk
+ ip arp inspection trust
+ ip dhcp snooping trust
+!
+interface GigabitEthernet1/0/1
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/2
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 3913
+ switchport mode access
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 800
+ snmp trap mac-notification change added
+ snmp trap mac-notification change removed
+ spanning-tree portfast edge
+ spanning-tree bpdufilter enable
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/15
+!
+interface GigabitEthernet1/0/16
+!
+interface TenGigabitEthernet1/0/1
+ switchport trunk allowed vlan 917,1600-1626,1628,1629,3911,3913
+ switchport mode trunk
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface TenGigabitEthernet1/0/2
+ switchport trunk allowed vlan 917,1600-1626,1628,1629,3911,3913
+ switchport mode trunk
+ ip arp inspection trust
+ channel-group 1 mode active
+ ip dhcp snooping trust
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan3911
+ ip address 10.101.111.32 255.255.255.0
+!
+ip default-gateway 10.101.111.1
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 10.101.111.1 name UPto
+ip ssh version 2
+!
+ip access-list standard SNMP-RW
+ permit 10.101.34.234
+ permit 10.101.34.134
+ deny   any
+!
+ip access-list extended NOC
+ permit ip host 10.101.36.42 any
+ permit ip object-group MONITORING any
+ permit ip host 10.101.23.241 any
+ permit ip host 10.101.11.180 any
+!
+logging source-interface Vlan3911
+logging host 10.101.18.80
+logging host 10.101.34.240 transport udp port 20514
+logging host 10.101.34.241 transport udp port 20514
+!
+!
+snmp-server community trsatx RO
+snmp-server community fnacx RW SNMP-RW
+snmp-server community nedix RO
+snmp-server trap-source Vlan3911
+snmp-server enable traps snmp linkdown linkup
+snmp-server enable traps config
+snmp-server enable traps power-ethernet group 1
+snmp-server enable traps power-ethernet police
+snmp-server enable traps cpu threshold
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps mac-notification change move threshold
+snmp-server host 10.101.34.134 version 2c fnacx  mac-notification snmp
+snmp-server host 10.101.34.234 version 2c fnacx  mac-notification snmp
+snmp-server host 10.101.34.61 version 2c nedix 
+snmp-server host 10.101.34.242 version 2c trsatx 
+snmp-server host 10.101.36.42 version 2c trsatx 
+snmp mib flash cache
+tacacs-server timeout 30
+tacacs server TURKSAT_TACACS_1
+ address ipv4 10.101.11.200
+ key 7 06321A33475D290D5645435F4D45
+ timeout 5
+tacacs server TURKSAT_TACACS_2
+ address ipv4 10.101.34.11
+ key 7 012713165018261B721E1F5D5844
+ timeout 5
+!
+!
+banner exec ^C
+   YOU HAVE ENTERED SUCCESFULLY TURKSAT SWITCH SYSTEM.     
+   $(hostname) on $(line). BE ADVISED YOUR ACTIONS ARE     
+   LOGGED AND AUDITS ARE PERFORMED DAILY. IF YOU HAVE      
+   ANY QUESTIONS CONTACT THE SYSTEM ADMINISTRATOR.         
+   EMAIL ADDRESS IS noc@turksat.com.tr.                    
+                                                           
+   THANK YOU !                                             
+   NETWORK TEAM
+^C
+banner login ^C
+
+/////  /    /  ////   /  /   ////     /    /////
+  /    /    /  /   /  / /   /        / /     /
+  /    /    /  ////   //     ///    /   /    /
+  /    /    /  /   /  / /       /  ///////   /
+  /    //////  /   /  /  /  ////   /     /   /
+  
+        /      / /     /   /////
+         /    /  / / / /   /    /
+          /  /   /  /  /   /    /
+           //    /     /   /////
+^C
+!
+line con 0
+line vty 0 4
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+ntp server 10.101.30.249 prefer
+ntp server 10.101.30.250
+mac address-table notification change interval 0
+mac address-table notification change
+!
+end
+

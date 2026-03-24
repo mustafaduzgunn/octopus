@@ -1,0 +1,15 @@
+{
+    "successful": [
+        {
+            "device": "RJ_11_124",
+            "ip": "10.101.11.124",
+            "brand": "Cisco",
+            "stack_members": [],
+            "serial_no": "G1NTAYD101243",
+            "model": null,
+            "software_version": null
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

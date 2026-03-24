@@ -1,0 +1,25 @@
+{
+    "successful": [
+        {
+            "device": "DEVICE_111_184",
+            "ip": "10.101.111.184",
+            "brand": "Extreme Networks",
+            "model": "X440G2-24p-10G4",
+            "hostname": "MCN_UPS_SW",
+            "software_version": "30.7.1.1",
+            "patch": "patch1-86",
+            "serial_no": null,
+            "uptime": "18 days 2 hours 48 minutes 45 seconds",
+            "location": "MACUNKOY_UPS_ODASI",
+            "contact": "https://www.extremenetworks.com/support/",
+            "mac_address": "00:04:96:FD:66:B7",
+            "collected_hostname": "MCN_UPS_SW",
+            "_hostname_diff": {
+                "inv_name": "DEVICE_111_184",
+                "hostname": "MCN_UPS_SW"
+            }
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

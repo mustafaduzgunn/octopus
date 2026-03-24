@@ -1,0 +1,17 @@
+{
+    "successful": [
+        {
+            "device": "TG_DC1_A0302U42_40G_H3C",
+            "ip": "10.101.111.130",
+            "brand": "H3C",
+            "model": "S9820-64H",
+            "software_version": "7.1.070",
+            "release": "6710",
+            "patch_version": "R6710HS15",
+            "uptime": "26 weeks, 5 days, 21 hours, 25 minutes",
+            "serial_no": null
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}

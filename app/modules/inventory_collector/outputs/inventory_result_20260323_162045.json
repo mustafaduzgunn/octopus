@@ -1,0 +1,29 @@
+{
+    "successful": [
+        {
+            "device": "DEVICE_111_69",
+            "ip": "10.101.111.69",
+            "brand": "Cisco",
+            "stack_members": [
+                {
+                    "member": "1",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255106YG"
+                },
+                {
+                    "member": "2",
+                    "model": "C9200L-48P-4X",
+                    "serial_number": "JAE255105ZJ"
+                }
+            ],
+            "serial_no": "JAE255106YG",
+            "model": "C9200L-48P-4X",
+            "uptime": "15 weeks, 1 minute",
+            "hostname": "AHMET_OZSOY_UTD",
+            "software_version": "17.9.5",
+            "collected_hostname": "AHMET_OZSOY_UTD"
+        }
+    ],
+    "failed": [],
+    "skipped": []
+}
