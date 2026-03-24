@@ -1,8 +1,0 @@
-
-============================================================
-COMMAND: show running-config
-============================================================
-                                 ^
-% Invalid input detected at '^' marker.
-
-ANKU_KAT_3_TOPLANTI_SALONU>
