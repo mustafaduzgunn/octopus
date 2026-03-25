@@ -1,0 +1,32 @@
+# cache
+__pycache__/
+*.pyc
+
+# venv
+venv/
+.env/
+
+# secrets
+*.env
+credentials.json
+vault.dat
+
+# OS
+.DS_Store
+Thumbs.db
+
+# logs
+logs/
+
+#backups
+backups/
+*.cfg
+
+#inventory
+inventory.json
+backup_schedule.json
+device_details.json
+device_status.json
+user.json
+network_map.json
+exclude.json
